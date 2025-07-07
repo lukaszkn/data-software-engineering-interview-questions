@@ -1,5 +1,5 @@
-# Kafka
-Kafka
+# Apache Kafka
+Apache Kafka
 
 * [What is Apache Kafka?](#What-is-Apache-Kafka)
 * [What is the traditional method of transferring messages?](#What-is-the-traditional-method-of-transferring-messages)

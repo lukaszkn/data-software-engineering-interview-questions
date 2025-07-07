@@ -1,55 +1,55 @@
 # RxSwift
 Basics of RxSwift
 
-* [### What is RxSwift?](#What-is-RxSwift)
-* [### Observable](#Observable)
-* [### Observer](#Observer)
-* [### Operators](#Operators)
-* [### Subjects](#Subjects)
-* [### Disposables and dispose bags](#Disposables-and-dispose-bags)
-* [### Schedulers](#Schedulers)
-* [### Benefits of RxSwift](#Benefits-of-RxSwift)
-* [### Common use cases](#Common-use-cases)
-* [### Example with 2 fields and button](#Example-with-2-fields-and-button)
-* [### What is RxCocoa?](#What-is-RxCocoa)
-* [### Reactive bindings for UI components](#Reactive-bindings-for-UI-components)
-* [### Handling UI Events](#Handling-UI-Events)
-* [### Driver](#Driver)
-* [### Relay](#Relay)
-* [### Built-in UI bindings](#Built-in-UI-bindings)
-* [### DelegateProxy](#DelegateProxy)
-* [### Example of `UITextField` and `UIButton` tap](#Example-of-UITextField-and-UIButton-tap)
-* [### Use cases for RxCocoa](#Use-cases-for-RxCocoa)
-* [### Advantages of RxCocoa](#Advantages-of-RxCocoa)
-* [### What is Subject?](#What-is-Subject)
-* [### PublishSubject](#PublishSubject)
-* [### BehaviorSubject](#BehaviorSubject)
-* [### ReplaySubject](#ReplaySubject)
-* [### AsyncSubject](#AsyncSubject)
-* [### Common use cases for subjects](#Common-use-cases-for-subjects)
-* [### Binder](#Binder)
-* [### Creating a Binder](#Creating-a-Binder)
-* [### Using a `Binder` to bind data to UI components](#Using-a-Binder-to-bind-data-to-UI-components)
-* [### Benefits of `Binder`](#Benefits-of-Binder)
-* [### What is RxRelay?](#What-is-RxRelay)
-* [### PublishRelay](#PublishRelay)
-* [### BehaviorRelay](#BehaviorRelay)
-* [### Why use RxRelay?](#Why-use-RxRelay)
-* [### Practical use cases for RxRelay](#Practical-use-cases-for-RxRelay)
-* [### Choosing the right publisher/observable](#Choosing-the-right-publisher-observable)
-* [### `Observable.create`](#Observable-create)
-* [### `Observable.interval`](#Observable-interval)
-* [### `Observable.timer`](#Observable-timer)
-* [### `Observable.deferred`](#Observable-deferred)
-* [### Transforming operators](#Transforming-operators)
-* [### Filtering operators](#Filtering-operators)
-* [### Combining operators](#Combining-operators)
-* [### Error handling operators](#Error-handling-operators)
-* [### Time-based operators](#Time-based-operators)
-* [### Utility operators](#Utility-operators)
-* [### Conditional and boolean operators](#Conditional-and-boolean-operators)
+* [What is RxSwift?](#What-is-RxSwift)
+* [Observable](#Observable)
+* [Observer](#Observer)
+* [Operators](#Operators)
+* [Subjects](#Subjects)
+* [Disposables and dispose bags](#Disposables-and-dispose-bags)
+* [Schedulers](#Schedulers)
+* [Benefits of RxSwift](#Benefits-of-RxSwift)
+* [Common use cases](#Common-use-cases)
+* [Example with 2 fields and button](#Example-with-2-fields-and-button)
+* [What is RxCocoa?](#What-is-RxCocoa)
+* [Reactive bindings for UI components](#Reactive-bindings-for-UI-components)
+* [Handling UI Events](#Handling-UI-Events)
+* [Driver](#Driver)
+* [Relay](#Relay)
+* [Built-in UI bindings](#Built-in-UI-bindings)
+* [DelegateProxy](#DelegateProxy)
+* [Example of `UITextField` and `UIButton` tap](#Example-of-UITextField-and-UIButton-tap)
+* [Use cases for RxCocoa](#Use-cases-for-RxCocoa)
+* [Advantages of RxCocoa](#Advantages-of-RxCocoa)
+* [What is Subject?](#What-is-Subject)
+* [PublishSubject](#PublishSubject)
+* [BehaviorSubject](#BehaviorSubject)
+* [ReplaySubject](#ReplaySubject)
+* [AsyncSubject](#AsyncSubject)
+* [Common use cases for subjects](#Common-use-cases-for-subjects)
+* [Binder](#Binder)
+* [Creating a Binder](#Creating-a-Binder)
+* [Using a `Binder` to bind data to UI components](#Using-a-Binder-to-bind-data-to-UI-components)
+* [Benefits of `Binder`](#Benefits-of-Binder)
+* [What is RxRelay?](#What-is-RxRelay)
+* [PublishRelay](#PublishRelay)
+* [BehaviorRelay](#BehaviorRelay)
+* [Why use RxRelay?](#Why-use-RxRelay)
+* [Practical use cases for RxRelay](#Practical-use-cases-for-RxRelay)
+* [Choosing the right publisher/observable](#Choosing-the-right-publisher-observable)
+* [`Observable.create`](#Observable-create)
+* [`Observable.interval`](#Observable-interval)
+* [`Observable.timer`](#Observable-timer)
+* [`Observable.deferred`](#Observable-deferred)
+* [Transforming operators](#Transforming-operators)
+* [Filtering operators](#Filtering-operators)
+* [Combining operators](#Combining-operators)
+* [Error handling operators](#Error-handling-operators)
+* [Time-based operators](#Time-based-operators)
+* [Utility operators](#Utility-operators)
+* [Conditional and boolean operators](#Conditional-and-boolean-operators)
 
-## ### What is RxSwift?
+## What is RxSwift?
 RxSwift is a powerful framework for handling asynchronous and event-based programming using observable sequences. It is based on Reactive Extensions (Rx) which uses functional programming with streams and observables to manage and compose asynchronous data sequences.
 
 In RxSwift, instead of directly handling states and events with traditional callbacks or delegates, you work with observables and observers, where:
@@ -58,7 +58,7 @@ In RxSwift, instead of directly handling states and events with traditional call
 
 - **Observer**: Listens and reacts to those values or events emitted by an observable.
 
-## ### Observable
+## Observable
 - Core to RxSwift, an observable is a sequence that produces elements over time.
 
 - Observables can emit events like .next (when a new element is emitted), .completed (when the observable sequence completes), and .error (when an error occurs).
@@ -67,7 +67,7 @@ In RxSwift, instead of directly handling states and events with traditional call
 let observable = Observable.of("Hello", "World")
 ```
 
-## ### Observer
+## Observer
 - Observers or subscribers, are interested in receiving elements from observables. Once an observer subscribes to an observable, it will start receiving values or events.
 
 ```swift
@@ -76,7 +76,7 @@ observable.subscribe { event in
 }
 ```
 
-## ### Operators
+## Operators
 - RxSwift includes many operators (similar to Combine) to help transform, filter, and combine observables. Some commonly used operators include `map`, `filter`, `merge`, `combineLatest`, `flatMap` and `reduce`.
 
 ```swift
@@ -86,7 +86,7 @@ numbers.map { $0 * 2 }
     .subscribe(onNext: { print($0) })
 ```
 
-## ### Subjects
+## Subjects
 - Subjects are special types of observables that are also observers. They can subscribe to other observables and emit their own values.
 
 - There are four main types of subjects:
@@ -108,7 +108,7 @@ subject.subscribe(onNext: { print($0) })
 subject.onNext("World")  // Emits "World" to subscribers
 ````
 
-## ### Disposables and dispose bags
+## Disposables and dispose bags
 - RxSwift uses `DisposeBag` to manage the lifecycle of subscriptions. When a subscription is added to a `DisposeBag`, it is automatically disposed of when the bag itself is deallocated, preventing memory leaks.
 
 ```swift
@@ -118,7 +118,7 @@ observable
     .disposed(by: disposeBag)
 ```
 
-## ### Schedulers
+## Schedulers
 ` Schedulers allow you to specify on which thread or queue code should run. Commonly used schedulers in RxSwift are `MainScheduler` (for UI updates), `ConcurrentDispatchQueueScheduler` (for background tasks) and `SerialDispatchQueueScheduler`.
 
 ```swift
@@ -128,7 +128,7 @@ observable
     .disposed(by: disposeBag)
 ```
 
-## ### Benefits of RxSwift
+## Benefits of RxSwift
 - **Asynchronous handling**: Simplifies handling asynchronous events, especially when working with complex event-driven programming.
 
 - **Declarative code**: Reactive code is more declarative, focusing on "what" should happen rather than "how" it happens.
@@ -137,7 +137,7 @@ observable
 
 - **Thread management**: Provides built-in thread management, making it easier to handle work on background threads and update the UI on the main thread.
 
-## ### Common use cases
+## Common use cases
 - **Networking**: Handle API responses and error handling, especially when chaining multiple API calls.
 
 - **Form validation**: Combine different input fields’ states to enable or disable a submit button dynamically.
@@ -146,7 +146,7 @@ observable
 
 - **UI binding**: Bind observable sequences to UI components, such as updating a label’s text when a property changes.
 
-## ### Example with 2 fields and button
+## Example with 2 fields and button
 Let's look at an example where a simple login form is created with two fields, username and password, and a loginButton that becomes enabled only when both fields are non-empty.
 
 ```swift
@@ -168,12 +168,12 @@ In this example:
 
 - `.bind(to:)` binds the result to the `isEnabled` property of `loginButton`.
 
-## ### What is RxCocoa?
+## What is RxCocoa?
 RxCocoa is an extension of the RxSwift framework that provides reactive extensions specifically for Apple’s Cocoa and UIKit frameworks. It enables seamless integration of RxSwift’s reactive programming model into the iOS and macOS UI components, such as `UIButton`, `UILabel`, `UITextField` and more.
 
 While RxSwift focuses on reactive programming in general, RxCocoa adds reactive capabilities to Cocoa touch frameworks, making it easier to manage UI state changes, handle user input, and respond to UI events in a declarative and reactive way.
 
-## ### Reactive bindings for UI components
+## Reactive bindings for UI components
 - RxCocoa allows you to create observable properties for UI elements. For instance, you can reactively observe text changes in a `UITextField`, the title of a `UIButton` or the value of a `UISlider`.
 
 - RxCocoa makes it easy to bind reactive observables directly to UI elements without needing traditional delegation or callback methods.
@@ -186,7 +186,7 @@ textField.rx.text
     .disposed(by: disposeBag)
 ```
 
-## ### Handling UI Events
+## Handling UI Events
 - RxCocoa provides reactive wrappers for common UI events such as taps, swipes, scrolling, and editing changes. Instead of implementing delegate methods, you can subscribe directly to these events and handle them in closures.
 
 ```swift
@@ -195,7 +195,7 @@ button.rx.tap
     .disposed(by: disposeBag)
 ```
 
-## ### Driver
+## Driver
 - `Driver` is a specialized type in RxCocoa designed for UI-related sequences that must always run on the main thread and cannot fail.
 
 - It is ideal for binding asynchronous data to the UI because it guarantees the sequence will deliver the last known value to new subscribers and always work on the main thread.
@@ -210,7 +210,7 @@ textDriver
     .disposed(by: disposeBag)
 ```
 
-## ### Relay
+## Relay
 Relay is a wrapper around subjects that never emit a completion event. There are two main types:
 - `PublishRelay`: Starts empty and only emits new elements to subscribers.
 
@@ -227,7 +227,7 @@ relay.bind(to: label.rx.text)
     .disposed(by: disposeBag)
 ```
 
-## ### Built-in UI bindings
+## Built-in UI bindings
 - RxCocoa offers a variety of built-in bindings to easily connect reactive streams to UIKit properties.
 
 - Common bindings include:
@@ -237,10 +237,10 @@ relay.bind(to: label.rx.text)
 
   - `rx.value` for `UISlider`, `UISwitch`, etc.
 
-## ### DelegateProxy
+## DelegateProxy
 RxCocoa uses `DelegateProxy` to enable delegation-based APIs to work with RxSwift. It allows events from delegate methods to be converted to observables, making them compatible with RxSwift’s declarative syntax.
 
-## ### Example of `UITextField` and `UIButton` tap
+## Example of `UITextField` and `UIButton` tap
 Imagine an app where a `UITextField` and `UIButton` are used to enable a search feature. The button should only be enabled when the user has entered at least three characters in the text field.
 
 ```swift
@@ -268,7 +268,7 @@ Here’s what’s happening in this example:
 
 - `button.rx.tap`: Subscribes to the tap event on the button, triggering a search action.
 
-## ### Use cases for RxCocoa
+## Use cases for RxCocoa
 - **Two-way binding**: For example, binding a text field to a model so that updates in the model reflect in the UI.
 
 - **Form validation**: Enabling/disabling buttons based on the validity of form input fields.
@@ -277,7 +277,7 @@ Here’s what’s happening in this example:
 
 - **UI event handling**: Handling taps, drags, gestures, and other UI interactions reactively.
 
-## ### Advantages of RxCocoa
+## Advantages of RxCocoa
 - **Declarative UI code**: Code is more concise and declarative, making it easier to understand and maintain.
 
 - **Unified data flow**: Simplifies state management and reduces the need for delegation, callback, and NotificationCenter patterns.
@@ -286,7 +286,7 @@ Here’s what’s happening in this example:
 
 - **Reactive patterns for UI**: Makes it easier to adopt reactive patterns across both data and UI components, improving modularity and maintainability.
 
-## ### What is Subject?
+## What is Subject?
 A Subject is a type that is both an Observable (it can emit events) and an Observer (it can subscribe to and receive events from other observables). Subjects act as bridges or proxies, relaying or emitting events to their subscribers. They are often used when you need to inject new values into a stream or manage shared state.
 
 There are four primary types of subjects in RxSwift:
@@ -297,7 +297,7 @@ There are four primary types of subjects in RxSwift:
 
 Each has unique properties and use cases.
 
-## ### PublishSubject
+## PublishSubject
 - **Description**: `PublishSubject` starts empty and only emits new elements to its subscribers.
 - **Use case**: Use when you want subscribers to receive events only after they’ve subscribed.
 
@@ -321,7 +321,7 @@ publishSubject.subscribe(onNext: { print("Subscriber 2: \($0)") })
 publishSubject.onNext("World")  // Output: "Subscriber 1: World", "Subscriber 2: World"
 ```
 
-## ### BehaviorSubject
+## BehaviorSubject
 - **Description**: `BehaviorSubject` requires an initial value and replays the latest value to new subscribers.
 - **Use case**: Use when you want subscribers to immediately receive the latest value upon subscribing, even if they join late.
 
@@ -346,7 +346,7 @@ behaviorSubject.subscribe(onNext: { print("Subscriber 2: \($0)") })
 behaviorSubject.onNext("World")  // Both Subscriber 1 and 2 receive "World"
 ```
 
-## ### ReplaySubject
+## ReplaySubject
 - **Description**: `ReplaySubject` stores a buffer of recent values (specified at creation) and replays them to new subscribers.
 
 - **Use case**: Use when you want new subscribers to catch up on recent events (up to a specified limit) when they subscribe.
@@ -369,7 +369,7 @@ replaySubject.subscribe(onNext: { print("Subscriber: \($0)") })
 // "Subscriber: Third"
 ```
 
-## ### AsyncSubject
+## AsyncSubject
 - **Description**: `AsyncSubject` only emits the last value and only after the sequence completes.
 
 - **Use case**: Use when you only care about the final value after completion (e.g., a result of a lengthy computation).
@@ -391,7 +391,7 @@ asyncSubject.onCompleted()  // Only emits "World" upon completion
 // "Subscriber: World"
 ```
 
-## ### Common use cases for subjects
+## Common use cases for subjects
 - **Event dispatching**: Use `PublishSubject` for one-time events, like button taps or notifications.
 
 - **State management**: Use `BehaviorSubject` for maintaining and sharing state that might change, such as form inputs.
@@ -400,7 +400,7 @@ asyncSubject.onCompleted()  // Only emits "World" upon completion
 
 - **Final results**: Use `AsyncSubject` for sequences where only the last emitted item upon completion is important.
 
-## ### Binder
+## Binder
 In RxCocoa, Binder is a specialized observer type used to bind UI elements in a safe, consistent way. A Binder is an observer that’s always bound to the main thread, making it ideal for UI updates. It provides a convenient way to update UI components in a reactive fashion without worrying about thread safety.
 
 Key characteristics of Binder
@@ -410,7 +410,7 @@ Key characteristics of Binder
 
 - **Error handling**: Unlike typical RxSwift observers, Binder does not handle errors. It's designed this way because UI elements don’t usually have a way to handle or display errors directly.
 
-## ### Creating a Binder
+## Creating a Binder
 A Binder can be created with an `onNext` closure that defines how to update the UI. The syntax requires specifying the type of the value the Binder will observe and how it should handle that value.
 
 ```swift
@@ -425,7 +425,7 @@ In this example:
 - `textBinder` is a Binder for `String` values.
 - The closure `label.text = text` defines how each new string will update the `UILabel`'s text.
 
-## ### Using a `Binder` to bind data to UI components
+## Using a `Binder` to bind data to UI components
 Binder works well with RxSwift’s `bind(to:)` syntax, which allows for binding observable data streams directly to UI elements.
 
 ```swift
@@ -437,14 +437,14 @@ textObservable
 ```
 In this example, label.rx.text is a Binder provided by RxCocoa that updates the UILabel text property with each new emitted value.
 
-## ### Benefits of `Binder`
+## Benefits of `Binder`
 - **Safe UI updates**: Always executes on the main thread, so you don’t need to worry about thread management for UI work.
 
 - **Cleaner code**: Helps you create reusable, declarative bindings for UI components.
 
 - **Reduces boilerplate**: RxCocoa provides many built-in binders for common properties like `rx.text`, `rx.isEnabled` and others, which minimizes the need for custom bindings.
 
-## ### What is RxRelay?
+## What is RxRelay?
 RxRelay is a part of the RxSwift ecosystem and provides special wrappers around Subjects that are stateful, meaning they maintain and emit the latest value, and non-completing, which means they never emit a completed or error event. This makes RxRelay ideal for managing state in reactive applications, especially UI-driven ones, where you generally don't want streams to terminate unexpectedly.
 
 The main types in RxRelay are:
@@ -454,7 +454,7 @@ The main types in RxRelay are:
 
 Each has its unique properties and use cases
 
-## ### PublishRelay
+## PublishRelay
 - `PublishRelay` is essentially a wrapper around `PublishSubject` that does not emit completion events.
 - It starts as an empty relay and only emits new elements to subscribers.
 - It’s great for emitting events like button taps or other one-time actions.
@@ -480,7 +480,7 @@ In this example:
 - The `PublishRelay` emits "Hello" and "World" only to active subscribers.
 - If a new subscriber subscribes after these values are emitted, they won't receive these past values.
 
-## ### BehaviorRelay
+## BehaviorRelay
 - `BehaviorRelay` is a wrapper around `BehaviorSubject` and requires an initial value.
 - It stores the latest value and replays it to new subscribers immediately upon subscription.
 - It’s ideal for managing state that needs to be observed as well as retained (like form inputs or user settings).
@@ -514,21 +514,21 @@ In this example:
 - When "New Value" is emitted, both subscribers receive it.
 - If a new subscriber joins later, it will immediately receive the latest value, "New Value".
 
-## ### Why use RxRelay?
+## Why use RxRelay?
 - **Ideal for state management**: RxRelay helps you manage state in a way that’s predictable and ensures that you always have access to the latest data without unexpected termination.
 
 - **No termination events**: Unlike `Subject`s, relays don’t emit `.completed` or `.error` events. This is perfect for UI events and state management where completion events aren’t meaningful.
 
 - **Simplifies state sharing**: Because `BehaviorRelay` retains the latest value, it simplifies state sharing across the app by ensuring new subscribers get the most current data.
 
-## ### Practical use cases for RxRelay
+## Practical use cases for RxRelay
 - **UI events**: Use `PublishRelay` for UI events like button taps, where you just want to send one-time actions without retaining state.
 
 - **Form inputs**: Use `BehaviorRelay` to manage form input states, where each input should be retained and accessible by other components.
 
 - **App settings or state**: Use `BehaviorRelay` to manage app settings or any state that might be modified and should always be accessible by new subscribers.
 
-## ### Choosing the right publisher/observable
+## Choosing the right publisher/observable
 - **Single-value emissions**: Use `just`, `of` or `from`.
 
 - **Custom emission logic**: Use `create` or `deferred`.
@@ -537,7 +537,7 @@ In this example:
 
 - **Subjects**: Use `Subjects` for shared sequences or state that can both emit and receive values.
 
-## ### `Observable.create`
+## `Observable.create`
 - Allows creating custom observable sequences by providing an observer.
 
 - Use Case: For custom observable creation with specific events or values.
@@ -550,7 +550,7 @@ let observable = Observable<String>.create { observer in
 }
 ```
 
-## ### `Observable.interval`
+## `Observable.interval`
 - Creates an observable that emits sequential numbers over a specified interval.
 
 - Use Case: Timed events, like a countdown or polling.
@@ -559,7 +559,7 @@ let observable = Observable<String>.create { observer in
 let observable = Observable<Int>.interval(.seconds(1), scheduler: MainScheduler.instance)
 ```
 
-## ### `Observable.timer`
+## `Observable.timer`
 - Creates an observable that emits the initial value after a delay and then emits values periodically.
 
 - Use Case: Similar to `interval` but allows an initial delay before starting.
@@ -568,7 +568,7 @@ let observable = Observable<Int>.interval(.seconds(1), scheduler: MainScheduler.
 let observable = Observable<Int>.timer(.seconds(5), period: .seconds(1), scheduler: MainScheduler.instance)
 ```
 
-## ### `Observable.deferred`
+## `Observable.deferred`
 - Defers creation of an observable sequence until a subscriber subscribes.
 
 - Use Case: Delays observable creation, useful when the state needs to be captured at the time of subscription.
@@ -579,7 +579,7 @@ let observable = Observable.deferred {
 }
 ```
 
-## ### Transforming operators
+## Transforming operators
 - `map`: Transforms each element emitted by an observable sequence by applying a function.
   ```swift
   observable.map { $0 * 2 }
@@ -606,7 +606,7 @@ let observable = Observable.deferred {
   }
   ```
 
-## ### Filtering operators
+## Filtering operators
 - `filter`: Emits only items that satisfy a condition.
   ```swift
   observable.filter { $0 > 5 }
@@ -632,7 +632,7 @@ let observable = Observable.deferred {
   observable.takeUntil(triggerObservable)
   ```
 
-## ### Combining operators
+## Combining operators
 - `merge`: Merges multiple observable sequences into one.
   ```swift
   Observable.merge(observable1, observable2)
@@ -662,7 +662,7 @@ let observable = Observable.deferred {
   primaryObservable.withLatestFrom(secondaryObservable)
   ```
 
-## ### Error handling operators
+## Error handling operators
 - `catchError`: Replaces an error with a fallback observable sequence.
   ```swift
   observable.catchError { error in
@@ -675,7 +675,7 @@ let observable = Observable.deferred {
   observable.retry(3)  // retries up to 3 times
   ```
 
-## ### Time-based operators
+## Time-based operators
 - `debounce`: Emits an item only after a specified duration has passed without another emission.
   ```swift
   observable.debounce(.milliseconds(300), scheduler: MainScheduler.instance)
@@ -696,7 +696,7 @@ let observable = Observable.deferred {
   Observable<Int>.interval(.seconds(1), scheduler: MainScheduler.instance)
   ```
 
-## ### Utility operators
+## Utility operators
 - `do`: Allows executing side-effects (logging, debugging) without modifying the observable sequence.
   ```swift
   observable.do(onNext: { print("Element: \($0)") })
@@ -717,7 +717,7 @@ let observable = Observable.deferred {
   observable.timeout(.seconds(3), scheduler: MainScheduler.instance)
   ```
 
-## ### Conditional and boolean operators
+## Conditional and boolean operators
 - `takeWhile`: Takes items while a condition is true.
   ```swift
   observable.takeWhile { $0 < 5 }

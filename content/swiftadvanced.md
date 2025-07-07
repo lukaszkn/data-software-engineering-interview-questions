@@ -1,214 +1,214 @@
 # Swift Advanced
 Properties, subscripts, concurrency, type casting, nested types, extensions, protocols, generics, Combine framework
 
-* [### What are property wrappers?](#What-are-property-wrappers)
-* [### What are available built-in property wrappers?](#What-are-available-built-in-property-wrappers)
-* [### What is `@Published` used for?](#What-is-Published-used-for)
-* [### What is property wrapper projected value?](#What-is-property-wrapper-projected-value)
-* [### What are subscripts?](#What-are-subscripts)
-* [### What is convenience initializer?](#What-is-convenience-initializer)
-* [### What are rules for convenience initializers?](#What-are-rules-for-convenience-initializers)
-* [### What is failable initializer?](#What-is-failable-initializer)
-* [### What is example usage of failable initializer?](#What-is-example-usage-of-failable-initializer)
-* [### Why use failable initializers?](#Why-use-failable-initializers)
-* [### What is `required` modifier used for?](#What-is-required-modifier-used-for)
-* [### How to setup default property value with closure?](#How-to-setup-default-property-value-with-closure)
-* [### What is asynchronous function?](#What-is-asynchronous-function)
-* [### How to define asynchronous function?](#How-to-define-asynchronous-function)
-* [### How to await asynchronous operation?](#How-to-await-asynchronous-operation)
-* [### How to call asynchronous functions?](#How-to-call-asynchronous-functions)
-* [### What are benefits of asynchronous functions?](#What-are-benefits-of-asynchronous-functions)
-* [### What is asynchronous sequence?](#What-is-asynchronous-sequence)
-* [### What is `AsyncSequence` protocol used for?](#What-is-AsyncSequence-protocol-used-for)
-* [### How to iterate over an asynchronous sequence?](#How-to-iterate-over-an-asynchronous-sequence)
-* [### Practical example: AsyncStream](#Practical-example-AsyncStream)
-* [### What are use cases for asynchronous sequences?](#What-are-use-cases-for-asynchronous-sequences)
-* [### How to call asynchronous functions in parallel?](#How-to-call-asynchronous-functions-in-parallel)
-* [### What is a `Task`?](#What-is-a-Task)
-* [### How to creaate a `Task`?](#How-to-creaate-a-Task)
-* [### Structured vs. unstructured tasks](#Structured-vs-unstructured-tasks)
-* [### What is a `TaskGroup`?](#What-is-a-TaskGroup)
-* [### How to create `TaskGroup`?](#How-to-create-TaskGroup)
-* [### Differences between `Task` and `TaskGroup`](#Differences-between-Task-and-TaskGroup)
-* [### What is Task cancellation?](#What-is-Task-cancellation)
-* [### How to check for Task cancellation?](#How-to-check-for-Task-cancellation)
-* [### How to throw on cancellation?](#How-to-throw-on-cancellation)
-* [### How to cancel a Task?](#How-to-cancel-a-Task)
-* [### Task group cancellation](#Task-group-cancellation)
-* [### How to use `CheckedContinuation`?](#How-to-use-CheckedContinuation)
-* [### What is an Actor?](#What-is-an-Actor)
-* [### How to define an actor?](#How-to-define-an-actor)
-* [### How to use an actor?](#How-to-use-an-actor)
-* [### Reentrancy in actors](#Reentrancy-in-actors)
-* [### What are global actors?](#What-are-global-actors)
-* [### How to define a global actor?](#How-to-define-a-global-actor)
-* [### How to use a global actor?](#How-to-use-a-global-actor)
-* [### Using global actor on functions or properties](#Using-global-actor-on-functions-or-properties)
-* [### What is sendable type?](#What-is-sendable-type)
-* [### How to define a Sendable type?](#How-to-define-a-Sendable-type)
-* [### What is implicit conformance to `Sendable`?](#What-is-implicit-conformance-to-Sendable)
-* [### Whar are non-sendable types?](#Whar-are-non-sendable-types)
-* [### What is `@unchecked` used for?](#What-is-unchecked-used-for)
-* [### What is macro?](#What-is-macro)
-* [### What are `Any` and `AnyObject`?](#What-are-Any-and-AnyObject)
-* [### What is `Any` used for?](#What-is-Any-used-for)
-* [### What is `AnyObject` used for?](#What-is-AnyObject-used-for)
-* [### Differences between `Any` and `AnyObject`](#Differences-between-Any-and-AnyObject)
-* [### Type casting with `Any` and `AnyObject`](#Type-casting-with-Any-and-AnyObject)
-* [### What are nested types?](#What-are-nested-types)
-* [### Example of nested structures](#Example-of-nested-structures)
-* [### Example of nested enumerations](#Example-of-nested-enumerations)
-* [### Example of nested classes](#Example-of-nested-classes)
-* [### What are extensions?](#What-are-extensions)
-* [### Example of adding methods using extensions](#Example-of-adding-methods-using-extensions)
-* [### Example of adding computed properties using extensions](#Example-of-adding-computed-properties-using-extensions)
-* [### Example of protocol conformance using extensions](#Example-of-protocol-conformance-using-extensions)
-* [### Example of adding initializers using extensions](#Example-of-adding-initializers-using-extensions)
-* [### Example of extensions for protocols](#Example-of-extensions-for-protocols)
-* [### Example of delegation: protocol and implementation](#Example-of-delegation-protocol-and-implementation)
-* [### Example of delegation: delegating object](#Example-of-delegation-delegating-object)
-* [### Common uses of delegation in iOS](#Common-uses-of-delegation-in-iOS)
-* [### What is conditional conformance to a protocol?](#What-is-conditional-conformance-to-a-protocol)
-* [### Example: Extending `Array` to conform to a protocol conditionally](#Example-Extending-Array-to-conform-to-a-protocol-conditionally)
-* [### Example: Extending `Equatable` to a custom generic type](#Example-Extending-Equatable-to-a-custom-generic-type)
-* [### Example: Conditional conformance with `Codable`](#Example-Conditional-conformance-with-Codable)
-* [### How to limit protocol adoption to class types?](#How-to-limit-protocol-adoption-to-class-types)
-* [### Example usage how to limit protocol adoption to class types](#Example-usage-how-to-limit-protocol-adoption-to-class-types)
-* [### Why restrict protocol adoption to class types?](#Why-restrict-protocol-adoption-to-class-types)
-* [### What is protocol composition?](#What-is-protocol-composition)
-* [### What are advantages of protocol composition?](#What-are-advantages-of-protocol-composition)
-* [### Optional protocol requirements](#Optional-protocol-requirements)
-* [### What are generics?](#What-are-generics)
-* [### Basic example of generics (functions)](#Basic-example-of-generics-functions)
-* [### Generic types](#Generic-types)
-* [### Generic constraints](#Generic-constraints)
-* [### What are associated types?](#What-are-associated-types)
-* [### Example of associated types](#Example-of-associated-types)
-* [### Constraints on associated types](#Constraints-on-associated-types)
-* [### Extensions with a generic `where` clause](#Extensions-with-a-generic-where-clause)
-* [### Example: Extension with a generic `where` clause on a type](#Example-Extension-with-a-generic-where-clause-on-a-type)
-* [### Example: Extension with a generic `where` clause on a protocol](#Example-Extension-with-a-generic-where-clause-on-a-protocol)
-* [### What are opaque types?](#What-are-opaque-types)
-* [### Opaque type vs. protocol type](#Opaque-type-vs-protocol-type)
-* [### Example: Returning an opaque type](#Example-Returning-an-opaque-type)
-* [### Example: Using opaque types with different types](#Example-Using-opaque-types-with-different-types)
-* [### Benefits of opaque types](#Benefits-of-opaque-types)
-* [### Opaque types use cases](#Opaque-types-use-cases)
-* [### Comparison to boxed/existential types (`any`)](#Comparison-to-boxed-existential-types-any)
-* [### What is boxed protocol type?](#What-is-boxed-protocol-type)
-* [### Key characteristics of boxed protocol types](#Key-characteristics-of-boxed-protocol-types)
-* [### What is type erasure?](#What-is-type-erasure)
-* [### Example: Type erasure with a protocol](#Example-Type-erasure-with-a-protocol)
-* [### Benefits of type erasure](#Benefits-of-type-erasure)
-* [### Drawbacks of type erasure](#Drawbacks-of-type-erasure)
-* [### Type erasure summary](#Type-erasure-summary)
-* [### What's the difference between `self` and `Self`?](#What-s-the-difference-between-self-and-Self)
-* [### The access levels](#The-access-levels)
-* [### The access levels best practices](#The-access-levels-best-practices)
-* [### Bitwise operators](#Bitwise-operators)
-* [### Operator methods](#Operator-methods)
-* [### Examples of operator methods: Addition operator `+`](#Examples-of-operator-methods-Addition-operator)
-* [### Examples of operator methods: Equality operator `==`](#Examples-of-operator-methods-Equality-operator)
-* [### Examples of operator methods: Custom prefix operator `-`](#Examples-of-operator-methods-Custom-prefix-operator)
-* [### Custom operators](#Custom-operators)
-* [### What is `@resultBuilder`?](#What-is-resultBuilder)
-* [### Example: SwiftUI's `@ViewBuilder`](#Example-SwiftUI-s-ViewBuilder)
-* [### Creating your own `@resultBuilder`](#Creating-your-own-resultBuilder)
-* [### What is Combine framework?](#What-is-Combine-framework)
-* [### How Combine works?](#How-Combine-works)
-* [### Combine: example usage](#Combine-example-usage)
-* [### Combine building blocks](#Combine-building-blocks)
-* [### Combine real-world use cases](#Combine-real-world-use-cases)
-* [### Combine advantages](#Combine-advantages)
-* [### `Just` publisher](#Just-publisher)
-* [### `Just` publisher usage and example](#Just-publisher-usage-and-example)
-* [### When to use `Just`](#When-to-use-Just)
-* [### `Future` publisher](#Future-publisher)
-* [### `Future` publisher usage and example](#Future-publisher-usage-and-example)
-* [### When to use `Future`](#When-to-use-Future)
-* [### `PassthroughSubject` publisher](#PassthroughSubject-publisher)
-* [### `PassthroughSubject` publisher usage and example](#PassthroughSubject-publisher-usage-and-example)
-* [### When to use `PassthroughSubject`](#When-to-use-PassthroughSubject)
-* [### `PassthroughSubject`: Comparison with `CurrentValueSubject`](#PassthroughSubject-Comparison-with-CurrentValueSubject)
-* [### `CurrentValueSubject` publisher](#CurrentValueSubject-publisher)
-* [### `CurrentValueSubject` publisher usage and example](#CurrentValueSubject-publisher-usage-and-example)
-* [### When to use `CurrentValueSubject`](#When-to-use-CurrentValueSubject)
-* [### `sink` subscriber](#sink-subscriber)
-* [### `sink` example: Handling values and completion](#sink-example-Handling-values-and-completion)
-* [### `sink` example: Handling only values](#sink-example-Handling-only-values)
-* [### Memory management with `sink`](#Memory-management-with-sink)
-* [### `assign` subscriber](#assign-subscriber)
-* [### `assign` subscriber usage and example](#assign-subscriber-usage-and-example)
-* [### When to use `assign`?](#When-to-use-assign)
-* [### Combine: Transformation Operators](#Combine-Transformation-Operators)
-* [### Combine: Filtering operators](#Combine-Filtering-operators)
-* [### Combine: Combining operators](#Combine-Combining-operators)
-* [### Combine: Sequence operators](#Combine-Sequence-operators)
-* [### Combine: Time operators](#Combine-Time-operators)
-* [### Combine: Error handling operators](#Combine-Error-handling-operators)
-* [### Combine schedulers](#Combine-schedulers)
-* [### Commonly used schedulers: DispatchQueue](#Commonly-used-schedulers-DispatchQueue)
-* [### Commonly used schedulers: RunLoop](#Commonly-used-schedulers-RunLoop)
-* [### Commonly used schedulers: OperationQueue](#Commonly-used-schedulers-OperationQueue)
-* [### Combine: Using schedulers effectively](#Combine-Using-schedulers-effectively)
-* [### `Deferred` publisher](#Deferred-publisher)
-* [### `Deferred` publisher usage and example](#Deferred-publisher-usage-and-example)
-* [### Why use `Deferred`?](#Why-use-Deferred)
-* [### What is list's deep copy?](#What-is-list-s-deep-copy)
-* [### List deep copy: For arrays of value types](#List-deep-copy-For-arrays-of-value-types)
-* [### List deep copy: For arrays of reference types](#List-deep-copy-For-arrays-of-reference-types)
-* [### List deep copy: Using protocol](#List-deep-copy-Using-protocol)
-* [### List deep copy: Handling nested arrays](#List-deep-copy-Handling-nested-arrays)
-* [### What does `eraseToAnyPublisher` do?](#What-does-eraseToAnyPublisher-do)
-* [### How does `eraseToAnyPublisher` work?](#How-does-eraseToAnyPublisher-work)
-* [### What are benefits of using `eraseToAnyPublisher`?](#What-are-benefits-of-using-eraseToAnyPublisher)
-* [### What can be Combine `flatMap` operator used for?](#What-can-be-Combine-flatMap-operator-used-for)
-* [### Combine `flatMap`: Chaining asynchronous operations](#Combine-flatMap-Chaining-asynchronous-operations)
-* [### Combine `flatMap`: Handling multiple nested publishers](#Combine-flatMap-Handling-multiple-nested-publishers)
-* [### Combine `flatMap`: Combining results from different publishers](#Combine-flatMap-Combining-results-from-different-publishers)
-* [### Combine `flatMap`: Dynamic publishers based on emitted values](#Combine-flatMap-Dynamic-publishers-based-on-emitted-values)
-* [### Combine `flatMap`: Summary](#Combine-flatMap-Summary)
-* [### What can be Combine `compactMap` operator used for?](#What-can-be-Combine-compactMap-operator-used-for)
-* [### What is `nonisolated` used for?](#What-is-nonisolated-used-for)
-* [### Use cases for `nonisolated`](#Use-cases-for-nonisolated)
-* [### Explain the difference between `Equatable` and `Comparable` protocols](#Explain-the-difference-between-Equatable-and-Comparable-protocols)
-* [### What is `@inlinable`?](#What-is-inlinable)
-* [### What is `@frozen`?](#What-is-frozen)
-* [### When to use `@frozen`?](#When-to-use-frozen)
-* [### What is `@MainActor`?](#What-is-MainActor)
-* [### Key differences between `@MainActor` and `DispatchQueue.main.async`](#Key-differences-between-MainActor-and-DispatchQueue-main-async)
-* [### Core Image](#Core-Image)
-* [### Basic example using Core Image](#Basic-example-using-Core-Image)
-* [### Core Image features](#Core-Image-features)
-* [### Core Animation](#Core-Animation)
-* [### Core Animation: CALayer](#Core-Animation-CALayer)
-* [### Core Animation: Implicit animations](#Core-Animation-Implicit-animations)
-* [### Core Animation: Explicit animations](#Core-Animation-Explicit-animations)
-* [### Core Animation: Animation timing](#Core-Animation-Animation-timing)
-* [### Core Animation: Transactions](#Core-Animation-Transactions)
-* [### Core Animation: Keyframe animations](#Core-Animation-Keyframe-animations)
-* [### Core Animation: Layer hierarchies](#Core-Animation-Layer-hierarchies)
-* [### Core Animation: Transformations](#Core-Animation-Transformations)
-* [### Core Animation: Core animation on the GPU](#Core-Animation-Core-animation-on-the-GPU)
-* [### Core Animation types](#Core-Animation-types)
-* [### Core Animation: Layer masking](#Core-Animation-Layer-masking)
-* [### Core Animation: Replicating layers](#Core-Animation-Replicating-layers)
-* [### Core Animation: Emitter layers](#Core-Animation-Emitter-layers)
-* [### Core Animation: Delegates](#Core-Animation-Delegates)
-* [### Core Animation: Performance considerations](#Core-Animation-Performance-considerations)
-* [### Core Animation: Practical use cases](#Core-Animation-Practical-use-cases)
-* [### AVFoundation](#AVFoundation)
-* [### AVFoundation: `AVPlayer` and `AVPlayerLayer`](#AVFoundation-AVPlayer-and-AVPlayerLayer)
-* [### AVFoundation: AVCaptureSession and Media Capture](#AVFoundation-AVCaptureSession-and-Media-Capture)
-* [### AVFoundation: AVComposition and Media Editing](#AVFoundation-AVComposition-and-Media-Editing)
-* [### AVFoundation: AVAssetExportSession](#AVFoundation-AVAssetExportSession)
-* [### AVFoundation: Metadata Management](#AVFoundation-Metadata-Management)
-* [### AVFoundation: Audio Processing](#AVFoundation-Audio-Processing)
-* [### AVFoundation: Time-based media operations](#AVFoundation-Time-based-media-operations)
-* [### AVFoundation: Real-time video effects](#AVFoundation-Real-time-video-effects)
-* [### Best practices for AVFoundation](#Best-practices-for-AVFoundation)
+* [What are property wrappers?](#What-are-property-wrappers)
+* [What are available built-in property wrappers?](#What-are-available-built-in-property-wrappers)
+* [What is `@Published` used for?](#What-is-Published-used-for)
+* [What is property wrapper projected value?](#What-is-property-wrapper-projected-value)
+* [What are subscripts?](#What-are-subscripts)
+* [What is convenience initializer?](#What-is-convenience-initializer)
+* [What are rules for convenience initializers?](#What-are-rules-for-convenience-initializers)
+* [What is failable initializer?](#What-is-failable-initializer)
+* [What is example usage of failable initializer?](#What-is-example-usage-of-failable-initializer)
+* [Why use failable initializers?](#Why-use-failable-initializers)
+* [What is `required` modifier used for?](#What-is-required-modifier-used-for)
+* [How to setup default property value with closure?](#How-to-setup-default-property-value-with-closure)
+* [What is asynchronous function?](#What-is-asynchronous-function)
+* [How to define asynchronous function?](#How-to-define-asynchronous-function)
+* [How to await asynchronous operation?](#How-to-await-asynchronous-operation)
+* [How to call asynchronous functions?](#How-to-call-asynchronous-functions)
+* [What are benefits of asynchronous functions?](#What-are-benefits-of-asynchronous-functions)
+* [What is asynchronous sequence?](#What-is-asynchronous-sequence)
+* [What is `AsyncSequence` protocol used for?](#What-is-AsyncSequence-protocol-used-for)
+* [How to iterate over an asynchronous sequence?](#How-to-iterate-over-an-asynchronous-sequence)
+* [Practical example: AsyncStream](#Practical-example-AsyncStream)
+* [What are use cases for asynchronous sequences?](#What-are-use-cases-for-asynchronous-sequences)
+* [How to call asynchronous functions in parallel?](#How-to-call-asynchronous-functions-in-parallel)
+* [What is a `Task`?](#What-is-a-Task)
+* [How to creaate a `Task`?](#How-to-creaate-a-Task)
+* [Structured vs. unstructured tasks](#Structured-vs-unstructured-tasks)
+* [What is a `TaskGroup`?](#What-is-a-TaskGroup)
+* [How to create `TaskGroup`?](#How-to-create-TaskGroup)
+* [Differences between `Task` and `TaskGroup`](#Differences-between-Task-and-TaskGroup)
+* [What is Task cancellation?](#What-is-Task-cancellation)
+* [How to check for Task cancellation?](#How-to-check-for-Task-cancellation)
+* [How to throw on cancellation?](#How-to-throw-on-cancellation)
+* [How to cancel a Task?](#How-to-cancel-a-Task)
+* [Task group cancellation](#Task-group-cancellation)
+* [How to use `CheckedContinuation`?](#How-to-use-CheckedContinuation)
+* [What is an Actor?](#What-is-an-Actor)
+* [How to define an actor?](#How-to-define-an-actor)
+* [How to use an actor?](#How-to-use-an-actor)
+* [Reentrancy in actors](#Reentrancy-in-actors)
+* [What are global actors?](#What-are-global-actors)
+* [How to define a global actor?](#How-to-define-a-global-actor)
+* [How to use a global actor?](#How-to-use-a-global-actor)
+* [Using global actor on functions or properties](#Using-global-actor-on-functions-or-properties)
+* [What is sendable type?](#What-is-sendable-type)
+* [How to define a Sendable type?](#How-to-define-a-Sendable-type)
+* [What is implicit conformance to `Sendable`?](#What-is-implicit-conformance-to-Sendable)
+* [Whar are non-sendable types?](#Whar-are-non-sendable-types)
+* [What is `@unchecked` used for?](#What-is-unchecked-used-for)
+* [What is macro?](#What-is-macro)
+* [What are `Any` and `AnyObject`?](#What-are-Any-and-AnyObject)
+* [What is `Any` used for?](#What-is-Any-used-for)
+* [What is `AnyObject` used for?](#What-is-AnyObject-used-for)
+* [Differences between `Any` and `AnyObject`](#Differences-between-Any-and-AnyObject)
+* [Type casting with `Any` and `AnyObject`](#Type-casting-with-Any-and-AnyObject)
+* [What are nested types?](#What-are-nested-types)
+* [Example of nested structures](#Example-of-nested-structures)
+* [Example of nested enumerations](#Example-of-nested-enumerations)
+* [Example of nested classes](#Example-of-nested-classes)
+* [What are extensions?](#What-are-extensions)
+* [Example of adding methods using extensions](#Example-of-adding-methods-using-extensions)
+* [Example of adding computed properties using extensions](#Example-of-adding-computed-properties-using-extensions)
+* [Example of protocol conformance using extensions](#Example-of-protocol-conformance-using-extensions)
+* [Example of adding initializers using extensions](#Example-of-adding-initializers-using-extensions)
+* [Example of extensions for protocols](#Example-of-extensions-for-protocols)
+* [Example of delegation: protocol and implementation](#Example-of-delegation-protocol-and-implementation)
+* [Example of delegation: delegating object](#Example-of-delegation-delegating-object)
+* [Common uses of delegation in iOS](#Common-uses-of-delegation-in-iOS)
+* [What is conditional conformance to a protocol?](#What-is-conditional-conformance-to-a-protocol)
+* [Example: Extending `Array` to conform to a protocol conditionally](#Example-Extending-Array-to-conform-to-a-protocol-conditionally)
+* [Example: Extending `Equatable` to a custom generic type](#Example-Extending-Equatable-to-a-custom-generic-type)
+* [Example: Conditional conformance with `Codable`](#Example-Conditional-conformance-with-Codable)
+* [How to limit protocol adoption to class types?](#How-to-limit-protocol-adoption-to-class-types)
+* [Example usage how to limit protocol adoption to class types](#Example-usage-how-to-limit-protocol-adoption-to-class-types)
+* [Why restrict protocol adoption to class types?](#Why-restrict-protocol-adoption-to-class-types)
+* [What is protocol composition?](#What-is-protocol-composition)
+* [What are advantages of protocol composition?](#What-are-advantages-of-protocol-composition)
+* [Optional protocol requirements](#Optional-protocol-requirements)
+* [What are generics?](#What-are-generics)
+* [Basic example of generics (functions)](#Basic-example-of-generics-functions)
+* [Generic types](#Generic-types)
+* [Generic constraints](#Generic-constraints)
+* [What are associated types?](#What-are-associated-types)
+* [Example of associated types](#Example-of-associated-types)
+* [Constraints on associated types](#Constraints-on-associated-types)
+* [Extensions with a generic `where` clause](#Extensions-with-a-generic-where-clause)
+* [Example: Extension with a generic `where` clause on a type](#Example-Extension-with-a-generic-where-clause-on-a-type)
+* [Example: Extension with a generic `where` clause on a protocol](#Example-Extension-with-a-generic-where-clause-on-a-protocol)
+* [What are opaque types?](#What-are-opaque-types)
+* [Opaque type vs. protocol type](#Opaque-type-vs-protocol-type)
+* [Example: Returning an opaque type](#Example-Returning-an-opaque-type)
+* [Example: Using opaque types with different types](#Example-Using-opaque-types-with-different-types)
+* [Benefits of opaque types](#Benefits-of-opaque-types)
+* [Opaque types use cases](#Opaque-types-use-cases)
+* [Comparison to boxed/existential types (`any`)](#Comparison-to-boxed-existential-types-any)
+* [What is boxed protocol type?](#What-is-boxed-protocol-type)
+* [Key characteristics of boxed protocol types](#Key-characteristics-of-boxed-protocol-types)
+* [What is type erasure?](#What-is-type-erasure)
+* [Example: Type erasure with a protocol](#Example-Type-erasure-with-a-protocol)
+* [Benefits of type erasure](#Benefits-of-type-erasure)
+* [Drawbacks of type erasure](#Drawbacks-of-type-erasure)
+* [Type erasure summary](#Type-erasure-summary)
+* [What's the difference between `self` and `Self`?](#What-s-the-difference-between-self-and-Self)
+* [The access levels](#The-access-levels)
+* [The access levels best practices](#The-access-levels-best-practices)
+* [Bitwise operators](#Bitwise-operators)
+* [Operator methods](#Operator-methods)
+* [Examples of operator methods: Addition operator `+`](#Examples-of-operator-methods-Addition-operator)
+* [Examples of operator methods: Equality operator `==`](#Examples-of-operator-methods-Equality-operator)
+* [Examples of operator methods: Custom prefix operator `-`](#Examples-of-operator-methods-Custom-prefix-operator)
+* [Custom operators](#Custom-operators)
+* [What is `@resultBuilder`?](#What-is-resultBuilder)
+* [Example: SwiftUI's `@ViewBuilder`](#Example-SwiftUI-s-ViewBuilder)
+* [Creating your own `@resultBuilder`](#Creating-your-own-resultBuilder)
+* [What is Combine framework?](#What-is-Combine-framework)
+* [How Combine works?](#How-Combine-works)
+* [Combine: example usage](#Combine-example-usage)
+* [Combine building blocks](#Combine-building-blocks)
+* [Combine real-world use cases](#Combine-real-world-use-cases)
+* [Combine advantages](#Combine-advantages)
+* [`Just` publisher](#Just-publisher)
+* [`Just` publisher usage and example](#Just-publisher-usage-and-example)
+* [When to use `Just`](#When-to-use-Just)
+* [`Future` publisher](#Future-publisher)
+* [`Future` publisher usage and example](#Future-publisher-usage-and-example)
+* [When to use `Future`](#When-to-use-Future)
+* [`PassthroughSubject` publisher](#PassthroughSubject-publisher)
+* [`PassthroughSubject` publisher usage and example](#PassthroughSubject-publisher-usage-and-example)
+* [When to use `PassthroughSubject`](#When-to-use-PassthroughSubject)
+* [`PassthroughSubject`: Comparison with `CurrentValueSubject`](#PassthroughSubject-Comparison-with-CurrentValueSubject)
+* [`CurrentValueSubject` publisher](#CurrentValueSubject-publisher)
+* [`CurrentValueSubject` publisher usage and example](#CurrentValueSubject-publisher-usage-and-example)
+* [When to use `CurrentValueSubject`](#When-to-use-CurrentValueSubject)
+* [`sink` subscriber](#sink-subscriber)
+* [`sink` example: Handling values and completion](#sink-example-Handling-values-and-completion)
+* [`sink` example: Handling only values](#sink-example-Handling-only-values)
+* [Memory management with `sink`](#Memory-management-with-sink)
+* [`assign` subscriber](#assign-subscriber)
+* [`assign` subscriber usage and example](#assign-subscriber-usage-and-example)
+* [When to use `assign`?](#When-to-use-assign)
+* [Combine: Transformation Operators](#Combine-Transformation-Operators)
+* [Combine: Filtering operators](#Combine-Filtering-operators)
+* [Combine: Combining operators](#Combine-Combining-operators)
+* [Combine: Sequence operators](#Combine-Sequence-operators)
+* [Combine: Time operators](#Combine-Time-operators)
+* [Combine: Error handling operators](#Combine-Error-handling-operators)
+* [Combine schedulers](#Combine-schedulers)
+* [Commonly used schedulers: DispatchQueue](#Commonly-used-schedulers-DispatchQueue)
+* [Commonly used schedulers: RunLoop](#Commonly-used-schedulers-RunLoop)
+* [Commonly used schedulers: OperationQueue](#Commonly-used-schedulers-OperationQueue)
+* [Combine: Using schedulers effectively](#Combine-Using-schedulers-effectively)
+* [`Deferred` publisher](#Deferred-publisher)
+* [`Deferred` publisher usage and example](#Deferred-publisher-usage-and-example)
+* [Why use `Deferred`?](#Why-use-Deferred)
+* [What is list's deep copy?](#What-is-list-s-deep-copy)
+* [List deep copy: For arrays of value types](#List-deep-copy-For-arrays-of-value-types)
+* [List deep copy: For arrays of reference types](#List-deep-copy-For-arrays-of-reference-types)
+* [List deep copy: Using protocol](#List-deep-copy-Using-protocol)
+* [List deep copy: Handling nested arrays](#List-deep-copy-Handling-nested-arrays)
+* [What does `eraseToAnyPublisher` do?](#What-does-eraseToAnyPublisher-do)
+* [How does `eraseToAnyPublisher` work?](#How-does-eraseToAnyPublisher-work)
+* [What are benefits of using `eraseToAnyPublisher`?](#What-are-benefits-of-using-eraseToAnyPublisher)
+* [What can be Combine `flatMap` operator used for?](#What-can-be-Combine-flatMap-operator-used-for)
+* [Combine `flatMap`: Chaining asynchronous operations](#Combine-flatMap-Chaining-asynchronous-operations)
+* [Combine `flatMap`: Handling multiple nested publishers](#Combine-flatMap-Handling-multiple-nested-publishers)
+* [Combine `flatMap`: Combining results from different publishers](#Combine-flatMap-Combining-results-from-different-publishers)
+* [Combine `flatMap`: Dynamic publishers based on emitted values](#Combine-flatMap-Dynamic-publishers-based-on-emitted-values)
+* [Combine `flatMap`: Summary](#Combine-flatMap-Summary)
+* [What can be Combine `compactMap` operator used for?](#What-can-be-Combine-compactMap-operator-used-for)
+* [What is `nonisolated` used for?](#What-is-nonisolated-used-for)
+* [Use cases for `nonisolated`](#Use-cases-for-nonisolated)
+* [Explain the difference between `Equatable` and `Comparable` protocols](#Explain-the-difference-between-Equatable-and-Comparable-protocols)
+* [What is `@inlinable`?](#What-is-inlinable)
+* [What is `@frozen`?](#What-is-frozen)
+* [When to use `@frozen`?](#When-to-use-frozen)
+* [What is `@MainActor`?](#What-is-MainActor)
+* [Key differences between `@MainActor` and `DispatchQueue.main.async`](#Key-differences-between-MainActor-and-DispatchQueue-main-async)
+* [Core Image](#Core-Image)
+* [Basic example using Core Image](#Basic-example-using-Core-Image)
+* [Core Image features](#Core-Image-features)
+* [Core Animation](#Core-Animation)
+* [Core Animation: CALayer](#Core-Animation-CALayer)
+* [Core Animation: Implicit animations](#Core-Animation-Implicit-animations)
+* [Core Animation: Explicit animations](#Core-Animation-Explicit-animations)
+* [Core Animation: Animation timing](#Core-Animation-Animation-timing)
+* [Core Animation: Transactions](#Core-Animation-Transactions)
+* [Core Animation: Keyframe animations](#Core-Animation-Keyframe-animations)
+* [Core Animation: Layer hierarchies](#Core-Animation-Layer-hierarchies)
+* [Core Animation: Transformations](#Core-Animation-Transformations)
+* [Core Animation: Core animation on the GPU](#Core-Animation-Core-animation-on-the-GPU)
+* [Core Animation types](#Core-Animation-types)
+* [Core Animation: Layer masking](#Core-Animation-Layer-masking)
+* [Core Animation: Replicating layers](#Core-Animation-Replicating-layers)
+* [Core Animation: Emitter layers](#Core-Animation-Emitter-layers)
+* [Core Animation: Delegates](#Core-Animation-Delegates)
+* [Core Animation: Performance considerations](#Core-Animation-Performance-considerations)
+* [Core Animation: Practical use cases](#Core-Animation-Practical-use-cases)
+* [AVFoundation](#AVFoundation)
+* [AVFoundation: `AVPlayer` and `AVPlayerLayer`](#AVFoundation-AVPlayer-and-AVPlayerLayer)
+* [AVFoundation: AVCaptureSession and Media Capture](#AVFoundation-AVCaptureSession-and-Media-Capture)
+* [AVFoundation: AVComposition and Media Editing](#AVFoundation-AVComposition-and-Media-Editing)
+* [AVFoundation: AVAssetExportSession](#AVFoundation-AVAssetExportSession)
+* [AVFoundation: Metadata Management](#AVFoundation-Metadata-Management)
+* [AVFoundation: Audio Processing](#AVFoundation-Audio-Processing)
+* [AVFoundation: Time-based media operations](#AVFoundation-Time-based-media-operations)
+* [AVFoundation: Real-time video effects](#AVFoundation-Real-time-video-effects)
+* [Best practices for AVFoundation](#Best-practices-for-AVFoundation)
 
-## ### What are property wrappers?
+## What are property wrappers?
 Property wrappers provide a mechanism for encapsulating common property logic and behavior in a reusable way. They allow you to define a custom wrapper type that can add additional behavior to a property, such as validation, transformation, or synchronization.
 
 ### Key Concepts
@@ -258,7 +258,7 @@ print(rect.height) // Output: 100 (clamped to the upper bound)
 - **Property wrapper definition**: The `Clamped` struct is marked with the `@propertyWrapper` attribute. It has a private stored property `value`, a public `wrappedValue` property, and an initializer.
 - **Using the Property Wrapper**: The `@Clamped` attribute is applied to the `width` and `height` properties in the `Rectangle` struct. The `wrappedValue` property handles getting and setting the clamped values.
 
-## ### What are available built-in property wrappers?
+## What are available built-in property wrappers?
 Swift includes some built-in property wrappers, such as:
 - `@State` (SwiftUI): Manages a view’s state.
 - `@Published`: Automatically announces changes to a property.
@@ -267,7 +267,7 @@ Swift includes some built-in property wrappers, such as:
 
 These built-in property wrappers streamline many common tasks in Swift, particularly in the development of modern, reactive, and declarative user interfaces with SwiftUI.
 
-## ### What is `@Published` used for?
+## What is `@Published` used for?
 ### `@Published`
 - **Purpose**: Declares that a property in an `ObservableObject` should trigger a change notification when it changes. Useful in SwiftUI and Combine for automatically updating views or triggering other reactive programming behavior.
 - **Usage**: Used in classes that conform to `ObservableObject`.
@@ -286,7 +286,7 @@ let cancellable = user.$name.sink { newName in
 user.name = "Bob" // Output: "User name changed to Bob"
 ```
 
-## ### What is property wrapper projected value?
+## What is property wrapper projected value?
 A projected value is an additional value provided by a property wrapper, which can be accessed alongside the primary wrapped value. The projected value is typically used to expose supplementary information or functionality related to the property wrapper.
 
 ### How projected values work
@@ -337,7 +337,7 @@ print(example.$number) // Output: true (hasChanged is now true)
 - The `wrappedValue` property represents the main value (`number` in this case). It's accessed directly through `example.number`.
 - The `projectedValue` property provides additional information (`hasChanged` in this case), which is accessed using `$example.number`.
 
-## ### What are subscripts?
+## What are subscripts?
 Subscripts are a feature that allows you to define a custom way to access elements of a collection, list, sequence, or any type you define, using the familiar square bracket syntax `[]`. Subscripts can be used to read and write values based on an index or other key, much like how you access elements in arrays or dictionaries.
 
 The basic syntax for defining a subscript is:
@@ -357,7 +357,7 @@ subscript(parameters) -> ReturnType {
 
 Subscripts are a powerful feature that allows types to be indexed in a flexible and customizable way. They enable you to create intuitive and concise interfaces for accessing and modifying data within your types.
 
-## ### What is convenience initializer?
+## What is convenience initializer?
 A convenience initializer is a secondary initializer that provides a shortcut to initializing an instance of a class. It is typically used to offer alternative ways to initialize a class with default values or a simplified set of parameters. Unlike a designated initializer, a convenience initializer must call another initializer within the same class, either another convenience initializer or a designated initializer.
 
 ### Key characteristics
@@ -392,7 +392,7 @@ print(myCar.color)           // Output: Red
 
 The `convenience init(color:)` initializer provides a simplified way to create a `Car` instance by only specifying the color. It assumes a default of 4 wheels by calling the designated initializer `init(numberOfWheels:color:)` with `numberOfWheels` set to 4.
 
-## ### What are rules for convenience initializers?
+## What are rules for convenience initializers?
 1. **Must call an initializer**: A convenience initializer must call another initializer in the same class. It cannot directly initialize any properties.
 
 2. **Cannot be overridden**: Convenience initializers cannot be overridden in subclasses.
@@ -406,7 +406,7 @@ The `convenience init(color:)` initializer provides a simplified way to create a
 
 - **Multiple initialization options**: When a class needs multiple ways to be initialized, convenience initializers offer a flexible and clear approach.
 
-## ### What is failable initializer?
+## What is failable initializer?
 A failable initializer is an initializer that can return `nil` if initialization fails. This is useful in situations where an object cannot be initialized with certain values or conditions, and you want to handle such failures gracefully.
 
 Failable initializers are defined using the `init?` syntax. The `?` indicates that the initializer might return `nil`, making it an optional initializer.
@@ -425,7 +425,7 @@ class Person {
 }
 ```
 
-## ### What is example usage of failable initializer?
+## What is example usage of failable initializer?
 ### Example usage
 ```swift
 let validPerson = Person(name: "John")
@@ -449,7 +449,7 @@ if let person = invalidPerson {
 
 - **Handling the result**: When using a failable initializer, the result is an optional. You need to unwrap it using `if let`, `guard let`, or optional chaining to check if the initialization was successful.
 
-## ### Why use failable initializers?
+## Why use failable initializers?
 1. **Invalid input handling**: When certain input values should prevent an object from being created, a failable initializer lets you enforce that constraint.
 
 2. **Error Avoidance**: It avoids using implicitly unwrapped optionals or force unwrapping, which can lead to runtime crashes if not handled properly.
@@ -462,7 +462,7 @@ You can also define a failable initializer with `init!`, which returns an implic
 
 Failable initializers are a powerful feature that helps you write safer, more robust code by handling invalid initialization scenarios gracefully.
 
-## ### What is `required` modifier used for?
+## What is `required` modifier used for?
 The `required` modifier is used to indicate that a subclass must implement a particular initializer. When an initializer is marked with required, all subclasses of the class are required to provide their own implementation of this initializer, either by inheriting it or by providing a custom implementation.
 
 ## Key points
@@ -491,7 +491,7 @@ class SubClass: SomeClass {
 
 The `required` modifier is a powerful tool for enforcing consistent behavior across class hierarchies, ensuring that all subclasses provide the necessary initializers.
 
-## ### How to setup default property value with closure?
+## How to setup default property value with closure?
 You can set up a default property value using a closure. This is particularly useful when the property’s initial value requires some setup or computation that cannot be easily expressed as a simple literal. The closure is executed immediately to initialize the property, and its result is used as the initial value.
 
 ```swift
@@ -510,7 +510,7 @@ class MyClass {
 - **Stored property**: The result of the closure is stored as the initial value of `someProperty`
 
 
-## ### What is asynchronous function?
+## What is asynchronous function?
 An asynchronous function allows you to perform tasks that might take some time to complete, such as network requests, file I/O, or complex computations, without blocking the main thread. By marking a function as asynchronous, you enable it to perform work in the background and return a result later, allowing the rest of your code to continue running in the meantime.
 
 ### Key concepts
@@ -518,7 +518,7 @@ An asynchronous function allows you to perform tasks that might take some time t
 - **Suspension points**: Asynchronous functions can be suspended and resumed at specific points, allowing them to wait for asynchronous operations (like network requests) to complete without blocking the entire function.
 - **Concurrency**: Asynchronous functions are a fundamental part of writing concurrent code, enabling multiple tasks to be performed at the same time.
 
-## ### How to define asynchronous function?
+## How to define asynchronous function?
 Asynchronous functions are defined using the async keyword:
 ```swift
 func fetchData() async -> String {
@@ -527,7 +527,7 @@ func fetchData() async -> String {
 }
 ```
 
-## ### How to await asynchronous operation?
+## How to await asynchronous operation?
 Within an asynchronous function, you can call other asynchronous functions using the `await` keyword. The `await` keyword indicates that the function will be suspended at this point until the asynchronous operation completes.
 
 Example
@@ -543,7 +543,7 @@ In this example:
 - **`await` keyword**: The `try await` statement is used to wait for the data task to complete. The function will be suspended until the data is received.
 - **Error handling**: The function is also marked with `throws`, indicating it can throw an error if something goes wrong, like a network failure.
 
-## ### How to call asynchronous functions?
+## How to call asynchronous functions?
 Asynchronous functions must be called from within another asynchronous context, typically within an `async` function or concurrency context like a `Task`.
 
 ```swift
@@ -564,7 +564,7 @@ In this example:
 - **Asynchronous context**: The `processData()` function is an asynchronous function that calls the `fetchData(from:)` function using `await`.
 - **Task**: The `processData()` function is executed within a `Task`, which provides the necessary asynchronous context for running `async` functions in a non-asynchronous environment (like main() or a synchronous method).
 
-## ### What are benefits of asynchronous functions?
+## What are benefits of asynchronous functions?
 - **Non-blocking operations**: Asynchronous functions allow potentially long-running operations to be performed without freezing the user interface or blocking other tasks.
 - **Improved performance**: By enabling concurrent execution, asynchronous functions help make better use of system resources, improving the overall performance and responsiveness of your application.
 - **Simpler code**: Structured concurrency model, which includes `async` and `await`, allows you to write asynchronous code that is easier to read, understand, and maintain compared to traditional callback-based or closure-based asynchronous code.
@@ -577,14 +577,14 @@ In this example:
 
 Asynchronous functions are a key feature in modern Swift programming, allowing developers to handle asynchronous tasks in a clean, structured, and efficient manner.
 
-## ### What is asynchronous sequence?
+## What is asynchronous sequence?
 An asynchronous sequence is a type that conforms to the `AsyncSequence` protocol, allowing you to iterate over a sequence of values that are produced asynchronously. This is particularly useful when you want to work with a series of values that arrive over time, such as values from a network stream, user input events, or data being read from a file in chunks.
 
 ### Key concepts
 - **Asynchronous sequence**: A sequence where the elements are produced or fetched asynchronously, meaning each element might take some time to become available.
 - **Iteration with for `await`**: You can iterate over an asynchronous sequence using a `for await` loop, which suspends the loop's execution until the next element is available.
 
-## ### What is `AsyncSequence` protocol used for?
+## What is `AsyncSequence` protocol used for?
 The `AsyncSequence` protocol defines the interface for an asynchronous sequence. A type conforming to `AsyncSequence` must provide an `AsyncIterator` that produces values asynchronously.
 
 Here's a simple example of creating an asynchronous sequence:
@@ -615,7 +615,7 @@ In this example:
 - **`AsyncIterator`**: The iterator conforms to `AsyncIteratorProtocol` and provides the `next()` method, which asynchronously returns the next value in the sequence.
 - **`makeAsyncIterator()`**: This method returns an instance of AsyncIterator, allowing you to iterate over the sequence asynchronously.
 
-## ### How to iterate over an asynchronous sequence?
+## How to iterate over an asynchronous sequence?
 You can iterate over an `AsyncSequence` using the for `await loop`, which suspends execution until the next element is available:
 
 ```swift
@@ -626,7 +626,7 @@ for await number in countdown {
 }
 ```
 
-## ### Practical example: AsyncStream
+## Practical example: AsyncStream
 In real-world applications, you might use `AsyncStream` to create an asynchronous sequence. `AsyncStream` allows you to bridge the gap between callback-based code and structured concurrency model.
 
 ```swift
@@ -651,7 +651,7 @@ In this example:
 - **`fetchNumbers`**: This function returns an `AsyncStream` that produces numbers from 1 to 5, with a simulated delay between each number.
 - **`for await` loop**: The numbers are received asynchronously in a `for await` loop, demonstrating how you can process values as they become available.
 
-## ### What are use cases for asynchronous sequences?
+## What are use cases for asynchronous sequences?
 - **Networking**: Streaming data from a server, such as a WebSocket connection or downloading large files in chunks.
 - **User input**: Handling asynchronous input events, such as button presses, text input, or gestures.
 - **Real-time data**: Processing live data feeds, such as sensor data, stock prices, or real-time notifications.
@@ -664,7 +664,7 @@ In this example:
 
 Asynchronous sequences are a powerful feature in Swift's concurrency model, enabling you to work with sequences of asynchronously produced values in a clean, structured, and efficient way.
 
-## ### How to call asynchronous functions in parallel?
+## How to call asynchronous functions in parallel?
 You can call asynchronous functions in parallel using several approaches, with `async let` being one of the most common and straightforward methods. This allows you to run multiple asynchronous tasks concurrently, improving the performance of your application by making better use of system resources.
 
 The `async let` syntax allows you to create and run multiple asynchronous tasks in parallel, and then await their results later.
@@ -694,7 +694,7 @@ In this example:
 - **`await`**: Later in the code, you use `await` to get the results of these tasks. The `await` statement will suspend the execution until the respective task is completed.
 - **Efficiency**: By running these tasks in parallel, the total time to fetch all data is reduced compared to running them sequentially.
 
-## ### What is a `Task`?
+## What is a `Task`?
 A `Task` represents a unit of work that runs asynchronously. You can think of it as a lightweight thread that can perform some work in the background, allowing your code to run concurrently. Tasks can be created to execute code that doesn't block the main thread, making your app more responsive.
 
 ### Key features of `Task`:
@@ -702,7 +702,7 @@ A `Task` represents a unit of work that runs asynchronously. You can think of it
 - **Automatic cancellation**: Tasks can be canceled automatically if their parent task is canceled, helping manage resource use and avoid unnecessary work.
 - **Isolation**: Tasks help in isolating mutable state by default, which reduces data races and makes concurrent code safer.
 
-## ### How to creaate a `Task`?
+## How to creaate a `Task`?
 You create a task by calling the Task initializer, usually from within an asynchronous context or directly from synchronous code.
 
 Example:
@@ -715,7 +715,7 @@ Task {
 ```
 In this example, the `Task` runs the `fetchData()` function asynchronously, allowing the code following the `Task` creation to continue executing without waiting for `fetchData()` to complete.
 
-## ### Structured vs. unstructured tasks
+## Structured vs. unstructured tasks
 - **Structured task**: A task that is part of the existing hierarchy of tasks, such as one created with `async let` or in a `TaskGroup`. It inherits the cancellation and priority of its parent task.
 - **Unstructured task**: A standalone task, not linked to the current task hierarchy. Created using `Task {}` or `Task.detached`. These tasks do not automatically inherit cancellation from their parent context.
 
@@ -729,7 +729,7 @@ Task.detached {
 }
 ```
 
-## ### What is a `TaskGroup`?
+## What is a `TaskGroup`?
 A `TaskGroup` allows you to create a group of tasks that can run concurrently and be managed together. You use `TaskGroup` when you need to run multiple asynchronous tasks concurrently and handle their results as they complete.
 
 ### Key features of `TaskGroup`:
@@ -737,7 +737,7 @@ A `TaskGroup` allows you to create a group of tasks that can run concurrently an
 - **Result collection**: As tasks in the group complete, you can collect and process their results.
 - **Cancellation propagation**: If the group is canceled, all tasks within the group are also canceled.
 
-## ### How to create `TaskGroup`?
+## How to create `TaskGroup`?
 You use the `withTaskGroup` function to create a `TaskGroup` and manage tasks within it.
 
 Example:
@@ -759,14 +759,14 @@ In this example:
 - **Dynamic task addition**: Tasks are added to the group using `group.addTask { }`.
 - **Result collection**: The results of the tasks are collected and processed as they complete, in the order they finish.
 
-## ### Differences between `Task` and `TaskGroup`
+## Differences between `Task` and `TaskGroup`
 - **`Task`**: Represents a single unit of asynchronous work. Use it when you need to run a single operation asynchronously.
 
 - **`TaskGroup`**: Represents a collection of tasks that run concurrently and are managed together. Use it when you have multiple operations that can run in parallel and need to manage them as a group.
 
 These constructs help in writing clean, efficient, and responsive code in Swift, taking full advantage of the language's concurrency model.
 
-## ### What is Task cancellation?
+## What is Task cancellation?
 Task cancellation is a mechanism that allows you to stop a running task before it completes. This is particularly useful in scenarios where you no longer need the result of a task or if continuing the task would be wasteful, such as when a user navigates away from a screen, or when an operation takes too long and you want to timeout.
 
 ### How Task cancellation works
@@ -774,7 +774,7 @@ Task cancellation is a mechanism that allows you to stop a running task before i
 
 - **Cancellation propagation**: If a task is part of a task hierarchy (e.g., tasks within a `TaskGroup` or child tasks created with `async let`), cancellation of the parent task will propagate down to its child tasks.
 
-## ### How to check for Task cancellation?
+## How to check for Task cancellation?
 A task can check if it has been canceled by calling `Task.isCancelled`. If the task has been canceled, `Task.isCancelled` will return `true`, and the task can then decide to stop execution.
 
 Example of checking for cancellation
@@ -795,7 +795,7 @@ func performWork() async {
 ```
 In this example, the task periodically checks `Task.isCancelled` during its loop. If the task has been canceled, it prints a message and returns early.
 
-## ### How to throw on cancellation?
+## How to throw on cancellation?
 Instead of just returning when a task is canceled, you can also throw an error to indicate that the task did not complete successfully due to cancellation. Swift provides a `CancellationError` for this purpose.
 
 ```swift
@@ -824,7 +824,7 @@ In this example:
 
 - **Error Handling**: The task's caller can catch the `CancellationError` to handle the cancellation appropriately.
 
-## ### How to cancel a Task?
+## How to cancel a Task?
 You can cancel a task by calling its `cancel()` method. If you're within the task itself, you typically handle cancellation by checking `Task.isCancelled` or using `Task.checkCancellation()`.
 
 ```swift
@@ -845,7 +845,7 @@ In this example:
 
 - **Cancellation**: A second task cancels the first task after 1 second, causing the first task to stop its work early.
 
-## ### Task group cancellation
+## Task group cancellation
 In a `TaskGroup`, if any task fails or if the group itself is canceled, all remaining tasks in the group are also canceled.
 
 ```swift
@@ -863,7 +863,7 @@ await withTaskGroup(of: Void.self) { group in
 ```
 In this example, `group.cancelAll()` cancels all tasks that are currently running within the `TaskGroup`.
 
-## ### How to use `CheckedContinuation`?
+## How to use `CheckedContinuation`?
 One approach to receive a notification of task cancellation is to use a `CheckedContinuation`. This allows you to create a point in your code where the task can be resumed or notified about cancellation.
 
 ```swift
@@ -898,7 +898,7 @@ In this example:
 
 - **Notification**: After the task is canceled and `continuation.resume()` is called, the code following the `await performCancelableWork()` will execute, indicating that the cancellation was handled.
 
-## ### What is an Actor?
+## What is an Actor?
 An actor is a reference type that provides a safe, isolated environment for managing and modifying mutable state in a concurrent programming context. Actors are designed to help prevent data races, a common issue in concurrent programming where multiple threads or tasks access shared data simultaneously, leading to unpredictable behavior.
 
 ### Key features of actors
@@ -910,7 +910,7 @@ An actor is a reference type that provides a safe, isolated environment for mana
 
 - **Asynchronous access**: Interaction with actors is usually asynchronous, which means you often need to use `await` when calling an actor's method or accessing its properties.
 
-## ### How to define an actor?
+## How to define an actor?
 Actors are defined similarly to classes, using the `actor` keyword.
 
 ```swift
@@ -942,7 +942,7 @@ In this example:
 
 - **Concurrency-safe methods**: The `deposit`, `withdraw`, and `getBalance` methods are safe to call from multiple tasks because the actor ensures that only one task accesses its state at a time.
 
-## ### How to use an actor?
+## How to use an actor?
 When you interact with an actor, you typically do so asynchronously.
 
 ```swift
@@ -962,10 +962,10 @@ In this example:
 
 - **Safety**: Even if multiple tasks try to interact with the `BankAccount` actor simultaneously, the actor's internal state (`balance`) is protected from race conditions.
 
-## ### Reentrancy in actors
+## Reentrancy in actors
 Actors in Swift are reentrant, meaning that while an actor is awaiting the completion of an asynchronous operation, it can process other incoming tasks. This reentrancy can help in certain situations but can also lead to subtle bugs if not carefully managed, especially when the actor's state depends on the order of operations.
 
-## ### What are global actors?
+## What are global actors?
 In addition to individual actors, Swift also supports global actors that provide concurrency protection across a broader scope, such as for an entire module or application. Global actors are useful when you want to enforce that certain code always runs on a specific actor, for example, ensuring that UI updates always happen on the main thread.
 
 ```swift
@@ -984,7 +984,7 @@ class ViewModel {
 ```
 In this example, the `ViewModel` class is annotated with `@MainActor`, ensuring that all its methods and properties are accessed on the main thread.
 
-## ### How to define a global actor?
+## How to define a global actor?
 A global actor is a way to enforce that certain code runs on a specific thread or execution context across your entire app or module. You define a global actor using the `@globalActor` attribute and typically use it to ensure that certain operations (like UI updates) always happen on the correct thread, such as the main thread.
 ```swift
 @globalActor
@@ -1001,7 +1001,7 @@ In this example:
 
 - **`shared` instance**: The global actor requires a `shared` static instance, which is an actor itself (`MyActor` in this case).
 
-## ### How to use a global actor?
+## How to use a global actor?
 After defining a global actor, you can use it to ensure certain classes, structs, functions, or properties always execute on the actor's context. This is done by annotating the code with the global actor.
 
 ```swift
@@ -1020,7 +1020,7 @@ class SomeClass {
 ```
 The `SomeClass` class is annotated with `@MyGlobalActor`, meaning all of its properties and methods are automatically isolated by the global actor.
 
-## ### Using global actor on functions or properties
+## Using global actor on functions or properties
 You can also use a global actor on individual functions, methods, or properties instead of an entire class or struct.
 
 ```swift
@@ -1045,13 +1045,13 @@ In this example:
 
 - **Global actor on method**: The `updateImportantData` method is isolated by MyGlobalActor.
 
-## ### What is sendable type?
+## What is sendable type?
 A sendable type is a type that can be safely used across concurrency boundaries, such as between different threads or tasks. This concept is crucial in Swift's concurrency model, where ensuring that data is safely shared or passed between concurrently executing code is vital to avoid data races and undefined behavior.
 
 ### What makes a type `Sendable`?
 A type is considered `Sendable` if it can be passed or accessed from one concurrent context to another without causing thread safety issues. This generally means that the type is immutable or safely synchronized.
 
-## ### How to define a Sendable type?
+## How to define a Sendable type?
 Swift provides a protocol called `Sendable` that types can conform to, either explicitly or implicitly. Many basic types like `Int`, `String`, and `Array` (when their elements are `Sendable`) automatically conform to Sendable.
 
 ```swift
@@ -1062,7 +1062,7 @@ struct Point: Sendable {
 ```
 In this example, `Point` is a simple struct that is immutable (because all its properties are constants). Therefore, it safely conforms to `Sendable`.
 
-## ### What is implicit conformance to `Sendable`?
+## What is implicit conformance to `Sendable`?
 Some types automatically conform to `Sendable` without requiring explicit declaration. This includes:
 
 - Value types like `struct` and `enum` with all `Sendable` properties.
@@ -1081,7 +1081,7 @@ let user = User(name: "Alice", age: 30)
 ```
 Here, `User` implicitly conforms to `Sendable` because `String` and `Int` are `Sendable`, and `User` is immutable.
 
-## ### Whar are non-sendable types?
+## Whar are non-sendable types?
 Types that are not safe to share between concurrent contexts do not conform to `Sendable`. This typically includes mutable reference types (e.g., `class`) with non-thread-safe properties.
 
 ```swift
@@ -1095,7 +1095,7 @@ class Counter {
 ```
 In this example, `Counter` is a non-Sendable type because its `value` property can be modified from multiple threads or tasks concurrently, leading to potential data races.
 
-## ### What is `@unchecked` used for?
+## What is `@unchecked` used for?
 The `@unchecked` keyword is used in combination with the `Sendable` protocol to explicitly mark a type as conforming to `Sendable`, even if the compiler cannot guarantee that the type is actually safe to use across concurrency boundaries. Essentially, it tells the compiler to trust you that the type is safe to be sent between tasks or threads, bypassing the usual safety checks.
 ```swift
 final class Logger: @unchecked Sendable {
@@ -1115,7 +1115,7 @@ In this example:
 
 - **`@unchecked Sendable`**: The `Logger` class is marked as `@unchecked Sendable`, meaning that the compiler will allow instances of `Logger` to be used across concurrency boundaries (e.g., passed between different tasks), even though it's not strictly safe without additional synchronization.
 
-## ### What is macro?
+## What is macro?
 A macro is a compile-time feature that allows you to generate code or perform transformations on code before it is compiled. Macros can be used to reduce boilerplate, enforce patterns, or generate repetitive code, which can enhance productivity and reduce errors in codebases.
 
 ### Key concepts of macros in Swift
@@ -1127,10 +1127,10 @@ A macro is a compile-time feature that allows you to generate code or perform tr
 
 - **Reducing boilerplate**: One of the main use cases for macros is to reduce repetitive patterns or boilerplate code, making the code more concise and maintainable.
 
-## ### What are `Any` and `AnyObject`?
+## What are `Any` and `AnyObject`?
 `Any` and `AnyObject` are special types that provide a way to work with values that are not known at compile-time. They are useful in scenarios where you need to handle a variety of types in a flexible and dynamic way.
 
-## ### What is `Any` used for?
+## What is `Any` used for?
 - `Any` can represent an instance of any type, including function types, optional types, and even `AnyObject`.
 
 - It can hold both value types (e.g., `Int`, `String`, `Structs`, `Enums`) and reference types (`Classes`).
@@ -1146,7 +1146,7 @@ anything = [1, 2, 3] // Array
 ```
 In this example, anything can be assigned a value of any type.
 
-## ### What is `AnyObject` used for?
+## What is `AnyObject` used for?
 - `AnyObject` represents an instance of any class type. It is restricted to reference types (`class` instances) and cannot hold value types like `struct` or `enum`.
 
 - `AnyObject` is often used when you need to interact with Objective-C APIs, where the type system is less strict and class types are often treated generically.
@@ -1175,7 +1175,7 @@ anyObject = Cat(age: 5)
 ```
 In this example, `anyObject` can hold instances of any class, such as `Dog` or `Cat`.
 
-## ### Differences between `Any` and `AnyObject`
+## Differences between `Any` and `AnyObject`
 ### Type scope:
 - `Any` can represent both value types and reference types.
 
@@ -1186,7 +1186,7 @@ In this example, `anyObject` can hold instances of any class, such as `Dog` or `
 
 - Use `AnyObject` when you need to work specifically with class instances or interact with Objective-C APIs.
 
-## ### Type casting with `Any` and `AnyObject`
+## Type casting with `Any` and `AnyObject`
 When working with `Any` or `AnyObject`, you often need to cast the value back to its original type using type casting operators (`as?`, `as!` or `is`).
 
 ```swift
@@ -1204,7 +1204,7 @@ for item in items {
 ```
 In this example, the `items` array contains elements of different types, and type casting is used to determine the type of each element at runtime.
 
-## ### What are nested types?
+## What are nested types?
 Nested types refer to the practice of defining types within the context of other types, such as classes, structures, enumerations, and even within other nested types. This allows you to group related types together in a logical and hierarchical manner, improving code organization and encapsulation.
 
 ### Why use nested types?
@@ -1214,7 +1214,7 @@ Nested types refer to the practice of defining types within the context of other
 
 - **Avoiding name clashes**: Nesting types within another type prevents name clashes with other types defined elsewhere in your codebase.
 
-## ### Example of nested structures
+## Example of nested structures
 ```swift
 struct Car {
     struct Engine {
@@ -1231,7 +1231,7 @@ print("My car is a \(myCar.model) with \(myCar.engine.horsepower) horsepower.")
 ```
 `Engine` is a structure nested inside the `Car` structure. This implies that `Engine` is closely related to `Car` and it should only be used within the context of a `Car`.
 
-## ### Example of nested enumerations
+## Example of nested enumerations
 ```swift
 struct Device {
     enum Status {
@@ -1247,7 +1247,7 @@ print("The device is currently \(device.status).")
 ```
 Here, `Status` is an enumeration nested inside the `Device` structure, indicating that the status is directly associated with the device.
 
-## ### Example of nested classes
+## Example of nested classes
 ```swift
 class University {
     class Department {
@@ -1273,7 +1273,7 @@ print("Department: \(university.department.name)")
 ```
 `Department` is a class nested inside the `University` class, signifying that a department is an integral part of a university.
 
-## ### What are extensions?
+## What are extensions?
 Extensions are a powerful feature that allows you to add new functionality to an existing class, structure, enumeration, or protocol without modifying the original source code. Extensions can be used to add methods, computed properties, initializers, subscripts, and even conform types to protocols. They are particularly useful for organizing code, enhancing readability, and adhering to the open/closed principle (i.e., classes should be open for extension but closed for modification).
 
 ### Key features of extensions
@@ -1285,7 +1285,7 @@ Extensions are a powerful feature that allows you to add new functionality to an
 
 - **Modularity**: Extensions help in organizing code by allowing you to break up large types into smaller, focused extensions.
 
-## ### Example of adding methods using extensions
+## Example of adding methods using extensions
 ```swift
 extension String {
     func reversedString() -> String {
@@ -1299,7 +1299,7 @@ print(greeting.reversedString())  // Output: "olleH"
 ```
 In this example, the `reversedString()` method is added to the `String` type using an extension. Now, any `String` instance can use this method.
 
-## ### Example of adding computed properties using extensions
+## Example of adding computed properties using extensions
 ```swift
 extension Int {
     var squared: Int {
@@ -1312,7 +1312,7 @@ print(number.squared)  // Output: 16
 ```
 Here, a computed property `squared` is added to the `Int` type, allowing you to get the square of an integer easily.
 
-## ### Example of protocol conformance using extensions
+## Example of protocol conformance using extensions
 ```swift
 protocol Describable {
     func describe() -> String
@@ -1329,7 +1329,7 @@ print(pi.describe())  // Output: "The value is 3.14159"
 ```
 In this example, an extension is used to make `Double` conform to the `Describable` protocol by implementing the `describe()` method.
 
-## ### Example of adding initializers using extensions
+## Example of adding initializers using extensions
 ```swift
 struct Point {
     var x: Double
@@ -1347,7 +1347,7 @@ print(point)  // Output: Point(x: 3.0, y: 3.0)
 ```
 Here, an additional initializer is added to the `Point` struct, allowing you to initialize a `Point` with the same value for both `x` and `y`.
 
-## ### Example of extensions for protocols
+## Example of extensions for protocols
 Extensions can also be used to add default implementations to protocols, which is particularly useful in Swift's protocol-oriented programming paradigm.
 
 ```swift
@@ -1370,7 +1370,7 @@ print(user.identify())  // Output: "My ID is 12345"
 ```
 In this example, the `identify()` method is provided as a default implementation for any type that conforms to the `Identifiable` protocol.
 
-## ### Example of delegation: protocol and implementation
+## Example of delegation: protocol and implementation
 Let’s consider an example where we have a TaskManager that delegates the task of reporting progress to another object.
 
 ### Step 1: Define a protocol
@@ -1401,7 +1401,7 @@ class TaskHandler: TaskManagerDelegate {
 ```
 The `TaskHandler` class conforms to the `TaskManagerDelegate` protocol and implements its methods.
 
-## ### Example of delegation: delegating object
+## Example of delegation: delegating object
 ### Step 1: Create a delegating object
 ```swift
 class TaskManager {
@@ -1433,7 +1433,7 @@ taskManager.startTask()
 ```
 When the `startTask` method is called on `taskManager`, it uses the `taskHandler` to report progress.
 
-## ### Common uses of delegation in iOS
+## Common uses of delegation in iOS
 Delegation is heavily used in iOS development, especially in UIKit. Examples include:
 
 - **UITableViewDelegate and UITableViewDataSource**: Used to manage the display and behavior of table views.
@@ -1442,7 +1442,7 @@ Delegation is heavily used in iOS development, especially in UIKit. Examples inc
 
 - **NSURLSessionDelegate**: Used to handle events related to network requests.
 
-## ### What is conditional conformance to a protocol?
+## What is conditional conformance to a protocol?
 Conditional conformance allows a generic type to conform to a protocol only when certain conditions are met, such as when the generic type's parameters themselves conform to a specific protocol. This feature is particularly powerful for creating flexible and reusable code while maintaining type safety.
 
 ### Why use conditional conformance?
@@ -1451,7 +1451,7 @@ Conditional conformance is useful when you want to extend a generic type to conf
 ### How conditional conformance works
 You can make a generic type conform to a protocol conditionally by adding constraints to the generic parameters in the conformance declaration.
 
-## ### Example: Extending `Array` to conform to a protocol conditionally
+## Example: Extending `Array` to conform to a protocol conditionally
 Let's say we have a protocol called Summable that requires a method for summing elements.
 
 ```swift
@@ -1471,7 +1471,7 @@ extension Array: Summable where Element: Summable {
 ```
 In this example, the extension makes `Array` conform to `Summable`, but only when `Element` (the type of the elements in the array) also conforms to `Summable`.
 
-## ### Example: Extending `Equatable` to a custom generic type
+## Example: Extending `Equatable` to a custom generic type
 Suppose you have a generic type Box that wraps another type:
 ```swift
 struct Box<T> {
@@ -1488,7 +1488,7 @@ extension Box: Equatable where T: Equatable {
 ```
 Here, `Box` will only conform to `Equatable` if the type `T` is `Equatable`. This ensures that `Box` can only be compared for equality when its wrapped type supports equality comparison.
 
-## ### Example: Conditional conformance with `Codable`
+## Example: Conditional conformance with `Codable`
 Let's say you have a generic type `Container` that can hold any type:
 
 ```swift
@@ -1503,7 +1503,7 @@ extension Container: Codable where T: Codable {}
 ```
 This makes `Container` conform to `Codable` only when `T` is `Codable`, allowing you to encode and decode `Container` instances when they contain codable items.
 
-## ### How to limit protocol adoption to class types?
+## How to limit protocol adoption to class types?
 You can limit a protocol so that only class types (also known as reference types) can adopt it by using the AnyObject protocol as an inheritance requirement. By declaring your protocol to inherit from AnyObject, you restrict its adoption to classes only. This ensures that only class instances can conform to the protocol, and it cannot be adopted by structs or enums (which are value types).
 
 Here’s how you can define a protocol that can only be adopted by class types:
@@ -1516,7 +1516,7 @@ In this example:
 - **`MyClassOnlyProtocol`**: This is the protocol that can only be adopted by classes.
 - **`AnyObject`**: By inheriting from `AnyObject`, the protocol is limited to class types.
 
-## ### Example usage how to limit protocol adoption to class types
+## Example usage how to limit protocol adoption to class types
 ### Step 1: Define the protocol
 ```swift
 protocol MyClassOnlyProtocol: AnyObject {
@@ -1535,7 +1535,7 @@ class MyClass: MyClassOnlyProtocol {
 ```
 Here, `MyClass` adopts the `MyClassOnlyProtocol` and implements its required method.
 
-## ### Why restrict protocol adoption to class types?
+## Why restrict protocol adoption to class types?
 Restricting protocol adoption to class types might be necessary in scenarios where:
 
 - **Reference semantics**: The protocol requires reference semantics, meaning you need the conforming type to behave as a reference rather than a value. For example, when you need to share the same instance across different parts of your code or maintain identity.
@@ -1544,7 +1544,7 @@ Restricting protocol adoption to class types might be necessary in scenarios whe
 
 - **ARC (Automatic Reference Counting)**: You want the protocol to work with features that rely on ARC, such as weak references, which are not applicable to value types.
 
-## ### What is protocol composition?
+## What is protocol composition?
 Protocol composition allows you to create a type that conforms to multiple protocols simultaneously. Instead of defining a new protocol that inherits from several others, you can compose protocols together on the fly using the protocol composition syntax. This is particularly useful when you want to specify that a type must conform to more than one protocol without creating a new protocol.
 
 The syntax for protocol composition uses the `&` operator between the protocols:
@@ -1562,14 +1562,14 @@ typealias CombinedProtocol = ProtocolA & ProtocolB
 In this example:
 - **`CombinedProtocol`**: This is a type alias that represents any type that conforms to both `ProtocolA` and `ProtocolB`.
 
-## ### What are advantages of protocol composition?
+## What are advantages of protocol composition?
 - **Flexibility**: Allows you to work with types that conform to multiple protocols without needing to define a new protocol that combines them.
 
 - **Reusability**: You can easily reuse existing protocols in various combinations, promoting modular design.
 
 - **Type safety**: Swift ensures at compile-time that the type conforms to all the required protocols, preventing runtime errors.
 
-## ### Optional protocol requirements
+## Optional protocol requirements
 Optional protocol requirements are a feature that allows certain methods or properties in a protocol to be optionally implemented by conforming types. This means that a type conforming to the protocol is not required to implement those specific methods or properties.
 
 However, it's important to note that optional protocol requirements are only available when the protocol is marked with the `@objc` attribute, which restricts the protocol to being compatible with Objective-C. As a result, this feature is typically used when working with Cocoa or Cocoa Touch frameworks, where interoperability with Objective-C is needed.
@@ -1587,7 +1587,7 @@ In this example:
 
 - **`optionalMethod()`**: This method is optional, meaning a conforming type may implement it, but it's not required.
 
-## ### What are generics?
+## What are generics?
 Generics allow you to write flexible and reusable code by defining functions, types, and methods that can work with any type, rather than requiring a specific one. Generics enable you to write code that can handle different data types in a type-safe way, making your code more abstract, general, and reusable.
 
 ### Why use generics?
@@ -1597,7 +1597,7 @@ Generics allow you to write flexible and reusable code by defining functions, ty
 
 - **Flexibility**: You can build more abstract and versatile algorithms that work across different types.
 
-## ### Basic example of generics (functions)
+## Basic example of generics (functions)
 Let’s start with a simple example: a function that swaps two values.
 
 ### Without generics
@@ -1644,7 +1644,7 @@ var y = "World"
 swapTwoValues(&x, &y)  // x is now "World", y is "Hello"
 ```
 
-## ### Generic types
+## Generic types
 You can also create generic types, such as generic classes, structs, or enums. A common example is a stack data structure.
 
 ```swift
@@ -1678,7 +1678,7 @@ stringStack.push("World")
 print(stringStack.pop())  // Output: Optional("World")
 ```
 
-## ### Generic constraints
+## Generic constraints
 Sometimes, you might want to restrict the types that can be used with your generic code. This is where generic constraints come in. You can specify that a type parameter must conform to a certain protocol or be a subclass of a specific class.
 
 ```swift
@@ -1707,7 +1707,7 @@ if let index = findIndex(of: "banana", in: words) {
 }
 ```
 
-## ### What are associated types?
+## What are associated types?
 An associated type is a placeholder name for a type that is used within a protocol. It is specified with the `associatedtype` keyword inside the protocol. When a type conforms to the protocol, it specifies what the associated type should be. This allows the protocol to be more generic and work with different types without being tied to a specific one.
 
 Here's how you declare an associated type in a protocol:
@@ -1726,7 +1726,7 @@ In this example:
 
 - The `Container` protocol defines methods and properties that use the Item type.
 
-## ### Example of associated types
+## Example of associated types
 Let's implement the Container protocol in a Stack type.
 ```swift
 struct Stack<Element>: Container {
@@ -1755,7 +1755,7 @@ In this implementation:
 
 - The `Item` type is inferred to be the same as `Element`, so there's no need to explicitly declare the `Item` type.
 
-## ### Constraints on associated types
+## Constraints on associated types
 Just like generic type parameters, you can apply constraints to associated types to restrict what types can be used.
 
 ### Example with constraints
@@ -1772,7 +1772,7 @@ protocol Container {
 In this example:
 - `Item: Equatable`: The associated type `Item` is constrained to types that conform to the `Equatable` protocol. This means any type that conforms to `Container` must specify an Item type that can be compared for equality.
 
-## ### Extensions with a generic `where` clause
+## Extensions with a generic `where` clause
 When you combine extensions with a generic where clause, you can make your extensions apply only to types that meet specific criteria. This allows you to add functionality in a more controlled and precise manner.
 
 ### What is a generic `where` clause?
@@ -1784,7 +1784,7 @@ extension SomeType where Condition {
 }
 ```
 
-## ### Example: Extension with a generic `where` clause on a type
+## Example: Extension with a generic `where` clause on a type
 Let's say you have a generic type `Stack`, and you want to add a method that’s only available when the elements in the stack are `Equatable`:
 
 ```swift
@@ -1816,7 +1816,7 @@ Explanation:
 
 If you tried to call `isTop(_:)` on a `Stack` that holds a non-`Equatable` type, you’d get a compile-time error.
 
-## ### Example: Extension with a generic `where` clause on a protocol
+## Example: Extension with a generic `where` clause on a protocol
 You can also use a generic where clause to extend a protocol in a way that only applies to certain types that conform to the protocol.
 ```swift
 protocol Container {
@@ -1842,7 +1842,7 @@ Explanation:
 
 - **`allItemsEqual`**: This method checks if all items in the container are equal.
 
-## ### What are opaque types?
+## What are opaque types?
 Opaque types provide a way to return a type from a function or method without exposing the specific underlying type to the caller. This is done using the `some` keyword. Opaque types offer a balance between abstraction and type safety, allowing you to hide implementation details while still ensuring that the returned value conforms to a particular protocol.
 
 ### Key concepts
@@ -1850,12 +1850,12 @@ Opaque types provide a way to return a type from a function or method without ex
 
 - **Type safety**: Even though the specific type is hidden, the compiler knows what the type is and enforces type safety. This means that you can't accidentally mix up types or misuse the returned value.
 
-## ### Opaque type vs. protocol type
+## Opaque type vs. protocol type
 - **Opaque type**: The concrete type is known at compile time, but hidden from the caller. The caller only knows that the return type conforms to a certain protocol. The concrete type remains consistent for a particular function.
 
 - **Protocol type (`any`)**: The concrete type can vary, and the caller can interact with it using only the methods and properties defined by the protocol. However, protocol types can incur runtime costs due to dynamic dispatch and type erasure.
 
-## ### Example: Returning an opaque type
+## Example: Returning an opaque type
 Suppose you have two different types that conform to a protocol `Shape`:
 
 ```swift
@@ -1896,7 +1896,7 @@ let shape = makeShape()
 print(shape.area())  // Works because `Shape` protocol guarantees `area` method
 ```
 
-## ### Example: Using opaque types with different types
+## Example: Using opaque types with different types
 One important thing to note is that the opaque type must be consistent. If you tried to return different types based on a condition, you would get a compile-time error:
 
 ```swift
@@ -1910,14 +1910,14 @@ func makeShape(condition: Bool) -> some Shape {
 ```
 Opaque types require that the returned value is of the same concrete type, regardless of how the function executes.
 
-## ### Benefits of opaque types
+## Benefits of opaque types
 - **Encapsulation**: You can hide the details of your implementation while providing a clean, abstract interface.
 
 - **Performance**: Since the concrete type is known at compile time, the Swift compiler can optimize the code better than with protocol types (`any`).
 
 - **Type safety**: The compiler ensures that the returned value always conforms to the expected protocol, even though the specific type is hidden.
 
-## ### Opaque types use cases
+## Opaque types use cases
 Opaque types are particularly useful in cases like:
 
 - **Returning types that conform to a protocol**: When you want to hide the exact type but ensure it conforms to a specific protocol.
@@ -1926,7 +1926,7 @@ Opaque types are particularly useful in cases like:
 
 - **Maintaining flexibility**: When you may want to change the underlying type without affecting the API or the code that uses it.
 
-## ### Comparison to boxed/existential types (`any`)
+## Comparison to boxed/existential types (`any`)
 ### Opaque types (`some`):
 
 - The type is determined at compile time and remains consistent.
@@ -1939,10 +1939,10 @@ Opaque types are particularly useful in cases like:
 - Supports dynamic dispatch.
 - Can handle multiple types at the cost of some performance overhead.
 
-## ### What is boxed protocol type?
+## What is boxed protocol type?
 A boxed protocol type refers to a concept where a value of a type that conforms to a protocol is stored in a way that abstracts (or "boxes") the underlying concrete type, allowing for a more flexible, albeit less type-safe, handling of multiple types. This is typically done using existential types (also referred to as protocol types) in Swift, and is common when using a protocol as a type itself.
 
-## ### Key characteristics of boxed protocol types
+## Key characteristics of boxed protocol types
 - **Type erasure**: When you use a protocol as a type, the specific details of the underlying type are erased, or "boxed". The only thing the compiler knows is that the value conforms to the protocol. This is known as type erasure.
 
 - **Dynamic dispatch**: Methods on a boxed protocol type are called via dynamic dispatch, which means the actual method to call is determined at runtime. This adds some runtime overhead compared to calling methods on a concrete type directly.
@@ -1951,13 +1951,13 @@ A boxed protocol type refers to a concept where a value of a type that conforms 
 
 - **Flexibility**: Boxed protocol types allow you to write more flexible and generic code, as you can handle multiple types uniformly as long as they conform to the protocol.
 
-## ### What is type erasure?
+## What is type erasure?
 Type erasure is a technique that allows you to work with values of different concrete types in a generic way while hiding (or "erasing") the specific underlying type information. This enables you to use protocols with associated types or generic types as concrete types, providing flexibility while maintaining a uniform interface.
 
 ### Why use type erasure?
 Protocols with associated types or self-requirements (e.g., `Self` or associated types) cannot be used directly as types. This limitation can make it challenging to create collections or APIs that can handle multiple types conforming to such protocols in a type-safe manner. Type erasure solves this problem by wrapping the conforming types in a type-erased container that hides the specific type, allowing you to use the protocol as a type.
 
-## ### Example: Type erasure with a protocol
+## Example: Type erasure with a protocol
 Consider a protocol with an associated type:
 ```swift
 protocol Shape {
@@ -2017,21 +2017,21 @@ for shape in shapes {
 }
 ```
 
-## ### Benefits of type erasure
+## Benefits of type erasure
 - **Flexibility**: Type erasure allows you to work with heterogeneous collections of types that conform to a protocol with associated types or self-requirements.
 
 - **Abstraction**: The concrete type is hidden, providing an abstract and uniform interface for interacting with different types.
 
 - **Simplification**: Type erasure can simplify APIs by allowing you to define functions and methods that accept or return types conforming to protocols with associated types, without exposing the underlying implementation details.
 
-## ### Drawbacks of type erasure
+## Drawbacks of type erasure
 - **Complexity**: Implementing type erasure requires additional boilerplate code, such as wrapper types, which can make the code harder to understand and maintain.
 
 - **Performance overhead**: There may be some performance overhead due to the use of closures and indirection, as well as the loss of some compile-time optimizations.
 
 - **Loss of type information**: With type erasure, the specific type information is hidden, which can limit the operations you can perform on the type-erased value.
 
-## ### Type erasure summary
+## Type erasure summary
 - **Type erasure**: A technique that hides the concrete type of a value conforming to a protocol with associated types or self-requirements, allowing the protocol to be used as a type.
 
 - **Implementation**: Usually involves creating a wrapper type that conforms to the protocol and delegates the protocol's requirements to the wrapped value.
@@ -2040,7 +2040,7 @@ for shape in shapes {
 
 Type erasure is a powerful tool for creating flexible, abstract APIs while maintaining type safety and a uniform interface, though it comes with trade-offs in complexity and performance.
 
-## ### What's the difference between `self` and `Self`?
+## What's the difference between `self` and `Self`?
 ### `self`
 
 - Refers to the current instance of a type (class, struct, or enum).
@@ -2055,7 +2055,7 @@ Type erasure is a powerful tool for creating flexible, abstract APIs while maint
 
 Understanding the distinction between `self` and `Self` is crucial for writing correct and clear Swift code, particularly when dealing with protocols, initializers, and type-level methods.
 
-## ### The access levels
+## The access levels
 Swift has five access levels and visibility scope:
 - **`open`**:  Anywhere in the module and any module that imports it. Inheritance outside module: Yes
 
@@ -2067,7 +2067,7 @@ Swift has five access levels and visibility scope:
 
 - **`private`**: Only within the same declaration (class, struct, etc.)
 
-## ### The access levels best practices
+## The access levels best practices
 - **Use `internal` (the default) unless you need something to be more or less visible**. This keeps your codebase clean and prevents accidental misuse.
 
 - **Use `private` and `fileprivate` to encapsulate implementation details** that shouldn’t be accessible outside the immediate context, maintaining a clean API surface.
@@ -2076,7 +2076,7 @@ Swift has five access levels and visibility scope:
 
 Understanding and using these access levels effectively helps ensure your Swift code is well-organized, maintainable, and secure.
 
-## ### Bitwise operators
+## Bitwise operators
 Bitwise operators allow you to manipulate individual bits of data types such as integers. They perform operations directly on the binary representation of numbers. These operators are often used in low-level programming, cryptography, graphics programming, and situations where performance is critical.
 
 Swift provides several bitwise operators:
@@ -2094,13 +2094,13 @@ Swift provides several bitwise operators:
 
 Understanding bitwise operators is crucial for tasks that require direct manipulation of binary data, offering powerful tools for low-level operations in Swift.
 
-## ### Operator methods
+## Operator methods
 Operators such as `+`, `-`, `*` and `==` can be overloaded or custom operators can be created to work with custom types. These are known as operator methods. Operator methods are special methods that allow you to define the behavior of an operator when used with instances of your custom types.
 
 ### Defining operator methods
 To define an operator method, you need to use the `static func` keyword inside your custom type (class, struct, or enum) and associate it with the operator symbol. Swift allows overloading both existing operators and defining custom operators.
 
-## ### Examples of operator methods: Addition operator `+`
+## Examples of operator methods: Addition operator `+`
 Let's say you have a `Vector2D` struct that represents a 2D vector, and you want to add two vectors together using the `+` operator.
 
 ```swift
@@ -2120,7 +2120,7 @@ let result = vector1 + vector2  // Vector2D(x: 5.0, y: 7.0)
 ```
 Explanation: The `+` operator is overloaded to add the `x` and `y` components of two `Vector2D` instances. The result is a new `Vector2D` instance.
 
-## ### Examples of operator methods: Equality operator `==`
+## Examples of operator methods: Equality operator `==`
 You can also overload the equality operator `==` to compare two instances of a custom type.
 
 ```swift
@@ -2143,7 +2143,7 @@ print(vector1 == vector3)  // false
 ```
 Explanation: The `==` operator is overloaded to compare the x and y components of two `Vector2D` instances for equality.
 
-## ### Examples of operator methods: Custom prefix operator `-`
+## Examples of operator methods: Custom prefix operator `-`
 You can define custom behavior for prefix operators like the unary minus (-) for a type.
 
 ```swift
@@ -2164,7 +2164,7 @@ let negatedVector = -vector  // Vector2D(x: -3.0, y: -4.0)
 ```
 Explanation: The `-` operator is overloaded as a prefix operator to negate the `x` and `y` components of a `Vector2D` instance.
 
-## ### Custom operators
+## Custom operators
 You can also define entirely new operators and then provide implementations for them. For example, you could define a `**` operator to perform exponentiation:
 
 ```swift
@@ -2178,7 +2178,7 @@ let result = 2.0 ** 3.0  // 8.0
 ```
 Explanation: The `**` operator is defined and implemented to perform exponentiation using the `pow` function from the standard library.
 
-## ### What is `@resultBuilder`?
+## What is `@resultBuilder`?
 `@resultBuilder` is a powerful feature that allows you to define a custom syntax for building complex data structures, typically by composing smaller pieces of data in a declarative way. It's used to create domain-specific languages (DSLs) that enable a more expressive and natural way of defining complex operations, such as UI layouts, HTML markup, or data pipelines.
 
 ### Key concepts of `@resultBuilder`
@@ -2188,7 +2188,7 @@ Explanation: The `**` operator is defined and implemented to perform exponentiat
 
 - **Transform statements**: The result builder transforms a series of statements into a single value, often by combining them into a collection or other structure.
 
-## ### Example: SwiftUI's `@ViewBuilder`
+## Example: SwiftUI's `@ViewBuilder`
 SwiftUI uses a result builder called @ViewBuilder to allow developers to write views in a natural, declarative style.
 
 ```swift
@@ -2205,7 +2205,7 @@ struct ContentView: View {
 ```
 Here, VStack is using `@ViewBuilder` to combine the `Text` views into a single `View` structure.
 
-## ### Creating your own `@resultBuilder`
+## Creating your own `@resultBuilder`
 You can create a custom result builder by defining a struct or class and annotating it with `@resultBuilder`. The result builder type needs to implement several static methods that describe how to handle different parts of the builder syntax, such as combining multiple values, handling optional values, or building blocks conditionally.
 
 Let's create a simple result builder to construct arrays of integers.
@@ -2260,7 +2260,7 @@ Explanation:
 
 - **`buildArray(_:)`**: Handles loops like `for` or `map` inside the result builder.
 
-## ### What is Combine framework?
+## What is Combine framework?
 The Combine framework is a powerful reactive programming framework introduced by Apple in iOS 13, macOS 10.15, watchOS 6, and tvOS 13. It allows developers to work with asynchronous events by providing a declarative Swift API for handling asynchronous sequences of values over time.
 
 ### Key concepts of combine
@@ -2274,7 +2274,7 @@ The Combine framework is a powerful reactive programming framework introduced by
 
 - **Subject**: A subject is a type of publisher that can both publish values and be subscribed to. Subjects are typically used to bridge imperative code (like user input) with reactive Combine code.
 
-## ### How Combine works?
+## How Combine works?
 In Combine, you create a data pipeline where:
 
 - **Publishers** emit values or events over time.
@@ -2285,7 +2285,7 @@ Here's a basic flow:
 
 **Publisher** → **Operator** → **Subscriber**
 
-## ### Combine: example usage
+## Combine: example usage
 Below is a simple example of how Combine can be used to filter and transform values emitted by a publisher:
 
 ```swift
@@ -2318,7 +2318,7 @@ let subscription = publisher
 // Finished
 ```
 
-## ### Combine building blocks
+## Combine building blocks
 1. **Publishers**:
 - Examples: **`Just`**, **`Future`**, **`PassthroughSubject`**, **`CurrentValueSubject`**, **`URLSession.DataTaskPublisher`**.
 - Emit sequences of values or events over time.
@@ -2338,7 +2338,7 @@ let subscription = publisher
 5. **Schedulers**:
 - Define where and when work occurs, such as on the main thread, a background thread, or after a delay.
 
-## ### Combine real-world use cases
+## Combine real-world use cases
 - **Network requests**: Chain and process responses from API calls.
 
 - **User input handling**: Debounce and throttle text input in search fields.
@@ -2347,14 +2347,14 @@ let subscription = publisher
 
 - **Event streams**: React to system notifications, delegate calls, or other event-driven programming tasks.
 
-## ### Combine advantages
+## Combine advantages
 - **Declarative**: Code becomes more declarative and easier to reason about.
 
 - **Type-safe**: Strongly typed, which catches errors at compile time.
 
 - **Integration**: Designed to work seamlessly with Swift, SwiftUI, and other Apple frameworks.
 
-## ### `Just` publisher
+## `Just` publisher
 A `Just` publisher in Combine is a simple type of publisher that emits a single value and then immediately finishes. It's useful when you want to work with a known, single value in a Combine pipeline, or when you want to wrap a constant value in a publisher to integrate with other Combine-based code.
 
 ### Key characteristics of `Just`
@@ -2364,7 +2364,7 @@ A `Just` publisher in Combine is a simple type of publisher that emits a single 
 
 - **No failure**: The `Just` publisher cannot fail. It uses `Never` as its failure type, indicating that it never emits an error.
 
-## ### `Just` publisher usage and example
+## `Just` publisher usage and example
 `Just` is commonly used in scenarios where you need a simple publisher that wraps a constant value, or in testing where you want to provide a known value in a Combine chain.
 
 Here's an example of using `Just` in a Combine pipeline:
@@ -2396,14 +2396,14 @@ Explanation
 
 - **Output**: The value is printed, followed by a message indicating that the publisher has finished.
 
-## ### When to use `Just`
+## When to use `Just`
 - **Testing**: It's useful in unit tests where you want to simulate a publisher that emits a single value.
 
 - **Default values**: When you need to provide a default value or wrap a known constant in a Combine chain.
 
 - **Simple pipelines**: In simple Combine chains where you don't need more complex, dynamic publishers.
 
-## ### `Future` publisher
+## `Future` publisher
 The `Future` publisher in Combine is a powerful tool for handling asynchronous tasks that will eventually produce a result or fail with an error. Unlike `Just`, which emits a single known value immediately, `Future` allows you to create a publisher that will emit a value or an error sometime in the future.
 
 ### Key characteristics of `Future`
@@ -2413,7 +2413,7 @@ The `Future` publisher in Combine is a powerful tool for handling asynchronous t
 
 - **Promise-based**: When you create a `Future`, you receive a `Promise` object that you use to either fulfill with a value or reject with an error.
 
-## ### `Future` publisher usage and example
+## `Future` publisher usage and example
 A `Future` is typically created with a closure that takes a `Promise` as an argument. The closure contains the asynchronous code, and once the operation is complete, you call the `Promise` with either a success or failure result.
 
 Here’s an example of using Future to simulate a simple asynchronous operation that fetches data:
@@ -2466,14 +2466,14 @@ Explanation
 
 - **Subscribing**: The `sink` subscriber is used to handle the received value or error when the Future completes.
 
-## ### When to use `Future`
+## When to use `Future`
 - **Asynchronous operations**: Ideal for wrapping asynchronous operations such as network requests, database queries, or any task that takes time to complete.
 
 - **Single result**: Use `Future` when you expect to receive only one value (or error) from the operation.
 
 - **Integration with Combine**: `Future` is a great way to bridge asynchronous code with Combine's reactive programming model.
 
-## ### `PassthroughSubject` publisher
+## `PassthroughSubject` publisher
 A `PassthroughSubject` in Combine is a type of publisher that you can use to manually emit values or events to subscribers. Unlike other publishers that may have a predefined sequence of events (like `Just` or `Future`), `PassthroughSubject` allows you to dynamically send values at any time, making it ideal for handling user input, notifications, or other events that occur over time.
 
 ### Key characteristics of `PassthroughSubject`
@@ -2485,7 +2485,7 @@ A `PassthroughSubject` in Combine is a type of publisher that you can use to man
 
 - **Completion and error handling**: You can signal completion or failure at any time using the `send(completion:)` method.
 
-## ### `PassthroughSubject` publisher usage and example
+## `PassthroughSubject` publisher usage and example
 `PassthroughSubject` is typically used when you want to broadcast events or values to one or more subscribers, and you want to control when those events occur.
 
 Here’s an example of using `PassthroughSubject` to broadcast user input events:
@@ -2532,19 +2532,19 @@ Explanation
 
 - **Completion**: The `send(completion:)` method is called to signal that no more values will be sent, completing the subject.
 
-## ### When to use `PassthroughSubject`
+## When to use `PassthroughSubject`
 - **Event broadcasting**: When you need to broadcast events like user actions, notifications, or other triggers to one or more subscribers.
 
 - **Dynamic data sources**: For scenarios where the data source is dynamic, such as user input, sensors, or real-time data feeds.
 
 - **Manual control**: When you want full control over when values are emitted and when the publisher completes.
 
-## ### `PassthroughSubject`: Comparison with `CurrentValueSubject`
+## `PassthroughSubject`: Comparison with `CurrentValueSubject`
 - **`PassthroughSubject`**: Does not store the current value, and new subscribers do not receive any previous values—only new ones sent after they subscribe.
 
 - **`CurrentValueSubject`**: Holds onto the most recent value and sends it to any new subscribers immediately upon subscription.
 
-## ### `CurrentValueSubject` publisher
+## `CurrentValueSubject` publisher
 The `CurrentValueSubject` in Combine is a special type of publisher that stores the latest value it has received and emits it to new subscribers. It combines the behavior of a regular subject (where you can manually send values) with the ability to hold onto and replay the most recent value to new subscribers.
 
 ### Key characteristics of `CurrentValueSubject`
@@ -2556,7 +2556,7 @@ The `CurrentValueSubject` in Combine is a special type of publisher that stores 
 
 - **Multiple subscribers**: Multiple subscribers can attach to a `CurrentValueSubject`, and all will receive updates when new values are sent.
 
-## ### `CurrentValueSubject` publisher usage and example
+## `CurrentValueSubject` publisher usage and example
 `CurrentValueSubject` is ideal when you need to maintain a current state and share it with multiple subscribers, even those that subscribe after the state has been updated.
 
 Here’s an example of using `CurrentValueSubject` to keep track of a changing value:
@@ -2611,14 +2611,14 @@ Explanation
 
 - **Subscriber 2**: When Subscriber 2 subscribes, it immediately receives the most recent value (`"Hello, Combine!"`) before receiving any further updates.
 
-## ### When to use `CurrentValueSubject`
+## When to use `CurrentValueSubject`
 - **State management**: When you need to maintain and share a current state with multiple subscribers, and new subscribers should immediately receive the latest state.
 
 - **Configuration or settings**: Useful for scenarios where a configuration or setting might change, and you want all subscribers to stay up-to-date.
 
 - **Reactive UI components**: Great for UI components that need to reflect the latest data or state.
 
-## ### `sink` subscriber
+## `sink` subscriber
 The `sink` subscriber in Combine is a convenient and flexible way to attach a closure-based handler to a publisher. It allows you to react to emitted values and completion events in a Combine pipeline without needing to define a full custom subscriber.
 
 ### Key characteristics of `sink`
@@ -2628,7 +2628,7 @@ The `sink` subscriber in Combine is a convenient and flexible way to attach a cl
 
 - **Memory management**: The returned `AnyCancellable` object must be retained if you want to keep the subscription alive; otherwise, it will automatically cancel when it goes out of scope.
 
-## ### `sink` example: Handling values and completion
+## `sink` example: Handling values and completion
 ```
 import Combine
 
@@ -2664,7 +2664,7 @@ Explanation
 
 - **`receiveCompletion`**: This closure is called when the publisher finishes or encounters an error.
 
-## ### `sink` example: Handling only values
+## `sink` example: Handling only values
 If you're only interested in the values and don't need to handle the completion, you can omit the `receiveCompletion` closure:
 
 ```swift
@@ -2685,7 +2685,7 @@ let valueSubscription = stringPublisher.sink { value in
 Explanation
 - **Simplified subscription**: In this example, we only handle the values emitted by the publisher, omitting the completion handling.
 
-## ### Memory management with `sink`
+## Memory management with `sink`
 The `sink` method returns an `AnyCancellable` object, which is important for managing the lifetime of the subscription. If you don’t retain the `AnyCancellable`, the subscription will be automatically canceled when it goes out of scope.
 
 Example: Storing the subscription
@@ -2714,7 +2714,7 @@ myClass.start()
 Explanation
 - **Retaining the subscription**: The `subscription` property retains the `AnyCancellable`, ensuring that the subscription stays active until you explicitly cancel it or the `MyClass` instance is deallocated.
 
-## ### `assign` subscriber
+## `assign` subscriber
 The `assign` subscriber in Combine is a specialized subscriber that assigns the value it receives from a publisher directly to a property of an object. It’s particularly useful when you want to bind a stream of values to a property, such as updating a UI element or a model property in response to data changes.
 
 ### Key characteristics of `assign`
@@ -2724,7 +2724,7 @@ The `assign` subscriber in Combine is a specialized subscriber that assigns the 
 
 - **No completion handling**: Unlike `sink`, `assign` only handles values and does not deal with completion or errors.
 
-## ### `assign` subscriber usage and example
+## `assign` subscriber usage and example
 You use `assign` to create a binding between a publisher and a property on an object. This is useful for situations where you want the property to automatically reflect the latest value from the publisher.
 
 Let’s see an example where we bind a publisher’s output to a property of a class:
@@ -2761,14 +2761,14 @@ Explanation
 
 - **Property updates**: The `name` property of the `MyModel` instance is updated automatically each time a new value is emitted by the publisher. The `didSet` property observer is triggered each time the `name` is updated, printing the new value.
 
-## ### When to use `assign`?
+## When to use `assign`?
 - **Property binding**: Ideal for scenarios where you need to automatically update an object’s property in response to a stream of data.
 
 - **UI updates**: Commonly used to bind model data to UI elements in a reactive way, ensuring the UI stays in sync with the data.
 
 - **Simplifying code**: Reduces boilerplate code needed to manually update properties in response to data changes.
 
-## ### Combine: Transformation Operators
+## Combine: Transformation Operators
 - **`map`**: Transforms each value emitted by a publisher into a new value.
 ```swift
 let numbers = [1, 2, 3].publisher
@@ -2795,7 +2795,7 @@ let numbers = [1, 2, 3, 4].publisher
 let runningTotal = numbers.scan(0) { $0 + $1 }
 ```
 
-## ### Combine: Filtering operators
+## Combine: Filtering operators
 - **`filter`**: Emits only values that satisfy a condition.
 ```swift
 let numbers = [1, 2, 3, 4, 5].publisher
@@ -2820,7 +2820,7 @@ let numbers = [1, 2, 3, 4, 5].publisher
 let firstTwo = numbers.prefix(2)
 ```
 
-## ### Combine: Combining operators
+## Combine: Combining operators
 - **`merge`**: Combines multiple publishers into a single stream.
 ```swift
 let publisher1 = [1, 2, 3].publisher
@@ -2851,7 +2851,7 @@ let subjects = PassthroughSubject<PassthroughSubject<Int, Never>, Never>()
 let latest = subjects.switchToLatest()
 ```
 
-## ### Combine: Sequence operators
+## Combine: Sequence operators
 - **`collect`**: Collects all values emitted by the publisher into an array.
 ```swift
 let numbers = [1, 2, 3, 4].publisher
@@ -2870,7 +2870,7 @@ let numbers = [1, 2, 3, 4].publisher
 let firstValue = numbers.first()
 ```
 
-## ### Combine: Time operators
+## Combine: Time operators
 - **`debounce`**: Emits a value only after a specified time interval without receiving another value.
 ```swift
 let subject = PassthroughSubject<String, Never>()
@@ -2889,7 +2889,7 @@ let subject = PassthroughSubject<String, Never>()
 let throttled = subject.throttle(for: .seconds(2), scheduler: RunLoop.main, latest: true)
 ```
 
-## ### Combine: Error handling operators
+## Combine: Error handling operators
 - **`catch`**: Replaces an error with another publisher.
 ```swift
 let failingPublisher = Fail<Int, Error>(error: URLError(.badURL))
@@ -2906,7 +2906,7 @@ let failingPublisher = Fail<Int, Error>(error: URLError(.badURL))
 let retried = failingPublisher.retry(2)
 ```
 
-## ### Combine schedulers
+## Combine schedulers
 In Combine, schedulers are responsible for controlling the timing and execution context of publishers and subscribers. They determine on which thread or queue the work should be performed, making it easier to handle asynchronous operations and ensure that UI updates occur on the main thread.
 
 ### Key concepts of schedulers
@@ -2923,7 +2923,7 @@ In Combine, schedulers are responsible for controlling the timing and execution 
 
 - **DispatchQueueScheduler**: Uses a `DispatchQueue` (from Grand Central Dispatch) to execute tasks.
 
-## ### Commonly used schedulers: DispatchQueue
+## Commonly used schedulers: DispatchQueue
 DispatchQueue: A powerful and flexible scheduler that leverages GCD to execute tasks on various dispatch queues.
 
 Usage example:
@@ -2943,7 +2943,7 @@ Explanation:
 
 - **`receive(on:)`** Specifies the scheduler on which to receive values. Here, it’s set to the main thread, ensuring any UI updates are performed on the correct thread.
 
-## ### Commonly used schedulers: RunLoop
+## Commonly used schedulers: RunLoop
 RunLoop: A scheduler that executes tasks on a run loop, which is often used for timers and other periodic events.
 
 Usage example:
@@ -2962,7 +2962,7 @@ Explanation:
 - This example sets up a timer that emits values every second on the main run loop.
 - The values are received and handled on the main thread, making it safe to update the UI.
 
-## ### Commonly used schedulers: OperationQueue
+## Commonly used schedulers: OperationQueue
 OperationQueue: A scheduler that executes tasks on an `OperationQueue`, allowing for more granular control over task execution.
 
 Usage example:
@@ -2980,7 +2980,7 @@ publisher.sink { value in
 Explanation:
 `OperationQueue` allows you to manage a queue of operations that can run concurrently or serially. The `subscribe(on:)` method sets up the publisher to start on a custom operation queue, while `receive(on:)` ensures the values are handled on the main operation queue.
 
-## ### Combine: Using schedulers effectively
+## Combine: Using schedulers effectively
 Schedulers are essential for managing threading in Combine, especially when dealing with UI updates and background tasks. By correctly using `subscribe(on:)` and `receive(on:)`, you can control where and when your Combine pipelines execute, ensuring thread safety and efficient execution.
 
 Example: Background processing and UI updates
@@ -3002,7 +3002,7 @@ let publisher = Just(42)
     }
 ```
 
-## ### `Deferred` publisher
+## `Deferred` publisher
 In Combine, a `Deferred` publisher is used to delay the creation of a publisher until a subscriber actually requests it. This is particularly useful when you need to defer the execution of a publisher's work until the moment it's actually needed, rather than at the time of the publisher's declaration.
 
 ### Key concepts of `Deferred`
@@ -3010,7 +3010,7 @@ In Combine, a `Deferred` publisher is used to delay the creation of a publisher 
 
 - **Dynamic publisher creation**: With `Deferred`, you can dynamically generate a new publisher every time a subscription is made, making it useful when the publisher's behavior depends on the state or configuration at the time of subscription.
 
-## ### `Deferred` publisher usage and example
+## `Deferred` publisher usage and example
 The `Deferred` publisher wraps a closure that returns a publisher. When a subscriber subscribes, this closure is executed, and the returned publisher is then used to produce values.
 
 Let's look at an example where a `Deferred` publisher is used to simulate a deferred network request.
@@ -3051,14 +3051,14 @@ Explanation
 
 - **Subscription**: When `sink` subscribes to the `deferredPublisher`, the `fetchData` function is called, triggering the simulated network request and eventually delivering the data.
 
-## ### Why use `Deferred`?
+## Why use `Deferred`?
 - **Lazy evaluation**: If you have a publisher that performs expensive operations (like network requests or complex computations), using `Deferred` can ensure that these operations are only performed when absolutely necessary—when there's an active subscriber.
 
 - **Dynamic data**: `Deferred` is useful when the publisher needs to be recreated each time based on the current state or context.
 
 - **Testing**: It can be particularly helpful in testing scenarios where you need to ensure that certain actions don't occur until a subscription is made.
 
-## ### What is list's deep copy?
+## What is list's deep copy?
 A deep copy of a list (array) means creating a new array where all elements are duplicated in such a way that they do not share references with the original array. This is particularly important when dealing with arrays of reference types, such as objects or classes, where a simple assignment only creates a shallow copy (i.e., both arrays share the same objects).
 
 Here are different ways you can perform a deep copy of a list:
@@ -3068,7 +3068,7 @@ Here are different ways you can perform a deep copy of a list:
 3. Using protocol
 4. Handling nested arrays
 
-## ### List deep copy: For arrays of value types
+## List deep copy: For arrays of value types
 If the array contains value types (like `Int`, `String`, `Structs`, etc.), you don't need to do anything special since assigning the array or copying it will automatically create a deep copy:
 
 ```swift
@@ -3076,7 +3076,7 @@ let originalArray = [1, 2, 3, 4]
 let copiedArray = originalArray // This is a deep copy because Int is a value type
 ```
 
-## ### List deep copy: For arrays of reference types
+## List deep copy: For arrays of reference types
 If the array contains reference types (like classes), you'll need to manually create copies of the elements to achieve a true deep copy.
 
 ### Example with custom class
@@ -3104,7 +3104,7 @@ let copiedArray = originalArray.map { $0.copy() }
 Explanation:
 - **`map` function**: Iterates over each element in `originalArray` and applies the `copy` method, returning a new array with new `Person` instances. This ensures that `copiedArray` contains entirely new `Person` objects, independent of those in `originalArray`.
 
-## ### List deep copy: Using protocol
+## List deep copy: Using protocol
 You can make the Person class conform to the NSCopying protocol, which is more idiomatic:
 
 ```swift
@@ -3129,7 +3129,7 @@ Explanation:
 
 - **`map` with `copy`**: Similar to the previous example, but using the `NSCopying` protocol.
 
-## ### List deep copy: Handling nested arrays
+## List deep copy: Handling nested arrays
 If you have an array of arrays or a more complex nested structure, you would need to recursively apply the deep copy logic to each level of the structure:
 
 ```swift
@@ -3140,7 +3140,7 @@ let copiedNestedArray = originalNestedArray.map { innerArray in
 }
 ```
 
-## ### What does `eraseToAnyPublisher` do?
+## What does `eraseToAnyPublisher` do?
 In Combine framework, the `eraseToAnyPublisher` method is used to hide the specific type of a publisher, allowing you to return a more generic type, `AnyPublisher`, instead of the concrete type of the publisher you’re working with.
 
 ### Why use eraseToAnyPublisher?
@@ -3148,7 +3148,7 @@ In Combine framework, the `eraseToAnyPublisher` method is used to hide the speci
 
 - **API flexibility**: If you're building an API or a function that returns a publisher, it's often preferable to return a generic `AnyPublisher<Output, Failure>` rather than exposing the exact type of the publisher. This abstraction allows you to change the internal implementation of the function (like replacing one operator chain with another) without affecting the function's public interface.
 
-## ### How does `eraseToAnyPublisher` work?
+## How does `eraseToAnyPublisher` work?
 The `eraseToAnyPublisher` method essentially wraps the publisher in a type-erased box. It doesn't change the behavior of the publisher; it just hides its actual type.
 
 Here’s how you can use it:
@@ -3174,7 +3174,7 @@ Explanation:
 
 - **`eraseToAnyPublisher()`**: This converts the specific publisher type (which in this case is `Just<String>.SetFailureType<Error>`) into a generic `AnyPublisher<String, Error>`.
 
-## ### What are benefits of using `eraseToAnyPublisher`?
+## What are benefits of using `eraseToAnyPublisher`?
 - **Simpler function signatures**: Instead of returning a complex type like `Map<URLSession.DataTaskPublisher, Data, URLError>`, you return `AnyPublisher<Data, URLError>`. This makes your function signatures more readable and easier to work with.
 
 - **Encapsulation**: By hiding the actual type of the publisher, you encapsulate the implementation details. This is particularly useful when you want to maintain the flexibility to change your internal publisher logic without affecting code that depends on it.
@@ -3189,7 +3189,7 @@ func fetchUser() -> Publishers.MapError<Just<String>, Error> {
 ```
 This exposes the entire type chain, which could become cumbersome and tightly couples the caller to the specific implementation details of the function. If you later decided to change the implementation, you’d also have to update the function's return type, potentially breaking the existing code.
 
-## ### What can be Combine `flatMap` operator used for?
+## What can be Combine `flatMap` operator used for?
 In Combine framework, the `flatMap` operator is a powerful tool for transforming publishers. It is particularly useful when you have a publisher that emits another publisher, and you want to flatten the sequence of publishers into a single continuous stream of values. Here are some common scenarios where `flatMap` is used:
 
 1. **Chaining asynchronous operations**
@@ -3200,7 +3200,7 @@ In Combine framework, the `flatMap` operator is a powerful tool for transforming
 
 4. **Dynamic publishers based on emitted values**
 
-## ### Combine `flatMap`: Chaining asynchronous operations
+## Combine `flatMap`: Chaining asynchronous operations
 When you need to perform a sequence of asynchronous operations where each operation returns a publisher, you can use `flatMap` to handle this chaining. For example, you might need to make a network request, and based on the result, make another network request.
 
 ```swift
@@ -3252,7 +3252,7 @@ Explanation:
 
 - **`flatMap`**: Takes the `User` emitted by `fetchUser` and uses it to create a new publisher (`fetchUserDetails`). The `flatMap` operator then flattens the resulting publishers into a single stream, allowing you to handle the final `UserDetails`.
 
-## ### Combine `flatMap`: Handling multiple nested publishers
+## Combine `flatMap`: Handling multiple nested publishers
 If you have a situation where a publisher emits publishers, and you want to merge all the inner publishers' output into a single stream, flatMap is ideal.
 
 ```swift
@@ -3277,7 +3277,7 @@ Explanation:
 
 - **`flatMap`**: For each integer emitted, it returns a new publisher `Just(number * 2)`, which then emits the transformed value. `flatMap` collects these into a single stream.
 
-## ### Combine `flatMap`: Combining results from different publishers
+## Combine `flatMap`: Combining results from different publishers
 `flatMap` can also be used to combine results from different publishers. For example, you might want to combine data from two different network requests.
 
 ```swift
@@ -3317,7 +3317,7 @@ Explanation:
 
 - **`flatMap`**: After fetching data from the first source, it fetches additional data and combines the two results into a single output.
 
-## ### Combine `flatMap`: Dynamic publishers based on emitted values
+## Combine `flatMap`: Dynamic publishers based on emitted values
 Sometimes, the choice of the next publisher to subscribe to depends on the value emitted by the current publisher. `flatMap` is perfect for dynamically creating a new publisher based on each value emitted.
 
 ```swift
@@ -3343,7 +3343,7 @@ Explanation:
 
 - **`flatMap`**: For each emitted integer, a new publisher is created `fetchValue(for: id)`. The results are then flattened into a single stream.
 
-## ### Combine `flatMap`: Summary
+## Combine `flatMap`: Summary
 In summary, `flatMap` in Combine is used when you have a publisher that produces another publisher, and you want to flatten these nested publishers into a single stream. It’s commonly used for:
 
 - Chaining asynchronous operations.
@@ -3353,7 +3353,7 @@ In summary, `flatMap` in Combine is used when you have a publisher that produces
 
 This flexibility makes `flatMap` one of the most powerful operators in Combine for managing complex reactive data flows.
 
-## ### What can be Combine `compactMap` operator used for?
+## What can be Combine `compactMap` operator used for?
 In Swift's Combine framework, the compactMap operator is used to transform the output of a publisher by applying a closure that returns an optional value. If the closure returns a non-nil value, compactMap emits that value downstream. If the closure returns nil, compactMap skips the emission and does not pass anything downstream for that value.
 
 ### Common use cases for `compactMap`
@@ -3363,7 +3363,7 @@ In Swift's Combine framework, the compactMap operator is used to transform the o
 
 3. **Processing inputs**: In user input scenarios, where you might get optional or invalid inputs, you can use `compactMap` to filter out those invalid entries.
 
-## ### What is `nonisolated` used for?
+## What is `nonisolated` used for?
 The `nonisolated` keyword is used to mark methods, properties, or initializers that belong to an actor but can be accessed from outside the actor’s isolation domain. This allows these members to be accessed concurrently, without requiring the actor's thread-safe execution environment.
 
 Typically, actor members are isolated to ensure thread safety, meaning they are only accessed within the actor's execution context. However, sometimes you want a method or property to be safe to access from outside of the actor without going through the actor's protection mechanisms. This is where `nonisolated` comes in.
@@ -3393,7 +3393,7 @@ In this example:
 - `increment()` is an isolated method and can only be accessed asynchronously within the actor's context.
 - `description()` is marked as nonisolated, so it can be accessed directly from any thread without going through the actor’s queue.
 
-## ### Use cases for `nonisolated`
+## Use cases for `nonisolated`
 - **Computed properties** or **methods** that are thread-safe or don’t access mutable state.
 
 - Methods that provide utility or information and don’t require synchronization with the actor’s state.
@@ -3412,7 +3412,7 @@ actor Database {
 ```
 Here, `version()` is automatically nonisolated because it doesn’t operate on the actor’s instance data.
 
-## ### Explain the difference between `Equatable` and `Comparable` protocols
+## Explain the difference between `Equatable` and `Comparable` protocols
 ### Key differences:
 1. **Equatable**:
 - Used for checking equality (`==`) and inequality (`!=`).
@@ -3429,7 +3429,7 @@ Here, `version()` is automatically nonisolated because it doesn’t operate on t
 - `Comparable` is about comparing the relative order of two instances.
 - Every `Comparable` type must also be `Equatable` but not every `Equatable` type needs to be `Comparable`.
 
-## ### What is `@inlinable`?
+## What is `@inlinable`?
 `@inlinable` is an attribute that can be applied to functions, methods, computed properties, and subscripts to indicate that the body of the code should be made available for inlining across module boundaries. This means that the compiler can see the actual implementation of the function, allowing it to decide whether to inline the function when it's used in another module. Inlining can potentially improve performance by reducing function call overhead.
 
 ### Key points about `@inlinable`:
@@ -3456,7 +3456,7 @@ In the above code, the `add` function is marked `@inlinable`, which means that a
 
 - Avoid using it on complex functions that are likely to change, as this could lead to binary compatibility issues across different versions of your module.
 
-## ### What is `@frozen`?
+## What is `@frozen`?
 `@frozen` is an attribute that can be applied to enums or structs to indicate that the type’s layout and cases are fixed and cannot change in future versions of the module. This attribute is primarily used for ABI (Application Binary Interface) stability, allowing the compiler to make optimizations based on the assumption that the type's structure will not change.
 
 ### Key concepts of `@frozen`:
@@ -3498,14 +3498,14 @@ func move(direction: Direction) {
 ```
 Without `@frozen`, you would be required to add a `default` case, as the compiler would allow for the possibility of new cases being introduced in future versions of the library.
 
-## ### When to use `@frozen`?
+## When to use `@frozen`?
 - Use `@frozen` for types where you are certain that the type’s layout or cases will never change in the future.
 
 - It is especially useful for public types in libraries or frameworks that need ABI stability.
 
 - Be cautious with using `@frozen` if you might need to extend or modify the type in the future, as this could break binary compatibility.
 
-## ### What is `@MainActor`?
+## What is `@MainActor`?
 `@MainActor` is an attribute used to ensure that certain code is executed on the main thread (the thread responsible for updating the UI in iOS and macOS apps). This is crucial because UI updates must always occur on the main thread to prevent crashes or inconsistent behavior.
 
 ### Key concepts of `@MainActor`:
@@ -3540,7 +3540,7 @@ class MyViewController: UIViewController {
 ```
 In this example, the `updateUI()` method is marked with `@MainActor`, ensuring that any UI updates inside this function will always run on the main thread. If `fetchData()` is executed on a background thread (asynchronous task), `@MainActor` ensures that `updateUI()` is executed on the main thread when called.
 
-## ### Key differences between `@MainActor` and `DispatchQueue.main.async`
+## Key differences between `@MainActor` and `DispatchQueue.main.async`
 - **@MainActor`: This is part of Swift's concurrency model, making thread handling explicit at the declaration level, which is more type-safe and can integrate smoothly with `async/await`.
 
 - **DispatchQueue.main.async { }`: This is the more traditional way of dispatching work to the main thread, using Grand Central Dispatch (GCD). While still valid, `@MainActor` is preferred when using Swift’s modern concurrency features.
@@ -3550,7 +3550,7 @@ In this example, the `updateUI()` method is marked with `@MainActor`, ensuring t
 
 - It simplifies thread management, especially when using Swift's `async/await` concurrency model.
 
-## ### Core Image
+## Core Image
 Core Image is a powerful framework in Apple's ecosystem for image processing and analysis. It provides a wide range of image filters and utilities that allow developers to apply complex effects to images, perform real-time image processing, and even use custom filters. Core Image is designed to leverage the hardware acceleration of the CPU and GPU, making it suitable for high-performance image manipulation in iOS, macOS, and other Apple platforms.
 
 ### Key concepts of Core Image:
@@ -3573,7 +3573,7 @@ Core Image is a powerful framework in Apple's ecosystem for image processing and
 
 - **Performance**: Core Image is designed to be highly performant. It can leverage the GPU for hardware-accelerated image processing, which is particularly useful for real-time filters on live video or high-resolution images.
 
-## ### Basic example using Core Image
+## Basic example using Core Image
 Here’s a simple example of applying a sepia tone effect to an image using Core Image:
 
 ```swift
@@ -3605,7 +3605,7 @@ In this example:
 - The filter processes the image based on the intensity level set by the developer.
 - The final output is rendered using a `CIContext` to convert the processed `CIImage` into a `UIImage`.
 
-## ### Core Image features
+## Core Image features
 - **Image enhancement**: Core Image includes filters for automatic enhancement (`CIAutoAdjustment`) to adjust contrast, color, and brightness automatically.
 
 - **Face detection**: Core Image provides face detection capabilities via `CIDetector` and `CIFeature`.
@@ -3614,15 +3614,15 @@ In this example:
 
 - **Custom filters**: With custom kernels, you can create your own filters for specific processing requirements.
 
-## ### Core Animation
+## Core Animation
 Core Animation is a powerful animation framework provided by Apple that allows developers to create smooth, visually appealing animations in iOS, macOS, watchOS, and tvOS applications. Core Animation works at a lower level than UI frameworks like UIKit or AppKit, making it highly efficient for rendering animations directly on the GPU, thus offloading much of the work from the CPU.
 
-## ### Core Animation: CALayer
+## Core Animation: CALayer
 - The fundamental building block in Core Animation is the `CALayer` class, which represents a rectangular block of content that can be animated. Every view in UIKit or AppKit has a `CALayer` backing it, allowing Core Animation to work seamlessly with the UI.
 
 - Properties of a layer, such as its position, size, background color, opacity, and transform, can be animated without redrawing the view’s content.
 
-## ### Core Animation: Implicit animations
+## Core Animation: Implicit animations
 Core Animation provides implicit animations. When you change the animatable properties of a CALayer, Core Animation automatically animates the change. For instance, changing the position of a layer animates it smoothly to the new position by default.
 
 Example:
@@ -3632,7 +3632,7 @@ layer.position = CGPoint(x: 200, y: 200)
 ```
 This will cause the layer to animate its position from the old value to the new value.
 
-## ### Core Animation: Explicit animations
+## Core Animation: Explicit animations
 - If you want more control over animations, you can create explicit animations using `CABasicAnimation`, `CAKeyframeAnimation`, `CAAnimationGroup` or `CATransition`.
 
 - With explicit animations, you create the animation object, configure its properties (such as duration, timing, etc.), and then apply it to a `CALayer`.
@@ -3646,7 +3646,7 @@ animation.duration = 1.0
 layer.add(animation, forKey: "fade")
 ```
 
-## ### Core Animation: Animation timing
+## Core Animation: Animation timing
 Core Animation supports various timing functions to control the speed of animations, such as `ease-in`, `ease-out` and linear animations. These timing functions can be set via `CAMediaTimingFunction`.
 
 Example:
@@ -3655,7 +3655,7 @@ let timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
 animation.timingFunction = timingFunction
 ```
 
-## ### Core Animation: Transactions
+## Core Animation: Transactions
 - `CATransaction` is used to group multiple animations together and control their properties (e.g., timing). Transactions allow you to start and commit animations explicitly.
 
 - By default, all animations are grouped into an implicit transaction that commits automatically at the end of the current run loop cycle.
@@ -3668,7 +3668,7 @@ layer.position = CGPoint(x: 300, y: 300)
 CATransaction.commit()
 ```
 
-## ### Core Animation: Keyframe animations
+## Core Animation: Keyframe animations
 CAKeyframeAnimation allows you to specify multiple values for a property at different times during the animation. This is useful when you want more complex animations than simple start-to-end transitions.
 
 Example of keyframe animation:
@@ -3681,10 +3681,10 @@ keyframeAnimation.duration = 2.0
 layer.add(keyframeAnimation, forKey: "position")
 ```
 
-## ### Core Animation: Layer hierarchies
+## Core Animation: Layer hierarchies
 Core Animation layers can be arranged in hierarchies, similar to views. Parent layers influence the behavior of child layers, and you can apply animations to entire layer hierarchies.
 
-## ### Core Animation: Transformations
+## Core Animation: Transformations
 You can apply 3D transformations to layers using the `CATransform3D` struct. Core Animation can handle rotations, translations, and scaling in 3D space.
 
 Example of a 3D rotation:
@@ -3693,10 +3693,10 @@ let rotation = CATransform3DMakeRotation(CGFloat.pi, 0, 1, 0)
 layer.transform = rotation
 ```
 
-## ### Core Animation: Core animation on the GPU
+## Core Animation: Core animation on the GPU
 One of the key reasons Core Animation is so performant is that it works closely with the GPU. The layers and animations are rendered on the GPU, freeing up the CPU for other tasks, like handling touch events or business logic.
 
-## ### Core Animation types
+## Core Animation types
 - **CABasicAnimation**: Animates a single property from a start value to an end value.
 
 - **CAKeyframeAnimation**: Animates a property through a series of values (keyframes).
@@ -3705,7 +3705,7 @@ One of the key reasons Core Animation is so performant is that it works closely 
 
 - **CATransition**: Adds transitions between two different states (such as fading or sliding).
 
-## ### Core Animation: Layer masking
+## Core Animation: Layer masking
 You can use one `CALayer` to mask another, allowing you to create complex effects like rounded corners or clipping based on shape.
 
 Example:
@@ -3716,7 +3716,7 @@ maskLayer.contents = yourMaskImage.cgImage
 yourView.layer.mask = maskLayer
 ```
 
-## ### Core Animation: Replicating layers
+## Core Animation: Replicating layers
 `CAReplicatorLayer` creates copies (or "replicas") of a layer, each with a slight transformation. This can be used for effects like repeating patterns, waveforms, or 3D visuals.
 
 Example:
@@ -3727,7 +3727,7 @@ replicatorLayer.instanceTransform = CATransform3DMakeTranslation(30, 0, 0)
 replicatorLayer.addSublayer(yourLayer)
 ```
 
-## ### Core Animation: Emitter layers
+## Core Animation: Emitter layers
 `CAEmitterLayer` is used to create particle systems. You can define the shape, color, speed, and behavior of the particles.
 
 Example:
@@ -3741,7 +3741,7 @@ cell.velocity = 100
 emitterLayer.emitterCells = [cell]
 ```
 
-## ### Core Animation: Delegates
+## Core Animation: Delegates
 Core Animation allows you to set delegates for animations. This is useful when you need to execute code at certain points during an animation (such as when it starts or finishes).
 
 Example:
@@ -3752,12 +3752,12 @@ func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
 }
 ```
 
-## ### Core Animation: Performance considerations
+## Core Animation: Performance considerations
 - **Offscreen rendering**: Be cautious with operations like shadows and masking, as they may trigger offscreen rendering, which can impact performance. Always profile using instruments like the Core Animation Instrument to avoid bottlenecks.
 
 - **Reduce overdraw**: Ensure that layers do not overlap unnecessarily or have transparency where it's not needed, as overdraw can lead to degraded performance.
 
-## ### Core Animation: Practical use cases
+## Core Animation: Practical use cases
 - **Custom UI effects**: Create custom button animations, splash screens or interactive transitions between views.
 
 - **Data visualizations**: Animate charts, graphs, or progress indicators smoothly.
@@ -3766,7 +3766,7 @@ func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
 
 - **Real-time feedback**: Provide feedback like shaking or bouncing effects for interactive elements like text fields or buttons.
 
-## ### AVFoundation
+## AVFoundation
 AVFoundation is a comprehensive framework provided by Apple that enables developers to work with time-based audiovisual media in iOS, macOS, tvOS, and watchOS. It offers powerful tools for capturing, processing, editing, playing, and exporting audio and video content. AVFoundation provides low-level access to media data, making it an essential framework for apps that require complex media handling like camera control, video editing, or custom audio processing.
 
 ### Key features of AVFoundation
@@ -3789,7 +3789,7 @@ AVFoundation is a comprehensive framework provided by Apple that enables develop
 6. Audio processing:
 - Advanced control over audio output, including mixing, recording, and applying audio effects.
 
-## ### AVFoundation: `AVPlayer` and `AVPlayerLayer`
+## AVFoundation: `AVPlayer` and `AVPlayerLayer`
 - `AVPlayer` is used to play audio or video files and streams.
 - `AVPlayerLayer` can display video content in a view by adding it to a layer.
 - You can control playback (play, pause, seek) and manage playback state (e.g., buffering, end of playback).
@@ -3808,7 +3808,7 @@ view.layer.addSublayer(playerLayer)
 player.play()
 ```
 
-## ### AVFoundation: AVCaptureSession and Media Capture
+## AVFoundation: AVCaptureSession and Media Capture
 - `AVCaptureSession` is used to configure real-time capture from the camera or microphone. You configure it by adding input devices (camera or mic) and output (such as a file or preview layer).
 - `AVCaptureDevice` represents the physical camera or microphone.
 - `AVCaptureVideoPreviewLayer` allows you to display a live camera feed in a view.
@@ -3829,7 +3829,7 @@ view.layer.addSublayer(previewLayer)
 captureSession.startRunning()
 ```
 
-## ### AVFoundation: AVComposition and Media Editing
+## AVFoundation: AVComposition and Media Editing
 - `AVComposition` allows you to create a timeline-based audiovisual composition by combining different media tracks (audio, video).
 - `AVMutableComposition` is its mutable counterpart, used to edit and add tracks.
 - You can apply time-based edits, such as trimming, merging, or applying audio tracks, subtitles, or transitions.
@@ -3857,7 +3857,7 @@ try videoTrack?.insertTimeRange(CMTimeRange(start: .zero, duration: secondVideoA
 // You can then export this composition
 ```
 
-## ### AVFoundation: AVAssetExportSession
+## AVFoundation: AVAssetExportSession
 `AVAssetExportSession` is used to export or transcode media. You can specify output file types, preset qualities (like 1080p or 720p), and apply compression.
 
 Example: Exporting a video
@@ -3879,7 +3879,7 @@ exportSession?.exportAsynchronously {
 }
 ```
 
-## ### AVFoundation: Metadata Management
+## AVFoundation: Metadata Management
 You can retrieve and modify metadata from media files, like artist names, album titles, or video captions, using `AVMetadataItem`.
 
 Example: Reading metadata from an asset
@@ -3893,7 +3893,7 @@ for item in metadata {
 }
 ```
 
-## ### AVFoundation: Audio Processing
+## AVFoundation: Audio Processing
 - AVFoundation also offers advanced audio manipulation with `AVAudioEngine` and `AVAudioPlayer`.
 - `AVAudioEngine` allows developers to create real-time audio graphs, apply effects, and manage audio inputs/outputs.
 - `AVAudioPlayer` is a simple API for playing audio files, controlling playback, and handling audio events.
@@ -3904,12 +3904,12 @@ let player = try AVAudioPlayer(contentsOf: audioURL)
 player.play()
 ```
 
-## ### AVFoundation: Time-based media operations
+## AVFoundation: Time-based media operations
 - AVFoundation provides control over time-based operations such as seeking, trimming, and synchronizing media tracks.
 
 - You can work with `CMTime`, `CMTimeRange` and `CMTimeMapping` to handle time-based operations.
 
-## ### AVFoundation: Real-time video effects
+## AVFoundation: Real-time video effects
 By using the media capture capabilities (`AVCaptureVideoDataOutput`), you can capture frames from the camera in real-time, process them (e.g., apply filters or effects), and render the processed frames back to the screen.
 
 Example: Adding a filter to a live camera feed
@@ -3936,7 +3936,7 @@ func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBu
 }
 ```
 
-## ### Best practices for AVFoundation
+## Best practices for AVFoundation
 - **Handle memory efficiently**:
 Use appropriate configurations for capture sessions (e.g., reducing resolution or frame rate) to avoid overloading memory or processing capacity.
 

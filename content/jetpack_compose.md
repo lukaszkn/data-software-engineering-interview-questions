@@ -1,19 +1,19 @@
 # Jetpack Compose
 Basics
 
-* [### What is Jetpack Compose?](#What-is-Jetpack-Compose)
-* [### What is `@Composable`?](#What-is-Composable)
-* [### Calling composable functions](#Calling-composable-functions)
-* [### A `@Composable` function in a basic app](#A-Composable-function-in-a-basic-app)
-* [### Modifiers: Chaining](#Modifiers-Chaining)
-* [### Modifiers: Layout control](#Modifiers-Layout-control)
-* [### Modifiers: Appearance customization](#Modifiers-Appearance-customization)
-* [### Modifiers: Interaction handling](#Modifiers-Interaction-handling)
-* [### Modifiers: Alignment and arrangement](#Modifiers-Alignment-and-arrangement)
-* [### Modifiers: State-based modifications](#Modifiers-State-based-modifications)
-* [### Common modifiers](#Common-modifiers)
+* [What is Jetpack Compose?](#What-is-Jetpack-Compose)
+* [What is `@Composable`?](#What-is-Composable)
+* [Calling composable functions](#Calling-composable-functions)
+* [A `@Composable` function in a basic app](#A-Composable-function-in-a-basic-app)
+* [Modifiers: Chaining](#Modifiers-Chaining)
+* [Modifiers: Layout control](#Modifiers-Layout-control)
+* [Modifiers: Appearance customization](#Modifiers-Appearance-customization)
+* [Modifiers: Interaction handling](#Modifiers-Interaction-handling)
+* [Modifiers: Alignment and arrangement](#Modifiers-Alignment-and-arrangement)
+* [Modifiers: State-based modifications](#Modifiers-State-based-modifications)
+* [Common modifiers](#Common-modifiers)
 
-## ### What is Jetpack Compose?
+## What is Jetpack Compose?
 Jetpack Compose is a modern toolkit for building native Android user interfaces (UIs) using a declarative programming approach. Developed by Google, it simplifies UI development by allowing developers to describe the UI in code, which then updates automatically in response to changes in the application state.
 
 ### Key features of Jetpack Compose:
@@ -36,7 +36,7 @@ Jetpack Compose is a modern toolkit for building native Android user interfaces 
 
 - **Composable UIs**: With composables, it's easy to break down UIs into modular, reusable components.
 
-## ### What is `@Composable`?
+## What is `@Composable`?
 The `@Composable` annotation is used to mark a function as composable, meaning it is part of the declarative UI system provided by Jetpack Compose. Functions annotated with `@Composable` can define and build the UI elements in a Compose application.
 
 The @Composable annotation allows you to create UIs in a declarative manner. Rather than manually updating the UI when data changes, you define what the UI should look like based on the current state, and Compose handles updating the UI automatically.
@@ -48,7 +48,7 @@ fun Greeting(name: String) {
 ```
 In this example, Greeting is a composable function that creates a Text element, displaying a greeting message.
 
-## ### Calling composable functions
+## Calling composable functions
 A composable function can only be called from another composable function. This means you can't call a `@Composable` function from a normal Kotlin function, but inside a composable, you can call other composables.
 ```kotlin
 @Composable
@@ -60,7 +60,7 @@ fun MyScreen() {
 }
 ```
 
-## ### A `@Composable` function in a basic app
+## A `@Composable` function in a basic app
 Here’s how you’d use a `@Composable` function in a basic app:
 
 ```kotlin
@@ -88,7 +88,7 @@ In this example:
 - `MyApp` composes two `Greeting` composables.
 - The `@Preview` annotation allows you to preview the UI in Android Studio.
 
-## ### Modifiers: Chaining
+## Modifiers: Chaining
 Modifiers can be combined or "chained" together to apply multiple modifications to a single composable element. The order in which modifiers are applied matters because it determines how each modification is interpreted.
 ```kotlin
 @Composable
@@ -107,7 +107,7 @@ In this example:
 - It is then given a yellow background.
 - Lastly, the size is set to 200dp.
 
-## ### Modifiers: Layout control
+## Modifiers: Layout control
 Modifiers can control how a composable is laid out within its parent, such as specifying width, height, padding, margins, or alignment.
 
 ```kotlin
@@ -124,7 +124,7 @@ fun LayoutExample() {
 ```
 Here, the `Box` will have a size of 100dp and will be padded by 8dp from its edges.
 
-## ### Modifiers: Appearance customization
+## Modifiers: Appearance customization
 Modifiers can change the visual appearance of a composable, such as setting the background color, borders, or elevation (for shadows).
 
 ```kotlin
@@ -140,7 +140,7 @@ fun StyledText() {
 }
 ```
 
-## ### Modifiers: Interaction handling
+## Modifiers: Interaction handling
 You can use modifiers to add click listeners, gestures, or other interactions to a composable.
 
 ```kotlin
@@ -155,7 +155,7 @@ fun ClickableText() {
 }
 ```
 
-## ### Modifiers: Alignment and arrangement
+## Modifiers: Alignment and arrangement
 Modifiers are useful for aligning composables within layouts, like aligning items within rows or columns.
 
 ```kotlin
@@ -170,7 +170,7 @@ fun AlignedRow() {
 }
 ```
 
-## ### Modifiers: State-based modifications
+## Modifiers: State-based modifications
 You can conditionally apply modifiers based on certain states, for example, changing the background color when a button is clicked or hovered.
 ```kotlin
 @Composable
@@ -183,7 +183,7 @@ fun ColorChangingBox(isClicked: Boolean) {
 }
 ```
 
-## ### Common modifiers
+## Common modifiers
 - `padding()` Adds padding around a composable.
 ```kotlin
 Modifier.padding(16.dp)

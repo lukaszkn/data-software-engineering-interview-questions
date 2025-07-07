@@ -1,21 +1,21 @@
 # Python How-To
 How-to's
 
-* [### How to reverse binary file?](#How-to-reverse-binary-file)
-* [### Convert string of space separated integers to list of integers](#Convert-string-of-space-separated-integers-to-list-of-integers)
-* [### How to install packages with `pip` and `requirements.txt`](#How-to-install-packages-with-pip-and-requirements-txt)
-* [### Creating a `requirements.txt` file using `pip`](#Creating-a-requirements-txt-file-using-pip)
-* [### How to pad a number?](#How-to-pad-a-number)
-* [### How to get the lowercase English alphabet?](#How-to-get-the-lowercase-English-alphabet)
-* [### How to compute the Cartesian product of two lists?](#How-to-compute-the-Cartesian-product-of-two-lists)
-* [### How to count the occurrences of item in the list?](#How-to-count-the-occurrences-of-item-in-the-list)
-* [### How to make permutations of items of elements?](#How-to-make-permutations-of-items-of-elements)
-* [### How to convert the timestamp to a `datetime` object?](#How-to-convert-the-timestamp-to-a-datetime-object)
+* [How to reverse binary file?](#How-to-reverse-binary-file)
+* [Convert string of space separated integers to list of integers](#Convert-string-of-space-separated-integers-to-list-of-integers)
+* [How to install packages with `pip` and `requirements.txt`](#How-to-install-packages-with-pip-and-requirements-txt)
+* [Creating a `requirements.txt` file using `pip`](#Creating-a-requirements-txt-file-using-pip)
+* [How to pad a number?](#How-to-pad-a-number)
+* [How to get the lowercase English alphabet?](#How-to-get-the-lowercase-English-alphabet)
+* [How to compute the Cartesian product of two lists?](#How-to-compute-the-Cartesian-product-of-two-lists)
+* [How to count the occurrences of item in the list?](#How-to-count-the-occurrences-of-item-in-the-list)
+* [How to make permutations of items of elements?](#How-to-make-permutations-of-items-of-elements)
+* [How to convert the timestamp to a `datetime` object?](#How-to-convert-the-timestamp-to-a-datetime-object)
 * [Decorator function time_decorator which has to calculate decorated function execution time](#Decorator-function-time-decorator-which-has-to-calculate-decorated-function-execution-time)
-* [### Descriptor which don't allow to set price](#Descriptor-which-don-t-allow-to-set-price)
-* [### Descriptor which don't allow to change field value after initialization](#Descriptor-which-don-t-allow-to-change-field-value-after-initialization)
+* [Descriptor which don't allow to set price](#Descriptor-which-don-t-allow-to-set-price)
+* [Descriptor which don't allow to change field value after initialization](#Descriptor-which-don-t-allow-to-change-field-value-after-initialization)
 
-## ### How to reverse binary file?
+## How to reverse binary file?
 To reverse the contents of a binary file in Python, you can read the file into memory, reverse the bytes, and then write the reversed bytes back to a file. Here's a step-by-step guide on how to do that:
 
 1. Read the binary file into memory.
@@ -50,13 +50,13 @@ If `example.bin` contains `b'\x01\x02\x03\x04'`, after running the script, `reve
 
 This approach reads the entire file into memory, so it's suitable for relatively small files. If the file is very large, you might want to handle it in chunks, but that complicates the reversal process.
 
-## ### Convert string of space separated integers to list of integers
+## Convert string of space separated integers to list of integers
 Here's example using `map`
 ```
 integer_list = map(int, input().split())
 ```
 
-## ### How to install packages with `pip` and `requirements.txt`
+## How to install packages with `pip` and `requirements.txt`
 To install all the packages listed in a requirements.txt file, use:
 
 ```bash
@@ -64,7 +64,7 @@ pip install -r requirements.txt
 ```
 This will install each package listed in the file with the specified version (if provided).
 
-## ### Creating a `requirements.txt` file using `pip`
+## Creating a `requirements.txt` file using `pip`
 To generate a `requirements.txt` file that includes all currently installed packages, use the following command:
 
 ```bash
@@ -72,7 +72,7 @@ pip freeze > requirements.txt
 ```
 This command writes the list of installed packages and their versions to requirements.txt.
 
-## ### How to pad a number?
+## How to pad a number?
 To pad a number in Python, you can use different methods, depending on the format you need. Below are a few common ways:
 
 ### 1. Using `zfill()` for zero-padding
@@ -119,7 +119,7 @@ print(padded_num)  # Output: 00042
 
 You can adjust the padding width and the padding character based on your requirements.
 
-## ### How to get the lowercase English alphabet?
+## How to get the lowercase English alphabet?
 In Python, you can get the lowercase English alphabet using the `string` module, which provides a convenient way to access alphabet-related constants.
 
 Here’s how you can do it:
@@ -139,7 +139,7 @@ abcdefghijklmnopqrstuvwxyz
 ### Explanation:
 `string.ascii_lowercase`: This is a string containing all lowercase letters from a to z.
 
-## ### How to compute the Cartesian product of two lists?
+## How to compute the Cartesian product of two lists?
 You can use `itertools.product()` to compute the Cartesian product of two lists. The function generates all combinations of elements from the two input iterables. Each combination is returned as a tuple.
 
 ### Steps:
@@ -171,7 +171,7 @@ print(*cartesian_product)
 
 - `print(*cartesian_product)` Prints the result in the required format, where the * unpacks the tuples and separates them by spaces.
 
-## ### How to count the occurrences of item in the list?
+## How to count the occurrences of item in the list?
 ### Using `collections.Counter`
 The `Counter` class from the `collections` module provides a convenient way to count occurrences of items in a list.
 
@@ -187,7 +187,7 @@ counts = Counter(my_list)
 print("Occurrences:", counts)  # Output: Counter({1: 3, 2: 2, 3: 1})
 ```
 
-## ### How to make permutations of items of elements?
+## How to make permutations of items of elements?
 To generate permutations of elements in Python, you can use the `itertools.permutations()` function. This function generates all possible ordered arrangements (permutations) of elements from a given iterable (e.g., a list or string).
 
 ### Syntax:
@@ -281,7 +281,7 @@ Summary
 - `itertools.permutations()` generates all possible ordered combinations of the elements in an iterable.
 - By default, it generates permutations of the same length as the iterable, but you can specify a different length `r`.
 
-## ### How to convert the timestamp to a `datetime` object?
+## How to convert the timestamp to a `datetime` object?
 To convert a timestamp string to a `datetime` object in Python, you can use the strptime() function from the datetime module. The `strptime()` function parses a string representing a date and time according to a specified format and returns a `datetime` object.
 
 Here's how to convert a timestamp to a datetime object:
@@ -366,7 +366,7 @@ print(func_add(10, 20))  # Output: 30
 print(execution_time['func_add'])  # Output: ~0.2 (exact time may vary)
 ```
 
-## ### Descriptor which don't allow to set price
+## Descriptor which don't allow to set price
 ```python
 class PriceControl:
 
@@ -386,7 +386,7 @@ class PriceControl:
         instance._price = value
 ```
 
-## ### Descriptor which don't allow to change field value after initialization
+## Descriptor which don't allow to change field value after initialization
 ```python
 class NameControl:
 

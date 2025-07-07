@@ -1,17 +1,17 @@
 # Machine learning
 Basic concepts
 
-* [### What is machine learning?](#What-is-machine-learning)
-* [### Types of machine learning](#Types-of-machine-learning)
-* [### Applications of machine learning](#Applications-of-machine-learning)
-* [### What is entropy in PPO?](#What-is-entropy-in-PPO)
-* [### What is `vf_explained_var`?](#What-is-vf-explained-var)
-* [### Interpreting `vf_explained_var`](#Interpreting-vf-explained-var)
-* [### `vf_explained_var`: Importance in reinforcement learning](#vf-explained-var-Importance-in-reinforcement-learning)
-* [### What are sparse rewards?](#What-are-sparse-rewards)
-* [### What are dense rewards?](#What-are-dense-rewards)
+* [What is machine learning?](#What-is-machine-learning)
+* [Types of machine learning](#Types-of-machine-learning)
+* [Applications of machine learning](#Applications-of-machine-learning)
+* [What is entropy in PPO?](#What-is-entropy-in-PPO)
+* [What is `vf_explained_var`?](#What-is-vf-explained-var)
+* [Interpreting `vf_explained_var`](#Interpreting-vf-explained-var)
+* [`vf_explained_var`: Importance in reinforcement learning](#vf-explained-var-Importance-in-reinforcement-learning)
+* [What are sparse rewards?](#What-are-sparse-rewards)
+* [What are dense rewards?](#What-are-dense-rewards)
 
-## ### What is machine learning?
+## What is machine learning?
 Machine learning (ML) is a branch of artificial intelligence (AI) that focuses on building systems that can learn from data, identify patterns, and make decisions with minimal human intervention. In essence, instead of being explicitly programmed to perform specific tasks, machine learning models use algorithms to analyze data, learn from it, and make predictions or decisions based on new data.
 
 ### Key concepts in machine learning
@@ -31,7 +31,7 @@ Machine learning (ML) is a branch of artificial intelligence (AI) that focuses o
   - **Overfitting**: When a model learns the training data too well, including noise and irrelevant details, it may not generalize well to new data.
   - **Underfitting**: When a model is too simple and does not capture the underlying patterns in the data, leading to poor performance.
 
-## ### Types of machine learning
+## Types of machine learning
 1. **Supervised learning**:
 - In supervised learning, the model is trained on a labeled dataset, meaning the input data comes with known output labels.
 
@@ -59,7 +59,7 @@ Machine learning (ML) is a branch of artificial intelligence (AI) that focuses o
 5. **Self-Supervised learning**:
 - This is a form of unsupervised learning where the system generates its own labels from the input data. It’s commonly used in natural language processing and computer vision.
 
-## ### Applications of machine learning
+## Applications of machine learning
 - **Natural Language Processing (NLP)**: Chatbots, language translation, sentiment analysis and text summarization.
 
 - **Computer vision**: Image recognition, object detection, facial recognition and autonomous vehicles.
@@ -72,7 +72,7 @@ Machine learning (ML) is a branch of artificial intelligence (AI) that focuses o
 
 Machine learning is a powerful tool that enables computers to learn from data and improve their performance over time without being explicitly programmed for specific tasks. It is at the heart of many modern AI applications, driving advancements in fields ranging from healthcare to autonomous systems.
 
-## ### What is entropy in PPO?
+## What is entropy in PPO?
 In the context of PPO (and other policy gradient methods), entropy is a measure of randomness in the action distribution produced by the policy. In simpler terms, it quantifies how "uncertain" or "random" the policy is about which action to take. If a policy is highly uncertain and assigns roughly equal probabilities to many actions, its entropy is high. Conversely, if it is very confident and assigns a high probability to a specific action, its entropy is low.
 
 ### Should entropy be low?
@@ -93,7 +93,7 @@ The level of entropy in PPO should be managed carefully:
 ### Conclusion
 Entropy should not be uniformly low throughout training. Instead, it should start relatively high and decrease over time as the policy becomes more confident. Properly managing entropy is crucial for balancing exploration and exploitation, ensuring that the agent learns an effective policy without getting stuck in local optima.
 
-## ### What is `vf_explained_var`?
+## What is `vf_explained_var`?
 The term `vf_explained_var` stands for "value function explained variance" and is a metric used to evaluate the performance of the value function in reinforcement learning algorithms, including those like PPO (Proximal Policy Optimization).
 
 ### Understanding `vf_explained_var`
@@ -101,14 +101,14 @@ In reinforcement learning, the value function estimates the expected return (cum
 
 - **Explained variance**: Explained variance is a statistical measure used to assess how much of the variance in a dependent variable (in this case, the actual returns) can be explained by the independent variable (the predicted values from the value function). It essentially measures the proportion of the variation in the data that is captured by the model.
 
-## ### Interpreting `vf_explained_var`
+## Interpreting `vf_explained_var`
 - **1 (or close to 1)**: Indicates that the value function's predictions explain nearly all the variance in the actual returns. This means the value function is highly accurate.
 
 - **0**: Indicates that the value function's predictions do not explain any of the variance in the actual returns, meaning it has no predictive power.
 
 - **Negative values**: Indicate that the value function's predictions are worse than simply predicting the mean of the returns, which suggests that the value function is performing poorly.
 
-## ### `vf_explained_var`: Importance in reinforcement learning
+## `vf_explained_var`: Importance in reinforcement learning
 In reinforcement learning, `vf_explained_var` is useful for diagnosing how well the value function is being learned:
 
 - **High `vf_explained_var`**: Suggests that the value function is capturing the underlying structure of the returns well, and thus, the learning process is progressing effectively.
@@ -118,7 +118,7 @@ In reinforcement learning, `vf_explained_var` is useful for diagnosing how well 
 ### Conclusion
 `vf_explained_var` is a critical diagnostic tool in reinforcement learning that helps you understand how well your value function is performing. It gives you insight into how much of the variance in the returns your value function is capturing, helping you assess and improve the learning process.
 
-## ### What are sparse rewards?
+## What are sparse rewards?
 Sparse rewards refer to a situation in reinforcement learning (RL) where the agent receives feedback (rewards or penalties) only rarely or after a long sequence of actions, rather than continuously or frequently throughout its interactions with the environment.
 
 In a sparse reward environment, the agent has to figure out which of its actions (sometimes far in the past) contributed to achieving a reward. This makes learning significantly more challenging because:
@@ -157,7 +157,7 @@ To address the difficulties of sparse rewards, several strategies can be employe
 ### Conclusion
 Sparse rewards create significant challenges in reinforcement learning because they make it difficult for the agent to learn which actions are beneficial. However, with techniques like reward shaping, intrinsic motivation, and hierarchical learning, it is possible to make progress in these difficult environments.
 
-## ### What are dense rewards?
+## What are dense rewards?
 Dense rewards refer to a situation in reinforcement learning (RL) where the agent receives frequent and continuous feedback (rewards or penalties) from the environment as it interacts with it. Unlike sparse rewards, where rewards are infrequent or delayed, dense rewards provide the agent with more immediate information about the value of its actions.
 
 In a dense reward setting, the agent gets rewarded or penalized for almost every action or step it takes, allowing it to learn more quickly from the environment because the feedback is more consistent and informative.

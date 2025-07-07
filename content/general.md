@@ -1,33 +1,33 @@
 # General
 General programming concepts, design patterns
 
-* [### What is delegation?](#What-is-delegation)
-* [### How delegation works?](#How-delegation-works)
-* [### What are benefits of delegation?](#What-are-benefits-of-delegation)
-* [### What are SOLID principles?](#What-are-SOLID-principles)
-* [### What is dependency injection?](#What-is-dependency-injection)
-* [### Types of dependency injection](#Types-of-dependency-injection)
-* [### Benefits of dependency injection](#Benefits-of-dependency-injection)
-* [### Dependency Injection in Swift](#Dependency-Injection-in-Swift)
-* [### What is MVVM?](#What-is-MVVM)
-* [### Components of MVVM: Model](#Components-of-MVVM-Model)
-* [### Components of MVVM: View](#Components-of-MVVM-View)
-* [### Components of MVVM: ViewModel](#Components-of-MVVM-ViewModel)
-* [### How MVVM works together](#How-MVVM-works-together)
-* [### MVVM example flow](#MVVM-example-flow)
-* [### Benefits of MVVM](#Benefits-of-MVVM)
-* [## What are top 5 interview data structures?](#What-are-top-5-interview-data-structures)
-* [## What are top 5 interview algorithms?](#What-are-top-5-interview-algorithms)
-* [### What is Gerrit?](#What-is-Gerrit)
-* [### What are most popular CI/CD tools?](#What-are-most-popular-CI-CD-tools)
-* [### What is Docker?](#What-is-Docker)
-* [### What is Apache Spark?](#What-is-Apache-Spark)
-* [### What is Apache Kafka?](#What-is-Apache-Kafka)
-* [### What is Terraform?](#What-is-Terraform)
-* [### What is GraphQL?](#What-is-GraphQL)
-* [### Best practices for dependencies versioning in own libraries](#Best-practices-for-dependencies-versioning-in-own-libraries)
+* [What is delegation?](#What-is-delegation)
+* [How delegation works?](#How-delegation-works)
+* [What are benefits of delegation?](#What-are-benefits-of-delegation)
+* [What are SOLID principles?](#What-are-SOLID-principles)
+* [What is dependency injection?](#What-is-dependency-injection)
+* [Types of dependency injection](#Types-of-dependency-injection)
+* [Benefits of dependency injection](#Benefits-of-dependency-injection)
+* [Dependency Injection in Swift](#Dependency-Injection-in-Swift)
+* [What is MVVM?](#What-is-MVVM)
+* [Components of MVVM: Model](#Components-of-MVVM-Model)
+* [Components of MVVM: View](#Components-of-MVVM-View)
+* [Components of MVVM: ViewModel](#Components-of-MVVM-ViewModel)
+* [How MVVM works together](#How-MVVM-works-together)
+* [MVVM example flow](#MVVM-example-flow)
+* [Benefits of MVVM](#Benefits-of-MVVM)
+* [What are top 5 interview data structures?](#What-are-top-5-interview-data-structures)
+* [What are top 5 interview algorithms?](#What-are-top-5-interview-algorithms)
+* [What is Gerrit?](#What-is-Gerrit)
+* [What are most popular CI/CD tools?](#What-are-most-popular-CI-CD-tools)
+* [What is Docker?](#What-is-Docker)
+* [What is Apache Spark?](#What-is-Apache-Spark)
+* [What is Apache Kafka?](#What-is-Apache-Kafka)
+* [What is Terraform?](#What-is-Terraform)
+* [What is GraphQL?](#What-is-GraphQL)
+* [Best practices for dependencies versioning in own libraries](#Best-practices-for-dependencies-versioning-in-own-libraries)
 
-## ### What is delegation?
+## What is delegation?
 Delegation is a design pattern in many programming languages that allows one object to hand off (or delegate) responsibility for a specific task to another object. This pattern is commonly used to customize or alter the behavior of objects in a decoupled and reusable way.
 
 ### Key concepts of delegation
@@ -37,7 +37,7 @@ Delegation is a design pattern in many programming languages that allows one obj
 
 - **Protocol**: A protocol is used to define the methods and properties that the delegate must implement. This ensures that the delegate has the required methods for handling the delegated tasks.
 
-## ### How delegation works?
+## How delegation works?
 1. **Define a protocol**: Create a protocol that defines the responsibilities or tasks that need to be delegated. The delegate object will conform to this protocol.
 
 2. **Create a delegate property**: In the delegating object, create a property that holds a reference to the delegate. This property is typically declared as optional to allow the delegating object to work even if no delegate is assigned.
@@ -46,14 +46,14 @@ Delegation is a design pattern in many programming languages that allows one obj
 
 4. **Delegate the tasks**: The delegating object calls the delegate's methods when needed, passing the responsibility to the delegate.
 
-## ### What are benefits of delegation?
+## What are benefits of delegation?
 - **Separation of concerns**: Delegation allows you to separate responsibilities between different objects, making your code more modular and easier to manage.
 
 - **Reusability**: The delegating object can be reused with different delegate objects, each providing different behavior.
 
 - **Customizability**: The delegate can customize the behavior of the delegating object without subclassing or modifying its code.
 
-## ### What are SOLID principles?
+## What are SOLID principles?
 - **Single-responsibility**: There should never be more than one reason for a class to change. In other words, every class should have only one responsibility.
 
 - **Open–closed**: Software entities should be open for extension but closed for modification.
@@ -64,7 +64,7 @@ Delegation is a design pattern in many programming languages that allows one obj
 
 - **Dependency inversion**: Depend upon abstractions, not concretes.
 
-## ### What is dependency injection?
+## What is dependency injection?
 Dependency injection (DI) is a design pattern used in software development to achieve Inversion of Control (IoC) between a class and its dependencies. In simpler terms, dependency injection allows an object to receive its dependencies from an external source rather than creating them itself. This pattern promotes loose coupling between components, making the code more modular, testable, and easier to maintain.
 
 ### Key concepts of dependency injection
@@ -74,7 +74,7 @@ Dependency injection (DI) is a design pattern used in software development to ac
 
 - **Inversion of Control (IoC)**: IoC is a principle where the control of creating and managing dependencies is inverted from the class to an external source. Dependency injection is one way to achieve IoC.
 
-## ### Types of dependency injection
+## Types of dependency injection
 There are several ways to inject dependencies into a class:
 
 - **Constructor injection**: Dependencies are provided through the class constructor.
@@ -133,7 +133,7 @@ class Car: EngineInjectable {
 }
 ```
 
-## ### Benefits of dependency injection
+## Benefits of dependency injection
 - **Loose coupling**: Classes are less dependent on specific implementations of their dependencies, making them easier to change or 
 replace.
 
@@ -143,7 +143,7 @@ replace.
 
 - **Flexibility**: Dependencies can be configured externally, making it easier to manage complex dependencies and configurations.
 
-## ### Dependency Injection in Swift
+## Dependency Injection in Swift
 In Swift, dependency injection is commonly used in scenarios like:
 - **Network requests**: Injecting different network clients or mock clients.
 - **View controllers**: Injecting view models or services into view controllers.
@@ -176,7 +176,7 @@ In this example:
 - `NetworkService` is a dependency of `ViewModel`.
 - The `ViewModel` doesn't create the `NetworkService` itself. Instead, it receives it from the outside, which is dependency injection.
 
-## ### What is MVVM?
+## What is MVVM?
 MVVM (Model-View-ViewModel) is a design pattern used in software development, particularly in the context of building user interfaces. It’s a way of organizing code that separates concerns, making it easier to manage, maintain, and test an application's codebase. MVVM is especially popular in frameworks like SwiftUI, WPF (Windows Presentation Foundation), and others that emphasize data binding.
 
 ### Components of MVVM
@@ -188,7 +188,7 @@ MVVM (Model-View-ViewModel) is a design pattern used in software development, pa
 
 MVVM is a powerful design pattern that helps structure your code in a way that makes it more maintainable, testable, and scalable. By separating the concerns of data management, business logic, and UI, MVVM allows developers to focus on different aspects of the application independently, leading to cleaner and more efficient codebases. SwiftUI's declarative nature and support for data binding make it a natural fit for implementing the MVVM pattern.
 
-## ### Components of MVVM: Model
+## Components of MVVM: Model
 - The `Model` represents the data and business logic of the application. It includes the data structures, network requests, database management, and any rules or logic that pertain to the data.
 
 - In simple terms, the `Model` defines the structure of the data your application works with and the operations you can perform on that data.
@@ -201,7 +201,7 @@ struct User {
 }
 ```
 
-## ### Components of MVVM: View
+## Components of MVVM: View
 - The `View` is the user interface of the application. It displays the data provided by the `ViewModel` and handles user interactions like taps and gestures.
 
 - The `View` should be as simple as possible, focusing on presentation and delegating all logic to the `ViewModel`.
@@ -224,7 +224,7 @@ struct UserView: View {
 }
 ```
 
-## ### Components of MVVM: ViewModel
+## Components of MVVM: ViewModel
 - The `ViewModel` serves as an intermediary between the `Model` and the `View`. It holds the logic for transforming the data from the `Model` into a format that the `View` can easily display.
 
 - The `ViewModel` also handles user input and updates the `Model` or performs actions accordingly.
@@ -248,14 +248,14 @@ class UserViewModel: ObservableObject {
 }
 ```
 
-## ### How MVVM works together
+## How MVVM works together
 - **Model**: The `Model` layer doesn't know anything about the `View` or `ViewModel`. It's pure data and business logic.
 
 - **ViewModel**: The `ViewModel` interacts with the `Model` to retrieve or manipulate data. It doesn't directly interact with the `View` but instead exposes data through properties that the `View` observes.
 
 - **View**: The `View` observes the `ViewModel` for any changes. When the `ViewModel` updates its properties, the `View` automatically updates the UI to reflect these changes. The `View` also sends user interactions (like button taps) to the `ViewModel`.
 
-## ### MVVM example flow
+## MVVM example flow
 - **Data fetching**: A user presses a "Load Data" button in the `View`. This action is passed to the `ViewModel`.
 
 - **Data processing**: The `ViewModel` then asks the `Model` to fetch the data. The `Model` might perform a network request or access a database.
@@ -264,7 +264,7 @@ class UserViewModel: ObservableObject {
 
 - **UI update**: The `View` observes the changes in the `ViewModel`'s properties and updates the user interface accordingly.
 
-## ### Benefits of MVVM
+## Benefits of MVVM
 - **Separation of concerns**: By separating the UI (View) from the business logic (ViewModel) and data (Model), you make the code more modular and easier to manage.
 
 - **Testability**: The `ViewModel` is independent of the `View`, making it easier to test. You can write unit tests for the `ViewModel` without needing to test the UI.
@@ -273,21 +273,21 @@ class UserViewModel: ObservableObject {
 
 - **Data binding**: Especially in frameworks like SwiftUI, data binding allows the `View` to automatically update when the `ViewModel` changes, reducing boilerplate code.
 
-## ## What are top 5 interview data structures?
+## What are top 5 interview data structures?
 ## 1. Stack
 ## 2. Heap
 ## 3. Graphs
 ## 4. Binary tree
 ## 5. Hash map / set
 
-## ## What are top 5 interview algorithms?
+## What are top 5 interview algorithms?
 ## 1. Top k elements
 ## 2. Dynamic programming
 ## 3. Backtracking
 ## 4. Sliding window
 ## 5. Breadth first search and depth first search
 
-## ### What is Gerrit?
+## What is Gerrit?
 Gerrit is a web-based code review tool that integrates with Git to facilitate collaborative software development. It allows teams to review, discuss, and approve code changes before they are merged into a codebase. Gerrit provides a structured workflow where contributors submit changes (also known as patch sets) for review, and other team members can inspect, comment on, and suggest modifications to the code. It supports features like:
 
 - **Version control integration**: Gerrit works directly with Git, one of the most popular version control systems. Every change is stored in Git as a commit, and the review process is tightly coupled with Git workflows.
@@ -300,7 +300,7 @@ Gerrit is a web-based code review tool that integrates with Git to facilitate co
 
 The primary goal of Gerrit is to improve the quality of the code through peer review, helping to catch bugs, enforce coding standards, and ensure that only high-quality code is integrated into the main project.
 
-## ### What are most popular CI/CD tools?
+## What are most popular CI/CD tools?
 There are several popular Continuous Integration (CI) and Continuous Deployment/Delivery (CD) tools that developers and organizations commonly use to automate testing, building, and deployment of code. Some of the most popular CI/CD tools include:
 
 1. **Jenkins**
@@ -393,7 +393,7 @@ There are several popular Continuous Integration (CI) and Continuous Deployment/
 
 These tools offer a wide range of capabilities, from simple CI/CD pipelines to more complex DevOps workflows, and are widely adopted across various industries and development environments.
 
-## ### What is Docker?
+## What is Docker?
 Docker is an open-source platform that allows developers to automate the deployment, scaling, and management of applications by packaging them in containers. Containers are lightweight, standalone, and executable software packages that include everything needed to run an application: code, libraries, dependencies, and the runtime environment.
 
 ### Key features of Docker:
@@ -418,7 +418,7 @@ Docker is an open-source platform that allows developers to automate the deploym
 
 Docker is widely used in DevOps, microservices architecture, and cloud-based applications due to its flexibility and ability to standardize environments.
 
-## ### What is Apache Spark?
+## What is Apache Spark?
 Apache Spark is an open-source distributed computing system designed for big data processing and analytics. It was developed at UC Berkeley’s AMPLab in 2009 and has since become one of the most popular tools for large-scale data processing. Spark is known for its speed, ease of use, and advanced analytics capabilities such as machine learning and graph processing.
 
 ### Key features of Apache Spark:
@@ -449,7 +449,7 @@ Apache Spark is an open-source distributed computing system designed for big dat
 
 In summary, Apache Spark is a powerful tool for big data processing that excels in performance and flexibility, making it a go-to choice for organizations dealing with large-scale data challenges.
 
-## ### What is Apache Kafka?
+## What is Apache Kafka?
 Apache Kafka is an open-source, distributed event streaming platform primarily used for building real-time data pipelines and streaming applications. Developed by LinkedIn and later open-sourced, Kafka is designed to handle high throughput, fault tolerance, and scalability, making it a popular choice for real-time data processing.
 
 ### Key features of Apache Kafka:
@@ -497,7 +497,7 @@ Apache Kafka is an open-source, distributed event streaming platform primarily u
 
 In summary, Apache Kafka is a powerful, scalable, and fault-tolerant platform designed to handle large volumes of streaming data, making it an essential tool in many modern data infrastructures.
 
-## ### What is Terraform?
+## What is Terraform?
 Terraform is an open-source **infrastructure as code (IaC)** tool created by HashiCorp. It allows users to define, provision, and manage cloud infrastructure in a declarative configuration language called **HashiCorp Configuration Language (HCL)** or JSON. Terraform can manage infrastructure across a wide range of platforms, including public clouds (like AWS, Azure, and Google Cloud), private clouds, and on-premises environments.
 
 ### Key features of Terraform:
@@ -571,7 +571,7 @@ resource "aws_instance" "example" {
 
 In summary, Terraform is a highly flexible and scalable tool that automates the provisioning, management, and orchestration of infrastructure across multiple platforms, using a declarative approach to define and track infrastructure.
 
-## ### What is GraphQL?
+## What is GraphQL?
 GraphQL is a query language for APIs, and a runtime for executing those queries by allowing clients to request only the data they need. It was developed by Facebook in 2012 and released publicly in 2015. GraphQL provides a more flexible and efficient alternative to traditional REST APIs by enabling clients to request specific fields of data from a server, rather than receiving entire data objects or endpoints, which often return excess data.
 
 ### Key features of GraphQL:
@@ -621,7 +621,7 @@ It's often compared to REST, but GraphQL tends to be preferred in applications w
 
 Apollo iOS SDK
 
-## ### Best practices for dependencies versioning in own libraries
+## Best practices for dependencies versioning in own libraries
 When managing versioning for your own libraries (whether they're internal to your organization or open-source), it's important to ensure that your library is easy to adopt, update, and maintain for its consumers. Proper versioning plays a critical role in communicating changes and ensuring backward compatibility. Here are the best practices for versioning your own libraries:
 
 1. Follow semantic versioning strictly

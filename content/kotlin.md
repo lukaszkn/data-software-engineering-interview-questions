@@ -1,80 +1,80 @@
 # Kotlin Basics
 Basic syntax, functions, variables, classes, conditional expressions, loops, ranges, collections, nullable values
 
-* [### Program entry point](#Program-entry-point)
-* [### Package definition and imports](#Package-definition-and-imports)
-* [### Print to the standard output](#Print-to-the-standard-output)
-* [### Read from the standard input](#Read-from-the-standard-input)
-* [### Functions declaration](#Functions-declaration)
-* [### Unit Functions (Functions with no return value)](#Unit-Functions-Functions-with-no-return-value)
-* [### Single-expression functions](#Single-expression-functions)
-* [### Default and named arguments](#Default-and-named-arguments)
-* [### Function with varargs (variable number of arguments)](#Function-with-varargs-variable-number-of-arguments)
-* [### Higher-order functions](#Higher-order-functions)
-* [### Anonymous (lambda) functions](#Anonymous-lambda-functions)
-* [### Extension functions](#Extension-functions)
-* [### Variables﻿](#Variables)
-* [### Type inference](#Type-inference)
-* [### Declaring variables without initialization](#Declaring-variables-without-initialization)
-* [### Nullable variables](#Nullable-variables)
-* [### Constant variables](#Constant-variables)
-* [### Creating classes and instances](#Creating-classes-and-instances)
-* [### Primary constructor](#Primary-constructor)
-* [### Secondary constructor](#Secondary-constructor)
-* [### Initializer block `init`](#Initializer-block-init)
-* [### Properties with custom getters and setters](#Properties-with-custom-getters-and-setters)
-* [### Inheritance](#Inheritance)
-* [### Data classes](#Data-classes)
-* [### Comments﻿](#Comments)
-* [### Best practices for comments](#Best-practices-for-comments)
-* [### String templates](#String-templates)
-* [### Escaping `$` in strings](#Escaping-in-strings)
-* [### Multiline strings with string templates](#Multiline-strings-with-string-templates)
-* [### `if` expression](#if-expression)
-* [### `when` expression](#when-expression)
-* [### `else` and `else if`](#else-and-else-if)
-* [### `for` loop](#for-loop)
-* [### `for` loop: range with step](#for-loop-range-with-step)
-* [### `for` loop: iterating in reverse order](#for-loop-iterating-in-reverse-order)
-* [### Iterating over an array or a list](#Iterating-over-an-array-or-a-list)
-* [### Iterating with indices](#Iterating-with-indices)
-* [### `forEach` loop](#forEach-loop)
-* [### Breaking and continuing in a loop](#Breaking-and-continuing-in-a-loop)
-* [### `while` loop﻿](#while-loop)
-* [### `do-while` loop](#do-while-loop)
-* [### Breaking out of a `while` loop](#Breaking-out-of-a-while-loop)
-* [### Skipping `while` iterations with continue](#Skipping-while-iterations-with-continue)
-* [### Ranges﻿](#Ranges)
-* [### Iterating over a range](#Iterating-over-a-range)
-* [### Checking if a value is in a range](#Checking-if-a-value-is-in-a-range)
-* [### Exclusive ranges (`until`)](#Exclusive-ranges-until)
-* [### Character ranges](#Character-ranges)
-* [### Checking if a range is empty](#Checking-if-a-range-is-empty)
-* [### Progressions](#Progressions)
-* [### Collections﻿](#Collections)
-* [### Collections﻿: List](#Collections-List)
-* [### Collections﻿: Set](#Collections-Set)
-* [### Collections﻿: Map](#Collections-Map)
-* [### Common collection operations](#Common-collection-operations)
-* [### Collection immutability](#Collection-immutability)
-* [### Nullable values](#Nullable-values)
-* [### Null checks: Safe call `?.`](#Null-checks-Safe-call)
-* [### Null checks: Elvis operator `?:`](#Null-checks-Elvis-operator)
-* [### Null checks: Non-null assertion `!!`](#Null-checks-Non-null-assertion)
-* [### Null checks: Safe cast `as?`](#Null-checks-Safe-cast-as)
-* [### Nullability in functions](#Nullability-in-functions)
-* [### Smart casts](#Smart-casts)
-* [### `let` with safe call](#let-with-safe-call)
-* [### Chaining safe calls](#Chaining-safe-calls)
-* [### `takeIf` and `takeUnless`](#takeIf-and-takeUnless)
-* [### Type checking with `is`](#Type-checking-with-is)
-* [### Type casts with `as`](#Type-casts-with-as)
-* [### Smart casts in `when` expressions](#Smart-casts-in-when-expressions)
-* [### Combining type checks with `&&`](#Combining-type-checks-with)
-* [### Smart cast limitations](#Smart-cast-limitations)
-* [### `is` with nullable types](#is-with-nullable-types)
+* [Program entry point](#Program-entry-point)
+* [Package definition and imports](#Package-definition-and-imports)
+* [Print to the standard output](#Print-to-the-standard-output)
+* [Read from the standard input](#Read-from-the-standard-input)
+* [Functions declaration](#Functions-declaration)
+* [Unit Functions (Functions with no return value)](#Unit-Functions-Functions-with-no-return-value)
+* [Single-expression functions](#Single-expression-functions)
+* [Default and named arguments](#Default-and-named-arguments)
+* [Function with varargs (variable number of arguments)](#Function-with-varargs-variable-number-of-arguments)
+* [Higher-order functions](#Higher-order-functions)
+* [Anonymous (lambda) functions](#Anonymous-lambda-functions)
+* [Extension functions](#Extension-functions)
+* [Variables﻿](#Variables)
+* [Type inference](#Type-inference)
+* [Declaring variables without initialization](#Declaring-variables-without-initialization)
+* [Nullable variables](#Nullable-variables)
+* [Constant variables](#Constant-variables)
+* [Creating classes and instances](#Creating-classes-and-instances)
+* [Primary constructor](#Primary-constructor)
+* [Secondary constructor](#Secondary-constructor)
+* [Initializer block `init`](#Initializer-block-init)
+* [Properties with custom getters and setters](#Properties-with-custom-getters-and-setters)
+* [Inheritance](#Inheritance)
+* [Data classes](#Data-classes)
+* [Comments﻿](#Comments)
+* [Best practices for comments](#Best-practices-for-comments)
+* [String templates](#String-templates)
+* [Escaping `$` in strings](#Escaping-in-strings)
+* [Multiline strings with string templates](#Multiline-strings-with-string-templates)
+* [`if` expression](#if-expression)
+* [`when` expression](#when-expression)
+* [`else` and `else if`](#else-and-else-if)
+* [`for` loop](#for-loop)
+* [`for` loop: range with step](#for-loop-range-with-step)
+* [`for` loop: iterating in reverse order](#for-loop-iterating-in-reverse-order)
+* [Iterating over an array or a list](#Iterating-over-an-array-or-a-list)
+* [Iterating with indices](#Iterating-with-indices)
+* [`forEach` loop](#forEach-loop)
+* [Breaking and continuing in a loop](#Breaking-and-continuing-in-a-loop)
+* [`while` loop﻿](#while-loop)
+* [`do-while` loop](#do-while-loop)
+* [Breaking out of a `while` loop](#Breaking-out-of-a-while-loop)
+* [Skipping `while` iterations with continue](#Skipping-while-iterations-with-continue)
+* [Ranges﻿](#Ranges)
+* [Iterating over a range](#Iterating-over-a-range)
+* [Checking if a value is in a range](#Checking-if-a-value-is-in-a-range)
+* [Exclusive ranges (`until`)](#Exclusive-ranges-until)
+* [Character ranges](#Character-ranges)
+* [Checking if a range is empty](#Checking-if-a-range-is-empty)
+* [Progressions](#Progressions)
+* [Collections﻿](#Collections)
+* [Collections﻿: List](#Collections-List)
+* [Collections﻿: Set](#Collections-Set)
+* [Collections﻿: Map](#Collections-Map)
+* [Common collection operations](#Common-collection-operations)
+* [Collection immutability](#Collection-immutability)
+* [Nullable values](#Nullable-values)
+* [Null checks: Safe call `?.`](#Null-checks-Safe-call)
+* [Null checks: Elvis operator `?:`](#Null-checks-Elvis-operator)
+* [Null checks: Non-null assertion `!!`](#Null-checks-Non-null-assertion)
+* [Null checks: Safe cast `as?`](#Null-checks-Safe-cast-as)
+* [Nullability in functions](#Nullability-in-functions)
+* [Smart casts](#Smart-casts)
+* [`let` with safe call](#let-with-safe-call)
+* [Chaining safe calls](#Chaining-safe-calls)
+* [`takeIf` and `takeUnless`](#takeIf-and-takeUnless)
+* [Type checking with `is`](#Type-checking-with-is)
+* [Type casts with `as`](#Type-casts-with-as)
+* [Smart casts in `when` expressions](#Smart-casts-in-when-expressions)
+* [Combining type checks with `&&`](#Combining-type-checks-with)
+* [Smart cast limitations](#Smart-cast-limitations)
+* [`is` with nullable types](#is-with-nullable-types)
 
-## ### Program entry point
+## Program entry point
 In Kotlin, the entry point of a program is the `main` function. Here's a simple example of a program's entry point:
 
 ```kotlin
@@ -92,7 +92,7 @@ fun main(args: Array<String>) {
 ```
 Here, `args` is an array of strings, allowing you to pass and handle command-line arguments.
 
-## ### Package definition and imports
+## Package definition and imports
 The package definition and imports are similar to other languages like Java. The package declaration is optional but recommended, especially in larger projects, to organize code. Imports allow you to bring in external classes or functions from other packages.
 
 ### Package definition
@@ -118,7 +118,7 @@ import kotlin.math.*
 ```
 The `*` is a wildcard that imports all functions or properties from the `kotlin.math` package. Kotlin automatically imports some common packages like `kotlin.*`, `kotlin.io.*` and `kotlin.collections.*`, so you don't need to explicitly import them.
 
-## ### Print to the standard output
+## Print to the standard output
 Printing to the standard output can be done using the `println()` or `print()` functions.
 - `println()` prints the message and adds a newline at the end.
 - `print()` prints the message without adding a newline.
@@ -138,7 +138,7 @@ This is Kotlin. Still printing on the same line.
 ```
 Both `println()` and `print()` are part of Kotlin’s standard library, so there's no need to import anything to use them.
 
-## ### Read from the standard input
+## Read from the standard input
 You can read from the standard input using the `readLine()` function. This function reads a line of input from the user and returns it as a nullable string `String?`. You can also convert or cast the input to other data types as needed.
 
 Example 1: Reading a string from standard input
@@ -168,7 +168,7 @@ Explanation:
 
 For reading other types like floats or doubles, you can use similar conversion methods like `toFloatOrNull()` or `toDoubleOrNull()`.
 
-## ### Functions declaration
+## Functions declaration
 Functions are first-class citizens, meaning you can define, pass, and return them as variables. They can have parameters, return types, default arguments, and even be declared as anonymous (lambda functions). Here’s a breakdown of function usage in Kotlin.
 
 ### Basic function declaration
@@ -189,7 +189,7 @@ fun main() {
 }
 ```
 
-## ### Unit Functions (Functions with no return value)
+## Unit Functions (Functions with no return value)
 The `Unit` type is similar to void in Java, but it can be omitted since it's the default return type when there’s no return value.
 
 ```kotlin
@@ -202,7 +202,7 @@ fun main() {
 }
 ```
 
-## ### Single-expression functions
+## Single-expression functions
 If a function consists of a single expression, you can simplify it by using the `=` operator:
 
 ```kotlin
@@ -213,7 +213,7 @@ fun main() {
 }
 ```
 
-## ### Default and named arguments
+## Default and named arguments
 Kotlin allows you to specify default parameter values. When calling the function, you can either omit the argument (and the default will be used) or specify the argument by name.
 
 ```kotlin
@@ -237,7 +237,7 @@ fun main() {
 }
 ```
 
-## ### Function with varargs (variable number of arguments)
+## Function with varargs (variable number of arguments)
 The vararg keyword allows a function to accept a variable number of arguments.
 
 ```kotlin
@@ -252,7 +252,7 @@ fun main() {
 }
 ```
 
-## ### Higher-order functions
+## Higher-order functions
 Kotlin supports higher-order functions, meaning you can pass functions as arguments or return them from other functions.
 
 Example of passing a function as a parameter:
@@ -268,7 +268,7 @@ fun main() {
 ```
 In this example, `operate` takes another function operation as a parameter and applies it to `x` and `y`.
 
-## ### Anonymous (lambda) functions
+## Anonymous (lambda) functions
 Lambda functions are concise ways to declare functions inline.
 
 ```kotlin
@@ -279,7 +279,7 @@ fun main() {
 }
 ```
 
-## ### Extension functions
+## Extension functions
 You can add functions to existing classes using extension functions without modifying their source code.
 
 ```kotlin
@@ -294,7 +294,7 @@ fun main() {
 ```
 This function adds `addExclamation` to the `String` class, allowing any string to use it as if it were a method of `String`.
 
-## ### Variables﻿
+## Variables﻿
 In Kotlin, variables are declared using two keywords: `val` and `var`. The difference between them is mutability -`val` is for read-only (immutable) variables, while var is for mutable variables that can be reassigned.
 
 1. Immutable variables (`val`)
@@ -326,7 +326,7 @@ var greeting = "Hello"
 greeting = "Hi"
 ```
 
-## ### Type inference
+## Type inference
 Kotlin can automatically infer the type of a variable based on the assigned value. Explicit type declaration is optional if the compiler can infer the type.
 
 ```kotlin
@@ -334,7 +334,7 @@ val message = "Hello, Kotlin!"  // Type inferred as String
 val number = 42  // Type inferred as Int
 ```
 
-## ### Declaring variables without initialization
+## Declaring variables without initialization
 You can declare a variable without initializing it immediately, but you must specify the type in that case.
 
 ```kotlin
@@ -342,7 +342,7 @@ val age: Int
 age = 30  // Now initialized
 ```
 
-## ### Nullable variables
+## Nullable variables
 In Kotlin, you must explicitly declare whether a variable can hold `null` values by adding a `?` to the type. By default, variables are non-nullable.
 
 ```kotlin
@@ -367,7 +367,7 @@ fun main() {
 }
 ```
 
-## ### Constant variables
+## Constant variables
 If you want to declare a constant that is known at compile-time and will never change, you can use `const val`. This is typically used at the top level or inside objects and companion objects.
 
 ```kotlin
@@ -375,7 +375,7 @@ const val PI = 3.14159
 ```
 This declares PI as a constant that cannot be changed and is known at compile time.
 
-## ### Creating classes and instances
+## Creating classes and instances
 In Kotlin, creating classes and instances is simple and concise. Kotlin provides features like primary and secondary constructors, properties, and default values, making it more compact than languages like Java.
 
 ### Defining a basic class
@@ -399,7 +399,7 @@ fun main() {
 }
 ```
 
-## ### Primary constructor
+## Primary constructor
 Kotlin allows you to define a primary constructor directly in the class declaration.
 
 ```kotlin
@@ -419,7 +419,7 @@ fun main() {
 }
 ```
 
-## ### Secondary constructor
+## Secondary constructor
 In addition to the primary constructor, a class can have one or more secondary constructors. These are useful if you need to provide different ways to instantiate a class.
 
 ```kotlin
@@ -443,7 +443,7 @@ fun main() {
 }
 ```
 
-## ### Initializer block `init`
+## Initializer block `init`
 You can also use an init block to execute some code when the class is instantiated. The init block is executed after the primary constructor.
 
 ```kotlin
@@ -458,7 +458,7 @@ fun main() {
 }
 ```
 
-## ### Properties with custom getters and setters
+## Properties with custom getters and setters
 You can define custom getters and setters for properties in Kotlin.
 
 ```kotlin
@@ -483,7 +483,7 @@ fun main() {
 }
 ```
 
-## ### Inheritance
+## Inheritance
 Kotlin classes are `final` by default (cannot be inherited). To make a class inheritable, you need to use the `open` keyword.
 
 ```kotlin
@@ -501,7 +501,7 @@ fun main() {
 }
 ```
 
-## ### Data classes
+## Data classes
 Kotlin provides **data classes** for classes whose primary purpose is to hold data. These classes automatically generate useful methods like `toString()`, `equals()` and `hashCode()`.
 
 ```kotlin
@@ -516,7 +516,7 @@ fun main() {
 }
 ```
 
-## ### Comments﻿
+## Comments﻿
 In Kotlin, comments are similar to those in many other programming languages, such as Java or C++. There are two types of comments: single-line and multi-line.
 
 1. Single-line comments
@@ -544,7 +544,7 @@ val age = 25
 val city = "New York"
 ```
 
-## ### Best practices for comments
+## Best practices for comments
 1. **Keep comments concise and relevant**: Use comments to explain why something is done rather than what is being done if the code is already self-explanatory.
 
 2. **Avoid over-commenting**: Comment only where necessary, especially if the code is straightforward.
@@ -558,7 +558,7 @@ fun getData(): String {
 ```
 Kotlin IDEs like IntelliJ IDEA highlight TODO comments, making it easier to track unfinished work.
 
-## ### String templates
+## String templates
 In Kotlin, string templates allow you to embed variables or expressions directly within a string, which makes string handling more concise and readable. Kotlin uses the `$` symbol to indicate a variable or expression within a string.
 
 1. Embedding variables
@@ -582,7 +582,7 @@ println(message)  // Output: In 5 years, you will be 30 years old.
 ```
 You need to use curly braces `{}` for expressions, but for simple variables, you can use `$variableName` without braces.
 
-## ### Escaping `$` in strings
+## Escaping `$` in strings
 If you need to print a literal `$` symbol in the string (instead of using it as a template), you can escape it with a backslash `\`.
 
 ```kotlin
@@ -590,7 +590,7 @@ val price = "The total cost is \$50."
 println(price)  // Output: The total cost is $50.
 ```
 
-## ### Multiline strings with string templates
+## Multiline strings with string templates
 You can use triple-quoted strings `"""` for multiline strings, and string templates still work inside these.
 
 ```kotlin
@@ -602,7 +602,7 @@ val multilineMessage = """
 println(multilineMessage)
 ```
 
-## ### `if` expression
+## `if` expression
 In Kotlin, `if` is an expression, meaning it returns a value, unlike in many other languages where it's just a statement. This makes it more flexible.
 
 ### Basic `if` statement:
@@ -637,7 +637,7 @@ val result = if (number < 0) {
 println(result)  // Output: Positive
 ```
 
-## ### `when` expression
+## `when` expression
 The `when` expression in Kotlin is similar to `switch` in other languages but is more powerful. It can be used for matching conditions and returning values.
 
 ### Basic `when` example:
@@ -686,7 +686,7 @@ println(category)  // Output: Negative
 ```
 In this example, when is used without a specific value to evaluate general conditions.
 
-## ### `else` and `else if`
+## `else` and `else if`
 Kotlin supports `else` and `else if` for handling alternate conditions. These are used similarly to other languages:
 
 ```kotlin
@@ -702,7 +702,7 @@ val greeting = if (time < 12) {
 println(greeting)  // Output: Good evening
 ```
 
-## ### `for` loop
+## `for` loop
 In Kotlin, the `for` loop is used to iterate over ranges, arrays, collections, or any iterable objects. Here's a detailed explanation of how to use it.
 
 ### Iterating over a range
@@ -716,7 +716,7 @@ for (i in 1..5) {
 - This will print the numbers from 1 to 5, inclusive.
 - The `..` operator creates a range from the first value to the second.
 
-## ### `for` loop: range with step
+## `for` loop: range with step
 You can control the step of the iteration using the step keyword.
 
 ```kotlin
@@ -727,7 +727,7 @@ for (i in 1..10 step 2) {
 - This will print the numbers 1, 3, 5, 7, 9.
 - The `step` function allows you to increment by a value other than 1.
 
-## ### `for` loop: iterating in reverse order
+## `for` loop: iterating in reverse order
 To iterate in reverse order, you can use the `downTo` keyword.
 
 ```kotlin
@@ -746,7 +746,7 @@ for (i in 10 downTo 0 step 2) {
 ```
 - This will print 10, 8, 6, 4, 2, 0.
 
-## ### Iterating over an array or a list
+## Iterating over an array or a list
 You can iterate over arrays, lists, or any other collections in Kotlin.
 
 ```kotlin
@@ -764,7 +764,7 @@ for (fruit in fruits) {
 }
 ```
 
-## ### Iterating with indices
+## Iterating with indices
 If you want to access the index of each element while iterating over a collection, you can use the `indices` property or the `withIndex()` function.
 
 ### Using `indices`:
@@ -783,7 +783,7 @@ for ((index, fruit) in fruits.withIndex()) {
 ```
 - withIndex() provides both the index and the value in each iteration.
 
-## ### `forEach` loop
+## `forEach` loop
 You can also use the `forEach` higher-order function to iterate over collections.
 
 ```kotlin
@@ -793,7 +793,7 @@ fruits.forEach { fruit ->
 }
 ```
 
-## ### Breaking and continuing in a loop
+## Breaking and continuing in a loop
 You can use `break` to exit a loop and `continue` to skip the current iteration.
 
 ```kotlin
@@ -808,7 +808,7 @@ for (i in 1..5) {
 }
 ```
 
-## ### `while` loop﻿
+## `while` loop﻿
 In Kotlin, the while loop is used to repeatedly execute a block of code as long as a specified condition is true. Kotlin supports two types of while loops: `while` and `do-while`.
 
 ### `while` loop
@@ -832,7 +832,7 @@ while (i <= 5) {
 - This will print the numbers 1 to 5.
 - The condition `i <= 5` is checked before the loop body is executed.
 
-## ### `do-while` loop
+## `do-while` loop
 The `do-while` loop is similar to the `while` loop, but the difference is that the condition is checked after the block of code has been executed. This means that the loop is guaranteed to run at least once, even if the condition is initially `false`.
 
 ### Syntax:
@@ -853,7 +853,7 @@ do {
 - This will also print the numbers 1 to 5.
 - The condition `i <= 5` is checked after the loop executes, so the code block is executed at least once.
 
-## ### Breaking out of a `while` loop
+## Breaking out of a `while` loop
 You can use the `break` statement to exit a `while` loop prematurely when a certain condition is met.
 
 ### Example:
@@ -869,7 +869,7 @@ while (i <= 10) {
 ```
 - This will print numbers from 1 to 5 and then break the loop when `i` equals 6.
 
-## ### Skipping `while` iterations with continue
+## Skipping `while` iterations with continue
 You can use the `continue` statement to skip the current iteration and proceed to the next iteration of the loop.
 
 ### Example:
@@ -886,7 +886,7 @@ while (i <= 5) {
 ```
 - This will print the numbers 1, 2, 4, and 5, skipping 3.
 
-## ### Ranges﻿
+## Ranges﻿
 In Kotlin, ranges are an essential feature that allows you to work with sequences of values in a concise and readable manner. A range is essentially a progression of values, which can be used in loops, conditions, and other situations where you need a sequence of numbers or characters.
 
 ### Creating a range
@@ -899,7 +899,7 @@ println(range)  // Output: 1..5
 ```
 - This range includes the numbers 1, 2, 3, 4, and 5.
 
-## ### Iterating over a range
+## Iterating over a range
 You can easily iterate over a range with a `for` loop.
 
 ### Example:
@@ -909,7 +909,7 @@ for (i in 1..5) {
 }
 ```
 
-## ### Checking if a value is in a range
+## Checking if a value is in a range
 You can check whether a value belongs to a range using the `in` operator.
 
 ### Example:
@@ -923,7 +923,7 @@ if (num in 1..5) {
 // Output: 3 is in the range.
 ```
 
-## ### Exclusive ranges (`until`)
+## Exclusive ranges (`until`)
 The `..` operator creates an inclusive range. If you want an exclusive range (where the end value is excluded), you can use the `until` function.
 
 ### Example:
@@ -934,7 +934,7 @@ for (i in 1 until 5) {
 ```
 - The range `1 until 5` includes 1, 2, 3, and 4, but excludes 5.
 
-## ### Character ranges
+## Character ranges
 Ranges are not limited to numbers; you can also create ranges for characters.
 
 ### Example:
@@ -944,7 +944,7 @@ for (ch in 'a'..'d') {
 }
 ```
 
-## ### Checking if a range is empty
+## Checking if a range is empty
 You can check if a range is empty using the `isEmpty()` function. This is useful when dealing with ranges where the start value might be greater than the end value (for example, in descending ranges).
 
 ### Example:
@@ -959,7 +959,7 @@ val range = 5 downTo 1
 println(range.isEmpty())  // Output: false
 ```
 
-## ### Progressions
+## Progressions
 A progression in Kotlin is a sequence defined by a starting value, an ending value, and a step. It is the underlying mechanism for ranges with steps and reverse ranges.
 
 ```kotlin
@@ -967,14 +967,14 @@ val progression = 1..10 step 3
 println(progression.toList())  // Output: [1, 4, 7, 10]
 ```
 
-## ### Collections﻿
+## Collections﻿
 In Kotlin, collections are used to store groups of related data. Kotlin provides a rich set of collection types, and it supports both immutable and mutable collections. The key types of collections are:
 
 - **List**: Ordered collection of elements.
 - **Set**: Collection of unique elements.
 - **Map**: Collection of key-value pairs.
 
-## ### Collections﻿: List
+## Collections﻿: List
 A List is an ordered collection of elements that can contain duplicates. There are two types of lists in Kotlin:
 
 - **Immutable list**: Read-only, elements cannot be added, removed, or modified.
@@ -1005,7 +1005,7 @@ for (fruit in fruits) {
 }
 ```
 
-## ### Collections﻿: Set
+## Collections﻿: Set
 A Set is an unordered collection of unique elements. It does not allow duplicate values.
 
 ### Immutable set:
@@ -1024,7 +1024,7 @@ println(mutableNumbers)  // Output: [1, 2, 3, 4]
 ```
 - The `mutableSetOf()` function creates a mutable set.
 
-## ### Collections﻿: Map
+## Collections﻿: Map
 A Map is a collection of key-value pairs. Each key must be unique, but values can be duplicated. Like other collections, maps can be immutable or mutable.
 
 ### Immutable Map:
@@ -1046,7 +1046,7 @@ println(mutableMap)  // Output: {Alice=26, Bob=30}
 ```
 - The `mutableMapOf()` function creates a mutable map that can be modified.
 
-## ### Common collection operations
+## Common collection operations
 ### Filtering:
 You can filter elements from collections based on a condition using `filter()`.
 
@@ -1097,7 +1097,7 @@ println(numbers.sorted())  // Output: [1, 2, 3, 4, 5]
 println(numbers.sortedDescending())  // Output: [5, 4, 3, 2, 1]
 ```
 
-## ### Collection immutability
+## Collection immutability
 In Kotlin, collections are immutable by default. This helps enforce immutability and makes the code more predictable. If you need a mutable collection, you must explicitly create one using `mutableListOf()`, `mutableSetOf()` or `mutableMapOf()`.
 
 Immutable vs mutable:
@@ -1110,7 +1110,7 @@ val mutableList = mutableListOf(1, 2, 3)  // Mutable List
 mutableList.add(4)  // Works fine
 ```
 
-## ### Nullable values
+## Nullable values
 In Kotlin, nullable values and null checks are an essential part of handling null safely. Kotlin’s type system distinguishes between nullable types and non-null types, making your code safer by preventing `NullPointerException (NPE)`.
 
 ### Nullable types
@@ -1129,7 +1129,7 @@ var name: String = "Kotlin"
 // name = null  // Compilation error: Null can not be a value of a non-null type String
 ```
 
-## ### Null checks: Safe call `?.`
+## Null checks: Safe call `?.`
 You can use the safe call operator `?.` to call methods or access properties on a nullable object. If the object is `null`, the expression will return `null` instead of throwing an exception.
 
 ```kotlin
@@ -1139,7 +1139,7 @@ println(length)  // Prints the length if `name` is not null, otherwise prints `n
 ```
 In the above example, if name is `null`, the result of `name?.length` will be `null`. If `name` is not null, it returns the length of the string.
 
-## ### Null checks: Elvis operator `?:`
+## Null checks: Elvis operator `?:`
 The Elvis operator `?:` provides a default value in case the expression on the left is `null`.
 
 ```kotlin
@@ -1149,7 +1149,7 @@ println(length)  // If `name` is null, it prints 0; otherwise, it prints the len
 ```
 This is very useful for providing fallback values.
 
-## ### Null checks: Non-null assertion `!!`
+## Null checks: Non-null assertion `!!`
 You can use the **non-null assertion operator** `!!` to forcibly assert that a nullable value is not `null`. However, if the value is actually null, this will result in a `NullPointerException`.
 
 ```kotlin
@@ -1157,7 +1157,7 @@ val length: Int = name!!.length
 ```
 **Use this cautiously**, as it can lead to crashes if you're wrong about the nullability of the value.
 
-## ### Null checks: Safe cast `as?`
+## Null checks: Safe cast `as?`
 If you want to cast a value to a specific type, but you're not sure if the cast is possible, you can use the **safe cast operator** `as?`. It will return `null` if the cast fails, rather than throwing a `ClassCastException`.
 
 ```kotlin
@@ -1172,7 +1172,7 @@ val number: Int? = obj as? Int
 println(number)  // Prints `null` because obj is not an Int
 ```
 
-## ### Nullability in functions
+## Nullability in functions
 You can declare function parameters and return types as nullable by adding the `?` symbol.
 
 ### Example:
@@ -1186,7 +1186,7 @@ println(greet(null))    // Output: Guest
 ```
 In this case, the function `greet()` accepts a nullable `String?` and uses the Elvis operator to provide a default value.
 
-## ### Smart casts
+## Smart casts
 Kotlin automatically handles null checks and performs smart casts, meaning if you check for `null`, the compiler knows it's safe to use the non-null version of the variable in the following code.
 
 ### Example:
@@ -1198,7 +1198,7 @@ if (name != null) {
 }
 ```
 
-## ### `let` with safe call
+## `let` with safe call
 You can use the `let` function to execute a block of code only if the value is not `null`. It's often used in conjunction with the safe call operator `?.`
 
 Example:
@@ -1211,7 +1211,7 @@ name?.let {
 ```
 The code inside the `let` block will only execute if `name` is not `null`. Inside `let`, it refers to the non-null value of `name`.
 
-## ### Chaining safe calls
+## Chaining safe calls
 You can chain multiple safe calls to navigate through a series of nullable properties without needing to check for `null` at every level.
 
 ### Example:
@@ -1230,7 +1230,7 @@ println(unknownPerson?.address?.city)  // Prints `null`
 ```
 If any part of the chain is `null`, the whole expression evaluates to `null` without throwing an exception.
 
-## ### `takeIf` and `takeUnless`
+## `takeIf` and `takeUnless`
 The `takeIf` function returns the object if it matches a given condition or `null` if it doesn't. This can be useful for conditional null handling.
 
 ```kotlin
@@ -1242,7 +1242,7 @@ println(validName)  // Prints "Kotlin"
 ```
 Similarly, `takeUnless` does the opposite, returning the object if the condition is `false`.
 
-## ### Type checking with `is`
+## Type checking with `is`
 Kotlin provides the is operator to check whether an object is of a certain type.
 
 ### Example:
@@ -1266,7 +1266,7 @@ if (obj !is String) {
 }
 ```
 
-## ### Type casts with `as`
+## Type casts with `as`
 If you are sure about the type of a variable, you can explicitly cast it using the `as` operator.
 
 ### Example:
@@ -1279,7 +1279,7 @@ println(str.length)  // Output: 6
 ```
 The `as` operator casts `obj` to `String`. If the cast is invalid (e.g., if obj is not actually a `String`), it throws a `ClassCastException`.
 
-## ### Smart casts in `when` expressions
+## Smart casts in `when` expressions
 In Kotlin, when expressions are commonly used with type checks. The smart cast feature also applies here. After checking the type using `is` inside a `when` expression, the variable is automatically cast to that type within the corresponding branch.
 
 ### Example:
@@ -1303,7 +1303,7 @@ println(describe(3.14))     // Output: Unknown type
 In the `when` expression, once the type is checked with `is`, Kotlin smartly casts the object to the corresponding type within that branch.
 
 
-## ### Combining type checks with `&&`
+## Combining type checks with `&&`
 You can combine type checks with other conditions in a single statement. Kotlin will still perform smart casting if the type check succeeds.
 
 ### Example:
@@ -1324,7 +1324,7 @@ printLengthIfValid(null) // Output: Invalid or empty string
 ```
 In this example, after checking `obj is String && obj.length > 0`, the compiler automatically casts `obj` to `String` inside the `if` block.
 
-## ### Smart cast limitations
+## Smart cast limitations
 There are some limitations to smart casting in Kotlin. If the variable can be modified after the type check, the compiler cannot guarantee that the type will remain the same, so smart casting won't occur.
 
 ### Example:
@@ -1345,7 +1345,7 @@ if (obj is String) {
 ```
 Since `obj` is mutable and could change between the type check and its usage, the compiler cannot smart-cast it after a modification.
 
-## ### `is` with nullable types
+## `is` with nullable types
 When you use the `is` operator with nullable types, smart casting is also applied. However, if the value is `null`, the smart cast does not happen.
 
 ### Example:

@@ -1,28 +1,12 @@
 # SQL How to
 SQL tips & tricks
 
-* [The following pattern represents P(5):
-```
-*
-* * 
-* * * 
-* * * * 
-* * * * * 
-```
-Write a query to print the pattern P(20).](#The-following-pattern-represents-P-5-Write-a-query-to-print-the-pattern-P-20)
-* [### Query to calculate median value](#Query-to-calculate-median-value)
-* [### How to pivot a table in SQL Server?](#How-to-pivot-a-table-in-SQL-Server)
-* [### How to pivot a table in MySQL?](#How-to-pivot-a-table-in-MySQL)
+* [The following pattern represents P(5): ``` * * *  * * *  * * * *  * * * * *  ``` Write a query to print the pattern P(20).](#The-following-pattern-represents-P-5-Write-a-query-to-print-the-pattern-P-20)
+* [Query to calculate median value](#Query-to-calculate-median-value)
+* [How to pivot a table in SQL Server?](#How-to-pivot-a-table-in-SQL-Server)
+* [How to pivot a table in MySQL?](#How-to-pivot-a-table-in-MySQL)
 
-## The following pattern represents P(5):
-```
-*
-* * 
-* * * 
-* * * * 
-* * * * * 
-```
-Write a query to print the pattern P(20).
+## The following pattern represents P(5): ``` * * *  * * *  * * * *  * * * * *  ``` Write a query to print the pattern P(20).
 Sample query using recursive cte
 ```sql
 with recursive cte as
@@ -34,14 +18,14 @@ with recursive cte as
 select repeat('* ', n) from cte;
 ```
 
-## ### Query to calculate median value
+## Query to calculate median value
 ```sql
 SELECT x.value from table x, table y
 GROUP BY x.value
 HAVING SUM(SIGN(1 - SIGN(y.value - x.value))) = (COUNT(*) + 1) / 2
 ```
 
-## ### How to pivot a table in SQL Server?
+## How to pivot a table in SQL Server?
 SQL Server provides a built-in `PIVOT` function, which makes pivoting quite easy.
 
 ### Example:
@@ -64,7 +48,7 @@ PIVOT (
 - The `PIVOT` function is applied to transform the `Year` column into separate columns.
 - The `SUM(Revenue)` aggregates the revenue values for each year.
 
-## ### How to pivot a table in MySQL?
+## How to pivot a table in MySQL?
 MySQL does not have a built-in `PIVOT` function, but you can simulate it using `CASE` statements and `GROUP BY`.
 
 ### Example:

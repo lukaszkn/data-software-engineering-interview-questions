@@ -1,100 +1,100 @@
 # Python Advanced
 Functions, annotations, coding style, reading and writing files, classes, iterators, standard library
 
-* [### Positional-only parameters](#Positional-only-parameters)
-* [### Keyword-only parameters](#Keyword-only-parameters)
-* [### Combining different types of parameters](#Combining-different-types-of-parameters)
-* [### Keyword-only arguments without `*args`](#Keyword-only-arguments-without-args)
-* [### Function annotations](#Function-annotations)
-* [### Accessing annotations](#Accessing-annotations)
-* [### Type hinting with annotations](#Type-hinting-with-annotations)
-* [### Using `Optional` and `Union` for flexible type hints](#Using-Optional-and-Union-for-flexible-type-hints)
-* [### Annotating functions with complex types](#Annotating-functions-with-complex-types)
-* [### Custom annotations](#Custom-annotations)
-* [### Forward references](#Forward-references)
-* [### Using `Callable` for function annotations](#Using-Callable-for-function-annotations)
-* [### Coding style PEP8](#Coding-style-PEP8)
-* [### Coding style: Indentation](#Coding-style-Indentation)
-* [### Coding style: Line length](#Coding-style-Line-length)
-* [### Coding style: Blank lines](#Coding-style-Blank-lines)
-* [### Coding style: Imports](#Coding-style-Imports)
-* [### Coding style: Whitespace in expressions and statements](#Coding-style-Whitespace-in-expressions-and-statements)
-* [### Coding style: Comments](#Coding-style-Comments)
-* [### Coding style: Naming conventions](#Coding-style-Naming-conventions)
-* [### Coding style: Programming recommendations](#Coding-style-Programming-recommendations)
-* [### Coding style: Exceptions](#Coding-style-Exceptions)
-* [### Coding style: Use of `__main__`](#Coding-style-Use-of-main)
-* [### Reloading modules](#Reloading-modules)
-* [### "Compiled" Python files](#Compiled-Python-files)
-* [### Why does Python compile code?](#Why-does-Python-compile-code)
-* [### How compiled files work](#How-compiled-files-work)
-* [### Location of compiled files](#Location-of-compiled-files)
-* [### Running a Python program without the source code (`.pyc` files)](#Running-a-Python-program-without-the-source-code-pyc-files)
-* [### Disabling bytecode generation](#Disabling-bytecode-generation)
-* [### Forcing recompilation of Python files](#Forcing-recompilation-of-Python-files)
-* [### Pros and cons of compiled Python files](#Pros-and-cons-of-compiled-Python-files)
-* [### Bytecode and the Python Virtual Machine (PVM)](#Bytecode-and-the-Python-Virtual-Machine-PVM)
-* [### Intra-package references](#Intra-package-references)
-* [### Using `__init__.py` in packages](#Using-init-py-in-packages)
-* [### Best practices for intra-package imports](#Best-practices-for-intra-package-imports)
-* [### Opening a file](#Opening-a-file)
-* [### Closing a file](#Closing-a-file)
-* [### Reading the entire file `read()`](#Reading-the-entire-file-read)
-* [### Reading line by line `readline()`](#Reading-line-by-line-readline)
-* [### Reading all lines as a list `readlines()`](#Reading-all-lines-as-a-list-readlines)
-* [### Iterating over the file object](#Iterating-over-the-file-object)
-* [### Writing strings to a file `write()`](#Writing-strings-to-a-file-write)
-* [### Writing multiple lines to a file `writelines()`](#Writing-multiple-lines-to-a-file-writelines)
-* [### Binary files](#Binary-files)
-* [### File modes summary](#File-modes-summary)
-* [### File object methods](#File-object-methods)
-* [### Managing file paths](#Managing-file-paths)
-* [### File exceptions](#File-exceptions)
-* [### File handling best practices](#File-handling-best-practices)
-* [### File `tell()` method](#File-tell-method)
-* [### File `seek()` method](#File-seek-method)
-* [### `tell()` and `seek()` common use cases](#tell-and-seek-common-use-cases)
-* [### Saving data with json](#Saving-data-with-json)
-* [### Saving structured data with `json.dump()`](#Saving-structured-data-with-json-dump)
-* [### Reading json data with `json.load()`](#Reading-json-data-with-json-load)
-* [### Converting objects to JSON strings with `json.dumps()`](#Converting-objects-to-JSON-strings-with-json-dumps)
-* [### Converting JSON strings to objects with `json.loads()`](#Converting-JSON-strings-to-objects-with-json-loads)
-* [### Handling custom data types with `json.JSONEncoder`](#Handling-custom-data-types-with-json-JSONEncoder)
-* [### Working with nested json structures](#Working-with-nested-json-structures)
-* [### Error handling with json](#Error-handling-with-json)
-* [### Enriching exceptions with notes](#Enriching-exceptions-with-notes)
-* [### How to use `add_note()`](#How-to-use-add-note)
-* [### Benefits of enriching exceptions](#Benefits-of-enriching-exceptions)
-* [### Iterators](#Iterators)
-* [### How iterators work](#How-iterators-work)
-* [### Manually creating an iterator](#Manually-creating-an-iterator)
-* [### Using `iter()` and `next()`](#Using-iter-and-next)
-* [### Iterator vs iterable](#Iterator-vs-iterable)
-* [### Iterating over custom collections](#Iterating-over-custom-collections)
-* [### Infinite iterators with `itertools`](#Infinite-iterators-with-itertools)
-* [### Generators as iterators](#Generators-as-iterators)
-* [### `os` module: Basic file and directory operations](#os-module-Basic-file-and-directory-operations)
-* [### `os` module: File path operations](#os-module-File-path-operations)
-* [### `os` module: Environment variables](#os-module-Environment-variables)
-* [### `os` module: Process management](#os-module-Process-management)
-* [### `os` module: Working with file descriptors](#os-module-Working-with-file-descriptors)
-* [### `os` module: Working with the `os.walk()` function](#os-module-Working-with-the-os-walk-function)
-* [### `os` module: Temporary files and directories](#os-module-Temporary-files-and-directories)
-* [### `shutil` module: Copying files and directories](#shutil-module-Copying-files-and-directories)
-* [### `shutil` module: Moving files and directories](#shutil-module-Moving-files-and-directories)
-* [### `shutil` module: Removing files and directories](#shutil-module-Removing-files-and-directories)
-* [### `shutil` module: Archiving files and directories](#shutil-module-Archiving-files-and-directories)
-* [### `shutil` module: Disk usage](#shutil-module-Disk-usage)
-* [### `shutil` module: File system operations](#shutil-module-File-system-operations)
-* [### `shutil` module: Error handling](#shutil-module-Error-handling)
-* [### Common string validation methods](#Common-string-validation-methods)
-* [### What are context managers?](#What-are-context-managers)
-* [### Custom context manager example](#Custom-context-manager-example)
-* [### Real-world uses of context managers](#Real-world-uses-of-context-managers)
-* [### The `contextlib` module](#The-contextlib-module)
-* [### Why use context managers?](#Why-use-context-managers)
+* [Positional-only parameters](#Positional-only-parameters)
+* [Keyword-only parameters](#Keyword-only-parameters)
+* [Combining different types of parameters](#Combining-different-types-of-parameters)
+* [Keyword-only arguments without `*args`](#Keyword-only-arguments-without-args)
+* [Function annotations](#Function-annotations)
+* [Accessing annotations](#Accessing-annotations)
+* [Type hinting with annotations](#Type-hinting-with-annotations)
+* [Using `Optional` and `Union` for flexible type hints](#Using-Optional-and-Union-for-flexible-type-hints)
+* [Annotating functions with complex types](#Annotating-functions-with-complex-types)
+* [Custom annotations](#Custom-annotations)
+* [Forward references](#Forward-references)
+* [Using `Callable` for function annotations](#Using-Callable-for-function-annotations)
+* [Coding style PEP8](#Coding-style-PEP8)
+* [Coding style: Indentation](#Coding-style-Indentation)
+* [Coding style: Line length](#Coding-style-Line-length)
+* [Coding style: Blank lines](#Coding-style-Blank-lines)
+* [Coding style: Imports](#Coding-style-Imports)
+* [Coding style: Whitespace in expressions and statements](#Coding-style-Whitespace-in-expressions-and-statements)
+* [Coding style: Comments](#Coding-style-Comments)
+* [Coding style: Naming conventions](#Coding-style-Naming-conventions)
+* [Coding style: Programming recommendations](#Coding-style-Programming-recommendations)
+* [Coding style: Exceptions](#Coding-style-Exceptions)
+* [Coding style: Use of `__main__`](#Coding-style-Use-of-main)
+* [Reloading modules](#Reloading-modules)
+* ["Compiled" Python files](#Compiled-Python-files)
+* [Why does Python compile code?](#Why-does-Python-compile-code)
+* [How compiled files work](#How-compiled-files-work)
+* [Location of compiled files](#Location-of-compiled-files)
+* [Running a Python program without the source code (`.pyc` files)](#Running-a-Python-program-without-the-source-code-pyc-files)
+* [Disabling bytecode generation](#Disabling-bytecode-generation)
+* [Forcing recompilation of Python files](#Forcing-recompilation-of-Python-files)
+* [Pros and cons of compiled Python files](#Pros-and-cons-of-compiled-Python-files)
+* [Bytecode and the Python Virtual Machine (PVM)](#Bytecode-and-the-Python-Virtual-Machine-PVM)
+* [Intra-package references](#Intra-package-references)
+* [Using `__init__.py` in packages](#Using-init-py-in-packages)
+* [Best practices for intra-package imports](#Best-practices-for-intra-package-imports)
+* [Opening a file](#Opening-a-file)
+* [Closing a file](#Closing-a-file)
+* [Reading the entire file `read()`](#Reading-the-entire-file-read)
+* [Reading line by line `readline()`](#Reading-line-by-line-readline)
+* [Reading all lines as a list `readlines()`](#Reading-all-lines-as-a-list-readlines)
+* [Iterating over the file object](#Iterating-over-the-file-object)
+* [Writing strings to a file `write()`](#Writing-strings-to-a-file-write)
+* [Writing multiple lines to a file `writelines()`](#Writing-multiple-lines-to-a-file-writelines)
+* [Binary files](#Binary-files)
+* [File modes summary](#File-modes-summary)
+* [File object methods](#File-object-methods)
+* [Managing file paths](#Managing-file-paths)
+* [File exceptions](#File-exceptions)
+* [File handling best practices](#File-handling-best-practices)
+* [File `tell()` method](#File-tell-method)
+* [File `seek()` method](#File-seek-method)
+* [`tell()` and `seek()` common use cases](#tell-and-seek-common-use-cases)
+* [Saving data with json](#Saving-data-with-json)
+* [Saving structured data with `json.dump()`](#Saving-structured-data-with-json-dump)
+* [Reading json data with `json.load()`](#Reading-json-data-with-json-load)
+* [Converting objects to JSON strings with `json.dumps()`](#Converting-objects-to-JSON-strings-with-json-dumps)
+* [Converting JSON strings to objects with `json.loads()`](#Converting-JSON-strings-to-objects-with-json-loads)
+* [Handling custom data types with `json.JSONEncoder`](#Handling-custom-data-types-with-json-JSONEncoder)
+* [Working with nested json structures](#Working-with-nested-json-structures)
+* [Error handling with json](#Error-handling-with-json)
+* [Enriching exceptions with notes](#Enriching-exceptions-with-notes)
+* [How to use `add_note()`](#How-to-use-add-note)
+* [Benefits of enriching exceptions](#Benefits-of-enriching-exceptions)
+* [Iterators](#Iterators)
+* [How iterators work](#How-iterators-work)
+* [Manually creating an iterator](#Manually-creating-an-iterator)
+* [Using `iter()` and `next()`](#Using-iter-and-next)
+* [Iterator vs iterable](#Iterator-vs-iterable)
+* [Iterating over custom collections](#Iterating-over-custom-collections)
+* [Infinite iterators with `itertools`](#Infinite-iterators-with-itertools)
+* [Generators as iterators](#Generators-as-iterators)
+* [`os` module: Basic file and directory operations](#os-module-Basic-file-and-directory-operations)
+* [`os` module: File path operations](#os-module-File-path-operations)
+* [`os` module: Environment variables](#os-module-Environment-variables)
+* [`os` module: Process management](#os-module-Process-management)
+* [`os` module: Working with file descriptors](#os-module-Working-with-file-descriptors)
+* [`os` module: Working with the `os.walk()` function](#os-module-Working-with-the-os-walk-function)
+* [`os` module: Temporary files and directories](#os-module-Temporary-files-and-directories)
+* [`shutil` module: Copying files and directories](#shutil-module-Copying-files-and-directories)
+* [`shutil` module: Moving files and directories](#shutil-module-Moving-files-and-directories)
+* [`shutil` module: Removing files and directories](#shutil-module-Removing-files-and-directories)
+* [`shutil` module: Archiving files and directories](#shutil-module-Archiving-files-and-directories)
+* [`shutil` module: Disk usage](#shutil-module-Disk-usage)
+* [`shutil` module: File system operations](#shutil-module-File-system-operations)
+* [`shutil` module: Error handling](#shutil-module-Error-handling)
+* [Common string validation methods](#Common-string-validation-methods)
+* [What are context managers?](#What-are-context-managers)
+* [Custom context manager example](#Custom-context-manager-example)
+* [Real-world uses of context managers](#Real-world-uses-of-context-managers)
+* [The `contextlib` module](#The-contextlib-module)
+* [Why use context managers?](#Why-use-context-managers)
 
-## ### Positional-only parameters
+## Positional-only parameters
 Positional-only parameters are parameters that can only be provided by position, not by keyword. This is specified by placing a `/` in the function signature. Everything before the `/` is positional-only.
 
 Example:
@@ -112,7 +112,7 @@ print(greet("Alice", "Hi"))         # Output: Hi, Alice!
 ```
 In this example, `name` is a positional-only parameter, so you cannot pass it using a keyword argument.
 
-## ### Keyword-only parameters
+## Keyword-only parameters
 Keyword-only parameters are parameters that must be specified by keyword, not by position. This is specified by placing a `*` in the function signature. Everything after the `*` is keyword-only.
 
 Example:
@@ -137,7 +137,7 @@ print(process_data(data=[1, 2, 3], verbose=True))
 ```
 In this example, data and verbose are keyword-only parameters, so you must specify them by their names.
 
-## ### Combining different types of parameters
+## Combining different types of parameters
 You can combine positional-only, standard, keyword-only, `*args` and `**kwargs` parameters in a single function. The general order in which parameters should be placed is:
 
 1. Positional-only parameters
@@ -164,7 +164,7 @@ complex_function(1, 2, 3, 4, 5, kw_only="Hello", extra="world")
 # Kwargs: {'extra': 'world'}
 ```
 
-## ### Keyword-only arguments without `*args`
+## Keyword-only arguments without `*args`
 You can enforce keyword-only arguments without using `*args` by placing `*` before the keyword-only arguments:
 
 Example:
@@ -180,7 +180,7 @@ print(greet("Alice", greeting="Hi"))    # Output: Hi, Alice!
 # greet("Alice", "Hi")                  # Raises TypeError
 ```
 
-## ### Function annotations
+## Function annotations
 Function annotations in Python provide a way to attach metadata to function arguments and return values. This metadata is typically used for type hints, though annotations can technically hold any kind of data. Annotations do not affect the runtime behavior of the function; they are purely informational and can be accessed via the function's `__annotations__` attribute.
 
 ### Basic syntax of function annotations
@@ -196,7 +196,7 @@ In this example:
 - The parameter `age` is annotated with the type `int`.
 - The return type of the function is annotated as `str`.
 
-## ### Accessing annotations
+## Accessing annotations
 You can access a function’s annotations using the `__annotations__` attribute, which returns a dictionary.
 
 Example:
@@ -208,7 +208,7 @@ print(greet.__annotations__)
 # Output: {'name': 'str', 'age': 'int', 'return': 'str'}
 ```
 
-## ### Type hinting with annotations
+## Type hinting with annotations
 The most common use of function annotations is for type hinting, which helps developers and tools like linters or IDEs understand the expected types of arguments and return values.
 
 Example:
@@ -220,7 +220,7 @@ Here:
 - `a` and `b` are expected to be integers.
 - The function is expected to return an integer.
 
-## ### Using `Optional` and `Union` for flexible type hints
+## Using `Optional` and `Union` for flexible type hints
 Python’s `typing` module provides additional tools like `Optional` and `Union` for more complex type hints.
 
 Example with `Optional`:
@@ -246,7 +246,7 @@ def get_value(data: Union[int, str]) -> Union[int, str]:
 - `data: Union[int, str]` indicates that `data` can be either an `int` or a `str`.
 - The return type is also `Union[int, str]` indicating that the function can return either type.
 
-## ### Annotating functions with complex types
+## Annotating functions with complex types
 You can annotate functions with complex types, such as lists, dictionaries, tuples, and even custom classes.
 
 Example with a `List`:
@@ -268,7 +268,7 @@ def process_data(data: Dict[str, int]) -> None:
 ```
 - `data: Dict[str, int]` indicates that `data` should be a dictionary with string keys and integer values.
 
-## ### Custom annotations
+## Custom annotations
 Although type hints are the most common use of annotations, you can technically use any expression as an annotation.
 
 Example with custom annotations:
@@ -281,7 +281,7 @@ print(func.__annotations__)
 ```
 In this example, the annotations are just strings providing a description, but they can be any data type.
 
-## ### Forward references
+## Forward references
 In cases where a class or type is not yet defined, you can use a string to refer to the type.
 
 Example:
@@ -293,7 +293,7 @@ class Node:
 ```
 - Here, `'Node'` is a forward reference to a class that is defined later in the code.
 
-## ### Using `Callable` for function annotations
+## Using `Callable` for function annotations
 The `typing` module provides the `Callable` type to annotate functions that are passed as arguments.
 
 Example:
@@ -310,7 +310,7 @@ print(apply_function(add, 5, 3))  # Output: 8
 ```
 - `Callable[[int, int], int]` indicates that `func` is a function that takes two `int` arguments and returns an `int`.
 
-## ### Coding style PEP8
+## Coding style PEP8
 PEP 8 is the Python Enhancement Proposal that provides guidelines and best practices for writing Python code. Following PEP 8 helps ensure that your code is readable, consistent, and easy to maintain, especially when collaborating with others. Here are the key elements of PEP 8:
 
 1. Indentation
@@ -324,7 +324,7 @@ PEP 8 is the Python Enhancement Proposal that provides guidelines and best pract
 9. Exceptions
 10. Use of __main__
 
-## ### Coding style: Indentation
+## Coding style: Indentation
 - Use **4 spaces** per indentation level.
 - Do not use tabs for indentation.
 ```python
@@ -333,7 +333,7 @@ def example_function():
         print("Use 4 spaces per indentation level")
 ```
 
-## ### Coding style: Line length
+## Coding style: Line length
 - Limit all lines to a maximum of **79 characters**.
 - For docstrings or comments, the line length should be limited to **72 characters**.
 - If a line is too long, consider breaking it into multiple lines using parentheses for implicit line continuation or a backslash `\` for explicit continuation.
@@ -345,7 +345,7 @@ def example_function(arg1, arg2, arg3, arg4, arg5):
     return result
 ```
 
-## ### Coding style: Blank lines
+## Coding style: Blank lines
 - Use **two blank lines** before the definition of top-level functions and classes.
 - Use **one blank line** to separate methods inside a class.
 ```python
@@ -361,7 +361,7 @@ def top_level_function():
     pass
 ```
 
-## ### Coding style: Imports
+## Coding style: Imports
 - Imports should be on separate lines.
 - Group imports into three categories: standard library imports, related third-party imports, and local application/library-specific imports. Separate these groups with a blank line.
 - Avoid using wildcard imports (e.g., from module import *).
@@ -375,7 +375,7 @@ import requests
 from mymodule import myfunction
 ```
 
-## ### Coding style: Whitespace in expressions and statements
+## Coding style: Whitespace in expressions and statements
 Avoid extraneous whitespace in the following situations:
 - Immediately inside parentheses, brackets, or braces.
 - Before a comma, semicolon, or colon.
@@ -401,7 +401,7 @@ result = x+y
 my_list = [1,2,3]
 ```
 
-## ### Coding style: Comments
+## Coding style: Comments
 - Comments should be complete sentences with the first word capitalized and end with a period if they are full sentences.
 - Use inline comments sparingly. Place them on the same line as the statement they comment on, separated by at least two spaces.
 ```python
@@ -434,7 +434,7 @@ def complex_function(x, y):
     return x + y
 ```
 
-## ### Coding style: Naming conventions
+## Coding style: Naming conventions
 - Variables, functions, and attributes: Use `lowercase_with_underscores`.
 - Classes and exceptions: Use `CapWords` (also known as PascalCase).
 - Constants: Use `ALL_CAPS_WITH_UNDERSCORES`.
@@ -454,7 +454,7 @@ class MyClass:
 PI = 3.14159
 ```
 
-## ### Coding style: Programming recommendations
+## Coding style: Programming recommendations
 - Use `is` or `is not` when comparing to `None` (e.g., `if x is None` rather than `if x == None`).
 - Use the `in` operator for checking if a value is in a list, tuple, or dictionary.
 - Avoid using mutable default arguments like lists or dictionaries in function definitions.
@@ -470,7 +470,7 @@ def my_function(x=None):
     # x can be safely modified now
 ```
 
-## ### Coding style: Exceptions
+## Coding style: Exceptions
 - Use specific exception types rather than a generic `except` block.
 - Ensure exceptions are handled properly, using `try-except` blocks where appropriate.
 ```python
@@ -480,7 +480,7 @@ except ValueError:
     print("That's not a valid number.")
 ```
 
-## ### Coding style: Use of `__main__`
+## Coding style: Use of `__main__`
 When writing a script that can be imported as a module or run as a standalone program, include a `__name__ == "__main__"` block.
 
 ```python
@@ -491,7 +491,7 @@ if __name__ == "__main__":
     main()
 ```
 
-## ### Reloading modules
+## Reloading modules
 Sometimes, when you're developing a module and want to reload it after making changes, you can use the `reload()` function from the `importlib` module.
 
 Example:
@@ -502,7 +502,7 @@ from importlib import reload
 reload(mymodule)  # Reloads the mymodule after modification
 ```
 
-## ### "Compiled" Python files
+## "Compiled" Python files
 In Python, compiled Python files are bytecode files generated by the Python interpreter when a Python script is executed. These files are stored in a format that is faster for the interpreter to run in future executions.
 
 ### What are compiled Python files?
@@ -510,7 +510,7 @@ When you run a Python program, the Python interpreter first compiles the `.py` s
 
 The compiled bytecode files are stored with a `.pyc` extension (Python Compiled) and are located in a `__pycache__` directory. These `.pyc` files are used to speed up the execution of Python programs by avoiding the need to recompile the source code every time the program is run.
 
-## ### Why does Python compile code?
+## Why does Python compile code?
 Python is an interpreted language, but it uses a two-step process:
 
 - **Compilation**: The `.py` source code is compiled into bytecode (with `.pyc` extension).
@@ -518,7 +518,7 @@ Python is an interpreted language, but it uses a two-step process:
 
 The purpose of this process is to improve performance. Instead of interpreting the source code line by line every time, Python only needs to compile the source code once, and future executions can directly run the compiled bytecode.
 
-## ### How compiled files work
+## How compiled files work
 - The first time you run a Python script, Python compiles the source code into bytecode.
 
 - This bytecode is stored in a `__pycache__` directory inside the same folder as your Python files.
@@ -535,7 +535,7 @@ print("Hello, World!")
 ```
 When you run this script, Python compiles it into bytecode and stores it as `__pycache__/example.cpython-<version>.pyc`. The next time you run `example.py`, Python will use the `.pyc` file if no changes have been made to `example.py`.
 
-## ### Location of compiled files
+## Location of compiled files
 Compiled Python files are stored in a `__pycache__` folder within the same directory as your Python script. The naming convention for the compiled file is as follows:
 - `module_name.cpython-<version>.pyc`
 
@@ -544,7 +544,7 @@ For example, a file compiled with Python 3.8 will have a `.pyc` file named:
 
 This structure allows Python to store multiple compiled files for different versions of the interpreter in the same directory.
 
-## ### Running a Python program without the source code (`.pyc` files)
+## Running a Python program without the source code (`.pyc` files)
 Python can run a program directly from its bytecode files (`.pyc`), even if the original source code (`.py` files) is not available. To run a `.pyc` file, just pass it to the Python interpreter.
 
 For example, if you have a compiled bytecode file `example.cpython-38.pyc`, you can run it like this:
@@ -553,7 +553,7 @@ For example, if you have a compiled bytecode file `example.cpython-38.pyc`, you 
 python example.cpython-38.pyc
 ```
 
-## ### Disabling bytecode generation
+## Disabling bytecode generation
 If you don’t want Python to generate compiled `.pyc` files, you can prevent this by using the `PYTHONDONTWRITEBYTECODE` environment variable or by passing the `-B` flag when running Python scripts.
 
 Example:
@@ -562,7 +562,7 @@ python -B example.py
 ```
 This will run the script without creating a compiled `.pyc` file.
 
-## ### Forcing recompilation of Python files
+## Forcing recompilation of Python files
 If you want to force Python to recompile your source files (perhaps because of changes in the code or version), you can delete the `__pycache__` directory or the corresponding `.pyc` files.
 
 Alternatively, you can use the `compileall` module to recompile all Python source files in a directory.
@@ -573,7 +573,7 @@ python -m compileall .
 ```
 This command will recompile all Python files in the current directory and store the `.pyc` files in the `__pycache__` folder.
 
-## ### Pros and cons of compiled Python files
+## Pros and cons of compiled Python files
 Pros:
 - **Faster execution**: Since the source code is already compiled into bytecode, Python can skip the compilation step, resulting in faster execution times.
 
@@ -588,7 +588,7 @@ Cons:
 
 - **No human readability**: Bytecode is not human-readable, making it difficult to inspect or debug.
 
-## ### Bytecode and the Python Virtual Machine (PVM)
+## Bytecode and the Python Virtual Machine (PVM)
 Python’s bytecode is executed by the Python virtual machine (PVM). The PVM is a part of the Python runtime system, which takes the compiled bytecode and interprets it to perform the actual execution. This is why Python is often called an "interpreted" language even though it involves an intermediate compilation step.
 
 ### Summary
@@ -600,7 +600,7 @@ Python’s bytecode is executed by the Python virtual machine (PVM). The PVM is 
 
 - **Disabling `.pyc` files**: You can prevent Python from generating compiled files using the `-B` flag or `PYTHONDONTWRITEBYTECODE` environment variable.
 
-## ### Intra-package references
+## Intra-package references
 Intra-package references in Python refer to the process of referencing or importing modules, submodules, or functions within the same package. These references help organize and maintain large projects by allowing components of the package to be accessible to each other in a structured and clear way.
 
 ### Absolute imports
@@ -627,7 +627,7 @@ from .. import module1
 from ...subpackage import submodule
 ```
 
-## ### Using `__init__.py` in packages
+## Using `__init__.py` in packages
 The `__init__.py` file is an essential part of Python packages. It can be used to initialize the package or define what is available when importing the package.
 
 **Empty `__init__.py`**
@@ -651,7 +651,7 @@ mypackage.some_function()
 mypackage.another_function()
 ```
 
-## ### Best practices for intra-package imports
+## Best practices for intra-package imports
 - **Use absolute imports**: Absolute imports are preferred for their clarity and explicitness, especially in larger projects where relative imports might become confusing.
 
 - **Use relative imports sparingly**: While relative imports are convenient, they can become ambiguous as the project grows, especially when modules are moved around.
@@ -660,7 +660,7 @@ mypackage.another_function()
 
 - **Avoid circular imports**: Be cautious when importing modules within the same package to avoid circular dependencies, where two or more modules import each other, causing a loop.
 
-## ### Opening a file
+## Opening a file
 Before you can read from or write to a file, you must first open it using the built-in open() function. This function returns a file object that can be used to interact with the file.
 
 The syntax is:
@@ -680,7 +680,7 @@ For example:
 f = open("example.txt", "r")  # Opens 'example.txt' for reading
 ```
 
-## ### Closing a file
+## Closing a file
 After working with a file, it’s important to close it to free up system resources. You can close a file using the `close()` method:
 
 ```python
@@ -694,7 +694,7 @@ with open("example.txt", "r") as f:
 ```
 The file will be closed automatically when the with block is exited.
 
-## ### Reading the entire file `read()`
+## Reading the entire file `read()`
 The `read()` method reads the entire contents of the file into a string.
 
 ```python
@@ -703,7 +703,7 @@ with open("example.txt", "r") as f:
     print(content)
 ```
 
-## ### Reading line by line `readline()`
+## Reading line by line `readline()`
 The `readline()` method reads one line from the file at a time:
 
 ```python
@@ -714,7 +714,7 @@ with open("example.txt", "r") as f:
         line = f.readline()
 ```
 
-## ### Reading all lines as a list `readlines()`
+## Reading all lines as a list `readlines()`
 The `readlines()` method reads all lines from the file and returns them as a list of strings:
 
 ```python
@@ -724,7 +724,7 @@ with open("example.txt", "r") as f:
         print(line, end='')
 ```
 
-## ### Iterating over the file object
+## Iterating over the file object
 You can also iterate over the file object directly, which is memory-efficient for large files:
 
 ```python
@@ -733,7 +733,7 @@ with open("example.txt", "r") as f:
         print(line, end='')
 ```
 
-## ### Writing strings to a file `write()`
+## Writing strings to a file `write()`
 The `write()` method writes a string to the file. If the file is opened in `'w'` mode, it will overwrite the file’s contents. If opened in `'a'` mode, it will append data to the end.
 
 ```python
@@ -742,7 +742,7 @@ with open("example.txt", "w") as f:
     f.write("Writing to a file in Python is easy.")
 ```
 
-## ### Writing multiple lines to a file `writelines()`
+## Writing multiple lines to a file `writelines()`
 The `writelines()` method writes a list of strings to a file. It doesn’t automatically add newlines between lines, so you need to include `\n` at the end of each string if necessary.
 
 ```python
@@ -751,7 +751,7 @@ with open("example.txt", "w") as f:
     f.writelines(lines)
 ```
 
-## ### Binary files
+## Binary files
 To work with binary files (like images, audio files, or any file that is not plain text), open the file in binary mode by adding `'b'` to the mode (e.g., `'rb'` for reading a binary file or `'wb'` for writing a binary file).
 
 Example: Reading a binary file
@@ -767,7 +767,7 @@ with open("output.bin", "wb") as f:
     f.write(b'\x00\xFF\xAA\xBB')  # Writing some raw bytes to a file
 ```
 
-## ### File modes summary
+## File modes summary
 - **`'r'`** Open for reading (default). The file must exist.
 
 - **`'w'`** Open for writing. Truncate the file if it exists.
@@ -782,7 +782,7 @@ with open("output.bin", "wb") as f:
 
 - **`'+'`**	Open for reading and writing.
 
-## ### File object methods
+## File object methods
 - **`read(size)`** Reads at most size characters (or bytes in binary mode).
 
 - **`readline()`** Reads a single line from the file.
@@ -795,7 +795,7 @@ with open("output.bin", "wb") as f:
 
 - **`close()`** Closes the file.
 
-## ### Managing file paths
+## Managing file paths
 Python's `os` and `pathlib` modules provide ways to handle file paths in a platform-independent way. You can use these to build paths, check if files exist, etc.
 
 Using `os` module:
@@ -825,7 +825,7 @@ if file_path.exists():
 print(file_path.resolve())
 ```
 
-## ### File exceptions
+## File exceptions
 When dealing with files, errors may occur. Python provides exception handling to deal with these scenarios:
 
 ```python
@@ -838,14 +838,14 @@ except IOError:
     print("An I/O error occurred")
 ```
 
-## ### File handling best practices
+## File handling best practices
 - **Use the `with` statement**: This ensures the file is closed properly after you’re done with it, even if exceptions occur.
 
 - **Handle exceptions**: Always handle potential errors, such as files not existing, using `try`/`except`.
 
 - **Use appropriate modes**: Make sure you’re using the correct mode for reading, writing, or appending data to avoid accidentally overwriting data.
 
-## ### File `tell()` method
+## File `tell()` method
 The `tell()` method returns the current position of the file pointer, measured in bytes from the beginning of the file. It helps you know where you are in the file at any given time.
 
 Usage of `tell()`
@@ -860,7 +860,7 @@ with open("example.txt", "r") as f:
 ```
 In the above example, the file pointer will be at position 10 after reading the first 10 characters from the file.
 
-## ### File `seek()` method
+## File `seek()` method
 The `seek()` method is used to move the file pointer to a specific position in the file. This is useful when you want to read or write from a specific location in the file rather than from the current position.
 
 Syntax of `seek()`
@@ -895,7 +895,7 @@ In this example:
 - The second `seek(-10, 2)` moves the pointer 10 bytes back from the end.
 - The `read(10)` reads the last 10 bytes of the file.
 
-## ### `tell()` and `seek()` common use cases
+## `tell()` and `seek()` common use cases
 - **Repositioning the file pointer**: You might want to skip certain portions of the file or re-read some part.
 - **Random access**: When working with binary files or large files, you might need to jump to specific parts without reading the entire file.
 - **Reading from or writing to specific locations**: You can use `seek()` to position the pointer at the right place before writing data.
@@ -908,7 +908,7 @@ with open("example.txt", "r") as f:
     print(f.read(10))  # Read 10 bytes starting from the middle
 ```
 
-## ### Saving data with json
+## Saving data with json
 In Python, you can use the `json` module to work with json, a popular format for storing and exchanging structured data. Python provides an easy way to serialize Python objects into JSON format and deserialize JSON back into Python objects.
 
 To work with JSON data in Python, you'll primarily use the following methods from the json module:
@@ -917,7 +917,7 @@ To work with JSON data in Python, you'll primarily use the following methods fro
 - `json.load()` Parse JSON from a file into a Python object.
 - `json.loads()` Parse JSON from a string into a Python object.
 
-## ### Saving structured data with `json.dump()`
+## Saving structured data with `json.dump()`
 You can save an object (like a dictionary or list) as a JSON file using `json.dump()`. This method serializes the object into JSON format and writes it to a file.
 
 Example: Saving data to a JSON file
@@ -944,7 +944,7 @@ In this example:
 - The dictionary `data` is written to the `data.json` file.
 - The `indent=4` argument ensures the JSON is formatted with indentation, making it easier to read.
 
-## ### Reading json data with `json.load()`
+## Reading json data with `json.load()`
 To read structured data from a JSON file, use the `json.load()` method. This will parse the JSON file and convert it into an object (usually a dictionary or list).
 
 Example: Reading data from a JSON file
@@ -962,7 +962,7 @@ print(data["address"]["city"]) # Output: New York
 In this example:
 - The `json.load()` method is used to read the contents of `data.json` and convert it back into a dictionary.
 
-## ### Converting objects to JSON strings with `json.dumps()`
+## Converting objects to JSON strings with `json.dumps()`
 If you want to convert an object into a JSON-formatted string (without saving it to a file), you can use `json.dumps()`.
 
 Example: Convert dictionary to JSON string
@@ -982,7 +982,7 @@ print(json_string)
 ```
 In this example, the `json.dumps()` method converts the dictionary data into a JSON-formatted string that can be printed or sent over a network.
 
-## ### Converting JSON strings to objects with `json.loads()`
+## Converting JSON strings to objects with `json.loads()`
 You can parse a JSON-formatted string into an object using `json.loads()`.
 
 Example: Convert JSON string to dictionary
@@ -999,7 +999,7 @@ print(data["age"])  # Output: 30
 ```
 Here, the `json.loads()` method converts a JSON string into a dictionary.
 
-## ### Handling custom data types with `json.JSONEncoder`
+## Handling custom data types with `json.JSONEncoder`
 By default, `json` can handle basic Python types like `str`, `int`, `list`, `dict` and `bool`. For custom data types, you need to write your own encoder.
 
 **Example: Handling custom objects in JSON**
@@ -1029,7 +1029,7 @@ print(person_json)
 ```
 This custom encoder converts a Person object into a dictionary that can be serialized to JSON.
 
-## ### Working with nested json structures
+## Working with nested json structures
 JSON supports nested structures, meaning you can have lists of dictionaries, dictionaries inside dictionaries, etc. Python handles these easily.
 
 Example: Nested structures
@@ -1059,7 +1059,7 @@ with open("nested_data.json", "r") as json_file:
 print(data["employees"][0]["name"])  # Output: John
 ```
 
-## ### Error handling with json
+## Error handling with json
 When working with JSON, it’s common to encounter errors, especially when the data format is incorrect. You can handle such cases using `try`/`except`.
 
 Example: Handling JSON decode error
@@ -1074,7 +1074,7 @@ except json.JSONDecodeError as e:
     print(f"Error decoding JSON: {e}")
 ```
 
-## ### Enriching exceptions with notes
+## Enriching exceptions with notes
 In Python 3.11 and later, you can enrich exceptions with additional information using the `add_note()` method. This allows you to add more context to the error, making it easier to debug complex problems. The notes don't change the original exception but append extra details that are displayed when the exception is printed or logged.
 
 ### Why use `add_note()`?
@@ -1082,7 +1082,7 @@ When exceptions occur in your code, it's often helpful to provide additional inf
 
 For example, if you're catching an error during file processing, you can add a note that includes the file path or details about the operation being attempted.
 
-## ### How to use `add_note()`
+## How to use `add_note()`
 The `add_note()` method can be called on any exception object to append a note. The note will be displayed along with the usual exception traceback when the exception is printed.
 
 ### Basic syntax
@@ -1108,14 +1108,14 @@ ValueError: Invalid input!
   Note: Make sure the input is a valid number between 1 and 100.
 ```
 
-## ### Benefits of enriching exceptions
+## Benefits of enriching exceptions
 - **Increased clarity**: Additional context helps developers understand the circumstances of the error.
 
 - **Improved debugging**: Notes can provide hints or background information, which can be especially useful when errors occur deep within the application.
 
 - **Self-documenting errors**: By adding relevant information directly to the exception, you're effectively documenting the possible failure points in your code.
 
-## ### Iterators
+## Iterators
 In Python, an iterator is an object that allows you to iterate over (traverse) a collection of values, such as a list, tuple, or dictionary, one element at a time. Iterators play a fundamental role in Python's for-loops and comprehension structures.
 
 ### Key concepts of iterators
@@ -1126,7 +1126,7 @@ In Python, an iterator is an object that allows you to iterate over (traverse) a
 
   - `__next__()` Returns the next item from the iterator. If there are no more items, it raises the `StopIteration` exception.
 
-## ### How iterators work
+## How iterators work
 When a for loop iterates over an iterable, Python internally calls the `__iter__()` method to obtain an iterator object, and then repeatedly calls the `__next__()` method to retrieve each item from the iterator until the `StopIteration` exception is raised.
 
 Example: Basic iteration
@@ -1147,7 +1147,7 @@ print(next(iterator))  # Output: 4
 # print(next(iterator))  # Raises StopIteration
 ```
 
-## ### Manually creating an iterator
+## Manually creating an iterator
 Any object in Python can be made into an iterator by implementing the `__iter__()` and `__next__()` methods.
 
 Example: Custom iterator
@@ -1175,7 +1175,7 @@ for num in my_iter:
 ```
 In this example, `MyIterator` class behaves like a built-in iterator. The `__iter__()` method returns the iterator object itself and `__next__()` returns the next item until it reaches `max_value`, after which it raises `StopIteration`.
 
-## ### Using `iter()` and `next()`
+## Using `iter()` and `next()`
 - **`iter()`** This function returns an iterator object from an iterable.
 
 - **`next()`** This function retrieves the next item from an iterator. If there are no more items, it raises StopIteration.
@@ -1192,7 +1192,7 @@ print(next(it))  # Output: 20
 print(next(it))  # Output: 30
 ```
 
-## ### Iterator vs iterable
+## Iterator vs iterable
 - **Iterable**: Any object that can return an iterator. Examples: lists, tuples, strings.
   - Implements `__iter__()`.
 
@@ -1214,7 +1214,7 @@ print(next(iterator))  # Output: 2
 print(next(iterator))  # Output: 3
 ```
 
-## ### Iterating over custom collections
+## Iterating over custom collections
 You can make your custom collection class iterable by implementing the `__iter__()` method, which returns an iterator.
 
 Example: Making a custom collection iterable
@@ -1233,7 +1233,7 @@ for item in my_collection:
     print(item)  # Output: 10, 20, 30
 ```
 
-## ### Infinite iterators with `itertools`
+## Infinite iterators with `itertools`
 `itertools` module provides several functions that return infinite iterators, such as `count()`, `cycle()` and `repeat()`.
 
 Example: Infinite iterators
@@ -1255,7 +1255,7 @@ for item in itertools.cycle(['A', 'B', 'C']):
     counter += 1
 ```
 
-## ### Generators as iterators
+## Generators as iterators
 A generator is a special type of iterator created using functions with the `yield` keyword. Unlike normal functions that return a single value and exit, generators yield a series of values, pausing between each one and resuming when `next()` is called.
 
 Example: Generator function
@@ -1273,7 +1273,7 @@ print(next(gen))  # Output: 3
 ```
 Generator functions simplify the creation of iterators and provide a concise way to iterate over large data sets lazily, generating values only when needed.
 
-## ### `os` module: Basic file and directory operations
+## `os` module: Basic file and directory operations
 - `os.getcwd()` Returns the current working directory.
 - `os.chdir(path)` Changes the current working directory to the given path.
 - `os.listdir(path)` Lists the files and directories in the specified path.
@@ -1303,7 +1303,7 @@ os.chdir("..")
 os.rmdir("new_directory")  # Remove the directory
 ```
 
-## ### `os` module: File path operations
+## `os` module: File path operations
 - `os.path.join(path, *paths)` Joins one or more path components.
 - `os.path.exists(path)` Checks if a given path exists.
 - `os.path.isfile(path)` Checks if the path is a file.
@@ -1341,7 +1341,7 @@ new_path = os.path.join("/home/user", "new_folder", "new_file.txt")
 print("Joined path:", new_path)
 ```
 
-## ### `os` module: Environment variables
+## `os` module: Environment variables
 The os module provides access to the environment variables of the operating system.
 
 ### Common environment functions:
@@ -1369,7 +1369,7 @@ print("MY_VAR:", os.getenv('MY_VAR'))
 os.unsetenv('MY_VAR')
 ```
 
-## ### `os` module: Process management
+## `os` module: Process management
 The `os` module provides functions to interact with system processes, including executing shell commands, managing process IDs, and terminating processes.
 
 ### Key process functions:
@@ -1394,7 +1394,7 @@ os.system('ls')
 print("Process ID:", os.getpid())
 ```
 
-## ### `os` module: Working with file descriptors
+## `os` module: Working with file descriptors
 The `os` module allows low-level file I/O using file descriptors, providing more control over how files are opened, read, and written.
 
 ### Key file descriptor functions:
@@ -1421,7 +1421,7 @@ print("Data read:", data)
 os.close(fd)
 ```
 
-## ### `os` module: Working with the `os.walk()` function
+## `os` module: Working with the `os.walk()` function
 The `os.walk()` function allows you to iterate over the directory tree, yielding the directory path, subdirectories, and files.
 
 Example: Walking through a directory tree
@@ -1436,7 +1436,7 @@ for dirpath, dirnames, filenames in os.walk('/path/to/directory'):
         print(f"File: {filename}")
 ```
 
-## ### `os` module: Temporary files and directories
+## `os` module: Temporary files and directories
 The `os` module, along with the `tempfile` module, allows you to create temporary files and directories.
 
 ### Example: Creating temporary files
@@ -1452,7 +1452,7 @@ with tempfile.NamedTemporaryFile(delete=False) as temp_file:
 # Temporary file will be deleted when the program exits
 ```
 
-## ### `shutil` module: Copying files and directories
+## `shutil` module: Copying files and directories
 The `shutil` module offers several ways to copy files and directories.
 
 - `shutil.copy(src, dst)` Copies a file from src to dst. The metadata (like timestamps) is not preserved.
@@ -1477,7 +1477,7 @@ shutil.copy2('source.txt', 'destination_with_metadata.txt')
 shutil.copytree('source_directory', 'destination_directory')
 ```
 
-## ### `shutil` module: Moving files and directories
+## `shutil` module: Moving files and directories
 - `shutil.move(src, dst)` Moves a file or directory from src to dst. It can also rename files or directories if the source and destination are on the same filesystem.
 
 ### Example: Moving files
@@ -1491,7 +1491,7 @@ shutil.move('old_file.txt', 'new_location.txt')
 shutil.move('source_directory', 'destination_directory')
 ```
 
-## ### `shutil` module: Removing files and directories
+## `shutil` module: Removing files and directories
 - shutil.rmtree(path): Recursively deletes a directory and all its contents (files and subdirectories).
 
 ### Example: Removing a directory and its contents
@@ -1502,7 +1502,7 @@ import shutil
 shutil.rmtree('directory_to_remove')
 ```
 
-## ### `shutil` module: Archiving files and directories
+## `shutil` module: Archiving files and directories
 The `shutil` module provides tools to create and extract archives (e.g., zip or tar files).
 
 - `shutil.make_archive(base_name, format, root_dir)` Creates an archive file (e.g., zip, tar) from a directory.
@@ -1524,7 +1524,7 @@ shutil.make_archive('my_archive', 'zip', 'my_folder')
 shutil.unpack_archive('my_archive.zip', 'extracted_folder')
 ```
 
-## ### `shutil` module: Disk usage
+## `shutil` module: Disk usage
 - `shutil.disk_usage(path)` Returns the disk usage statistics for the given path as a tuple: (total, used, free).
 
 ### Example: Checking disk usage
@@ -1537,7 +1537,7 @@ total, used, free = shutil.disk_usage('/')
 print(f"Total: {total} bytes, Used: {used} bytes, Free: {free} bytes")
 ```
 
-## ### `shutil` module: File system operations
+## `shutil` module: File system operations
 - `shutil.chown(path, user=None, group=None)` Changes the owner and/or group of a file or directory. This is useful for Unix-like systems.
 
 ### Example: Changing ownership of a file
@@ -1548,7 +1548,7 @@ import shutil
 shutil.chown('myfile.txt', user='newuser', group='newgroup')
 ```
 
-## ### `shutil` module: Error handling
+## `shutil` module: Error handling
 The `shutil` module provides an error-handling mechanism that is helpful when dealing with file operations that might fail, such as permissions issues or missing files.
 
 - `shutil.Error` A base class for exceptions raised by `shutil` functions.
@@ -1564,7 +1564,7 @@ except shutil.Error as e:
     print(f"Error occurred: {e}")
 ```
 
-## ### Common string validation methods
+## Common string validation methods
 Python provides several built-in string methods to validate the contents of strings. These methods help check if a string contains specific types of characters (e.g., alphabetic, numeric, etc.). These validation methods return boolean values (`True` or `False`), making them ideal for conditional checks.
 
 - `isalpha()` Checks if all characters are alphabetic.
@@ -1591,7 +1591,7 @@ Python provides several built-in string methods to validate the contents of stri
 
 - `isidentifier()` Checks if the string is a valid Python identifier.
 
-## ### What are context managers?
+## What are context managers?
 A context manager is a construct that sets something up, lets you use it, and then cleans up automatically, no matter what happens (even if there's an error).
 
 Most commonly used with the `with` statement:
@@ -1604,7 +1604,7 @@ Under the hood, context managers use two special methods:
 - `__enter__()` called when the with block is entered.
 - `__exit__()` called when the with block is exited.
 
-## ### Custom context manager example
+## Custom context manager example
 ```python
 class MyContext:
     def __enter__(self):
@@ -1624,7 +1624,7 @@ Using resource
 Exiting context
 ```
 
-## ### Real-world uses of context managers
+## Real-world uses of context managers
 - **File handling**: `open()` (auto-closes files)
 
 - **Database connections**: auto-commits or rolls back
@@ -1635,7 +1635,7 @@ Exiting context
 
 - **Resource management**: open/close network sockets, sessions, etc.
 
-## ### The `contextlib` module
+## The `contextlib` module
 Python provides tools to build context managers easily, like contextlib.contextmanager:
 ```python
 from contextlib import contextmanager
@@ -1656,7 +1656,7 @@ Hello
 End
 ```
 
-## ### Why use context managers?
+## Why use context managers?
 - Ensures resources are cleaned up properly
 
 - Makes code more readable and concise
