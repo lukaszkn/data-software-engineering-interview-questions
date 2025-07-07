@@ -1,4 +1,4 @@
-# 2871 Data and Software engineering interview questions
+# 3056 Data and Software engineering interview questions
 | Questions | Description |
 | --- | --- |
 | [Ansible](content/ansible.md) | An open-source automation tool primarily used for configuration management, application deployment and orchestration |
@@ -15,13 +15,16 @@
 | [Big Data Engineering](content/bigdata.md) | Big Data engineering concepts and tools. |
 | [Data Warehousing](content/dwha.md) | Data Warehousing Architecture |
 | [dbt](content/dbt.md) | dbt |
+| [Elasticsearch](content/elasticsearch.md) | A search engine based on Apache Lucene, a free and open-source search engine. It provides a distributed, multitenant-capable full-text search engine with an HTTP web interface and schema-free JSON documents. |
 | [General](content/general.md) | General programming concepts, design patterns |
 | [Google Cloud Platform](content/gcp.md) | Google Cloud Platform |
+| [Grafana](content/grafana.md) | A multi-platform open source analytics and interactive visualization web application. |
 | [Hadoop](content/hadoop.md) | Hadoop |
 | [Jetpack Compose](content/jetpack_compose.md) | Basics |
 | [Kotlin Basics](content/kotlin.md) | Basic syntax, functions, variables, classes, conditional expressions, loops, ranges, collections, nullable values |
 | [Machine learning](content/machine_learning.md) | Basic concepts |
 | [MongoDB](content/mongodb.md) | MongoDB |
+| [Pandas](content/pandas.md) | A software library written for the Python for data manipulation and analysis |
 | [Python](content/python.md) | The basics, interpreter, numbers, text, lists, sets, dictionaries, control flow, loops, functions |
 | [Python Advanced](content/pythonadvanced.md) | Functions, annotations, coding style, reading and writing files, classes, iterators, standard library |
 | [Python How-To](content/pythonhowto.md) | How-to's |
