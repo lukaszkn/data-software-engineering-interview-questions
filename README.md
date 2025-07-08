@@ -1,4 +1,4 @@
-# 3713 Data and Software engineering interview questions
+# 3941 Data and Software engineering interview questions
 | Questions | Description |
 | --- | --- |
 | [Amazon Neptune](content/amazon_neptune.md) | A fast, fully managed database service powering graph use cases such as identity graphs, knowledge graphs, and fraud detection. |
@@ -24,6 +24,7 @@
 | [Elasticsearch](content/elasticsearch.md) | A search engine based on Apache Lucene, a free and open-source search engine. It provides a distributed, multitenant-capable full-text search engine with an HTTP web interface and schema-free JSON documents. |
 | [FastAPI](content/fastapi.md) | A high-performance web framework for building HTTP-based service APIs in Python |
 | [General](content/general.md) | General programming concepts, design patterns |
+| [General Data Engineer interview](content/general_interview.md) | General, behavioral, communication, collaboration, problem solving from data engineering perspective |
 | [Google Cloud Platform](content/gcp.md) | Google Cloud Platform |
 | [Grafana](content/grafana.md) | A multi-platform open source analytics and interactive visualization web application. |
 | [Hadoop](content/hadoop.md) | Hadoop |
@@ -34,10 +35,13 @@
 | [MongoDB](content/mongodb.md) | MongoDB |
 | [Pandas](content/pandas.md) | A software library written for the Python for data manipulation and analysis |
 | [Power BI](content/power_bi.md) | A business analytics and data visualization tool |
+| [Power BI DAX](content/power_bi_dax.md) | Power BI DAX |
+| [PySpark](content/pyspark.md) | PySpark |
 | [Python](content/python.md) | The basics, interpreter, numbers, text, lists, sets, dictionaries, control flow, loops, functions |
 | [Python Advanced](content/pythonadvanced.md) | Functions, annotations, coding style, reading and writing files, classes, iterators, standard library |
 | [Python How-To](content/pythonhowto.md) | How-to's |
 | [RxSwift](content/rxswift.md) | Basics of RxSwift |
+| [Scala](content/scala_de.md) | Scala for data engineering |
 | [Scala Essential](content/scala.md) | Essential Scala programming concepts |
 | [Snowflake](content/snowflake.md) | A cloud data platform that at it's core features a columnar-stored data warehouse |
 | [SQL](content/sql.md) | SQL |
