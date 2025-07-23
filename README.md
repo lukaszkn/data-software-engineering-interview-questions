@@ -1,4 +1,4 @@
-# 4121 Data and Software engineering interview questions
+# 4302 Data and Software engineering interview questions
 | Questions | Description |
 | --- | --- |
 | [Amazon Neptune](content/amazon_neptune.md) | A fast, fully managed database service powering graph use cases such as identity graphs, knowledge graphs, and fraud detection. |
@@ -8,6 +8,7 @@
 | [Apache Flume](content/apache_flume.md) | Apache Flume |
 | [Apache HBase](content/apache_hbase.md) | Apache HBase |
 | [Apache Hive](content/apache_hive.md) | Apache Hive |
+| [Apache Iceberg](content/apache_iceberg.md) | Apache Iceberg |
 | [Apache Kafka](content/apache_kafka.md) | Apache Kafka |
 | [Apache Spark](content/apache_spark.md) | Apache Spark |
 | [Apache Superset](content/apache_superset.md) | Apache Superset |
@@ -23,6 +24,7 @@
 | [Databricks Machine Learning](content/databricks_machine_learning.md) | Databricks Machine Learning |
 | [dbt](content/dbt.md) | dbt |
 | [Delta Lake](content/delta_lake.md) | A flexible storage pattern that is typically used for storing massive amounts of raw data in its native format |
+| [DynamoDB](content/dynamodb.md) | DynamoDB |
 | [Elasticsearch](content/elasticsearch.md) | A search engine based on Apache Lucene, a free and open-source search engine. It provides a distributed, multitenant-capable full-text search engine with an HTTP web interface and schema-free JSON documents. |
 | [FastAPI](content/fastapi.md) | A high-performance web framework for building HTTP-based service APIs in Python |
 | [General](content/general.md) | General programming concepts, design patterns |
@@ -34,6 +36,7 @@
 | [Jetpack Compose](content/jetpack_compose.md) | Basics |
 | [Kotlin Basics](content/kotlin.md) | Basic syntax, functions, variables, classes, conditional expressions, loops, ranges, collections, nullable values |
 | [Machine learning](content/machine_learning.md) | Basic concepts |
+| [MLflow](content/mlflow.md) | MLflow |
 | [MongoDB](content/mongodb.md) | MongoDB |
 | [Pandas](content/pandas.md) | A software library written for the Python for data manipulation and analysis |
 | [Polars](content/polars.md) | Polars |
@@ -49,6 +52,7 @@
 | [Snowflake](content/snowflake.md) | A cloud data platform that at it's core features a columnar-stored data warehouse |
 | [SQL](content/sql.md) | SQL |
 | [SQL How to](content/sqlhowto.md) | SQL tips & tricks |
+| [Streamlit](content/streamlit.md) | Streamlit |
 | [Swift Advanced](content/swiftadvanced.md) | Properties, subscripts, concurrency, type casting, nested types, extensions, protocols, generics, Combine framework |
 | [Swift Basics](content/swift.md) | The basics, string and characters, collection types, control flow, functions, closures, enumerations, structures and classes, properties, methods |
 | [Swift UI Advanced](content/swiftuiadvanced.md) | Advanced topics and how-to's |
