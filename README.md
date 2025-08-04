@@ -1,4 +1,4 @@
-# 5071 Data and Software engineering interview questions
+# 5173 Data and Software engineering interview questions
 | Questions | Description |
 | --- | --- |
 | [Amazon Neptune](content/amazon_neptune.md) | A fast, fully managed database service powering graph use cases such as identity graphs, knowledge graphs, and fraud detection. |
@@ -23,6 +23,7 @@
 | [Azure Purview](content/azure_purview.md) | A unified data governance solution that helps organizations discover, manage, and govern their data estate across on-premises, multi-cloud, and SaaS environments |
 | [Big Data Engineering](content/bigdata.md) | Big Data engineering concepts and tools. |
 | [Data pipelines](content/data_pipelines.md) | Data pipelines basics |
+| [Data Preparation for Machine Learning](content/data_preparation_for_machine_learning.md) | Data Preparation for Machine Learning |
 | [Data Vault architecture](content/data_vault_architecture.md) | Data Vault architecture |
 | [Data Warehouse Modeling](content/data_warehouse_modeling.md) | data warehouse modeling |
 | [Data Warehousing](content/dwha.md) | Data Warehousing Architecture |
@@ -44,6 +45,7 @@
 | [Jenkins](content/jenkins.md) | An open source automation server. It helps automate the parts of software development related to building, testing, and deploying |
 | [Jetpack Compose](content/jetpack_compose.md) | Basics |
 | [Kotlin Basics](content/kotlin.md) | Basic syntax, functions, variables, classes, conditional expressions, loops, ranges, collections, nullable values |
+| [LangChain](content/langchain.md) | LangChain |
 | [Machine learning](content/machine_learning.md) | Basic concepts |
 | [Microsoft Fabric](content/microsoft_fabric.md) | Microsoft Fabric |
 | [MLflow](content/mlflow.md) | MLflow |
