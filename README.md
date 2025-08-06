@@ -1,4 +1,4 @@
-# 5173 Data and Software engineering interview questions
+# 5430 Data and Software engineering interview questions
 | Questions | Description |
 | --- | --- |
 | [Amazon Neptune](content/amazon_neptune.md) | A fast, fully managed database service powering graph use cases such as identity graphs, knowledge graphs, and fraud detection. |
@@ -28,8 +28,12 @@
 | [Data Warehouse Modeling](content/data_warehouse_modeling.md) | data warehouse modeling |
 | [Data Warehousing](content/dwha.md) | Data Warehousing Architecture |
 | [Databricks AutoML](content/databricks_automl.md) | Databricks AutoML |
+| [Databricks Data Modeling Strategies](content/databricks_data_modeling_strategies.md) | Databricks Data Modeling Strategies |
+| [Databricks Generative AI Application Deployment and Monitoring](content/databricks_generative_ai_application_deployment_and_monitoring.md) | Databricks Generative AI Application Deployment and Monitoring |
+| [Databricks Generative AI Application Development](content/databricks_generative_ai_application_development.md) | Databricks Generative AI Application Development |
 | [Databricks Machine Learning](content/databricks_machine_learning.md) | Databricks Machine Learning |
 | [Databricks Mosaic AI](content/databricks_mosaic_ai.md) | Databricks Mosaic AI |
+| [Databricks Performance Optimization](content/databricks_performance_optimization.md) | Databricks Performance Optimization |
 | [dbt](content/dbt.md) | dbt |
 | [Delta Lake](content/delta_lake.md) | A flexible storage pattern that is typically used for storing massive amounts of raw data in its native format |
 | [DynamoDB](content/dynamodb.md) | DynamoDB |
@@ -42,6 +46,7 @@
 | [Google Cloud Platform](content/gcp.md) | Google Cloud Platform |
 | [Grafana](content/grafana.md) | A multi-platform open source analytics and interactive visualization web application. |
 | [Hadoop](content/hadoop.md) | Hadoop |
+| [Haystack](content/haystack.md) | Haystack |
 | [Jenkins](content/jenkins.md) | An open source automation server. It helps automate the parts of software development related to building, testing, and deploying |
 | [Jetpack Compose](content/jetpack_compose.md) | Basics |
 | [Kotlin Basics](content/kotlin.md) | Basic syntax, functions, variables, classes, conditional expressions, loops, ranges, collections, nullable values |
