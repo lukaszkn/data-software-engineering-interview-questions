@@ -1,4 +1,4 @@
-# 5522 Data and Software engineering interview questions
+# 5682 Data and Software engineering interview questions
 | Questions | Description |
 | --- | --- |
 | [Amazon Neptune](content/amazon_neptune.md) | A fast, fully managed database service powering graph use cases such as identity graphs, knowledge graphs, and fraud detection. |
@@ -30,6 +30,7 @@
 | [Data Warehousing](content/dwha.md) | Data Warehousing Architecture |
 | [Databricks AutoML](content/databricks_automl.md) | Databricks AutoML |
 | [Databricks Data Modeling Strategies](content/databricks_data_modeling_strategies.md) | Databricks Data Modeling Strategies |
+| [Databricks Data Warehousing](content/databricks_data_warehousing.md) | Databricks Data Warehousing |
 | [Databricks Generative AI Application Deployment and Monitoring](content/databricks_generative_ai_application_deployment_and_monitoring.md) | Databricks Generative AI Application Deployment and Monitoring |
 | [Databricks Generative AI Application Development](content/databricks_generative_ai_application_development.md) | Databricks Generative AI Application Development |
 | [Databricks Machine Learning](content/databricks_machine_learning.md) | Databricks Machine Learning |
@@ -69,6 +70,7 @@
 | [Scala](content/scala_de.md) | Scala for data engineering |
 | [Scala Essential](content/scala.md) | Essential Scala programming concepts |
 | [Snowflake](content/snowflake.md) | A cloud data platform that at it's core features a columnar-stored data warehouse |
+| [Spark Structured Streaming](content/spark_structured_streaming.md) | Spark Structured Streaming |
 | [SQL](content/sql.md) | SQL |
 | [SQL How to](content/sqlhowto.md) | SQL tips & tricks |
 | [Streamlit](content/streamlit.md) | Streamlit |
