@@ -1,4 +1,4 @@
-# 6138 Data and Software engineering interview questions
+# 6332 Data and Software engineering interview questions
 | Questions | Description |
 | --- | --- |
 | [Amazon Neptune](content/amazon_neptune.md) | A fast, fully managed database service powering graph use cases such as identity graphs, knowledge graphs, and fraud detection. |
@@ -22,6 +22,7 @@
 | [Azure](content/azure.md) | Azure |
 | [Azure Data Factory](content/azure_data_factory.md) | Azure Data Factory |
 | [Azure Databricks](content/azure_databricks.md) | Azure Databricks |
+| [Azure HDInsight](content/azure_hdinsight.md) | Azure HDInsight |
 | [Azure Purview](content/azure_purview.md) | A unified data governance solution that helps organizations discover, manage, and govern their data estate across on-premises, multi-cloud, and SaaS environments |
 | [Azure Synapse Analytics](content/azure_synapse_analytics.md) | Azure Synapse Analytics |
 | [Big Data Engineering](content/bigdata.md) | Big Data engineering concepts and tools. |
