@@ -1,6 +1,7 @@
-# 6332 Data and Software engineering interview questions
+# 7117 Data and Software engineering interview questions
 | Questions | Description |
 | --- | --- |
+| [Amazon Bedrock](content/amazon_bedrock.md) | Amazon Bedrock |
 | [Amazon Neptune](content/amazon_neptune.md) | A fast, fully managed database service powering graph use cases such as identity graphs, knowledge graphs, and fraud detection. |
 | [Amazon Redshift](content/amazon_redshift.md) | Amazon Redshift |
 | [Amazon SageMaker](content/amazon_sagemaker.md) | Amazon SageMaker |
@@ -22,6 +23,7 @@
 | [Azure](content/azure.md) | Azure |
 | [Azure Data Factory](content/azure_data_factory.md) | Azure Data Factory |
 | [Azure Databricks](content/azure_databricks.md) | Azure Databricks |
+| [Azure DevOps](content/azure_devops.md) | Azure DevOps |
 | [Azure HDInsight](content/azure_hdinsight.md) | Azure HDInsight |
 | [Azure Purview](content/azure_purview.md) | A unified data governance solution that helps organizations discover, manage, and govern their data estate across on-premises, multi-cloud, and SaaS environments |
 | [Azure Synapse Analytics](content/azure_synapse_analytics.md) | Azure Synapse Analytics |
@@ -47,6 +49,7 @@
 | [Fivetran](content/fivetran.md) | Fivetran |
 | [General](content/general.md) | General programming concepts, design patterns |
 | [General Data Engineer interview](content/general_interview.md) | General, behavioral, communication, collaboration, problem solving from data engineering perspective |
+| [Golang](content/golang.md) | Golang |
 | [Google BigQuery](content/google_bigquery.md) | Google BigQuery |
 | [Google Cloud Platform](content/gcp.md) | Google Cloud Platform |
 | [Grafana](content/grafana.md) | A multi-platform open source analytics and interactive visualization web application. |
@@ -55,8 +58,10 @@
 | [Jenkins](content/jenkins.md) | An open source automation server. It helps automate the parts of software development related to building, testing, and deploying |
 | [Jetpack Compose](content/jetpack_compose.md) | Basics |
 | [Kotlin Basics](content/kotlin.md) | Basic syntax, functions, variables, classes, conditional expressions, loops, ranges, collections, nullable values |
+| [Kusto Query Language KQL](content/kusto_query_language_kql.md) | Kusto Query Language KQL |
 | [LangChain](content/langchain.md) | LangChain |
 | [Machine learning](content/machine_learning.md) | Basic concepts |
+| [Matillion](content/matillion.md) | Matillion |
 | [Microsoft Fabric](content/microsoft_fabric.md) | Microsoft Fabric |
 | [MLflow](content/mlflow.md) | MLflow |
 | [MongoDB](content/mongodb.md) | MongoDB |
