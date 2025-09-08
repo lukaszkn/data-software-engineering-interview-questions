@@ -125,8 +125,12 @@ There are several methods to improve performance in Apache Hive:
 
 Implementing these techniques collectively can lead to significant performance gains in Hive programs.
 
+[Top](#top)
+
 ## Can we use Hive for Online Transaction Processing (OLTP) systems?
 Hive is not suitable for Online Transaction Processing (OLTP) systems. Hive is designed for Online Analytical Processing (OLAP) and batch processing use cases, dealing primarily with large-scale data analysis and read-heavy workloads. It has high latency for query execution and does not support fine-grained insert, update, and delete operations typically required by OLTP systems. The underlying file formats and lack of row-level locking further limit its ability to handle concurrent, small transactions. As a result, Hive is best used for data warehousing and analytical workloads, not transactional applications.
+
+[Top](#top)
 
 ## How will you change the data type of a column in Hive?
 To change the data type of a column in Hive, use the `ALTER TABLE` statement with the `CHANGE` command. The syntax is:
@@ -143,10 +147,14 @@ ALTER TABLE employees CHANGE age age BIGINT;
 
 Note: This operation modifies the table metadata only. If the existing data can't be implicitly converted to the new type, queries may fail or provide incorrect results. For complex type changes, or if you need to transform existing data, it's safer to create a new column, populate it with converted data, then drop the old column.
 
+[Top](#top)
+
 ## What is Metastore in Hive?
 The Metastore in Hive is a central repository that stores metadata for all Hive tables and partitions in the warehouse. It includes information such as table names, column types, table locations, partition details, and database schemas. The Metastore is usually backed by a traditional relational database like MySQL, PostgreSQL, or Derby.
 
 Hive uses the Metastore to manage and access schema information, which enables Hive to abstract the underlying data storage format and location. Components such as the Hive CLI, HiveServer2, and other data processing engines interact with the Metastore using the Thrift service interface to read/write metadata. The Metastore is critical for query planning and execution, as it tells Hive how to interpret and navigate the data stored in Hadoop Distributed File System (HDFS) or other storage systems.
+
+[Top](#top)
 
 ## What is SerDe in Hive?
 In Hive, **SerDe** stands for **Serializer/Deserializer**. It is a component that defines how Hive translates data stored in HDFS to records in a table (deserialization), and how it writes records from a table back to HDFS (serialization).
@@ -154,6 +162,8 @@ In Hive, **SerDe** stands for **Serializer/Deserializer**. It is a component tha
 When Hive reads data from a table, the SerDe interprets the bytes stored on disk and converts them into Java objects for processing (deserialization). When writing data, it converts Java objects back into a format suitable for storage (serialization).
 
 Hive provides built-in SerDes for common formats like CSV, JSON, ORC, and Parquet, and also allows developers to implement custom SerDes for other data formats. The SerDe is specified through table properties, and it plays a central role in enabling Hive to process a wide variety of structured and semi-structured data.
+
+[Top](#top)
 
 ## What are the components in Hive data model?
 The core components in the Hive data model are:
@@ -171,6 +181,8 @@ The core components in the Hive data model are:
 6. **Views**: Virtual tables defined by a HiveQL query. Views do not store data themselves but provide a way to simplify complex queries.
 
 These components together enable Hive to manage structured data efficiently on top of Hadoop.
+
+[Top](#top)
 
 ## What are the different modes in which we can run Hive?
 Hive can be run in two primary modes:
@@ -195,6 +207,8 @@ Summary:
 - Local Mode (for testing/small data)
 - Distributed Mode (for production/large data), where queries are executed on a Hadoop cluster
 
+[Top](#top)
+
 ## What are the main components of Hive?
 The main components of Apache Hive are:
 
@@ -216,8 +230,12 @@ The main components of Apache Hive are:
 
 In summary, the main components include the Hive Client, Hive Services (Driver, Compiler, Execution Engine), Metastore, and Storage. These components interact to provide the data warehousing and query execution capabilities of Apache Hive.
 
+[Top](#top)
+
 ## What is the use of Hive in Hadoop ecosystem?
 Hive is a data warehouse infrastructure built on top of Hadoop that provides data summarization, query, and analysis capabilities. It allows users to query and manage large datasets stored in Hadoop Distributed File System (HDFS) using a SQL-like language called HiveQL. Hive translates HiveQL statements into MapReduce jobs, making it easier for users with SQL knowledge to process and analyze big data on Hadoop without needing to write complex Java code for MapReduce. Hive is commonly used for data extraction, transformation, loading (ETL), reporting, and ad-hoc querying in the Hadoop ecosystem.
+
+[Top](#top)
 
 ## What Collection Complex data types are supported by Hive?
 Hive supports the following collection complex data types:
@@ -225,6 +243,8 @@ Hive supports the following collection complex data types:
 1. **ARRAY**: An ordered sequence of elements of the same type. Example: `ARRAY<INT>`.
 2. **MAP**: A collection of key-value pairs, where keys and values are primitive types. Example: `MAP<STRING, INT>`.
 3. **STRUCT**: A collection of fields, where each field can have its own name and type, allowing heterogenous element types. Example: `STRUCT<name:STRING, age:INT>`.
+
+[Top](#top)
 
 ## What is the use of .hiverc file in Hive?
 The `.hiverc` file in Hive is a script file that contains HiveQL commands or set commands, and it is executed automatically every time the Hive CLI is started. Its primary uses include:
@@ -235,6 +255,8 @@ The `.hiverc` file in Hive is a script file that contains HiveQL commands or set
 - Running initial setup queries
 
 This provides a way to customize or set up the Hive session environment consistently for all CLI users. The `.hiverc` file is typically located in the user's home directory, although its location can be overridden by setting the `HIVE_RCFILE` environment variable.
+
+[Top](#top)
 
 ## How will you run Unix commands from Hive?
 In Hive, Unix commands can be executed using the **! (exclamation mark)** before the command in the Hive shell. This allows you to run system shell commands without leaving the Hive CLI. For example:
@@ -252,8 +274,12 @@ hive> dfs -ls /user/hive/warehouse;
 
 But for standard Unix commands, prefixing with `!` is the way to invoke shell commands directly from the Hive CLI. This feature is specific to the CLI and is not available from Beeline or when running Hive queries via JDBC/ODBC.
 
+[Top](#top)
+
 ## What is the purpose of USE command in Hive?
 The `USE` command in Hive is used to set the current database for the session. By executing `USE database_name;`, all subsequent HiveQL statements are executed in the context of the specified database, unless the database is explicitly qualified in the query. This simplifies queries and operations by not requiring the user to specify the database name each time they reference a table.
+
+[Top](#top)
 
 ## What is the precedence order in Hive configuration?
 In Apache Hive, the configuration precedence order determines which settings take effect when there are conflicts or multiple sources of configuration for a parameter. The order of precedence, from highest to lowest, is as follows:
@@ -264,6 +290,8 @@ In Apache Hive, the configuration precedence order determines which settings tak
 4. **Default values in hive-default.xml** – Hive's built-in default values, specified in `hive-default.xml`. These values are effective only if not overridden by any other mechanism.
 
 So, the effective value of a Hive configuration property will be determined by the first occurrence it finds in this order, with session-level `SET` commands being the most authoritative.
+
+[Top](#top)
 
 ## How will you display header row with the results of a Hive query?
 By default, Hive CLI displays only the data rows, not the column headers. To display the header row (column names) along with the query results, set the following property before running your query:
@@ -287,6 +315,8 @@ SELECT * FROM your_table;
 ```
 
 This ensures that the output includes the column names as a header row.
+
+[Top](#top)
 
 ## Can we create multiple tables in Hive for a data file?
 Yes, in Hive, you can create multiple tables that refer to the same data file. This is possible because Hive separates the table schema (metadata) from the actual data storage. By using external tables and specifying the same data location (directory or file path) in the `LOCATION` property of the table definition, different tables can interpret the same underlying data file, even with different schemas if desired.
@@ -316,6 +346,8 @@ LOCATION '/user/data/sample_data/';
 
 Both `table1` and `table2` can query the same data file (though column mapping must align with actual data structure). This feature is useful for experimenting with different schemas or views without duplicating data.
 
+[Top](#top)
+
 ## How does CONCAT function work in Hive?
 The `CONCAT` function in Hive is used to join two or more strings into a single string. It takes multiple string arguments and returns a single string that is the concatenation of all input strings.
 
@@ -344,6 +376,8 @@ SELECT CONCAT('abc', NULL, 'xyz');
 
 In summary, `CONCAT` is used for straightforward string joining without any separator and returns `NULL` if any argument is `NULL`.
 
+[Top](#top)
+
 ## How will you change settings of a Hive session?
 Settings of a Hive session can be changed using the `SET` command within the Hive shell or through Beeline. The `SET` command allows you to view or modify configuration properties for the current session only; these changes do not affect other sessions or global Hive configurations.
 
@@ -366,6 +400,8 @@ For example:
 
 You can set any Hive, Hadoop, or custom property required for query execution, optimization, or resource allocation. These changes are effective immediately for the ongoing session and revert to default/global values once the session ends.
 
+[Top](#top)
+
 ## How will you rename a table in Hive without using ALTER command?
 To rename a table in Hive without using the `ALTER TABLE ... RENAME TO` command, you can take the following approach:
 
@@ -384,6 +420,8 @@ To rename a table in Hive without using the `ALTER TABLE ... RENAME TO` command,
    ```
 
 This method works, but be aware that table metadata such as constraints or comments, as well as table properties, may not be copied over—only the data and schema will be, and sometimes not every table aspect (like partitioning) is preserved automatically. Always validate the new table structure and data before dropping the original one.
+
+[Top](#top)
 
 ## What is the difference between SORT BY and ORDER BY in Hive?
 In Hive, both **ORDER BY** and **SORT BY** are used to sort query results, but they function differently:
@@ -416,6 +454,8 @@ SELECT * FROM employees SORT BY salary;    -- Each reducer sorts by salary, but 
 **Key Point:**  
 Use **ORDER BY** for global ordering (small data), **SORT BY** for partial ordering (large data) where full ordering is not needed.
 
+[Top](#top)
+
 ## What is the use of strict mode in Hive?
 Strict mode in Hive is used to prevent queries that can accidentally lead to large resource consumption, inefficient execution, or unintentional full table scans. When strict mode is enabled (by setting `hive.mapred.mode=strict`), Hive applies several restrictions, such as:
 
@@ -425,6 +465,8 @@ Strict mode in Hive is used to prevent queries that can accidentally lead to lar
 4. Restricts certain types of queries that are likely to generate large amounts of data or resource usage.
 
 Strict mode is primarily used in production or shared environments to encourage best practices and guard against accidental heavy workloads or expensive operations.
+
+[Top](#top)
 
 ## What is the use of IF EXISTS clause in Hive statements?
 The IF EXISTS clause in Hive statements is used to prevent errors when attempting to drop or alter a database object (such as a table, view, or database) that may not exist. By including IF EXISTS, Hive checks for the existence of the object before performing the action. If the object does not exist, Hive does not throw an error; instead, it skips the operation and proceeds without interruption.
@@ -439,12 +481,16 @@ DROP DATABASE IF EXISTS test_db;
 
 In these examples, if the specified table or database does not exist, Hive does not return an error, allowing scripts or automated jobs to run smoothly without manual existence checks.
 
+[Top](#top)
+
 ## What is the use of PURGE in DROP statement of Hive?
 The `PURGE` option in the `DROP` statement of Hive determines what happens to the underlying data files when a table or partition is dropped. By default, when a table is dropped, Hive moves the data files to the `.Trash` directory in HDFS, allowing for recovery in case of accidental deletion.
 
 When the `PURGE` keyword is specified in the `DROP` statement (e.g., `DROP TABLE table_name PURGE;`), Hive deletes the data files immediately and permanently, bypassing the `.Trash` directory. This means the data cannot be recovered through Hive or HDFS after the operation.
 
 This option is useful for freeing up space quickly or for compliance reasons where data must be unrecoverable after deletion.
+
+[Top](#top)
 
 ## What are the main limitations of Apache Hive?
 The main limitations of Apache Hive are:
@@ -474,6 +520,8 @@ The main limitations of Apache Hive are:
 12. **Error Handling and Debugging:** Diagnosing query errors and debugging can be challenging due to verbose logs and lack of intuitive error messages.
 
 These limitations make Hive suitable primarily for large-scale, batch-oriented data warehousing scenarios rather than transactional or real-time applications.
+
+[Top](#top)
 
 ## What is the difference between HBase and Hive?
 HBase and Hive are two distinct components in the Hadoop ecosystem, serving fundamentally different purposes:
@@ -517,6 +565,8 @@ HBase and Hive are two distinct components in the Hadoop ecosystem, serving fund
 
 In summary, HBase is like a NoSQL database for fast, real-time access to large datasets, while Hive is a data warehouse for batch analytics using SQL-like queries.
 
+[Top](#top)
+
 ## What is ObjectInspector in Hive?
 In Hive, an `ObjectInspector` is an interface used to inspect and analyze the internal structure of complex and simple objects at runtime. It provides a uniform way to access different kinds of objects, supporting both primitive types (like int, string) and complex types (like structs, maps, lists). ObjectInspector is crucial to Hive's serialization and deserialization framework (SerDe), allowing reversible conversion between Hive's internal data structures and Java objects.
 
@@ -527,6 +577,8 @@ Key points about ObjectInspector:
 - It supports both standard Java objects ("Java ObjectInspector") and Hive's internal storage format ("Writable ObjectInspector").
 
 In essence, ObjectInspector provides the necessary metadata and methods to interpret field values and structure, enabling flexible data processing in Hive.
+
+[Top](#top)
 
 ## What are the main components of Query Processor in Apache Hive?
 The main components of the Query Processor in Apache Hive are:
@@ -539,6 +591,8 @@ The main components of the Query Processor in Apache Hive are:
 6. **Execution Engine**: Interacts with the chosen execution framework to execute the physical plan and obtain results.
 
 These components collectively parse, analyze, optimize, and execute HiveQL queries.
+
+[Top](#top)
 
 ## How will you resolve an out of memory error while running a JOIN query?
 To resolve an out of memory error during a JOIN query in Apache Hive, consider the following strategies:
@@ -590,6 +644,8 @@ To resolve an out of memory error during a JOIN query in Apache Hive, consider t
 
 By implementing these techniques, you can often resolve out of memory issues during complex JOIN operations in Hive.
 
+[Top](#top)
+
 ## What are the different SerDe implementations in Hive?
 Apache Hive uses SerDe (Serializer/Deserializer) to interpret the data format stored in HDFS. Different SerDe implementations allow Hive to read and write data in various formats. The primary SerDe implementations in Hive include:
 
@@ -631,6 +687,8 @@ Apache Hive uses SerDe (Serializer/Deserializer) to interpret the data format st
 
 Custom SerDes can also be developed to support other or proprietary file formats. In practice, selecting the appropriate SerDe depends on the data format and processing requirements.
 
+[Top](#top)
+
 ## What is the use of HCatalog?
 HCatalog is a table and storage management layer for Hadoop that enables users to read and write data in the Hadoop ecosystem more easily. It serves as an abstraction layer on top of Hive’s metastore, allowing various tools (such as Pig, MapReduce, and Hive) to share a common view of the underlying data schema and metadata.
 
@@ -642,6 +700,8 @@ The main uses of HCatalog are:
 
 HCatalog has been largely subsumed by the Hive Metastore Service, but its core concepts remain relevant for interoperability in data processing workflows in Hadoop.
 
+[Top](#top)
+
 ## What is the Data Model of HCatalog?
 HCatalog, a table and storage management layer for Hadoop, exposes a relational data model that abstracts the underlying storage formats (like ORC, Parquet, RCFile, Text, etc.). Its data model consists of the following core concepts:
 
@@ -652,6 +712,8 @@ HCatalog, a table and storage management layer for Hadoop, exposes a relational 
 - **Storage Format**: The physical representation of the data (e.g., ORC, Parquet, Avro, Text).
 
 This data model allows multiple processing tools (Hive, Pig, MapReduce, Spark, etc.) to read and write data in a consistent way without needing to know the low-level details of where or how the actual bytes are stored. HCatalog relies on the Hive Metastore service to store metadata definitions for databases, tables, partitions, and columns.
+
+[Top](#top)
 
 ## What is RLIKE operator in Hive?
 The `RLIKE` operator in Apache Hive is used for pattern matching using regular expressions within a `WHERE` clause. It compares a string column to a regular expression pattern and returns `TRUE` if the string matches the pattern, and `FALSE` otherwise. It's similar to the `LIKE` operator, but supports Perl-style regular expressions, allowing for more complex and flexible pattern matching.
@@ -676,8 +738,12 @@ This query selects all employees whose names start with the letter 'A'.
 - `LIKE` supports only simple wildcards such as `%` and `_`.
 - `RLIKE` supports full regular expression syntax for advanced matching.
 
+[Top](#top)
+
 ## Can we use same name for a TABLE and VIEW in Hive?
 No, in Apache Hive, you cannot use the same name for a table and a view within the same database. Hive maintains a single namespace for tables and views within a database, so the name must be unique. Attempting to create a view with the same name as an existing table (or vice versa) will result in an error like `Table already exists`. However, you can use the same name for a table and a view if they are in different databases.
+
+[Top](#top)
 
 ## How will you load data into a VIEW in Hive?
 In Apache Hive, you cannot load data directly into a VIEW because a VIEW is not a physical table; it's a logical construct based on a SELECT query. A VIEW does not store data itself; it displays data from the underlying tables each time it is queried.
@@ -702,6 +768,8 @@ SELECT * FROM hr_employees;
 
 In summary, you load data into the base tables, not into the VIEW itself. The VIEW will dynamically present the relevant data from those tables based on its logic.
 
+[Top](#top)
+
 ## What is Bucketing in Hive?
 Bucketing in Hive is a technique used to divide large datasets into more manageable parts called buckets, based on the hash value of a column’s data. When a table is bucketed, Hive organizes data such that each bucket contains data with specific hash values of the chosen bucketing column(s).
 
@@ -711,6 +779,8 @@ The process works as follows:
 3. Data is physically stored as separate files in HDFS, each representing a bucket.
 
 Bucketing helps optimize query performance, especially for operations like sampling, joins, and map-side joins. For instance, when two tables are bucketed and sorted on the same column and have the same number of buckets, Hive can perform more efficient joins by reading only the corresponding buckets instead of scanning the whole dataset. Bucketing is different from partitioning, which divides data based on column values rather than a hash function.
+
+[Top](#top)
 
 ## What are the pros and cons of archiving a partition in Hive?
 **Pros of Archiving a Partition in Hive:**
@@ -730,6 +800,8 @@ Bucketing helps optimize query performance, especially for operations like sampl
 
 Summarizing, archiving partitions in Hive is primarily a solution for NameNode scalability and file management, but it can negatively impact read performance and data change flexibility.
 
+[Top](#top)
+
 ## How can we specify in Hive to load an HDFS file in LOAD DATA?
 To load an HDFS file into a Hive table using the `LOAD DATA` command, specify the `INPATH` keyword with the fully qualified HDFS file path. Example:
 
@@ -738,6 +810,8 @@ LOAD DATA INPATH '/user/hive/warehouse/mysourcefile.csv' INTO TABLE mytable;
 ```
 
 By default, this moves the file from its current HDFS location to the Hive table's location (unless you add the `OVERWRITE` keyword to replace existing data). You can use `LOCAL` if the file is on the local filesystem, but for HDFS files, omit `LOCAL` and use only `INPATH`.
+
+[Top](#top)
 
 ## What is a Skewed table in Hive?
 A skewed table in Hive is a table where certain values of a column appear much more frequently than others, causing data skew. This skew leads to performance issues during query processing, particularly in join operations and aggregations, as some reducers get assigned disproportionally larger volumes of data compared to others.
@@ -762,6 +836,8 @@ Here, 'US' and 'EU' are skewed values for the `region` column.
 
 **Use case:** Skewed tables are useful when you know in advance that certain column values are much more common than others and often appear as join keys.
 
+[Top](#top)
+
 ## What is the use of CLUSTERED BY clause during table creation in Hive?
 The `CLUSTERED BY` clause in Hive is used during table creation to specify the columns on which the data should be bucketed (distributed) and, optionally, the number of buckets. Bucketing organizes data into more manageable parts, called buckets, which can improve query performance, enable efficient sampling, and facilitate operations such as joins.
 
@@ -777,8 +853,12 @@ CLUSTERED BY (department) INTO 4 BUCKETS;
 
 By using `CLUSTERED BY`, Hive distributes rows into buckets based on the hash value of the specified columns (`department`, in this case). This can lead to better query optimization, especially for joins and aggregations that involve the clustered column(s). Bucketing is also used for enabling certain optimizations like map-side joins and efficient data sampling.
 
+[Top](#top)
+
 ## What is a Managed table in Hive?
 A managed table in Apache Hive is a table for which Hive manages both the data (files) and the metadata (table definition). When a managed table is created, the data is stored in a location controlled by Hive, typically in a subdirectory under the Hive warehouse directory. If the managed table is dropped, both the metadata and the data associated with that table are deleted by Hive. In other words, the lifecycle of the data is tightly coupled with the table’s lifecycle in Hive. Managed tables are suitable when you want Hive to have complete control over the data storage and its deletion. The default table type in Hive is managed unless explicitly specified as external.
+
+[Top](#top)
 
 ## How will you prevent data to be dropped or queried from a partition in Hive?
 To prevent data from being dropped or queried in a Hive partition, you can use the following strategies:
@@ -799,6 +879,8 @@ To prevent data from being dropped or queried in a Hive partition, you can use t
 
 It is important to note that simply setting Hive permissions at the SQL level is not sufficient unless access to the underlying storage is also controlled, as users may access data directly in HDFS. Use a combination of permission, policy, and/or archival strategies for robust protection.
 
+[Top](#top)
+
 ## What is the use of TOUCH in ALTER statement?
 The `TOUCH` command in the `ALTER TABLE` statement updates the modification metadata of a table or partition in Apache Hive without making any actual data changes. It effectively updates the table or partition's last modified time. This can trigger downstream processes or refresh cache mechanisms that rely on metadata timestamps, even though the data itself remains unchanged.
 
@@ -809,6 +891,8 @@ ALTER TABLE table_name PARTITION (partition_spec) TOUCH;
 ```
 
 Typical use cases include making external systems or tools recognize the table or partition as "updated," or forcing Hive to refresh metadata for partitions especially when files are manipulated outside Hive (e.g., added manually to HDFS).
+
+[Top](#top)
 
 ## How does OVERWRITE clause work in CREATE TABLE statement in Hive?
 In Apache Hive, the `OVERWRITE` clause is not part of the `CREATE TABLE` statement. Instead, `OVERWRITE` is typically used in data manipulation statements such as `INSERT OVERWRITE` to replace the existing contents of a table or partition.
@@ -824,6 +908,8 @@ In summary:
 - `OVERWRITE` is not used with `CREATE TABLE` in Hive.
 - To replace data in Hive, you use `INSERT OVERWRITE table table_name SELECT ...` which overwrites existing data.
 - Creating a table always defines a new schema; it does not overwrite any existing data unless you drop and recreate the table.
+
+[Top](#top)
 
 ## What are the options to connect an application to a Hive server?
 Applications can connect to a Hive server using the following options:
@@ -841,6 +927,8 @@ Applications can connect to a Hive server using the following options:
 6. **HS2 HTTP/REST API:** HiveServer2 supports HTTP transport with RESTful endpoints, allowing connections using HTTP clients.
 
 7. **Third-party libraries and connectors:** Python libraries (such as PyHive, JayDeBeApi), and connectors for other languages enable connectivity with Hive from non-Java applications.
+
+[Top](#top)
 
 ## How TRIM and RPAD functions work in Hive?
 In Apache Hive:
@@ -863,6 +951,8 @@ In Apache Hive:
   - `RPAD('Hive', 2, 'x')` returns `'Hi'`
 
 Both functions are useful for formatting strings and cleaning data in Hive queries.
+
+[Top](#top)
 
 ## How will you recursively access sub-directories in Hive?
 In Apache Hive, to recursively access files in sub-directories when querying a table or using LOAD operations, you set the following property:
@@ -893,6 +983,8 @@ SELECT * FROM my_table;
 ```
 
 This will allow Hive to read all files under the table’s directory, including those within sub-directories.
+
+[Top](#top)
 
 ## What is the optimization that can be done in SELECT * query in Hive?
 Using SELECT * in Hive queries can be inefficient because it reads all columns from the underlying data, potentially resulting in significant I/O for wide tables. To optimize SELECT * queries in Hive:
@@ -928,6 +1020,8 @@ Using SELECT * in Hive queries can be inefficient because it reads all columns f
 **Summary:**  
 For best performance, avoid using SELECT * in Hive. Favor specifying only necessary columns, use partitioning, and store data in columnar formats to leverage Hive's internal optimizations.
 
+[Top](#top)
+
 ## What is the use of ORC format tables in Hive?
 ORC (Optimized Row Columnar) is a highly efficient columnar storage format used in Hive. The primary uses and advantages of ORC format tables in Hive are:
 
@@ -940,6 +1034,8 @@ ORC (Optimized Row Columnar) is a highly efficient columnar storage format used 
 7. **Enhancements for ACID Tables:** Hive’s support for transactional tables and ACID operations leverages ORC, as it supports features necessary for insert, update, and delete operations efficiently.
 
 In summary, ORC format tables optimize storage, accelerate query performance, and are critical for transactional workloads in Hive.
+
+[Top](#top)
 
 ## What are the main use cases for using Hive?
 The main use cases for using Apache Hive include:
@@ -959,6 +1055,8 @@ The main use cases for using Apache Hive include:
 7. Integration with Machine Learning and Data Science Pipelines: Hive can be used as a preprocessing or staging area for data that is later used in machine learning experiments or advanced analytics.
 
 Hive is typically not used for low-latency or transactional workloads; its strength lies in scalable, high-throughput processing and ad hoc analytics over large data sets.
+
+[Top](#top)
 
 ## What are the different Types of Tables available in Hive?
 Hive supports the following main types of tables:
@@ -988,8 +1086,12 @@ Hive supports the following main types of tables:
 
 Each type is chosen based on data management needs, sharing requirements, and performance considerations.
 
+[Top](#top)
+
 ## Is Hive suitable to be used for Oltp systems?
 No, Hive is not suitable for OLTP (Online Transaction Processing) systems. Hive is designed for OLAP (Online Analytical Processing) workloads involving large-scale data analysis, batch processing, and read-intensive queries. It has high latency for query execution, does not support real-time inserts or updates efficiently, and its architecture is optimized for throughput rather than low-latency transactions. Additionally, Hive’s support for ACID transactions is limited and not as performant as traditional OLTP databases. Therefore, Hive should not be used as an OLTP solution.
+
+[Top](#top)
 
 ## Can Table be Renamed in Hive?
 Yes, a table can be renamed in Apache Hive using the `ALTER TABLE` statement with the `RENAME TO` clause. The basic syntax is:
@@ -999,6 +1101,8 @@ ALTER TABLE old_table_name RENAME TO new_table_name;
 ```
 
 This operation only changes the metadata in the Hive metastore; the underlying data in HDFS remains unchanged, and the directory name in HDFS also remains the same unless the table is managed. If it’s a managed table, the directory will also be renamed. For external tables, only the metadata is updated.
+
+[Top](#top)
 
 ## Can we change Data Type of column in Hive Table?
 Yes, you can change the data type of a column in a Hive table using the `ALTER TABLE` statement with the `CHANGE` clause. The basic syntax is:
@@ -1025,8 +1129,12 @@ ALTER TABLE employees CHANGE salary salary DOUBLE;
 
 This would change the column `salary` to type `DOUBLE`. Always verify the impact on your data before making such changes.
 
+[Top](#top)
+
 ## What is Metastore in Hive?
 Metastore in Apache Hive is a central repository that stores metadata about the Hive tables, databases, partitions, columns, data types, and the location of the data stored in HDFS or other storage systems. It acts as the system catalog for Hive, providing necessary schema details and information required for query processing, optimization, and execution. The metastore can be configured to use an embedded local database or an external RDBMS such as MySQL, PostgreSQL, or Oracle. It exposes a Thrift service for interaction with Hive components and other tools, and its accurate functioning is critical for the integrity and performance of Hive queries.
+
+[Top](#top)
 
 ## What is the need for Custom Serde?
 Custom SerDe (Serializer/Deserializer) is needed in Apache Hive to handle data formats that are not natively supported by the built-in Hive SerDes. The primary reasons for using a custom SerDe are:
@@ -1043,6 +1151,8 @@ Custom SerDe (Serializer/Deserializer) is needed in Apache Hive to handle data f
 
 In summary, a custom SerDe is essential for working with data formats Hive does not support out of the box, and when you need precise control over how data is read into and written from Hive tables.
 
+[Top](#top)
+
 ## Why do we need Hive?
 Hive is needed to provide a data warehouse infrastructure on top of Hadoop. Its main purposes are:
 
@@ -1055,8 +1165,12 @@ Hive is needed to provide a data warehouse infrastructure on top of Hadoop. Its 
 
 Overall, Hive makes Hadoop accessible and useful for data analysts and engineers who need to query and analyze large datasets without deep knowledge of Java or MapReduce.
 
+[Top](#top)
+
 ## What is the Default Location where Hive stores Table Data?
 By default, Hive stores table data in the Hadoop Distributed File System (HDFS) under the directory `/user/hive/warehouse`. Each table created in Hive has its own subdirectory within this warehouse directory, named after the table. For example, a table named `sales` would be stored at `/user/hive/warehouse/sales` if it is a managed table. For external tables, the data location is specified explicitly during table creation.
+
+[Top](#top)
 
 ## What are the Three Different Modes in which Hive can be run?
 Hive can be run in the following three modes:
@@ -1072,6 +1186,8 @@ Hive can be run in the following three modes:
 
 *(Note: Sometimes modes are described as 'Hive CLI mode,' 'HiveServer2 mode,' and 'Web UI mode,' but the above categories refer to the underlying architectural ways Hive can be run.)*
 
+[Top](#top)
+
 ## Is there a Date Data Type in Hive?
 Yes, Hive supports the `DATE` data type. The `DATE` type represents a calendar date (year, month, day) without any time-of-day or timezone information. It was introduced in Hive version 0.12.0. You can use `DATE` in table definitions, store and query date values, and perform date-related operations using built-in date functions. Example usage:
 
@@ -1083,6 +1199,8 @@ CREATE TABLE sample (
 ```
 
 String literals for `DATE` must be in the format `YYYY-MM-DD` (e.g., `'2024-06-01'`).
+
+[Top](#top)
 
 ## What are Collection Data Types in Hive?
 Collection data types in Apache Hive are complex data types that allow a single column to store multiple values, enabling users to model more complex and hierarchical data structures within Hive tables. Hive supports three primary collection data types:
@@ -1104,8 +1222,12 @@ Collection data types in Apache Hive are complex data types that allow a single 
 
 These collection types allow users to store and query nested data, facilitating handling of denormalized or semi-structured datasets within the Hive ecosystem.
 
+[Top](#top)
+
 ## Can we run Unix Shell Commands from Hive?
 Yes, Unix shell commands can be executed directly from within the Hive command-line interface (CLI) using the exclamation mark (!) as a prefix. For example, typing `!ls` from the Hive CLI will execute the Unix `ls` command and display the result. This feature is available in the Hive CLI but **not** from Beeline or within Hive scripts executed with the `-f` option. This allows users to perform quick shell operations without leaving the Hive CLI environment.
+
+[Top](#top)
 
 ## What is Hive Variable?
 Hive variables are key-value pairs that allow users to substitute values dynamically in Hive scripts and queries. They are mainly used to parameterize HiveQL scripts, making the code more flexible and reusable. Variables in Hive can be defined using the `SET` command, and accessed in queries or scripts by prefixing with `${}`.
@@ -1117,12 +1239,16 @@ SELECT * FROM sales WHERE year = ${myvar};
 ```
 In this example, `${myvar}` will be replaced by its assigned value at runtime. Hive variables are often used for passing runtime parameters, simplifying script maintenance, and supporting different environments or data ranges without changing the query logic.
 
+[Top](#top)
+
 ## Can Hive Queries be executed from Script Files?
 Yes, Hive queries can be executed from script files. You can save your Hive queries in a file with a `.sql` or `.hql` extension and then execute them using the `hive` command-line interface (CLI). The syntax to execute queries from a script file is:
 ```bash
 hive -f <script-file-name>
 ```
 This approach allows batch execution of multiple queries stored in the script file.
+
+[Top](#top)
 
 ## What is the Importance of .hiverc file?
 The `.hiverc` file is an initialization script executed automatically each time the Hive CLI is started. Its main importance is:
@@ -1135,12 +1261,18 @@ The `.hiverc` file is an initialization script executed automatically each time 
 
 The `.hiverc` file is typically placed in the user home directory or configured via the `HIVE_RCFILE` environment variable, and it is read only by the Hive CLI (not by Beeline).
 
+[Top](#top)
+
 ## What are the default Record and Field Delimiter used for Hive Text Files?
 The default **Record Delimiter** for Hive text files is a newline character (`\n`), which separates each row.  
 The default **Field Delimiter** is a Control-A character (`\001`), which separates each column value within a row.
 
+[Top](#top)
+
 ## What do you mean by Schema on Read?
 Schema on Read is a data processing approach where the structure of the data (schema) is interpreted and applied only at the time of reading or querying the data, rather than when the data is written or imported. In Hive, this means raw data can be loaded into tables without enforcing a strict schema upfront. When a query is run, Hive applies the schema to the data dynamically. This provides flexibility to handle semi-structured or evolving data formats, and contrasts with "Schema on Write," where data must conform to a predefined schema before being stored in the system.
+
+[Top](#top)
 
 ## How do you find list all Databases whose name starts with P?
 To list all Hive databases whose names start with the letter 'P', use the following Hive command with a regular expression:
@@ -1151,8 +1283,12 @@ SHOW DATABASES LIKE 'P*';
 
 This command will display all database names beginning with `P`. The `LIKE` clause supports simple pattern matching using `*` (matches zero or more characters). The pattern is case-sensitive unless Hive is configured otherwise.
 
+[Top](#top)
+
 ## What does the use command in Hive do?
 The `USE` command in Apache Hive sets the current database context for subsequent queries. When you execute `USE database_name;`, Hive switches to the specified database, and all subsequent queries will operate within that database unless otherwise specified. This eliminates the need to fully qualify table names with their database prefix for every query. The command does not create or validate tables; it simply changes the session's working database.
+
+[Top](#top)
 
 ## How can you Delete Dbproperty in Hive?
 In Apache Hive, there is **no direct command to delete a specific property** from a database’s DBPROPERTIES. However, you can achieve this by **overwriting the existing properties** with a new set, excluding the one you want to remove.
@@ -1180,6 +1316,8 @@ Here’s how you can do it:
 **Summary:**  
 You **cannot delete a DBPROPERTY directly** in Hive. You can only update (overwrite) the properties to exclude the undesired one. If you need to "remove" a property, you simply do not include it in the new set, but note that system properties and some default properties cannot be removed.
 
+[Top](#top)
+
 ## What is the Significance of the Line Set Hive.mapred.mode = Strict.
 The line `set hive.mapred.mode = strict;` in Apache Hive configures the execution mode to "strict." In this mode, Hive imposes certain restrictions on queries to prevent common mistakes that could potentially result in resource-intensive or erroneous operations. The significance of this setting is as follows:
 
@@ -1192,6 +1330,8 @@ The line `set hive.mapred.mode = strict;` in Apache Hive configures the executio
 4. **Prevents Dangerous Operations:** Operations like overwriting entire tables or directories are checked more strictly.
 
 Overall, enabling strict mode helps enforce best practices, data safety, and resource efficiency in a multi-user Hive environment by restricting potentially hazardous query patterns.
+
+[Top](#top)
 
 ## How do you check if a Particular Partition Exists?
 To check if a particular partition exists in a Hive table, use the SHOW PARTITIONS command with an appropriate partition filter. For example, suppose your table is named sales and is partitioned by date. To check if the partition for date='2024-06-15' exists:
@@ -1210,6 +1350,8 @@ DESCRIBE FORMATTED sales PARTITION (date='2024-06-15');
 
 If the partition does not exist, Hive will return an error message stating the partition is not found.
 
+[Top](#top)
+
 ## Which Java Class handles the Input Record Encoding into files which store Tables in Hive?
 In Apache Hive, the Java class that handles the input record encoding into files for the storage of tables is the **org.apache.hadoop.hive.serde2.SerDe** (Serializer/Deserializer) class and its implementations.
 
@@ -1224,8 +1366,12 @@ For different file formats (like ORC, Parquet, Avro), Hive uses corresponding Se
 
 So, the general interface is `org.apache.hadoop.hive.serde2.SerDe`, and the actual encoding is managed by the respective SerDe class for the storage format used by the Hive table.
 
+[Top](#top)
+
 ## Which Java Class handles the Output Record Encoding into files which result from Hive Queries?
 The Java class that handles the output record encoding into files generated from Hive queries is `org.apache.hadoop.hive.ql.exec.FileSinkOperator.RecordWriter`. Specifically, the underlying implementation is provided by classes that implement the Hadoop `org.apache.hadoop.mapred.RecordWriter` interface, depending on the file format being used (e.g., `TextRecordWriter`, `RCFileRecordWriter`, `OrcRecordWriter`). In Hive's codebase, the `FileSinkOperator` creates the appropriate `RecordWriter` to write query output records to files.
+
+[Top](#top)
 
 ## What is the significance of if Exists clause while dropping Table?
 The **IF EXISTS** clause in the `DROP TABLE` statement in Apache Hive is used to prevent errors if the specified table does not exist. Without **IF EXISTS**, attempting to drop a non-existent table results in an error. Using **IF EXISTS** allows the command to safely execute without error, even if the table is not present. This is especially useful in scripts or automation where a table's existence is not guaranteed, thus making the operation idempotent and robust. 
@@ -1236,10 +1382,14 @@ DROP TABLE IF EXISTS employee;
 ```
 This command will drop the `employee` table only if it exists, and do nothing if it does not exist, avoiding unnecessary failures.
 
+[Top](#top)
+
 ## When you point a Partition of Hive Table to New Directory so what happens with Data?
 When you point a partition of a Hive table to a new directory—by using the `ALTER TABLE ... PARTITION ... SET LOCATION` command—Hive updates its metadata to reference the new directory path for that partition. Hive will **not** move or copy any data automatically; it simply changes the location pointer in the Hive Metastore.
 
 After this change, any future queries referencing that partition will read data from the new directory. The data in the old directory remains untouched unless you manually remove or move it. If there is data in the old directory that is no longer needed, it must be managed manually to avoid orphaned files consuming storage.
+
+[Top](#top)
 
 ## Write Query to Insert New Column new_col Int into Hive Table at a position before an existing Column x_col.
 To add a new column `new_col` (of type INT) before an existing column `x_col` in an Apache Hive table, use the `ALTER TABLE ... ADD COLUMNS ...` statement with the `AFTER` clause as shown below:
@@ -1279,10 +1429,14 @@ If you do not specify the position, Hive adds new columns at the end by default.
 **Summary:**  
 To insert `new_col INT` before `x_col`, add it using `AFTER y_col` where `y_col` is right before `x_col` in the schema.
 
+[Top](#top)
+
 ## Does Archiving of Hive Tables give any space saving in Hdfs?
 Archiving Hive tables does **not** save space in HDFS. When a Hive table or partition is archived using the `ARCHIVE` command, the content is wrapped into a Hadoop Archive (HAR) file. This process combines many small files into fewer, larger files (partitions inside a HAR file), which improves Namenode performance by reducing metadata, but the actual data is not compressed or altered. The HAR process does not remove duplicate data nor perform compression by default.
 
 In short, archiving helps with Namenode scalability, not HDFS space savings. If space savings are required, use compression codecs (like Snappy, Gzip, etc.) when storing data in Hive tables.
+
+[Top](#top)
 
 ## How can you Stop Partition form being queried?
 To stop a partition from being queried in Apache Hive, you can achieve this by altering the metadata or using file-level permissions. Here are common approaches:
@@ -1315,6 +1469,8 @@ To stop a partition from being queried in Apache Hive, you can achieve this by a
 
 In summary, preventing a partition from being queried is most reliably done by removing or altering its metadata in the Hive Metastore or via file system-level access control.
 
+[Top](#top)
+
 ## While loading Data into Hive Table using Load Data Clause so how do you specify it is a Hdfs File and not a Local File?
 When using the `LOAD DATA` clause in Hive, you specify whether the file is on the local file system or HDFS by using or omitting the `LOCAL` keyword. 
 
@@ -1329,6 +1485,8 @@ LOAD DATA INPATH '/user/hive/warehouse/datafile.txt' INTO TABLE tablename;
 
 If you use `LOCAL`, Hive expects the file to be on the local file system of the client. If you do not use `LOCAL`, Hive expects the file to be on HDFS.
 
+[Top](#top)
+
 ## If you omit Overwrite clause while creating Hive Table so what happens with File which are new and files which already exist?
 If you omit the `OVERWRITE` clause while loading data into a Hive table using the `LOAD DATA` statement (for example, `LOAD DATA INPATH 'path' INTO TABLE table_name;`), the following happens:
 
@@ -1340,6 +1498,8 @@ So, omitting `OVERWRITE` results in an **append** operation. The existing files/
 Summary:
 - **Without OVERWRITE:** New files are added (appended), existing files are not affected.
 - **With OVERWRITE:** Existing files are deleted, and only the new files remain in the table’s location.
+
+[Top](#top)
 
 ## What is a Table Generating Function on Hive?
 A Table Generating Function (TGF) in Apache Hive is a type of function that can return multiple rows for each input row, effectively generating a table as its output rather than a single value. TGFs are used in the SELECT statement’s FROM clause or LATERAL VIEW, and common examples in Hive are `explode()`, `posexplode()`, and `inline()`.
@@ -1356,6 +1516,8 @@ LATERAL VIEW explode(user_tags) t AS val;
 
 Here, for every array element in `user_tags`, a new row is generated, and the result is a table with potentially more rows than the original table. Table Generating Functions are essential for unnesting arrays or maps in Hive query processing.
 
+[Top](#top)
+
 ## How can Hive avoid Mapreduce?
 Hive can avoid MapReduce by using alternative execution engines such as Apache Tez and Apache Spark. Starting from Hive 0.13, Tez was introduced as an execution backend, allowing Hive queries to run with a more efficient, DAG-based engine instead of traditional MapReduce jobs. From Hive 2.0 onwards, Spark is also supported as an execution engine. Additionally, for certain lightweight queries—especially metadata-only queries and queries that can be processed entirely in the HiveServer2 process—Hive uses its built-in "Hive on MR" bypass mechanism called "Hive Fetch Task" or "Direct Fetch," which retrieves results without launching a MapReduce, Tez, or Spark job.
 
@@ -1365,6 +1527,8 @@ Use the `hive.execution.engine` property in Hive to specify the execution engine
 - `spark` for Spark
 
 By setting `hive.execution.engine=tez` or `hive.execution.engine=spark`, Hive queries will bypass MapReduce and use the respective engine for processing. Metadata-only operations and certain simple queries may also be executed without any distributed execution framework.
+
+[Top](#top)
 
 ## What is the difference between Like and Rlike operators in Hive?
 The **LIKE** and **RLIKE** operators in Apache Hive are both used for pattern matching against string data, but they function differently:
@@ -1382,6 +1546,8 @@ The **LIKE** and **RLIKE** operators in Apache Hive are both used for pattern ma
 In summary:  
 - **LIKE** uses simple wildcards; **RLIKE** uses regular expressions for advanced pattern matching.
 - **LIKE** is limited in pattern abilities; **RLIKE** is more flexible and powerful.
+
+[Top](#top)
 
 ## Is it possible to create Cartesian Join between 2 Tables using Hive?
 Yes, it is possible to perform a Cartesian Join (also known as a cross join) between two tables in Apache Hive. However, by default, Hive restricts Cartesian joins to prevent accidental creation of extremely large result sets that could overwhelm resources.
@@ -1408,6 +1574,8 @@ without a join condition in the WHERE clause.
 
 Hive will generate the Cartesian product, but you should use this operation cautiously, as it can produce an enormous number of rows if the input tables are large.
 
+[Top](#top)
+
 ## As part of optimizing Queries in Hive what should be the Order of Table Size in Join Query?
 In Hive, when writing join queries for optimal performance, the order of tables in a join should be from the smallest table to the largest table. Specifically:
 
@@ -1415,6 +1583,8 @@ In Hive, when writing join queries for optimal performance, the order of tables 
 - For **multiple joins**, arrange tables so that the leftmost table in the join clause is the smallest, followed by progressively larger tables, with the largest table last.
 
 This order minimizes memory usage and data transfer, leading to more efficient query execution. Hive's optimizer can sometimes reorder joins automatically, but explicitly controlling the order can provide better performance, especially with large datasets.
+
+[Top](#top)
 
 ## What is the Usefulness of the Distributed by clause in Hive?
 The **DISTRIBUTED BY** clause in Hive is used to control how the output data is distributed among reducers during the execution of a query. It determines the columns based on which Hive distributes (hash partitions) the rows of data across reducers. This is particularly useful when you want more control over data locality and parallelism beyond what **CLUSTER BY** or **ORDER BY** offer.
@@ -1437,11 +1607,17 @@ Here, data is distributed into reducers based on `user_id`, and within each redu
 
 In summary, **DISTRIBUTED BY** provides fine-grained control over the data shuffling phase, which can lead to improved query performance and efficiency in Hive jobs.
 
+[Top](#top)
+
 ## Can Name of a View be Same as Name of a Hive Table?
 No, in Apache Hive, the name of a view cannot be the same as the name of an existing table within the same database. Hive maintains a unified namespace for tables and views inside a database, so the names must be unique. Attempting to create a view with the same name as an existing table (or vice versa) will result in an error indicating the object already exists.
 
+[Top](#top)
+
 ## Can we load Data into View?
 No, data cannot be loaded directly into a Hive View. In Apache Hive, a View is a virtual table defined by a SELECT query on one or more base tables. It does not store data physically. Instead, it stores only the query definition and retrieves data dynamically from the underlying tables each time the view is queried. Data loading operations such as `LOAD DATA` or `INSERT INTO` are not allowed on Views; these operations can only be performed on base tables.
+
+[Top](#top)
 
 ## What types of Costs are associated in creating Index in Hive Tables?
 When creating indexes in Hive tables, there are several types of costs to consider:
@@ -1466,10 +1642,14 @@ When creating indexes in Hive tables, there are several types of costs to consid
 
 In summary, the primary costs in creating indexes on Hive tables are increased storage requirements, processing/resource costs during index creation and maintenance, and ongoing administrative and metadata overhead.
 
+[Top](#top)
+
 ## What is Bucketing?
 Bucketing is a technique in Apache Hive used to distribute data into a fixed number of equal-sized parts, called buckets, based on the hash value of a column or columns. Unlike partitioning, which divides data by column values and creates separate folders for each partition, bucketing divides data within each partition (or table) to provide a more granular level of management.
 
 Each bucket corresponds to a file in the table or partition directory, and the assignment is based on the hash of a bucketing column modulo the number of buckets specified. Bucketing can improve query performance, especially for operations like joins or sampling, by allowing Hive to quickly identify relevant files, reduce scan time, and enable more efficient sampling and map-side joins. Bucketing is defined at table creation with the `CLUSTERED BY` clause and `INTO n BUCKETS`.
+
+[Top](#top)
 
 ## What does streamtable do?
 In Apache Hive, `STREAMTABLE` is used as a hint with the `JOIN` clause to indicate which table should be streamed when performing a join operation. 
@@ -1489,12 +1669,16 @@ FROM large_table JOIN small_table ON (....)
 **Key point:**  
 The table specified in `STREAMTABLE(table_name)` will be read and streamed through the join process without being fully loaded into memory, which can reduce resource usage and enable joins on larger datasets.
 
+[Top](#top)
+
 ## Can Partition be Archived?
 Yes, a partition in Apache Hive can be archived. Archiving a partition in Hive means that the data files of that partition are bundled into a Hadoop Archive (HAR) file format to reduce the number of files and optimize storage. This helps improve NameNode performance by limiting the file and directory count in HDFS. 
 
 The `ALTER TABLE ... PARTITION ... ARCHIVE` statement is used to archive a partition. Archived partitions can later be restored (unarchived) if needed using the `UNARCHIVE` command. Archiving is typically leveraged in scenarios where certain partitions are accessed less frequently but still need to be retained for compliance or audit purposes. 
 
 It’s important to note that archived partitions are still queryable like normal, but certain operations (like insert/update into an archived partition) are restricted. Archiving works only with table partitions, not whole tables or non-partitioned tables.
+
+[Top](#top)
 
 ## What is Generic Udf in Hive?
 A **Generic UDF (User Defined Function)** in Hive is a type of custom function that allows developers to extend Hive’s capabilities beyond the built-in functions. Unlike the original simple UDF interface, a Generic UDF can process and handle complex types (such as arrays, maps, or structs), variable number of arguments, and supports lazy evaluation and type inspection at runtime.
@@ -1508,6 +1692,8 @@ Key points about Generic UDF:
 - Lifecycle involves three main methods: `initialize()`, `evaluate()`, and `getDisplayString()`.
 
 Typical use cases include custom string manipulation, complex business logic, or integration with external libraries that must process Hive data.
+
+[Top](#top)
 
 ## How do you specify Table Creator Name when creating Table in Hive?
 Hive does not have a direct built-in column or property specifically for "Table Creator Name" when creating a table. However, this information can be captured in one of two main ways:
@@ -1537,3 +1723,5 @@ SHOW TBLPROPERTIES my_table ("creator");
 Hive Metastore logs actions such as table creation, and with proper auditing enabled (or with a customized metastore schema), administrators can track which user created which table. But this is managed on the server/backend side, not directly in the table definition.
 
 There is no reserved syntax like `CREATED BY` in the `CREATE TABLE` DDL. Using `TBLPROPERTIES` is the most common and flexible standard method to store the creator’s name at table creation time.
+
+[Top](#top)

@@ -58,6 +58,8 @@ Primary use cases in data engineering:
 - Global applications: With global tables, DynamoDB supports multi-region, active-active replication, useful for low-latency global access and disaster recovery.
 - Event-driven pipelines: Streams integration allows DynamoDB to trigger workflows based on data changes, enabling event sourcing and real-time processing pipelines.
 
+[Top](#top)
+
 ## Explain the difference between partition keys and sort keys in DynamoDB.
 In DynamoDB, a partition key is the primary attribute used to determine the partition (physical storage) where an item is stored. Every item in a table is uniquely identified by its partition key value. The partition key’s value is hashed internally by DynamoDB to mark the storage location.
 
@@ -68,12 +70,16 @@ In summary:
 - Partition key: Used for distributed storage across partitions. Uniqueness is required when it is the only primary key attribute.
 - Sort key: Used in combination with the partition key to enable multi-item storage and range queries; uniqueness is required only for the combination of partition key and sort key.
 
+[Top](#top)
+
 ## When should you use a Global Secondary Index (GSI) as opposed to a Local Secondary Index (LSI) in DynamoDB?
 A Global Secondary Index (GSI) should be used when you need to query data based on attributes that are not part of the table’s primary key and you require an alternative partition key, potentially combined with a different sort key. GSIs allow queries across the entire table, regardless of the partition key used in the main table, and do not have to share the same partition key or sort key attributes as the base table. GSIs also permit read and write throughput to be provisioned independently of the main table.
 
 A Local Secondary Index (LSI) should be used when you want to query on an alternative sort key but require the index to use the same partition key as the table, offering different sort key perspectives within the scope of a given partition. LSIs must be defined at table creation time, and the maximum number per table is five.
 
 In summary, use a GSI when you need indexing flexibility on different partition keys, or need to add indexes after table creation. Use an LSI only when your alternative queries share the same partition key as the base table and you require a different sort key for those queries.
+
+[Top](#top)
 
 ## Describe the eventual consistency model of DynamoDB and how it impacts read operations.
 The eventual consistency model in DynamoDB means that after a write operation (create, update, or delete) is performed, the change is not guaranteed to be immediately visible to all subsequent read requests. Instead, DynamoDB replicates the updated data across multiple storage nodes, and there may be a short window where a read operation might return the old, unmodified data until the update propagates throughout the system.
@@ -84,6 +90,8 @@ For read operations, this can lead to the following impacts:
 - By default, DynamoDB uses eventual consistency for read operations, but it provides an option for strongly consistent reads if applications require the most up-to-date data.
 
 In summary, eventual consistency favors availability and performance, but may occasionally return stale data immediately after updates. This is suitable for scenarios where absolute read-after-write consistency is not critical.
+
+[Top](#top)
 
 ## How do you design a data model in DynamoDB to handle many-to-many relationships?
 To model many-to-many relationships in DynamoDB, you generally use a single table with composite primary keys and often a denormalized schema pattern. The typical approach is to create an "adjacency" or "join" table where each item represents a direct association between two entities.
@@ -108,6 +116,8 @@ You can store additional relationship attributes (e.g., membership_date, role) i
 
 This denormalized, index-driven approach enables scalable queries for both directions and effectively handles many-to-many relationships within DynamoDB’s single-table design paradigm.
 
+[Top](#top)
+
 ## What are the best practices for schema design in DynamoDB to avoid hot partitions?
 Best practices for schema design in DynamoDB to avoid hot partitions:
 
@@ -130,6 +140,8 @@ Best practices for schema design in DynamoDB to avoid hot partitions:
 9. **Write and read limits:** Be mindful of DynamoDB’s partition throughput limits (1,000 WCU or 3,000 RCU per partition); design for headroom or use on-demand mode for unpredictable workloads.
 
 10. **Single table design:** Model multiple entity types in one table when rational, which helps better distribute traffic and minimizes hot partitions accidently created by isolated tables with bad key choices.
+
+[Top](#top)
 
 ## How does DynamoDB handle scaling, and what strategies can you use to avoid throttling?
 DynamoDB handles scaling using automatic partitioning and by allowing configurable throughput capacity. It can be operated in two modes:
@@ -157,6 +169,8 @@ DynamoDB handles scaling using automatic partitioning and by allowing configurab
 
 By understanding partition behavior and aligning capacity modes and keys for your traffic patterns, you can minimize throttling in DynamoDB deployments.
 
+[Top](#top)
+
 ## Explain the provisioned capacity vs. on-demand capacity modes in DynamoDB and scenarios for each.
 DynamoDB has two capacity modes for handling read and write throughput: **provisioned capacity** and **on-demand capacity**.
 
@@ -183,6 +197,8 @@ DynamoDB has two capacity modes for handling read and write throughput: **provis
 - Rapid prototyping or development stages where usage isn’t known up-front.
 - Use cases that must handle sudden spikes gracefully (e.g., flash sales, viral marketing campaigns).
 
+[Top](#top)
+
 ## How can you monitor and optimize the performance of a DynamoDB table?
 To monitor and optimize the performance of a DynamoDB table:
 
@@ -202,6 +218,8 @@ To monitor and optimize the performance of a DynamoDB table:
 - Enable DynamoDB Accelerator (DAX) if fast, in-memory caching is required for read-heavy workloads.
 - Monitor and optimize usage of conditional writes and transactional operations to minimize contention and retries.
 
+[Top](#top)
+
 ## What are DynamoDB Streams and how can they be used in data pipelines?
 DynamoDB Streams is a feature that captures a time-ordered sequence of item-level modifications in a DynamoDB table. Each stream record contains information about a single data modification—such as `PutItem`, `UpdateItem`, or `DeleteItem`—and details like the item’s primary key and the before/after images of the item, depending on stream configuration.
 
@@ -217,10 +235,14 @@ DynamoDB Streams enable use cases such as:
 
 For data pipelines, DynamoDB Streams serves as a reliable integration point, decoupling the source database from downstream processing systems. AWS Lambda or custom consumers (using the Kinesis Client Library) poll the stream, process events, and push results to further processing stages, analytics systems, or storage. Streams retain data for 24 hours, and consumer applications are responsible for checkpointing and processing records within this window.
 
+[Top](#top)
+
 ## Describe a use case for DynamoDB TTL (Time To Live) and how it works.
 A common use case for DynamoDB TTL (Time To Live) is for managing session data, such as tracking user logins or authentication tokens that should expire automatically after a certain period. For example, in a web application, you might store active sessions or password reset tokens in a DynamoDB table and use TTL to ensure that expired records are automatically deleted, reducing storage costs and keeping the dataset clean.
 
 DynamoDB TTL works by specifying a designated attribute (for example, "expiresAt") that stores a timestamp (in Unix epoch time, seconds). When you enable TTL on a table and set the attribute's value, DynamoDB automatically marks items for expiration once the current time exceeds the timestamp in that attribute. Expired items are then deleted automatically by DynamoDB in the background, typically within 48 hours of expiration, but usually sooner. This process is fully managed and requires no manual intervention for cleanup, simplifying application logic around item expiration.
+
+[Top](#top)
 
 ## What methods exist for exporting and importing data to and from DynamoDB?
 You can export and import data in DynamoDB using several methods:
@@ -249,6 +271,8 @@ You can export and import data in DynamoDB using several methods:
 
 For bulk operations, using native S3 export/import or AWS Glue is recommended for performance and scalability. For small-to-medium datasets or fine-grained control, scripts with the AWS SDK are often sufficient.
 
+[Top](#top)
+
 ## How would you manage data migrations in DynamoDB without downtime?
 To manage data migrations in DynamoDB without downtime:
 
@@ -265,6 +289,8 @@ To manage data migrations in DynamoDB without downtime:
 6. **Thorough Testing:** Extensively test the migration in pre-production environments, and monitor for replication lag, throttling exceptions, and data integrity problems throughout the process.
 
 This strategy ensures zero-downtime migrations by keeping data available and consistent, and allowing rollback if issues occur.
+
+[Top](#top)
 
 ## What security features does DynamoDB offer, and how do you implement access control?
 DynamoDB offers multiple security features designed to protect data at rest and in transit, as well as robust mechanisms for access control.
@@ -321,6 +347,8 @@ For fine-grained access (for example, to rows where the partition key is equal t
 
 In summary, DynamoDB integrates tightly with IAM, supports encryption by default, and offers network-layer security features for end-to-end data protection. Access is primarily controlled through IAM policies, which can be fine-tuned to the action, resource, and even item or attribute level.
 
+[Top](#top)
+
 ## How does DynamoDB integrate with AWS Lambda for serverless data processing?
 DynamoDB integrates tightly with AWS Lambda to enable serverless data processing by supporting DynamoDB Streams as event sources for Lambda functions. When you enable DynamoDB Streams on a table, it captures item-level changes (inserts, updates, and deletes). You can then configure a Lambda function to be triggered automatically whenever new records appear in the stream.
 
@@ -331,6 +359,8 @@ The integration works as follows:
 - When items in the table change, the stream captures these changes, and AWS Lambda automatically invokes the function with batches of stream records.
 
 Typical use cases include real-time analytics, data replication, notifications, auditing, and triggering other workflows in response to data changes in DynamoDB—all without provisioning or managing servers. This model ensures high scalability and minimal operational overhead, in line with serverless architectures.
+
+[Top](#top)
 
 ## Describe the role of conditional writes in DynamoDB and give a practical example.
 Conditional writes in DynamoDB are used to ensure that write operations (PutItem, UpdateItem, DeleteItem) are executed only if a specified condition is met. This feature is critical for avoiding overwriting or deleting data unintentionally, implementing optimistic concurrency control, and maintaining data integrity.
@@ -353,6 +383,8 @@ For example, imagine a table called `Orders` where each item has an `orderId` (p
 
 This update will succeed only if `status` is `"pending"`. If `status` has already changed (for example, to `"shipped"`), the condition fails and no update occurs, helping to prevent race conditions or accidental overwrites in concurrent environments.
 
+[Top](#top)
+
 ## What are the read and write throughput units in DynamoDB, and how are they calculated?
 In DynamoDB, throughput capacity is measured in terms of **Read Capacity Units (RCUs)** and **Write Capacity Units (WCUs)**.
 
@@ -368,6 +400,8 @@ In DynamoDB, throughput capacity is measured in terms of **Read Capacity Units (
 - If you want to write 50 items per second, each item 2 KB in size, number of WCUs = (item size / 1 KB) x number of writes per second = (2/1) * 50 = 2 * 50 = 100 WCUs.
 
 You must provision or consume at least as many RCUs and WCUs as required by your anticipated workload to avoid throttling. With on-demand mode, DynamoDB automatically scales these units to accommodate traffic.
+
+[Top](#top)
 
 ## How would you design a DynamoDB table to efficiently support queries with multiple access patterns?
 To efficiently support queries with multiple access patterns in DynamoDB, start by identifying all the access patterns your application needs (e.g., lookups by user ID, by status, by date range). DynamoDB is optimized for key-value and simple query patterns, so careful schema design is required.
@@ -395,6 +429,8 @@ To efficiently support queries with multiple access patterns in DynamoDB, start 
    This supports fast access patterns by customer, status, and product.
 
 In summary: map each access pattern to either the primary key or an appropriate secondary index, design items and attributes to enable efficient querying, and be willing to denormalize data for speed. Always start with your application's query requirements and work backwards to your data model.
+
+[Top](#top)
 
 ## What limitations does DynamoDB have compared to relational databases, and how do you work around them?
 DynamoDB is a NoSQL, key-value and document database designed for high scalability and performance, but it lacks several features commonly found in relational databases:
@@ -429,6 +465,8 @@ DynamoDB is a NoSQL, key-value and document database designed for high scalabili
 
 To use DynamoDB effectively, it's essential to thoroughly analyze access patterns in advance, denormalize data as needed, optimize for known queries using indexes, and use application-side logic to handle complex operations that would otherwise be trivial in relational databases.
 
+[Top](#top)
+
 ## How does DynamoDB implement transactions and what are their limitations?
 DynamoDB implements transactions by providing ACID guarantees (Atomicity, Consistency, Isolation, Durability) for coordinated, all-or-nothing operations involving multiple items, potentially across multiple tables. Transactions in DynamoDB are exposed through two main API operations: `TransactWriteItems` for write operations (such as Put, Update, Delete, ConditionCheck), and `TransactGetItems` for coordinated reads.
 
@@ -452,6 +490,8 @@ DynamoDB implements transactions by providing ACID guarantees (Atomicity, Consis
 
 In summary, DynamoDB transactions are designed for short, small, coordinated operations across a limited number of items, and are not a full replacement for complex, long-running distributed transactions found in traditional relational databases.
 
+[Top](#top)
+
 ## What is the significance of item size limits in DynamoDB and how do you handle large items?
 In DynamoDB, each item has a maximum size limit of 400 KB. This limit includes attribute names and values in the item. The significance of this limit is that it enforces predictable performance, encourages efficient schema design, and helps DynamoDB maintain fast, consistent response times at scale.
 
@@ -464,6 +504,8 @@ To handle large items exceeding 400 KB, common approaches include:
 3. **Schema Redesign**: Redesign your data model to only persist the essential attributes required for access patterns in DynamoDB, offloading rarely-accessed or voluminous fields elsewhere.
 
 These strategies ensure that you stay within DynamoDB item limits while still handling large data requirements efficiently.
+
+[Top](#top)
 
 ## How can you use DynamoDB to store and retrieve binary data?
 DynamoDB supports storing and retrieving binary data by using the Binary (`B`), Binary Set (`BS`), and Byte Buffer (`ByteBuffer` in SDKs) attribute types. To store binary data, such as images or files, you can assign a binary value to an attribute of a DynamoDB item. When interacting with DynamoDB through SDKs, the binary data typically needs to be represented as a `ByteBuffer` or as a base64-encoded string, depending on the SDK and programming language in use.
@@ -491,6 +533,8 @@ Map<String, AttributeValue> returnedItem = dynamoDbClient.getItem(getRequest).ge
 ByteBuffer binaryData = returnedItem.get("data").getB();
 ```
 
+[Top](#top)
+
 ## Describe how you would use DynamoDB in a real-time analytics pipeline.
 DynamoDB can serve as a low-latency, highly available data store for ingesting and storing high-velocity event data in a real-time analytics pipeline. Here's how it could be used:
 
@@ -507,6 +551,8 @@ DynamoDB can serve as a low-latency, highly available data store for ingesting a
 6. **TTL for Aging Data**: DynamoDB’s Time to Live (TTL) feature can be used to automatically expire old data, keeping the working set relevant for live analytics and controlling storage costs.
 
 In summary, DynamoDB acts as both the fast ingestion layer and the low-latency serving store, with streams and Lambda enabling real-time data processing and integration with other analytic and visualization systems.
+
+[Top](#top)
 
 ## What patterns can you use to implement atomic counters in DynamoDB?
 Atomic counters in DynamoDB can be implemented using the UpdateItem API with the `ADD` action or the `SET ... = if_not_exists(...) + :incr` expression. These patterns leverage DynamoDB’s support for atomic updates on single items, allowing multiple clients to increment or decrement a numeric attribute safely without race conditions.
@@ -549,6 +595,8 @@ Atomic counters in DynamoDB can be implemented using the UpdateItem API with the
 
 These patterns ensure that increments and decrements are thread-safe and require no explicit locking logic.
 
+[Top](#top)
+
 ## How do you optimize cost for a high-traffic DynamoDB workload?
 To optimize cost for a high-traffic DynamoDB workload:
 
@@ -584,6 +632,8 @@ To optimize cost for a high-traffic DynamoDB workload:
 
 By applying these strategies, you can align DynamoDB throughput, storage, and feature usage closely with actual workload requirements, keeping operational costs optimized.
 
+[Top](#top)
+
 ## Explain the effect of write amplification and how to mitigate it in DynamoDB.
 Write amplification in DynamoDB refers to the phenomenon where the actual amount of physical writing to storage (disk or SSD) is greater than the logical amount of data being written by the user. This occurs due to the underlying storage engine's architecture—in DynamoDB’s case, its use of log-structured storage systems like those inspired by LSM-trees (Log-Structured Merge Trees).
 
@@ -603,6 +653,8 @@ Write amplification in DynamoDB refers to the phenomenon where the actual amount
 7. **Leverage DynamoDB Streams for Workflow Decoupling:** Offload heavy post-write operations to asynchronous processes rather than including them in the main write path, reducing pressure on write throughput and storage engine.
 
 Ultimately, DynamoDB abstracts much of the hardware complexity, but efficient application design—especially regarding access patterns and data modeling—helps minimize write amplification and its consequences.
+
+[Top](#top)
 
 ## What are some common anti-patterns when working with DynamoDB?
 Some common anti-patterns when working with DynamoDB include:
@@ -626,6 +678,8 @@ Some common anti-patterns when working with DynamoDB include:
 9. **Misusing Transactions**: Overusing DynamoDB transactions for multi-item or multi-table changes (especially at high throughput) can result in performance bottlenecks and should be reserved for strict consistency requirements.
 
 10. **Neglecting Error Handling and Retries**: Not implementing proper error handling and exponential backoff for throttling or transient errors may lead to application failures or degraded user experience.
+
+[Top](#top)
 
 ## How does DynamoDB handle backup and restore, and what strategies are recommended?
 DynamoDB offers two primary mechanisms for backup and restore:
@@ -651,6 +705,8 @@ DynamoDB offers two primary mechanisms for backup and restore:
 
 Carefully monitor backup and restore costs, especially for large tables, and account for eventual consistency after restore (restored tables do not re-create stream records or global table settings).
 
+[Top](#top)
+
 ## Describe how to enforce data integrity in DynamoDB without foreign keys.
 DynamoDB does not support foreign keys or joins, so data integrity between related items must be enforced at the application level. Common strategies include:
 
@@ -667,6 +723,8 @@ DynamoDB does not support foreign keys or joins, so data integrity between relat
 6. **Eventual Consistency Handling:** Accept that eventual consistency may delay data visibility and handle possible race conditions or temporary inconsistencies through compensating logic or re-validation.
 
 Best practices involve designing data models that minimize cross-item dependencies, favoring denormalization and in-place data, since referential integrity enforcement is always the responsibility of the application in NoSQL stores like DynamoDB.
+
+[Top](#top)
 
 ## What tools are available for debugging and analyzing DynamoDB queries?
 Several tools and features are available for debugging and analyzing DynamoDB queries:
@@ -691,6 +749,8 @@ Several tools and features are available for debugging and analyzing DynamoDB qu
 
 By using a combination of these tools, you can effectively debug issues, analyze performance, and optimize your DynamoDB queries.
 
+[Top](#top)
+
 ## Explain how adaptive capacity works in DynamoDB.
 Adaptive capacity in DynamoDB is a mechanism that automatically shifts and reallocates read and write throughput across table partitions in response to uneven access patterns. DynamoDB tables are partitioned for scalability, with each partition having a share of the table’s provisioned throughput or a share of the throughput from on-demand mode.
 
@@ -702,6 +762,8 @@ However, adaptive capacity has some limitations:
 - It is only available for standard tables, not for tables defined as “DynamoDB Standard-IA” (infrequent access).
 
 In summary, adaptive capacity is DynamoDB's built-in feature to handle sudden or uneven increases in access to specific partitions, helping maintain performance and minimize throttling without manual intervention.
+
+[Top](#top)
 
 ## How can you bulk load data into DynamoDB efficiently?
 To efficiently bulk load data into DynamoDB:
@@ -715,6 +777,8 @@ To efficiently bulk load data into DynamoDB:
 - **Use AWS SDKs and CLI Tools:** Use AWS SDKs, the AWS CLI `batch-write-item` command, or scripts (Python Boto3, etc.) that efficiently leverage the above strategies.
 
 Efficient bulk loading requires batching, parallelism, handling throttling, and distributing the write workload to maximize throughput and minimize table hot spots.
+
+[Top](#top)
 
 ## Describe the challenges of pagination in DynamoDB and how you overcome them.
 Pagination in DynamoDB presents several challenges due to its distributed and highly scalable design:
@@ -741,10 +805,14 @@ If items are inserted, deleted, or modified between requests, users might see in
 
 In summary, DynamoDB pagination requires key-based navigation rather than offset-based paging, and careful state handling at the application layer.
 
+[Top](#top)
+
 ## What is DynamoDB Accelerator (DAX) and when would you use it?
 DynamoDB Accelerator (DAX) is a fully managed, highly available, in-memory cache for DynamoDB. It is designed to deliver fast response times for read-intensive and bursty workloads, reducing typical read response times from milliseconds to microseconds. DAX is compatible with existing DynamoDB API calls, so applications can benefit from caching without requiring major code changes.
 
 Typical use cases for DAX include scenarios where applications require low-latency access to data that does not change frequently, such as leaderboards, real-time analytics, or high-traffic web applications. DAX is best utilized when a workload experiences read-heavy traffic patterns or frequent repeated reads to the same items. It's also useful when you want to offload read activity from your DynamoDB tables to improve cost efficiency and performance. However, DAX is not suitable for write-heavy workloads or for applications that require strongly consistent reads.
+
+[Top](#top)
 
 ## How do you manage and monitor DynamoDB indexes for performance and cost?
 To manage and monitor DynamoDB indexes for performance and cost:
@@ -771,6 +839,8 @@ To manage and monitor DynamoDB indexes for performance and cost:
 
 By continuously monitoring, analyzing, and optimizing based on these metrics and patterns, you can balance cost and performance for DynamoDB indexes effectively.
 
+[Top](#top)
+
 ## What are the implications of DynamoDB’s single-table design approach for data engineering?
 DynamoDB’s single-table design involves storing multiple entity types and relationships within a single table, rather than using one table per entity type as in traditional relational databases. The main implications for data engineering are:
 
@@ -789,6 +859,8 @@ DynamoDB’s single-table design involves storing multiple entity types and rela
 7. **Limited SQL-Like Features**: Single-table design eschews features like joins, foreign keys, and referential integrity checks, making some complex queries more challenging and necessitating additional work in code.
 
 Overall, DynamoDB’s single-table design shifts engineering effort from the database layer to the application and modeling layers, trading off database scalability and performance for increased modeling and application complexity. Proper single-table modeling is essential to fully benefit from DynamoDB's scalability and cost model.
+
+[Top](#top)
 
 ## How can you implement real-time alerting based on changes in DynamoDB tables?
 Real-time alerting based on changes in DynamoDB tables is typically achieved using **DynamoDB Streams** in conjunction with **AWS Lambda** and a notification service like **Amazon SNS** or **Amazon SQS**. Here is an overview of the approach:
@@ -820,6 +892,8 @@ Suppose you need an alert when an item is inserted with an attribute value great
 
 **Alternatives:**  
 - For high-throughput scenarios or more advanced processing, you can use Kinesis Data Streams instead of Lambda, but for most alerting use cases, Lambda and SNS are sufficient.
+
+[Top](#top)
 
 ## Describe the differences between DynamoDB and other NoSQL databases like MongoDB or Cassandra.
 DynamoDB is a fully managed, proprietary NoSQL database service provided by AWS, offering key-value and document data models. Here are key differences compared to MongoDB and Cassandra:
@@ -861,6 +935,8 @@ DynamoDB is a fully managed, proprietary NoSQL database service provided by AWS,
 
 In summary, DynamoDB excels in managed operations and seamless AWS integration, MongoDB offers greater query sophistication and document flexibility, and Cassandra is used for high availability and massive, distributed scale with tunable consistency. Choice depends on scalability, operational preferences, query needs, and ecosystem.
 
+[Top](#top)
+
 ## What is the significance of attribute projections in secondary indexes?
 Attribute projections in secondary indexes determine which attributes from the source table are copied, or "projected," into the index. The significance is:
 
@@ -871,6 +947,8 @@ Attribute projections in secondary indexes determine which attributes from the s
 3. **Flexibility:** You can select the minimal set (KEYS_ONLY), specific attributes (INCLUDE), or all attributes (ALL) for projection. This lets you balance query requirements and cost efficiency.
 
 In summary, proper use of attribute projections directly affects the performance, cost, and accessibility of data through secondary indexes.
+
+[Top](#top)
 
 ## How do you ensure high availability and disaster recovery for DynamoDB-backed applications?
 To ensure high availability and disaster recovery for DynamoDB-backed applications:
@@ -892,6 +970,8 @@ To ensure high availability and disaster recovery for DynamoDB-backed applicatio
 8. **Test Recovery Procedures**: Regularly test backup/restoration and regional failover processes to ensure disaster recovery plans work as expected.
 
 By combining these features and best practices, you significantly enhance the resilience and recoverability of DynamoDB-backed applications.
+
+[Top](#top)
 
 ## What approaches can you use to migrate from a relational database to DynamoDB?
 To migrate from a relational database to DynamoDB, you can use several approaches:
@@ -915,6 +995,8 @@ To migrate from a relational database to DynamoDB, you can use several approache
 8. **Cutover Planning**: Schedule a final migration cutover (with a brief downtime window, if necessary), apply the last changes, and switch your application to use DynamoDB as the primary data source.
 
 Each migration will be unique depending on your workload, data complexity, and uptime requirements, but the general process involves schema redesign, data transformation and migration, application changes, and robust testing.
+
+[Top](#top)
 
 ## How do you implement row-level security or data masking in DynamoDB?
 Row-level security and data masking in DynamoDB are typically implemented at the application level, as DynamoDB does not natively provide these features.
@@ -946,12 +1028,16 @@ If more granular control or attribute-level security is required, combine Dynamo
 
 In summary, both row-level security and data masking require IAM policies and application-layer enforcement in DynamoDB.
 
+[Top](#top)
+
 ## What are reserved words in DynamoDB and how do they affect attribute naming?
 Reserved words in DynamoDB are words that have special meaning within DynamoDB’s expression language, such as keywords used in projection expressions, condition expressions, and update expressions (for example, `SELECT`, `COUNT`, `SET`, `ADD`, etc.). If you try to use a reserved word as an attribute name in these expressions, DynamoDB will return a syntax error.
 
 To use attribute names that conflict with reserved words, you must use expression attribute names, which are placeholders prefixed with a `#` symbol. For example, if you have an attribute named `Order`, which is a reserved word, you would reference it in expressions as `#order` and define it in the expression attribute names map like this: `{"#order": "Order"}`.
 
 Ensuring that reserved words are properly handled is essential to avoid unexpected errors in queries, updates, and filters within DynamoDB.
+
+[Top](#top)
 
 ## How would you troubleshoot and resolve DynamoDB throughput exceeded exceptions?
 To troubleshoot and resolve DynamoDB throughput exceeded exceptions (ProvisionedThroughputExceededException or throttling):
@@ -973,6 +1059,8 @@ To troubleshoot and resolve DynamoDB throughput exceeded exceptions (Provisioned
 8. **Monitor and Alarm**: Set up CloudWatch alarms on `ThrottledRequests` and `ConsumedCapacity` metrics to get proactive alerts and address issues before they impact the application.
 
 Root cause analysis is crucial: determine if throttling is caused by overall table throughput limits, a poorly distributed workload, or specific usage patterns, then apply the above methods based on findings.
+
+[Top](#top)
 
 ## Explain how to structure items in DynamoDB to support efficient time-series data access.
 To efficiently store and access time-series data in DynamoDB, the table design should optimize for the common access patterns and avoid hot partitions. Here’s how to structure the items:
@@ -1015,3 +1103,5 @@ Each item should include:
 - Optional GSI for alternative access patterns
 
 This approach enables efficient, scalable, and cost-effective time-series data access in DynamoDB.
+
+[Top](#top)

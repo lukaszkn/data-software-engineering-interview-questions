@@ -92,6 +92,8 @@ fun main(args: Array<String>) {
 ```
 Here, `args` is an array of strings, allowing you to pass and handle command-line arguments.
 
+[Top](#top)
+
 ## Package definition and imports
 The package definition and imports are similar to other languages like Java. The package declaration is optional but recommended, especially in larger projects, to organize code. Imports allow you to bring in external classes or functions from other packages.
 
@@ -118,6 +120,8 @@ import kotlin.math.*
 ```
 The `*` is a wildcard that imports all functions or properties from the `kotlin.math` package. Kotlin automatically imports some common packages like `kotlin.*`, `kotlin.io.*` and `kotlin.collections.*`, so you don't need to explicitly import them.
 
+[Top](#top)
+
 ## Print to the standard output
 Printing to the standard output can be done using the `println()` or `print()` functions.
 - `println()` prints the message and adds a newline at the end.
@@ -137,6 +141,8 @@ Hello, Kotlin!
 This is Kotlin. Still printing on the same line.
 ```
 Both `println()` and `print()` are part of Kotlin’s standard library, so there's no need to import anything to use them.
+
+[Top](#top)
 
 ## Read from the standard input
 You can read from the standard input using the `readLine()` function. This function reads a line of input from the user and returns it as a nullable string `String?`. You can also convert or cast the input to other data types as needed.
@@ -168,6 +174,8 @@ Explanation:
 
 For reading other types like floats or doubles, you can use similar conversion methods like `toFloatOrNull()` or `toDoubleOrNull()`.
 
+[Top](#top)
+
 ## Functions declaration
 Functions are first-class citizens, meaning you can define, pass, and return them as variables. They can have parameters, return types, default arguments, and even be declared as anonymous (lambda functions). Here’s a breakdown of function usage in Kotlin.
 
@@ -189,6 +197,8 @@ fun main() {
 }
 ```
 
+[Top](#top)
+
 ## Unit Functions (Functions with no return value)
 The `Unit` type is similar to void in Java, but it can be omitted since it's the default return type when there’s no return value.
 
@@ -202,6 +212,8 @@ fun main() {
 }
 ```
 
+[Top](#top)
+
 ## Single-expression functions
 If a function consists of a single expression, you can simplify it by using the `=` operator:
 
@@ -212,6 +224,8 @@ fun main() {
     println(add(3, 4))  // Output: 7
 }
 ```
+
+[Top](#top)
 
 ## Default and named arguments
 Kotlin allows you to specify default parameter values. When calling the function, you can either omit the argument (and the default will be used) or specify the argument by name.
@@ -237,6 +251,8 @@ fun main() {
 }
 ```
 
+[Top](#top)
+
 ## Function with varargs (variable number of arguments)
 The vararg keyword allows a function to accept a variable number of arguments.
 
@@ -251,6 +267,8 @@ fun main() {
     printNumbers(1, 2, 3, 4, 5)  
 }
 ```
+
+[Top](#top)
 
 ## Higher-order functions
 Kotlin supports higher-order functions, meaning you can pass functions as arguments or return them from other functions.
@@ -268,6 +286,8 @@ fun main() {
 ```
 In this example, `operate` takes another function operation as a parameter and applies it to `x` and `y`.
 
+[Top](#top)
+
 ## Anonymous (lambda) functions
 Lambda functions are concise ways to declare functions inline.
 
@@ -278,6 +298,8 @@ fun main() {
     println(multiply(3, 4))  // Output: 12
 }
 ```
+
+[Top](#top)
 
 ## Extension functions
 You can add functions to existing classes using extension functions without modifying their source code.
@@ -293,6 +315,8 @@ fun main() {
 }
 ```
 This function adds `addExclamation` to the `String` class, allowing any string to use it as if it were a method of `String`.
+
+[Top](#top)
 
 ## Variables﻿
 In Kotlin, variables are declared using two keywords: `val` and `var`. The difference between them is mutability -`val` is for read-only (immutable) variables, while var is for mutable variables that can be reassigned.
@@ -326,6 +350,8 @@ var greeting = "Hello"
 greeting = "Hi"
 ```
 
+[Top](#top)
+
 ## Type inference
 Kotlin can automatically infer the type of a variable based on the assigned value. Explicit type declaration is optional if the compiler can infer the type.
 
@@ -334,6 +360,8 @@ val message = "Hello, Kotlin!"  // Type inferred as String
 val number = 42  // Type inferred as Int
 ```
 
+[Top](#top)
+
 ## Declaring variables without initialization
 You can declare a variable without initializing it immediately, but you must specify the type in that case.
 
@@ -341,6 +369,8 @@ You can declare a variable without initializing it immediately, but you must spe
 val age: Int
 age = 30  // Now initialized
 ```
+
+[Top](#top)
 
 ## Nullable variables
 In Kotlin, you must explicitly declare whether a variable can hold `null` values by adding a `?` to the type. By default, variables are non-nullable.
@@ -367,6 +397,8 @@ fun main() {
 }
 ```
 
+[Top](#top)
+
 ## Constant variables
 If you want to declare a constant that is known at compile-time and will never change, you can use `const val`. This is typically used at the top level or inside objects and companion objects.
 
@@ -374,6 +406,8 @@ If you want to declare a constant that is known at compile-time and will never c
 const val PI = 3.14159
 ```
 This declares PI as a constant that cannot be changed and is known at compile time.
+
+[Top](#top)
 
 ## Creating classes and instances
 In Kotlin, creating classes and instances is simple and concise. Kotlin provides features like primary and secondary constructors, properties, and default values, making it more compact than languages like Java.
@@ -399,6 +433,8 @@ fun main() {
 }
 ```
 
+[Top](#top)
+
 ## Primary constructor
 Kotlin allows you to define a primary constructor directly in the class declaration.
 
@@ -418,6 +454,8 @@ fun main() {
     println("${person.name} is ${person.age} years old.")
 }
 ```
+
+[Top](#top)
 
 ## Secondary constructor
 In addition to the primary constructor, a class can have one or more secondary constructors. These are useful if you need to provide different ways to instantiate a class.
@@ -443,6 +481,8 @@ fun main() {
 }
 ```
 
+[Top](#top)
+
 ## Initializer block `init`
 You can also use an init block to execute some code when the class is instantiated. The init block is executed after the primary constructor.
 
@@ -457,6 +497,8 @@ fun main() {
     val person = Person("Alice", 25)  // Output: Alice is created with age 25.
 }
 ```
+
+[Top](#top)
 
 ## Properties with custom getters and setters
 You can define custom getters and setters for properties in Kotlin.
@@ -483,6 +525,8 @@ fun main() {
 }
 ```
 
+[Top](#top)
+
 ## Inheritance
 Kotlin classes are `final` by default (cannot be inherited). To make a class inheritable, you need to use the `open` keyword.
 
@@ -501,6 +545,8 @@ fun main() {
 }
 ```
 
+[Top](#top)
+
 ## Data classes
 Kotlin provides **data classes** for classes whose primary purpose is to hold data. These classes automatically generate useful methods like `toString()`, `equals()` and `hashCode()`.
 
@@ -515,6 +561,8 @@ fun main() {
     println(person)  // Output: Person(name=Alice, age=25)
 }
 ```
+
+[Top](#top)
 
 ## Comments﻿
 In Kotlin, comments are similar to those in many other programming languages, such as Java or C++. There are two types of comments: single-line and multi-line.
@@ -544,6 +592,8 @@ val age = 25
 val city = "New York"
 ```
 
+[Top](#top)
+
 ## Best practices for comments
 1. **Keep comments concise and relevant**: Use comments to explain why something is done rather than what is being done if the code is already self-explanatory.
 
@@ -557,6 +607,8 @@ fun getData(): String {
 }
 ```
 Kotlin IDEs like IntelliJ IDEA highlight TODO comments, making it easier to track unfinished work.
+
+[Top](#top)
 
 ## String templates
 In Kotlin, string templates allow you to embed variables or expressions directly within a string, which makes string handling more concise and readable. Kotlin uses the `$` symbol to indicate a variable or expression within a string.
@@ -582,6 +634,8 @@ println(message)  // Output: In 5 years, you will be 30 years old.
 ```
 You need to use curly braces `{}` for expressions, but for simple variables, you can use `$variableName` without braces.
 
+[Top](#top)
+
 ## Escaping `$` in strings
 If you need to print a literal `$` symbol in the string (instead of using it as a template), you can escape it with a backslash `\`.
 
@@ -589,6 +643,8 @@ If you need to print a literal `$` symbol in the string (instead of using it as 
 val price = "The total cost is \$50."
 println(price)  // Output: The total cost is $50.
 ```
+
+[Top](#top)
 
 ## Multiline strings with string templates
 You can use triple-quoted strings `"""` for multiline strings, and string templates still work inside these.
@@ -601,6 +657,8 @@ val multilineMessage = """
 """
 println(multilineMessage)
 ```
+
+[Top](#top)
 
 ## `if` expression
 In Kotlin, `if` is an expression, meaning it returns a value, unlike in many other languages where it's just a statement. This makes it more flexible.
@@ -636,6 +694,8 @@ val result = if (number < 0) {
 }
 println(result)  // Output: Positive
 ```
+
+[Top](#top)
 
 ## `when` expression
 The `when` expression in Kotlin is similar to `switch` in other languages but is more powerful. It can be used for matching conditions and returning values.
@@ -686,6 +746,8 @@ println(category)  // Output: Negative
 ```
 In this example, when is used without a specific value to evaluate general conditions.
 
+[Top](#top)
+
 ## `else` and `else if`
 Kotlin supports `else` and `else if` for handling alternate conditions. These are used similarly to other languages:
 
@@ -702,6 +764,8 @@ val greeting = if (time < 12) {
 println(greeting)  // Output: Good evening
 ```
 
+[Top](#top)
+
 ## `for` loop
 In Kotlin, the `for` loop is used to iterate over ranges, arrays, collections, or any iterable objects. Here's a detailed explanation of how to use it.
 
@@ -716,6 +780,8 @@ for (i in 1..5) {
 - This will print the numbers from 1 to 5, inclusive.
 - The `..` operator creates a range from the first value to the second.
 
+[Top](#top)
+
 ## `for` loop: range with step
 You can control the step of the iteration using the step keyword.
 
@@ -726,6 +792,8 @@ for (i in 1..10 step 2) {
 ```
 - This will print the numbers 1, 3, 5, 7, 9.
 - The `step` function allows you to increment by a value other than 1.
+
+[Top](#top)
 
 ## `for` loop: iterating in reverse order
 To iterate in reverse order, you can use the `downTo` keyword.
@@ -746,6 +814,8 @@ for (i in 10 downTo 0 step 2) {
 ```
 - This will print 10, 8, 6, 4, 2, 0.
 
+[Top](#top)
+
 ## Iterating over an array or a list
 You can iterate over arrays, lists, or any other collections in Kotlin.
 
@@ -763,6 +833,8 @@ for (fruit in fruits) {
     println(fruit)
 }
 ```
+
+[Top](#top)
 
 ## Iterating with indices
 If you want to access the index of each element while iterating over a collection, you can use the `indices` property or the `withIndex()` function.
@@ -783,6 +855,8 @@ for ((index, fruit) in fruits.withIndex()) {
 ```
 - withIndex() provides both the index and the value in each iteration.
 
+[Top](#top)
+
 ## `forEach` loop
 You can also use the `forEach` higher-order function to iterate over collections.
 
@@ -792,6 +866,8 @@ fruits.forEach { fruit ->
     println(fruit)
 }
 ```
+
+[Top](#top)
 
 ## Breaking and continuing in a loop
 You can use `break` to exit a loop and `continue` to skip the current iteration.
@@ -807,6 +883,8 @@ for (i in 1..5) {
     println(i)  // Prints 1, 2, 4, 5
 }
 ```
+
+[Top](#top)
 
 ## `while` loop﻿
 In Kotlin, the while loop is used to repeatedly execute a block of code as long as a specified condition is true. Kotlin supports two types of while loops: `while` and `do-while`.
@@ -832,6 +910,8 @@ while (i <= 5) {
 - This will print the numbers 1 to 5.
 - The condition `i <= 5` is checked before the loop body is executed.
 
+[Top](#top)
+
 ## `do-while` loop
 The `do-while` loop is similar to the `while` loop, but the difference is that the condition is checked after the block of code has been executed. This means that the loop is guaranteed to run at least once, even if the condition is initially `false`.
 
@@ -853,6 +933,8 @@ do {
 - This will also print the numbers 1 to 5.
 - The condition `i <= 5` is checked after the loop executes, so the code block is executed at least once.
 
+[Top](#top)
+
 ## Breaking out of a `while` loop
 You can use the `break` statement to exit a `while` loop prematurely when a certain condition is met.
 
@@ -868,6 +950,8 @@ while (i <= 10) {
 }
 ```
 - This will print numbers from 1 to 5 and then break the loop when `i` equals 6.
+
+[Top](#top)
 
 ## Skipping `while` iterations with continue
 You can use the `continue` statement to skip the current iteration and proceed to the next iteration of the loop.
@@ -886,6 +970,8 @@ while (i <= 5) {
 ```
 - This will print the numbers 1, 2, 4, and 5, skipping 3.
 
+[Top](#top)
+
 ## Ranges﻿
 In Kotlin, ranges are an essential feature that allows you to work with sequences of values in a concise and readable manner. A range is essentially a progression of values, which can be used in loops, conditions, and other situations where you need a sequence of numbers or characters.
 
@@ -899,6 +985,8 @@ println(range)  // Output: 1..5
 ```
 - This range includes the numbers 1, 2, 3, 4, and 5.
 
+[Top](#top)
+
 ## Iterating over a range
 You can easily iterate over a range with a `for` loop.
 
@@ -908,6 +996,8 @@ for (i in 1..5) {
     println(i)  // Output: 1 2 3 4 5
 }
 ```
+
+[Top](#top)
 
 ## Checking if a value is in a range
 You can check whether a value belongs to a range using the `in` operator.
@@ -923,6 +1013,8 @@ if (num in 1..5) {
 // Output: 3 is in the range.
 ```
 
+[Top](#top)
+
 ## Exclusive ranges (`until`)
 The `..` operator creates an inclusive range. If you want an exclusive range (where the end value is excluded), you can use the `until` function.
 
@@ -934,6 +1026,8 @@ for (i in 1 until 5) {
 ```
 - The range `1 until 5` includes 1, 2, 3, and 4, but excludes 5.
 
+[Top](#top)
+
 ## Character ranges
 Ranges are not limited to numbers; you can also create ranges for characters.
 
@@ -943,6 +1037,8 @@ for (ch in 'a'..'d') {
     println(ch)  // Output: a b c d
 }
 ```
+
+[Top](#top)
 
 ## Checking if a range is empty
 You can check if a range is empty using the `isEmpty()` function. This is useful when dealing with ranges where the start value might be greater than the end value (for example, in descending ranges).
@@ -959,6 +1055,8 @@ val range = 5 downTo 1
 println(range.isEmpty())  // Output: false
 ```
 
+[Top](#top)
+
 ## Progressions
 A progression in Kotlin is a sequence defined by a starting value, an ending value, and a step. It is the underlying mechanism for ranges with steps and reverse ranges.
 
@@ -967,12 +1065,16 @@ val progression = 1..10 step 3
 println(progression.toList())  // Output: [1, 4, 7, 10]
 ```
 
+[Top](#top)
+
 ## Collections﻿
 In Kotlin, collections are used to store groups of related data. Kotlin provides a rich set of collection types, and it supports both immutable and mutable collections. The key types of collections are:
 
 - **List**: Ordered collection of elements.
 - **Set**: Collection of unique elements.
 - **Map**: Collection of key-value pairs.
+
+[Top](#top)
 
 ## Collections﻿: List
 A List is an ordered collection of elements that can contain duplicates. There are two types of lists in Kotlin:
@@ -1005,6 +1107,8 @@ for (fruit in fruits) {
 }
 ```
 
+[Top](#top)
+
 ## Collections﻿: Set
 A Set is an unordered collection of unique elements. It does not allow duplicate values.
 
@@ -1023,6 +1127,8 @@ mutableNumbers.add(2)  // Duplicate, will be ignored
 println(mutableNumbers)  // Output: [1, 2, 3, 4]
 ```
 - The `mutableSetOf()` function creates a mutable set.
+
+[Top](#top)
 
 ## Collections﻿: Map
 A Map is a collection of key-value pairs. Each key must be unique, but values can be duplicated. Like other collections, maps can be immutable or mutable.
@@ -1045,6 +1151,8 @@ mutableMap["Alice"] = 26  // Modifying an existing value
 println(mutableMap)  // Output: {Alice=26, Bob=30}
 ```
 - The `mutableMapOf()` function creates a mutable map that can be modified.
+
+[Top](#top)
 
 ## Common collection operations
 ### Filtering:
@@ -1097,6 +1205,8 @@ println(numbers.sorted())  // Output: [1, 2, 3, 4, 5]
 println(numbers.sortedDescending())  // Output: [5, 4, 3, 2, 1]
 ```
 
+[Top](#top)
+
 ## Collection immutability
 In Kotlin, collections are immutable by default. This helps enforce immutability and makes the code more predictable. If you need a mutable collection, you must explicitly create one using `mutableListOf()`, `mutableSetOf()` or `mutableMapOf()`.
 
@@ -1109,6 +1219,8 @@ val list = listOf(1, 2, 3)  // Immutable List
 val mutableList = mutableListOf(1, 2, 3)  // Mutable List
 mutableList.add(4)  // Works fine
 ```
+
+[Top](#top)
 
 ## Nullable values
 In Kotlin, nullable values and null checks are an essential part of handling null safely. Kotlin’s type system distinguishes between nullable types and non-null types, making your code safer by preventing `NullPointerException (NPE)`.
@@ -1129,6 +1241,8 @@ var name: String = "Kotlin"
 // name = null  // Compilation error: Null can not be a value of a non-null type String
 ```
 
+[Top](#top)
+
 ## Null checks: Safe call `?.`
 You can use the safe call operator `?.` to call methods or access properties on a nullable object. If the object is `null`, the expression will return `null` instead of throwing an exception.
 
@@ -1138,6 +1252,8 @@ val length: Int? = name?.length
 println(length)  // Prints the length if `name` is not null, otherwise prints `null`
 ```
 In the above example, if name is `null`, the result of `name?.length` will be `null`. If `name` is not null, it returns the length of the string.
+
+[Top](#top)
 
 ## Null checks: Elvis operator `?:`
 The Elvis operator `?:` provides a default value in case the expression on the left is `null`.
@@ -1149,6 +1265,8 @@ println(length)  // If `name` is null, it prints 0; otherwise, it prints the len
 ```
 This is very useful for providing fallback values.
 
+[Top](#top)
+
 ## Null checks: Non-null assertion `!!`
 You can use the **non-null assertion operator** `!!` to forcibly assert that a nullable value is not `null`. However, if the value is actually null, this will result in a `NullPointerException`.
 
@@ -1156,6 +1274,8 @@ You can use the **non-null assertion operator** `!!` to forcibly assert that a n
 val length: Int = name!!.length
 ```
 **Use this cautiously**, as it can lead to crashes if you're wrong about the nullability of the value.
+
+[Top](#top)
 
 ## Null checks: Safe cast `as?`
 If you want to cast a value to a specific type, but you're not sure if the cast is possible, you can use the **safe cast operator** `as?`. It will return `null` if the cast fails, rather than throwing a `ClassCastException`.
@@ -1172,6 +1292,8 @@ val number: Int? = obj as? Int
 println(number)  // Prints `null` because obj is not an Int
 ```
 
+[Top](#top)
+
 ## Nullability in functions
 You can declare function parameters and return types as nullable by adding the `?` symbol.
 
@@ -1186,6 +1308,8 @@ println(greet(null))    // Output: Guest
 ```
 In this case, the function `greet()` accepts a nullable `String?` and uses the Elvis operator to provide a default value.
 
+[Top](#top)
+
 ## Smart casts
 Kotlin automatically handles null checks and performs smart casts, meaning if you check for `null`, the compiler knows it's safe to use the non-null version of the variable in the following code.
 
@@ -1197,6 +1321,8 @@ if (name != null) {
     println(name.length)  // Smart cast to non-nullable String
 }
 ```
+
+[Top](#top)
 
 ## `let` with safe call
 You can use the `let` function to execute a block of code only if the value is not `null`. It's often used in conjunction with the safe call operator `?.`
@@ -1210,6 +1336,8 @@ name?.let {
 }
 ```
 The code inside the `let` block will only execute if `name` is not `null`. Inside `let`, it refers to the non-null value of `name`.
+
+[Top](#top)
 
 ## Chaining safe calls
 You can chain multiple safe calls to navigate through a series of nullable properties without needing to check for `null` at every level.
@@ -1230,6 +1358,8 @@ println(unknownPerson?.address?.city)  // Prints `null`
 ```
 If any part of the chain is `null`, the whole expression evaluates to `null` without throwing an exception.
 
+[Top](#top)
+
 ## `takeIf` and `takeUnless`
 The `takeIf` function returns the object if it matches a given condition or `null` if it doesn't. This can be useful for conditional null handling.
 
@@ -1241,6 +1371,8 @@ val validName = name?.takeIf { it.isNotBlank() }
 println(validName)  // Prints "Kotlin"
 ```
 Similarly, `takeUnless` does the opposite, returning the object if the condition is `false`.
+
+[Top](#top)
 
 ## Type checking with `is`
 Kotlin provides the is operator to check whether an object is of a certain type.
@@ -1266,6 +1398,8 @@ if (obj !is String) {
 }
 ```
 
+[Top](#top)
+
 ## Type casts with `as`
 If you are sure about the type of a variable, you can explicitly cast it using the `as` operator.
 
@@ -1278,6 +1412,8 @@ val str: String = obj as String
 println(str.length)  // Output: 6
 ```
 The `as` operator casts `obj` to `String`. If the cast is invalid (e.g., if obj is not actually a `String`), it throws a `ClassCastException`.
+
+[Top](#top)
 
 ## Smart casts in `when` expressions
 In Kotlin, when expressions are commonly used with type checks. The smart cast feature also applies here. After checking the type using `is` inside a `when` expression, the variable is automatically cast to that type within the corresponding branch.
@@ -1303,6 +1439,8 @@ println(describe(3.14))     // Output: Unknown type
 In the `when` expression, once the type is checked with `is`, Kotlin smartly casts the object to the corresponding type within that branch.
 
 
+[Top](#top)
+
 ## Combining type checks with `&&`
 You can combine type checks with other conditions in a single statement. Kotlin will still perform smart casting if the type check succeeds.
 
@@ -1323,6 +1461,8 @@ printLengthIfValid("") // Output: Invalid or empty string
 printLengthIfValid(null) // Output: Invalid or empty string
 ```
 In this example, after checking `obj is String && obj.length > 0`, the compiler automatically casts `obj` to `String` inside the `if` block.
+
+[Top](#top)
 
 ## Smart cast limitations
 There are some limitations to smart casting in Kotlin. If the variable can be modified after the type check, the compiler cannot guarantee that the type will remain the same, so smart casting won't occur.
@@ -1345,6 +1485,8 @@ if (obj is String) {
 ```
 Since `obj` is mutable and could change between the type check and its usage, the compiler cannot smart-cast it after a modification.
 
+[Top](#top)
+
 ## `is` with nullable types
 When you use the `is` operator with nullable types, smart casting is also applied. However, if the value is `null`, the smart cast does not happen.
 
@@ -1362,3 +1504,5 @@ checkNullable("Hello") // Output: String length: 5
 
 checkNullable(null) // Output: Not a string or null
 ```
+
+[Top](#top)

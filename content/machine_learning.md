@@ -31,6 +31,8 @@ Machine learning (ML) is a branch of artificial intelligence (AI) that focuses o
   - **Overfitting**: When a model learns the training data too well, including noise and irrelevant details, it may not generalize well to new data.
   - **Underfitting**: When a model is too simple and does not capture the underlying patterns in the data, leading to poor performance.
 
+[Top](#top)
+
 ## Types of machine learning
 1. **Supervised learning**:
 - In supervised learning, the model is trained on a labeled dataset, meaning the input data comes with known output labels.
@@ -59,6 +61,8 @@ Machine learning (ML) is a branch of artificial intelligence (AI) that focuses o
 5. **Self-Supervised learning**:
 - This is a form of unsupervised learning where the system generates its own labels from the input data. It’s commonly used in natural language processing and computer vision.
 
+[Top](#top)
+
 ## Applications of machine learning
 - **Natural Language Processing (NLP)**: Chatbots, language translation, sentiment analysis and text summarization.
 
@@ -71,6 +75,8 @@ Machine learning (ML) is a branch of artificial intelligence (AI) that focuses o
 - **Finance**: Fraud detection, stock market prediction and credit scoring.
 
 Machine learning is a powerful tool that enables computers to learn from data and improve their performance over time without being explicitly programmed for specific tasks. It is at the heart of many modern AI applications, driving advancements in fields ranging from healthcare to autonomous systems.
+
+[Top](#top)
 
 ## What is entropy in PPO?
 In the context of PPO (and other policy gradient methods), entropy is a measure of randomness in the action distribution produced by the policy. In simpler terms, it quantifies how "uncertain" or "random" the policy is about which action to take. If a policy is highly uncertain and assigns roughly equal probabilities to many actions, its entropy is high. Conversely, if it is very confident and assigns a high probability to a specific action, its entropy is low.
@@ -93,6 +99,8 @@ The level of entropy in PPO should be managed carefully:
 ### Conclusion
 Entropy should not be uniformly low throughout training. Instead, it should start relatively high and decrease over time as the policy becomes more confident. Properly managing entropy is crucial for balancing exploration and exploitation, ensuring that the agent learns an effective policy without getting stuck in local optima.
 
+[Top](#top)
+
 ## What is `vf_explained_var`?
 The term `vf_explained_var` stands for "value function explained variance" and is a metric used to evaluate the performance of the value function in reinforcement learning algorithms, including those like PPO (Proximal Policy Optimization).
 
@@ -101,12 +109,16 @@ In reinforcement learning, the value function estimates the expected return (cum
 
 - **Explained variance**: Explained variance is a statistical measure used to assess how much of the variance in a dependent variable (in this case, the actual returns) can be explained by the independent variable (the predicted values from the value function). It essentially measures the proportion of the variation in the data that is captured by the model.
 
+[Top](#top)
+
 ## Interpreting `vf_explained_var`
 - **1 (or close to 1)**: Indicates that the value function's predictions explain nearly all the variance in the actual returns. This means the value function is highly accurate.
 
 - **0**: Indicates that the value function's predictions do not explain any of the variance in the actual returns, meaning it has no predictive power.
 
 - **Negative values**: Indicate that the value function's predictions are worse than simply predicting the mean of the returns, which suggests that the value function is performing poorly.
+
+[Top](#top)
 
 ## `vf_explained_var`: Importance in reinforcement learning
 In reinforcement learning, `vf_explained_var` is useful for diagnosing how well the value function is being learned:
@@ -117,6 +129,8 @@ In reinforcement learning, `vf_explained_var` is useful for diagnosing how well 
 
 ### Conclusion
 `vf_explained_var` is a critical diagnostic tool in reinforcement learning that helps you understand how well your value function is performing. It gives you insight into how much of the variance in the returns your value function is capturing, helping you assess and improve the learning process.
+
+[Top](#top)
 
 ## What are sparse rewards?
 Sparse rewards refer to a situation in reinforcement learning (RL) where the agent receives feedback (rewards or penalties) only rarely or after a long sequence of actions, rather than continuously or frequently throughout its interactions with the environment.
@@ -157,6 +171,8 @@ To address the difficulties of sparse rewards, several strategies can be employe
 ### Conclusion
 Sparse rewards create significant challenges in reinforcement learning because they make it difficult for the agent to learn which actions are beneficial. However, with techniques like reward shaping, intrinsic motivation, and hierarchical learning, it is possible to make progress in these difficult environments.
 
+[Top](#top)
+
 ## What are dense rewards?
 Dense rewards refer to a situation in reinforcement learning (RL) where the agent receives frequent and continuous feedback (rewards or penalties) from the environment as it interacts with it. Unlike sparse rewards, where rewards are infrequent or delayed, dense rewards provide the agent with more immediate information about the value of its actions.
 
@@ -194,3 +210,5 @@ While dense rewards can make learning easier and faster, they also have some dra
 
 ### Conclusion
 Dense rewards provide immediate and frequent feedback to an agent, enabling faster learning and more straightforward exploration. However, careful reward design is essential to avoid issues like reward hacking or overfitting to short-term rewards. Dense rewards are typically easier to manage in structured environments where clear and consistent feedback is available, unlike sparse reward settings that may require more sophisticated exploration and long-term planning.
+
+[Top](#top)

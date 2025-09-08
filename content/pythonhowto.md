@@ -50,11 +50,15 @@ If `example.bin` contains `b'\x01\x02\x03\x04'`, after running the script, `reve
 
 This approach reads the entire file into memory, so it's suitable for relatively small files. If the file is very large, you might want to handle it in chunks, but that complicates the reversal process.
 
+[Top](#top)
+
 ## Convert string of space separated integers to list of integers
 Here's example using `map`
 ```
 integer_list = map(int, input().split())
 ```
+
+[Top](#top)
 
 ## How to install packages with `pip` and `requirements.txt`
 To install all the packages listed in a requirements.txt file, use:
@@ -64,6 +68,8 @@ pip install -r requirements.txt
 ```
 This will install each package listed in the file with the specified version (if provided).
 
+[Top](#top)
+
 ## Creating a `requirements.txt` file using `pip`
 To generate a `requirements.txt` file that includes all currently installed packages, use the following command:
 
@@ -71,6 +77,8 @@ To generate a `requirements.txt` file that includes all currently installed pack
 pip freeze > requirements.txt
 ```
 This command writes the list of installed packages and their versions to requirements.txt.
+
+[Top](#top)
 
 ## How to pad a number?
 To pad a number in Python, you can use different methods, depending on the format you need. Below are a few common ways:
@@ -119,6 +127,8 @@ print(padded_num)  # Output: 00042
 
 You can adjust the padding width and the padding character based on your requirements.
 
+[Top](#top)
+
 ## How to get the lowercase English alphabet?
 In Python, you can get the lowercase English alphabet using the `string` module, which provides a convenient way to access alphabet-related constants.
 
@@ -138,6 +148,8 @@ abcdefghijklmnopqrstuvwxyz
 
 ### Explanation:
 `string.ascii_lowercase`: This is a string containing all lowercase letters from a to z.
+
+[Top](#top)
 
 ## How to compute the Cartesian product of two lists?
 You can use `itertools.product()` to compute the Cartesian product of two lists. The function generates all combinations of elements from the two input iterables. Each combination is returned as a tuple.
@@ -171,6 +183,8 @@ print(*cartesian_product)
 
 - `print(*cartesian_product)` Prints the result in the required format, where the * unpacks the tuples and separates them by spaces.
 
+[Top](#top)
+
 ## How to count the occurrences of item in the list?
 ### Using `collections.Counter`
 The `Counter` class from the `collections` module provides a convenient way to count occurrences of items in a list.
@@ -186,6 +200,8 @@ counts = Counter(my_list)
 
 print("Occurrences:", counts)  # Output: Counter({1: 3, 2: 2, 3: 1})
 ```
+
+[Top](#top)
 
 ## How to make permutations of items of elements?
 To generate permutations of elements in Python, you can use the `itertools.permutations()` function. This function generates all possible ordered arrangements (permutations) of elements from a given iterable (e.g., a list or string).
@@ -281,6 +297,8 @@ Summary
 - `itertools.permutations()` generates all possible ordered combinations of the elements in an iterable.
 - By default, it generates permutations of the same length as the iterable, but you can specify a different length `r`.
 
+[Top](#top)
+
 ## How to convert the timestamp to a `datetime` object?
 To convert a timestamp string to a `datetime` object in Python, you can use the strptime() function from the datetime module. The `strptime()` function parses a string representing a date and time according to a specified format and returns a `datetime` object.
 
@@ -341,6 +359,8 @@ print(dt2)  # 2015-05-10 13:54:36+00:00
 ```
 In this case, `dt1` is represented in UTC-7, while `dt2` is represented in UTC (±00:00). This ensures that the time zone is taken into account when performing any datetime arithmetic.
 
+[Top](#top)
+
 ## Decorator function time_decorator which has to calculate decorated function execution time
 ```python
 def time_decorator(func):
@@ -366,6 +386,8 @@ print(func_add(10, 20))  # Output: 30
 print(execution_time['func_add'])  # Output: ~0.2 (exact time may vary)
 ```
 
+[Top](#top)
+
 ## Descriptor which don't allow to set price
 ```python
 class PriceControl:
@@ -385,6 +407,8 @@ class PriceControl:
 
         instance._price = value
 ```
+
+[Top](#top)
 
 ## Descriptor which don't allow to change field value after initialization
 ```python
@@ -407,3 +431,5 @@ class NameControl:
 
         setattr(instance, self.private_name, value)
 ```
+
+[Top](#top)

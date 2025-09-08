@@ -80,6 +80,8 @@ Apache Flink
 ## See you using Flink, briefly introduce Flink?
 Apache Flink is a distributed, open-source stream-processing framework for scalable, high-throughput, low-latency data processing. It supports both real-time stream processing and batch processing under a unified API. Flink provides features such as event-time processing, stateful computations, exactly-once semantics, and robust fault tolerance using distributed snapshots. It's commonly used for building real-time analytics, ETL pipelines, and event-driven applications. Flink integrates with a wide range of data sources and sinks, and can run on resource managers like YARN, Kubernetes, and standalone clusters.
 
+[Top](#top)
+
 ## What are the differences between Flink and Spark Streaming?
 Apache Flink and Apache Spark Streaming are both popular frameworks for processing large-scale data streams, but they differ significantly in architecture, processing models, latency, and fault tolerance. Key differences include:
 
@@ -117,6 +119,8 @@ Apache Flink and Apache Spark Streaming are both popular frameworks for processi
 
 **Summary:**  
 Flink is generally preferred for low-latency, complex event processing on unbounded streams, especially where event-time semantics and advanced windowing/stateful computations are critical. Spark Streaming is a good fit for environments where batch and streaming workloads are unified and micro-batch latency is sufficient. Structured Streaming narrows the gap, but Flink remains the more sophisticated streaming engine in terms of true stream processing.
+
+[Top](#top)
 
 ## What are the Flink component stacks
 Apache Flink’s architecture leverages a modular stack, allowing for various layers to interact while enabling flexibility and extensibility. The main component stacks in Flink are:
@@ -162,6 +166,8 @@ Apache Flink’s architecture leverages a modular stack, allowing for various la
 
 This component stack makes Flink versatile for building real-time and batch data processing applications with strong fault tolerance, scalability, and seamless integrations.
 
+[Top](#top)
+
 ## Does Flink need to depend on Hadoop?
 No, Apache Flink does not need to depend on Hadoop. Flink is a standalone stream processing framework that can run independently without requiring Hadoop or the Hadoop Distributed File System (HDFS).
 
@@ -173,8 +179,12 @@ However, Flink can integrate with Hadoop ecosystems when necessary. For example:
 
 But none of these are required for Flink’s core operation. Flink can run standalone on any supported operating system, using its own resource managers or other cluster managers like Kubernetes. Hadoop components are only necessary if you want to leverage specific Hadoop features.
 
+[Top](#top)
+
 ## How big is your FLink cluster?
 The size of an Apache Flink cluster is typically measured by the number of TaskManagers and the allocated resources, such as CPU cores and memory per TaskManager. In production environments, cluster size can range from a handful of TaskManagers in smaller deployments to dozens or even hundreds for large-scale, high-throughput use cases. For example, some organizations operate clusters with over 100 TaskManagers, each with multiple slots, supporting throughput in the range of hundreds of thousands to millions of records per second. Ultimately, the cluster size depends on the workload requirements, SLAs, and available infrastructure. In interviews, it's helpful to also mention whether dynamic scaling or Kubernetes-based deployments are in use for elasticity.
+
+[Top](#top)
 
 ## What is the Flink programming model?
 The Flink programming model is based on the concept of dataflows, where computations are represented as directed acyclic graphs (DAGs) of operations. In this model:
@@ -192,6 +202,8 @@ The Flink programming model is based on the concept of dataflows, where computat
 - **APIs**: Flink provides APIs at multiple abstraction levels: DataStream API (low-level), Table API, and SQL API (higher-level, declarative).
 
 The programming model is unified—users can write applications that process both streaming and batch data using the same APIs. The physical execution is abstracted from the user, who defines logic as transformations on data, while Flink handles parallelization, distribution, and coordination.
+
+[Top](#top)
 
 ## What are the roles of Flink cluster? What are the functions?
 Apache Flink cluster components play distinct roles to manage and execute distributed data processing jobs. The primary roles are:
@@ -225,8 +237,12 @@ Apache Flink cluster components play distinct roles to manage and execute distri
 
 These roles work together to achieve distributed, fault-tolerant, and scalable stream (and batch) processing in Flink.
 
+[Top](#top)
+
 ## What is TaskSolt?
 A **TaskSlot** in Apache Flink represents a unit of resource allocation on a TaskManager. Each TaskManager is split into multiple TaskSlots, and each TaskSlot can run one parallel subtask (such as an operator instance or a chain of operations) of a job. TaskSlots isolate resources (like memory) so that tasks executed in different slots do not interfere with each other. The number of available TaskSlots determines the maximum parallelism a TaskManager can provide for job execution. Allocating multiple slots allows Flink to execute several tasks simultaneously on a single TaskManager.
+
+[Top](#top)
 
 ## What are the commonly used operators in Flink?
 Commonly used operators in Apache Flink include:
@@ -243,6 +259,8 @@ Commonly used operators in Apache Flink include:
 **10. Union:** Merges two or more streams of the same type into one.
 **11. Connect:** Linked two streams of possibly different types for joint processing.
 **12. Broadcast:** Makes a small stream available to all parallel instances for stateful processing, useful in complex use cases like side inputs.
+
+[Top](#top)
 
 ## What is the parallelism of Flink and What is the parallelism setting of Flink?
 In Apache Flink, **parallelism** refers to the number of tasks that are executed concurrently for a given operation or job. Each operator (such as map, filter, or window) in a Flink job can have a parallelism setting that determines how many parallel instances (or subtasks) of that operator will run.
@@ -272,6 +290,8 @@ Parallelism settings affect how work is distributed across TaskManagers and slot
 - It can be set globally (for the job), per operator, or via the execution environment.
 - Proper parallelism settings utilize the cluster resources efficiently and improve throughput and latency.
 
+[Top](#top)
+
 ## What is the relationship between Flink's Solt and parallelism?
 In Apache Flink, a **slot** is a resource unit allocated on a TaskManager (worker node) and is used to execute one parallel subtask of a Flink job. The **parallelism** of a Flink operator defines how many parallel instances (subtasks) of that operator will be executed. Each of those subtasks needs a slot to run.
 
@@ -284,6 +304,8 @@ The relationship:
 - Slots are shared within a job by default (Slot Sharing), but each subtask still requires a slot.
 
 In summary, slots are the physical resources that allow Flink to realize the logical parallelism specified for job operators. The number of available slots across the cluster determines the achievable parallelism for your Flink job.
+
+[Top](#top)
 
 ## What if Flink encounters an abnormal restart of the program?
 If Flink encounters an abnormal restart—such as node failure, process crash, or hardware outage—it leverages its built-in fault tolerance mechanisms to recover the application. Flink’s primary mechanism for fault tolerance is distributed snapshotting using **checkpoints** (for stateful applications) or **savepoints** (for state versioning and upgrades).
@@ -300,6 +322,8 @@ If there are no completed checkpoints available, Flink cannot restore state, lea
 
 Proper deployment best practices—such as tuning checkpoint intervals, using durable and distributed state/backends, and monitoring job health—help minimize recovery time and data loss in such scenarios.
 
+[Top](#top)
+
 ## Flink's distributed cache
 Flink’s distributed cache is a mechanism that allows you to make files (such as lookup tables, configuration files, or reference datasets) available on all nodes of the cluster where your job is running. When you register a file or directory with the distributed cache, Flink ensures that this resource is copied to each task manager before the job executes.
 
@@ -314,6 +338,8 @@ Limitations:
 - Not intended for dynamically generated/updated data; the dataset must be fixed before job submission.
 
 The distributed cache simplifies accessing large, static files across a distributed Flink application and avoids redundant network transfers during job execution.
+
+[Top](#top)
 
 ## Broadcast variables in Flink
 In Apache Flink, broadcast variables refer to a mechanism that allows distributing a dataset or configuration information to all parallel instances of an operator in a job. This is particularly useful when you have a relatively small dataset (such as a lookup table, configuration, or set of rules) that needs to be accessible by all operations in a distributed dataflow.
@@ -367,6 +393,8 @@ DataStream<Event> processed = keyedMainStream
 
 In summary, broadcast variables/state in Flink enable applications to share small, dynamic datasets to all processing instances, facilitating use-cases such as rule-based stream processing and efficient stateful joins on globally relevant information.
 
+[Top](#top)
+
 ## Do you know what windows in Flink are?
 In Apache Flink, windows define how to logically divide an unbounded stream of data into finite, manageable chunks for processing. Windows allow computations like aggregations, counts, or averages to be performed over subsets of data based on time, event characteristics, or custom logic. There are several window types, including:
 
@@ -376,6 +404,8 @@ In Apache Flink, windows define how to logically divide an unbounded stream of d
 - **Global Windows:** Place all elements into a single window; typically require custom triggers.
 
 Windows are applied on keyed streams or non-keyed streams and work in tandem with triggers and evictors to control when and how windowed computations are executed and finalized.
+
+[Top](#top)
 
 ## Flink's state storage?
 Flink manages state in distributed stream processing using state backends. The state backend is responsible for storing and managing all stateful data, both in-memory and on durable storage for fault tolerance.
@@ -393,6 +423,8 @@ There are three main state backends in Flink:
 - *Operator state*: Not partitioned by key, managed per operator instance.
 
 The state backend can be configured per job or globally via Flink configuration. Choosing the right state backend is crucial for reliability, scalability, and performance.
+
+[Top](#top)
 
 ## What kind of time are there in Flink?
 In Apache Flink, there are three main concepts of time used to process events:
@@ -413,12 +445,16 @@ In Apache Flink, there are three main concepts of time used to process events:
 
 The choice between these notions of time impacts both correctness and performance of streaming applications in Flink, and should align with the application's requirements and the characteristics of source data. Event time is usually preferred for applications that require correctness in the presence of late or out-of-order events.
 
+[Top](#top)
+
 ## What is Watermark in Flink?
 A watermark in Apache Flink is a mechanism used to track event time progress in a stream processing application. In Flink, streams can consist of events that may arrive out of order or late. Watermarks are special markers inserted into the data stream that denote that no events with a timestamp less than the watermark's value are expected to arrive in the future.
 
 Watermarks help Flink manage time-based operations like windowing by telling the system when to trigger calculations, close windows, or handle late-arriving events. They flow through the data pipeline alongside the data records and are generated by the source function or assigned explicitly via a WatermarkStrategy.
 
 In summary, watermarks are used to manage event-time semantics, allow correct handling of out-of-order data, and provide a way to reason about the progression of time within a Flink streaming application.
+
+[Top](#top)
 
 ## What is Unbounded streams in Apache Flink?
 Unbounded streams in Apache Flink refer to data streams that have no predefined end. They represent continuous flows of data that can potentially go on forever, such as sensor readings, log files, or real-time user interactions. Because unbounded streams do not have a natural termination, Flink processes them in real time as new data arrives, typically using windowing techniques to group data for computation.
@@ -430,6 +466,8 @@ Processing unbounded streams requires special considerations:
 - **Infinite duration:** Aggregations and analytics typically use windows (like tumbling, sliding, or session windows) to produce finite, meaningful results from infinite streams.
 
 In summary, unbounded streams are central to Flink's streaming model, enabling the platform to handle real-time, never-ending data sources efficiently.
+
+[Top](#top)
 
 ## Apache Flink Job Execution Architecture
 Apache Flink’s job execution architecture follows a master-worker model, designed for high throughput, low latency, and robust stateful stream processing.
@@ -492,6 +530,8 @@ User → JobManager ← ZooKeeper (for HA)
 
 Flink’s architecture enables dynamic scaling, robust recovery, and fine-grained parallel task execution, making it suitable for real-time, large-scale data processing.
 
+[Top](#top)
+
 ## What is Bounded streams in Apache Flink?
 Bounded streams in Apache Flink are data streams that have a defined start and end point. Unlike unbounded streams, which represent continuous, infinite data flows (such as real-time sensor readings or logs), bounded streams are finite and typically represent static datasets like files, database tables, or a batch of records.
 
@@ -499,10 +539,14 @@ In Flink, bounded streams are typically used in batch processing scenarios. When
 
 Bounded streams are usually created from batch sources, such as reading from files (CSV, Parquet, etc.) or static database queries. Flink automatically recognizes such inputs as bounded and applies relevant execution strategies.
 
+[Top](#top)
+
 ## What is Dataset API in Apache Flink?
 The Dataset API in Apache Flink is a legacy API designed for batch processing of data sets. It allows users to define complex data transformations such as map, filter, join, group, aggregate, and iterate over static data. The API is type-safe and supports both Scala and Java. Dataset API operations are executed lazily, building a logical plan that Flink optimizes and executes when the job is triggered.
 
 As of Flink 1.12, the Dataset API is considered legacy and is being phased out in favor of the unified DataStream API, which now supports both batch and streaming workloads. New users are encouraged to use the DataStream or Table/SQL APIs instead.
+
+[Top](#top)
 
 ## What is DataStream API in Apache Flink?
 The DataStream API in Apache Flink is a core programming interface used to build applications for processing unbounded and bounded data streams. It allows developers to define stream processing workflows by applying transformations such as map, filter, window, join, and aggregation to data streams. The API supports both event-time and processing-time semantics, enabling accurate event processing even when data arrives out of order.
@@ -511,12 +555,16 @@ The DataStream API is available in Java and Scala, offering type-safe operations
 
 In summary, the DataStream API is fundamental for developing Flink applications that process streaming data in a distributed, fault-tolerant, and scalable manner.
 
+[Top](#top)
+
 ## What is Apache Flink Table API?
 Apache Flink Table API is a relational, SQL-like API for expressing data processing logic on top of Flink’s streaming and batch data sources. It provides a unified way to perform analytical operations on both bounded (batch) and unbounded (streaming) datasets using abstraction similar to tables found in traditional databases.
 
 The Table API is designed to be language-integrated, meaning operations can be composed using the host programming language (such as Java or Scala), leveraging its type safety and IDE support. It enables developers to write declarative queries for data transformation, aggregation, filtering, and joining, with the Flink optimizer translating these into efficient execution plans.
 
 The Table API works seamlessly with Flink SQL; queries and transformations can be intermixed programmatically within an application. It is commonly used for scenarios that require dynamic queries, complex event processing, or when you need the flexibility of building logic using a regular programming language alongside relational operations.
+
+[Top](#top)
 
 ## What is Apache Flink FlinkML?
 Apache Flink FlinkML is a machine learning library built on top of Apache Flink. It provides scalable and distributed machine learning algorithms and utilities, leveraging Flink’s distributed data processing capabilities. FlinkML aims to facilitate the development, training, and deployment of machine learning models on streaming and batch data in a way that is both scalable and fault-tolerant.
@@ -531,8 +579,12 @@ FlinkML includes:
 
 While FlinkML is promising, it's worth noting that as of recent Flink releases, FlinkML is still evolving and does not have as complete an ecosystem as more mature libraries like SparkMLlib or scikit-learn, but it offers a strong foundation for machine learning in environments where Flink is the primary data processing engine.
 
+[Top](#top)
+
 ## What is Apache Flink?
 Apache Flink is an open-source distributed processing framework for stateful computations over unbounded and bounded data streams. It is designed to run stream processing applications at large scale and with low latency. Flink provides APIs for Java, Scala, and Python, and supports both batch and stream processing natively within the same runtime, using a streaming-first architecture. It offers features such as event-time processing, exactly-once state consistency, fault tolerance via checkpointing, and integration with popular data sources and sinks like Apache Kafka, HDFS, and various relational databases. Flink is widely used for real-time analytics, event-driven applications, and large-scale data pipelines.
+
+[Top](#top)
 
 ## Explain Apache Flink Architecture?
 Apache Flink has a distributed, master-slave architecture designed for both batch and stream processing. The main components of its architecture are:
@@ -574,6 +626,8 @@ Apache Flink has a distributed, master-slave architecture designed for both batc
 - It supports session clusters (multiple jobs on one cluster) and per-job clusters (dedicated cluster per job).
 
 This architecture enables Flink to provide scalable, low-latency, and resilient stream and batch processing. It ensures fault tolerance, stateful stream processing, and high throughput.
+
+[Top](#top)
 
 ## Explain the Apache Flink Job Execution Architecture?
 Apache Flink’s job execution architecture follows a master-worker pattern, consisting of several key components:
@@ -620,6 +674,8 @@ Jobs can be submitted via Flink CLI, REST API, or programmatically. The job grap
 
 This architecture enables Flink to efficiently execute large-scale, distributed stream and batch processing jobs with strong fault tolerance and state consistency guarantees.
 
+[Top](#top)
+
 ## What are the features of Apache Flink?
 Apache Flink offers several key features:
 
@@ -653,6 +709,8 @@ Apache Flink offers several key features:
 
 15. Open Source: Flink is driven by an active community and is highly extensible for custom use cases.
 
+[Top](#top)
+
 ## What is Storage and Streaming in Apache Flink?
 In Apache Flink, **storage** and **streaming** refer to two fundamental concepts of working with data:
 
@@ -677,10 +735,14 @@ Key storage concepts in Flink:
 - **Streaming** in Flink is about processing unbounded, real-time data streams.
 - **Storage** in Flink involves managing operator state (for computations), persisting state snapshots for fault-tolerance, and connecting to external storage systems for ingress/egress of data.
 
+[Top](#top)
+
 ## What is DataSet API?
 The DataSet API in Apache Flink is the core API for processing batch data. It enables users to work with collections of data that are finite and bounded (i.e., data that has a defined start and end). The API provides operators for transformations such as map, filter, reduce, join, and group-by, allowing users to build complex batch processing pipelines.
 
 The DataSet API is primarily available in Flink’s Java and Scala APIs and supports operations on structured or semi-structured data. It is optimized for efficient execution on distributed systems. Starting from Flink 1.12, the DataSet API is being phased out in favor of the Table API and DataStream API, which are recommended for new batch and streaming applications.
+
+[Top](#top)
 
 ## What are the DSL Tool's in Flink?
 In Apache Flink, DSL (Domain-Specific Language) tools refer to the high-level APIs provided for defining and processing data pipelines. The primary DSL tools in Flink are:
@@ -716,6 +778,8 @@ In Apache Flink, DSL (Domain-Specific Language) tools refer to the high-level AP
 
 In summary, Flink’s DSL tools primarily include the DataStream API, Table API, and SQL API, each catering to different development preferences and requirements.
 
+[Top](#top)
+
 ## What are the Apache Flink domain-specific libraries?
 Apache Flink provides several domain-specific libraries on top of its core for specialized workloads:
 
@@ -736,6 +800,8 @@ Apache Flink provides several domain-specific libraries on top of its core for s
 
 These libraries allow developers to address specific data processing tasks using higher-level abstractions, streamlining implementation for streaming ETL, fraud detection, graph analytics, and machine learning scenarios.
 
+[Top](#top)
+
 ## What is the programing model of Apache Flink?
 The programming model of Apache Flink is based on DataStream and DataSet APIs, which allow for both batch and stream processing. In this model:
 
@@ -747,6 +813,8 @@ The programming model of Apache Flink is based on DataStream and DataSet APIs, w
 - **Low-level and High-level APIs**: Flink provides both low-level ProcessFunction APIs for fine-grained control and high-level abstractions (Table API and SQL) for ease of use.
 
 Overall, Flink’s programming model allows for building data processing pipelines that are expressive, scalable, and resilient, for both real-time and batch data.
+
+[Top](#top)
 
 ## What are the different types of tools supported by Apache Flink?
 Apache Flink supports a variety of tools and APIs, primarily focused on stream and batch processing. The main types of tools supported by Apache Flink include:
@@ -785,6 +853,8 @@ Apache Flink supports a variety of tools and APIs, primarily focused on stream a
 
 These tools collectively make Flink suitable for a wide variety of big data processing use cases, both streaming and batch, with rich ecosystem support for integration, monitoring, and scalability.
 
+[Top](#top)
+
 ## Can we consider Apache Flink as an alternative to Hadoop? if so then explain why?
 Yes, Apache Flink can be considered an alternative to Hadoop for certain use cases, especially where real-time stream processing or low-latency data processing is required.
 
@@ -813,6 +883,8 @@ Yes, Apache Flink can be considered an alternative to Hadoop for certain use cas
 
 In summary, while Hadoop remains suitable for large-scale, batch-oriented data processing tasks, Flink is a powerful alternative for stream and real-time processing scenarios, offering more flexibility and lower latency.
 
+[Top](#top)
+
 ## What are the use cases of Apache Flink?
 Apache Flink is a powerful framework for stateful computation over unbounded and bounded data streams. Key use cases for Apache Flink include:
 
@@ -837,6 +909,8 @@ Apache Flink is a powerful framework for stateful computation over unbounded and
 10. **Enrichment of Data Streams:** Enriching real-time streams with slower data sources, such as reference data from databases or lookups.
 
 These use cases leverage Flink’s features such as low latency, high throughput, strong consistency guarantees, support for exactly-once semantics, and advanced windowing mechanisms.
+
+[Top](#top)
 
 ## What are the different ways to use Apache Flink?
 Apache Flink can be used in several ways, tailored to different data processing needs:
@@ -874,6 +948,8 @@ Apache Flink can be used in several ways, tailored to different data processing 
 
 These facets allow Flink to address a wide range of data processing needs, from real-time ETL and enrichment to batch analytics and complex event processing.
 
+[Top](#top)
+
 ## What is the different component stack of Apache Flink?
 Apache Flink’s component stack is organized into several key layers:
 
@@ -908,6 +984,8 @@ Apache Flink’s component stack is organized into several key layers:
 
 This modular stack allows Flink to be flexible, supporting numerous deployment environments, application types, and integration scenarios.
 
+[Top](#top)
+
 ## What is the command to start Apache Flink Cluster?
 The command to start an Apache Flink cluster depends on the deployment mode. For a standalone cluster, you typically use the following command from the Flink installation directory:
 
@@ -920,6 +998,8 @@ This command starts both the JobManager and TaskManager processes. To stop the c
 ```bash
 bin/stop-cluster.sh
 ```
+
+[Top](#top)
 
 ## What is the Apache Flink SQL client and how to start it?
 The Apache Flink SQL Client is an interactive command-line tool that allows users to execute SQL queries and statements against Flink's Table API, both in batch and streaming modes. It supports connecting to various catalogs, querying data from external systems, and running ad-hoc or scripted SQL.
@@ -941,6 +1021,8 @@ Optionally, you can specify a custom configuration file:
 ```
 
 This launches the client in embedded mode, presenting a SQL prompt where SQL statements can be entered and executed interactively.
+
+[Top](#top)
 
 ## What are the SQL statements supported in Apache Flink?
 Apache Flink supports a broad set of SQL statements for defining, manipulating, querying, and managing streaming and batch data. The core SQL support in Flink is based on the SQL standard (ANSI SQL) with extensions tailored for streaming use cases. Key categories of supported statements include:
@@ -985,6 +1067,8 @@ Flink's SQL is strongest for `INSERT INTO ... SELECT ...` which is fundamental f
 
 Overall, Flink SQL closely aligns with the ANSI SQL standard, with additional syntax and functions for streaming use cases such as time-windowed aggregations and watermarks. The SQL API continues to evolve with each Flink release, expanding supported statements and features.
 
+[Top](#top)
+
 ## What is bounded and unbounded data in Apache Flink?
 In Apache Flink, **bounded data** refers to data sets that have a defined start and end. These are typically static data sources, such as files in a distributed file system (e.g., CSV files in HDFS or Parquet files in S3), relational databases, or any data that does not continuously grow. Processing bounded data is also known as batch processing in Flink.
 
@@ -997,8 +1081,12 @@ Flink supports both types of data:
 
 Specifying whether your data source is bounded or unbounded allows Flink to choose the appropriate execution mode and optimizations.
 
+[Top](#top)
+
 ## What is the building block of Apache Flink streaming applications?
 The building block of Apache Flink streaming applications is the **DataStream** API. This API provides abstractions like DataStream, from which developers create, transform, and process unbounded streams of data in real time. Developers construct streaming applications by defining sources (data ingestion), transformations (processing logic), and sinks (output) using DataStream operations.
+
+[Top](#top)
 
 ## What are the most common types of applications that use the Apache Flink?
 Apache Flink is widely used for real-time data processing in applications that require fast, reliable, and scalable analytics. The most common types of applications include:
@@ -1018,6 +1106,8 @@ Apache Flink is widely used for real-time data processing in applications that r
 7. **Alerting and monitoring**: Flink is used to generate real-time alerts for operational monitoring, fraud detection, or security incidents, by continuously evaluating complex conditions over data streams.
 
 Typical domains utilizing Flink include finance (fraud detection, risk analysis), ad tech (real-time bidding, analytics), e-commerce (personalization, real-time inventory), and telecommunications (network monitoring, billing).
+
+[Top](#top)
 
 ## What are the features of the Apache Flink execution Engine?
 Apache Flink’s execution engine is designed for efficient, scalable, and fault-tolerant data stream and batch processing. Its core features are:
@@ -1050,8 +1140,12 @@ Apache Flink’s execution engine is designed for efficient, scalable, and fault
 
 These features make the Flink execution engine suitable for mission-critical, real-time analytics and ETL applications on large-scale data.
 
+[Top](#top)
+
 ## What is Apache FlinkML?
 Apache FlinkML is a machine learning library for Apache Flink, designed to enable scalable and distributed machine learning and statistical algorithms on streaming and batch data. FlinkML provides a set of APIs and algorithms that leverage Flink’s streaming and batch processing capabilities, allowing data scientists and developers to build, train, and apply machine learning models directly within Flink pipelines. The library includes implementations of common algorithms such as regression, classification, clustering, and recommendation, as well as utilities for feature extraction and data preprocessing. FlinkML is still under active development and its feature set is more limited compared to other mature ML libraries, but it is integrated natively with the Flink ecosystem, allowing seamless integration of real-time data processing with machine learning workflows.
+
+[Top](#top)
 
 ## How can I check the progress of an Apache Flink Program?
 You can check the progress of an Apache Flink program through several mechanisms:
@@ -1072,6 +1166,8 @@ You can check the progress of an Apache Flink program through several mechanisms
    Integration with tools like Grafana, Prometheus, Datadog, or other APMs can be set up to visualize Flink’s built-in and custom metrics for long-running or complex jobs for better monitoring and alerting.
 
 These methods together provide comprehensive visibility into the progress of your Flink program.
+
+[Top](#top)
 
 ## How Apache Flink handles the fault-tolerance?
 Apache Flink handles fault tolerance primarily through distributed snapshots using a mechanism known as **checkpointing**. Flink employs a variant of the Chandy-Lamport algorithm for asynchronous, consistent snapshots of the distributed data streams and operator states.
@@ -1098,6 +1194,8 @@ Key aspects of Flink’s fault tolerance:
    - Coordination between tasks is handled in a scalable, decentralized manner so that the system can checkpoint at high frequency with minimal latencies.
 
 This robust checkpointing approach allows Flink jobs to resume seamlessly from failures without data loss or duplicates, depending on the desired guarantees.
+
+[Top](#top)
 
 ## How to run an Apache Flink program using CLI mode?
 To run an Apache Flink program using CLI mode:
@@ -1133,6 +1231,8 @@ To run an Apache Flink program using CLI mode:
 - For YARN, use the `flink run -m yarn-cluster` option.
 - For application mode or custom clusters, different deployment arguments may be required.
 
+[Top](#top)
+
 ## What is the responsibility of JobManager in Apache Flink Cluster?
 The JobManager in an Apache Flink cluster is responsible for the following core tasks:
 
@@ -1152,6 +1252,8 @@ The JobManager in an Apache Flink cluster is responsible for the following core 
 
 In summary, the JobManager serves as the master node that orchestrates and supervises the distributed execution of user programs in the Flink cluster.
 
+[Top](#top)
+
 ## What is the responsibility of TaskManager in Apache Flink Cluster?
 In an Apache Flink cluster, the TaskManager is responsible for the actual execution of tasks (units of computation) assigned to it by the JobManager. Each TaskManager runs as a JVM process and provides a set of slots; each slot represents a fixed subset of resources (CPU, memory) in which tasks can be executed.
 
@@ -1165,6 +1267,8 @@ Key responsibilities include:
 
 TaskManagers are the primary workers in the Flink architecture, executing the distributed data processing logic as specified by the user-defined job and orchestrated by the JobManager.
 
+[Top](#top)
+
 ## What is the filesystem supported by Apache Flink?
 Apache Flink supports multiple filesystems for reading and writing data. The main filesystems supported include:
 
@@ -1176,6 +1280,8 @@ Apache Flink supports multiple filesystems for reading and writing data. The mai
 - **Other Hadoop-compatible filesystems:** Includes MapR FS, Alluxio, and others via Hadoop's FileSystem interface.
 
 Flink determines the supported filesystems by loading the corresponding Hadoop FileSystem implementations and optional plugin modules (such as `flink-s3-fs-hadoop` or `flink-s3-fs-presto`). File system support is extensible, allowing additional file systems to be integrated using the Hadoop `org.apache.hadoop.fs.FileSystem` interface.
+
+[Top](#top)
 
 ## What is the difference between stream processing and batch processing?
 Stream processing and batch processing are two distinct data processing paradigms, primarily differentiated by how and when data is processed.
@@ -1190,6 +1296,8 @@ Key differences:
 - **Use cases:** Batch suits periodic, analysis-heavy workflows. Stream processing is ideal for event-driven, real-time applications.
 
 Apache Flink is designed for both paradigms, but it is particularly suited for stream processing and can also execute batch jobs using its streaming runtime.
+
+[Top](#top)
 
 ## What can I do with my state?
 With your state in Apache Flink, you can:
@@ -1212,6 +1320,8 @@ With your state in Apache Flink, you can:
 
 In summary, state in Flink empowers you to build robust, fault-tolerant, and highly scalable real-time applications that rely on more than just stateless transformations.
 
+[Top](#top)
+
 ## Flink watermark Transmission mechanism.
 In Apache Flink, watermarks are used to track progress in event time processing. The watermark transmission mechanism refers to how watermarks are generated, propagated, and used throughout the dataflow pipeline. Here’s a summary of the mechanism:
 
@@ -1231,6 +1341,8 @@ In Apache Flink, watermarks are used to track progress in event time processing.
 
 In summary, Flink's watermark transmission mechanism is a systematic way to propagate event time progress and handle out-of-order data, ensuring consistent and accurate event time processing across distributed streaming pipelines.
 
+[Top](#top)
+
 ## Flink The time semantics of?
 Apache Flink supports three primary types of time semantics, which define how events are processed and when results are produced:
 
@@ -1244,6 +1356,8 @@ Apache Flink supports three primary types of time semantics, which define how ev
    Ingestion time assigns timestamps to events when they enter the Flink data pipeline. It is a compromise between event time and processing time—offering more reliability than processing time, but does not account for upstream delays or original event generation times like event time does.
 
 Developers choose the time semantics based on application requirements for correctness versus performance. In Flink, you set the time characteristic using the `StreamExecutionEnvironment.setStreamTimeCharacteristic(...)` method (prior to Flink 1.12), but newer versions default to event time and deprecate the old API in favor of explicit timestamp assignment and watermark strategies.
+
+[Top](#top)
 
 ## Flink window join:
 A Flink window join is a type of join operation where two streams are joined together based on keys and their events' co-occurrence within a specified window of time. Unlike a regular stream join, which can potentially involve unbounded state, a window join restricts the join operation to events from both streams that fall within the same window.
@@ -1278,6 +1392,8 @@ Both events `a` and `b` must share the same key and arrive within the same five-
 
 **Use cases:**  
 Typical use cases include joining user interactions and transactions, correlating logs from multiple services, and real-time matching of events where time correlation is significant.
+
+[Top](#top)
 
 ## Flink What are the window functions:
 In Apache Flink, window functions are used to process streams of data over finite slices, or "windows," of time or other measures. They allow aggregation, computation, and analysis over these bounded subsets of the unbounded data stream.
@@ -1321,6 +1437,8 @@ dataStream
 
 In summary, window functions in Flink are mechanisms for segmenting the data stream and then applying computations over those bounded segments.
 
+[Top](#top)
+
 ## keyedProcessFunction How it works
 `KeyedProcessFunction` in Apache Flink is a low-level, powerful interface for building custom operations on keyed streams. It allows you to process events one-by-one per key, giving access to state and timers for advanced processing logic.
 
@@ -1351,6 +1469,8 @@ How it works:
    - `KeyedProcessFunction` is used with `.process(new MyKeyedProcessFunction())` on a KeyedStream.
 
 In summary, `KeyedProcessFunction` gives you fine-grained control over per-key stream processing with managed state and precise timer handling, suitable for custom streaming logic beyond built-in window or aggregate operators.
+
+[Top](#top)
 
 ## How to deal with offline data such as the association with offline data?
 In Apache Flink, dealing with offline data—or associating real-time streams with batch or static datasets (often referred to as "offline data")—is a common use case. This commonly happens when you want to enrich streaming events with contextual information (like user profiles, rules, historical data, or metadata) that doesn't change frequently.
@@ -1384,6 +1504,8 @@ There are several approaches to integrating offline data with Flink streams:
 
 In summary: Identify the size, update frequency, and access pattern of your offline data to choose between broadcast state, side input enrichment, or async lookup. Flink’s flexibility allows for multiple integration patterns to match your requirements and scalability needs.
 
+[Top](#top)
+
 ## What if there is a data skew?
 If there is data skew in Apache Flink, certain parallel tasks end up processing significantly more data than others. This leads to resource imbalances, such as:
 
@@ -1401,6 +1523,8 @@ To address data skew in Flink:
 6. **Monitoring:** Use Flink’s metrics and dashboard to identify skewed operators and take targeted actions.
 
 Ultimately, handling data skew requires identifying the source and designing redistribution strategies tailored to the workload and data characteristics.
+
+[Top](#top)
 
 ## How to do dimension table Association?
 Dimension table association in Apache Flink is commonly known as **dimension table lookup**, and it's a typical scenario in stream processing where you need to enrich your fact stream with descriptive attributes from a (usually slow-changing) reference or dimension table (e.g., user info, product metadata).
@@ -1484,6 +1608,8 @@ This approach enables joining a fact stream with historical versions of a dimens
 **In summary:**  
 Dimension table association in Flink is done via SQL lookup joins (dimension table as external lookup), DataStream broadcast state enrichment, or, for slowly changing dimensions, via temporal tables. The approach depends on dimension table size, update frequency, and latency/throughput requirements.
 
+[Top](#top)
+
 ## Flink checkpoint The overtime problem of How to solve?
 The checkpoint overtime problem in Apache Flink typically occurs when a checkpoint operation takes longer than the configured timeout (`state.checkpoints.timeout`). This can cause the checkpoint to fail and impact job reliability. Here are strategies to address this issue:
 
@@ -1522,6 +1648,8 @@ The checkpoint overtime problem in Apache Flink typically occurs when a checkpoi
 
 Addressing checkpoint overtime requires a holistic approach involving configuration tuning, resource scaling, state management, and infrastructure optimization.
 
+[Top](#top)
+
 ## FlinkTopN And offline TopN The difference between?
 **Flink TopN** refers to real-time (streaming) computation of the top N elements from a continuous data stream using Apache Flink. **Offline TopN** refers to batch processing, where all the data is available ahead of time—typically on disk or in a data warehouse—and is queried in one go.
 
@@ -1550,6 +1678,8 @@ Addressing checkpoint overtime requires a holistic approach involving configurat
 - **Offline TopN**: At end-of-day, compute the top 5 products by daily sales.
 
 In summary, Flink TopN is real-time, incremental, and stateful, while offline TopN is batch-based and straightforward, processing all data at once.
+
+[Top](#top)
 
 ## Sparkstreaming and flink in checkpoint?
 **Comparison of Checkpointing:**  
@@ -1583,6 +1713,8 @@ Apache Spark Streaming and Apache Flink handle checkpointing differently due to 
 
 Flink's checkpointing is more advanced, with finer granularity and stronger consistency guarantees, making it preferable for applications with strict fault tolerance and state consistency requirements.
 
+[Top](#top)
+
 ## A brief introduction cep State programming:
 CEP (Complex Event Processing) state programming in Apache Flink refers to the way Flink manages and maintains state as it detects patterns over streams of events. In Flink CEP, state is used to keep track of partial matches and the required context for ongoing event pattern detections.
 
@@ -1591,6 +1723,8 @@ When an event stream is processed, patterns specified by users are evaluated aga
 State handling in Flink CEP is transparent to the developer; typically, users define patterns and select functions for extracting matches, while Flink manages the underlying per-pattern state. However, advanced users can leverage custom conditions and guard states within their patterns, and use pattern process functions to manipulate matches and side effects.
 
 CEP state programming is therefore essential for scalable, reliable, and accurate complex event recognition on streams, enabling scenarios such as fraud detection, anomaly detection, and multi-step workflow monitoring.
+
+[Top](#top)
 
 ## How to deal with abnormal data in Flink.
 Dealing with abnormal data (also referred to as dirty data, anomalies, or outliers) in Apache Flink is a common requirement in real-time data processing. There are several techniques to address abnormal data in Flink:
@@ -1633,6 +1767,8 @@ Send suspicious or complex abnormal records to external systems or machine learn
 **Summary:**  
 Choose the technique based on the abnormal data's nature and the business requirements. Flink’s API flexibility allows for both simple rule-based methods and complex, stateful, or side-output patterns for robust abnormal data handling.
 
+[Top](#top)
+
 ## Is there any possibility of data loss in Flink?
 Yes, there is a possibility of data loss in Apache Flink, but it can largely be mitigated by configuring Flink correctly. Data loss may occur due to reasons such as:
 
@@ -1649,6 +1785,8 @@ To minimize the possibility of data loss:
 - Regularly test and verify Flink recovery processes.
 
 With best practices and correct configuration, Flink can provide strong guarantees against data loss. However, misconfiguration or failures outside of Flink’s control can still cause loss in rare cases.
+
+[Top](#top)
 
 ## At the time of submission How to make parallelism and how to allocate resources?
 At the time of submission, parallelism and resource allocation in Apache Flink can be configured in a few different ways:
@@ -1672,8 +1810,12 @@ At the time of submission, parallelism and resource allocation in Apache Flink c
 
 Summary: Set parallelism globally with `-p` or programmatically on operators, and allocate resources by configuring TaskManagers and their slots for the deployment environment. Proper resource allocation ensures your configured parallelism can be supported physically by available slots.
 
+[Top](#top)
+
 ## What's the common stream of API?
 The most common API for stream processing in Apache Flink is the **DataStream API**. The DataStream API allows developers to build real-time data processing applications by providing abstractions for both bounded (batch) and unbounded (streaming) data. With this API, you can define transformations such as map, filter, keyBy, window, join, and aggregate on streams of data. It supports event time and processing time semantics, stateful processing, and fault tolerance, making it suitable for a wide range of streaming use cases. The DataStream API is available in both Java and Scala.
+
+[Top](#top)
 
 ## How to maintain Checkpoint?
 To maintain a checkpoint in Apache Flink:
@@ -1695,6 +1837,8 @@ To maintain a checkpoint in Apache Flink:
 8. **Recovery:** When a failure occurs, Flink restarts the job and restores state from the latest successful checkpoint, resuming computation without data loss.
 
 Proper checkpoint maintenance includes regular configuration review, monitoring, and adapting the setup as the application and infrastructure evolve.
+
+[Top](#top)
 
 ## What's the difference at Spark and Flink Serialization?
 The main differences between Spark and Flink serialization relate to their internal processing models and support for serialization frameworks:
@@ -1720,6 +1864,8 @@ The main differences between Spark and Flink serialization relate to their inter
 
 **Summary:**  
 Flink’s serialization is more integrated, performant, and automated, especially for streaming workloads, while Spark’s serialization is more generic and configurable but may not be as fast without explicit tuning and registration. Flink is generally preferable when objects need to be serialized at high throughput and low latency.
+
+[Top](#top)
 
 ## How to deal with late data?
 Late data in Apache Flink refers to events that arrive after the expected processing time, often due to network delays or out-of-order ingestion. Flink provides mechanisms to handle late data:
@@ -1751,6 +1897,8 @@ DataStream<Event> lateEvents = mainStream.getSideOutput(lateTag);
 
 In summary, use watermarks to determine event time progress, allowed lateness to temporarily buffer late events, and side outputs to capture and process data arriving beyond the lateness threshold.
 
+[Top](#top)
+
 ## When to use aggregate perhaps process?
 Use `aggregate` or `process` functions in Apache Flink based on the complexity and requirements of your stateful streaming operation:
 
@@ -1767,3 +1915,5 @@ Use `aggregate` or `process` functions in Apache Flink based on the complexity a
 **Summary:**
 - Prefer `aggregate` for straightforward, efficient calculations over a keyed/grouped stream or window.
 - Use `process` when you need more flexibility, fine-grained control, or complex event processing that can't be expressed via simple aggregations.
+
+[Top](#top)

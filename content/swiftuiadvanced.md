@@ -93,6 +93,8 @@ struct ProfileView: View, Hashable {
 }
 ```
 
+[Top](#top)
+
 ## Specifying the view hierarchy of an app using a scene
 In SwiftUI, the view hierarchy of an app is specified using a scene, which is an essential part of the app's lifecycle management. The scene defines the root view of your application and how it should be displayed. Starting from iOS 14 and macOS 11, SwiftUI introduced the concept of a scene in the `App` protocol, which is used to manage the content and behavior of your app.
 
@@ -101,6 +103,8 @@ A scene in SwiftUI represents an instance of your app’s user interface and its
 
 ### Specifying the view hierarchy with a Scene
 When you create a SwiftUI app, you typically start by defining a struct that conforms to the `App` protocol. Inside this struct, you specify the view hierarchy using one or more scenes. The most common scene type is `WindowGroup`, which represents a group of windows that share the same state and behavior.
+
+[Top](#top)
 
 ## Example of defining a view hierarchy using a Scene
 Here’s a simple example of how you might specify the view hierarchy of an app using a scene:
@@ -159,6 +163,8 @@ The `ContentView` is the root view of the app's UI, containing a navigation stac
 - **Other views (`DetailView` and `ProfileView`)**:
 These are the destination views that are navigated to from the `ContentView`.
 
+[Top](#top)
+
 ## Multi-scene apps
 SwiftUI supports apps with multiple scenes. For example, on macOS, you can define multiple `WindowGroup` or even `DocumentGroup` scenes, allowing for a multi-window experience:
 
@@ -185,6 +191,8 @@ In this example:
 
 - **`Settings`**: Defines a settings window scene.
 
+[Top](#top)
+
 ## Maintaining the adaptable sizes of built-in views
 Maintaining adaptable sizes of built-in views in SwiftUI is crucial to creating a responsive and flexible user interface that works well across different screen sizes and device orientations. SwiftUI's layout system is designed to handle this automatically in many cases, but there are specific techniques and principles you can use to ensure your views adapt as intended.
 
@@ -207,8 +215,12 @@ Maintaining adaptable sizes of built-in views in SwiftUI is crucial to creating 
 
 - Grid layout
 
+[Top](#top)
+
 ## Automatic sizing of views
 SwiftUI’s built-in views like `Text`, `Image`, `Button`, etc., automatically adapt their sizes based on their content and the available space. This behavior is often sufficient for most interfaces.
+
+[Top](#top)
 
 ## View modifiers for sizing
 SwiftUI provides various modifiers that help control the size and layout of views, such as `frame`, `padding`, `fixedSize`, `layoutPriority` and `aspectRatio`.
@@ -219,6 +231,8 @@ Text("Hello, World!")
     .frame(maxWidth: .infinity, maxHeight: .infinity)
 ```
 This example makes the Text view take up all available space.
+
+[Top](#top)
 
 ## `GeometryReader`
 `GeometryReader` is a powerful tool for building adaptable layouts. It provides the size and position of the container view, allowing you to adjust your views dynamically.
@@ -232,6 +246,8 @@ GeometryReader { geometry in
     }
 }
 ```
+
+[Top](#top)
 
 ## Using flexible views
 Views like `HStack`, `VStack`, and `ZStack` automatically adjust their layout based on their contents and available space, making them essential for adaptive layouts.
@@ -248,6 +264,8 @@ VStack {
 }
 ```
 
+[Top](#top)
+
 ## What is `LayoutPriority`?
 `layoutPriority` helps determine how much space a view should prioritize relative to others when space is constrained.
 
@@ -260,6 +278,8 @@ HStack {
 }
 ```
 
+[Top](#top)
+
 ## `AspectRatio` and `ScaledToFit/Fill`
 `aspectRatio` maintains the aspect ratio of views like Image.
 `scaledToFit` and `scaledToFill` adjust an image’s size while maintaining its aspect ratio within the available space.
@@ -271,6 +291,8 @@ Image("example")
     .scaledToFit()
 ```
 
+[Top](#top)
+
 ## Dynamic type support
 Ensure text scales with the user’s preferred font size by using `Text` styles that support dynamic type, like `.title`, `.body`, etc.
 
@@ -280,6 +302,8 @@ Text("Hello, World!")
     .font(.body)
     .padding()
 ```
+
+[Top](#top)
 
 ## `Grid` layout
 Introduced in SwiftUI, `Grid` allows for more flexible and responsive layouts similar to CSS grids.
@@ -297,6 +321,8 @@ Grid {
     }
 }
 ```
+
+[Top](#top)
 
 ## Example: Responsive card view
 Here’s a practical example of how to create a card view that adapts to different screen sizes:
@@ -356,6 +382,8 @@ struct ContentView: View {
 
 - **Responsive frame**: The `.frame(maxWidth: 300)` keeps the card's width constrained, but still allows it to be responsive.
 
+[Top](#top)
+
 ## Scaling views to complement text
 In SwiftUI, scaling views to complement text can be achieved by dynamically adjusting the size of views based on the text's size or by ensuring that the views adapt to different text sizes. This is particularly useful when you want to create a responsive design that maintains a consistent visual hierarchy, regardless of the content.
 
@@ -365,6 +393,8 @@ In SwiftUI, scaling views to complement text can be achieved by dynamically adju
 - Using relative sizes
 - Dynamic type with `.scaledToFit()`
 - Responsive design with `@ScaledMetric`
+
+[Top](#top)
 
 ## Scaling views to complement text: Using `GeometryReader`
 - You can use `GeometryReader` to get the size of the parent view and scale your views or text accordingly.
@@ -389,6 +419,8 @@ struct ScaledTextWithView: View {
 ```
 In this example, the text size is scaled based on the width of the `GeometryReader`, and the circle is also scaled relative to the width.
 
+[Top](#top)
+
 ## Scaling views to complement text: Using `ScaleEffect`
 You can use the `.scaleEffect()` modifier to proportionally scale a view relative to the text or another reference size.
 
@@ -409,6 +441,8 @@ struct ScaleEffectExample: View {
 }
 ```
 This example scales the rectangle by 1.5 times its original size, making it complement the text size.
+
+[Top](#top)
 
 ## Scaling views to complement text: Using relative sizes
 Another approach is to define relative sizes using `.frame(width:height:)` based on the size of the text.
@@ -431,6 +465,8 @@ struct RelativeSizeExample: View {
 }
 ```
 Here, the circle is defined with a fixed size, but you can adjust its size to be relative to the text size.
+
+[Top](#top)
 
 ## Scaling views to complement text: Dynamic type with `.scaledToFit()`
 If you're using images or other views that need to scale with text, you can use `.scaledToFit()` or `.scaledToFill()` to ensure they adapt to the available space.
@@ -455,6 +491,8 @@ struct DynamicTypeExample: View {
 ```
 This ensures the image scales proportionally within its frame, complementing the text size.
 
+[Top](#top)
+
 ## Scaling views to complement text: Responsive design with `@ScaledMetric`
 SwiftUI also provides `@ScaledMetric` which allows you to scale certain dimensions relative to the user's preferred text size.
 
@@ -477,6 +515,8 @@ struct ScaledMetricExample: View {
 ```
 In this example, `iconSize` scales automatically based on the user’s text size preferences, ensuring consistency with the text.
 
+[Top](#top)
+
 ## Layering content
 In SwiftUI, layering content involves placing views on top of each other to create complex layouts, effects, or visual hierarchies. This can be achieved using a few different techniques such as using `ZStack`, overlays, backgrounds, and opacity modifiers. Below are some common methods for layering content in SwiftUI.
 
@@ -486,6 +526,8 @@ In SwiftUI, layering content involves placing views on top of each other to crea
 - Using `opacity` for layering effects
 - Combining `ZStack` with overlays and backgrounds
 - Using `alignmentGuide`
+
+[Top](#top)
 
 ## Layering content: Using `ZStack`
 `ZStack` is the primary container for layering views. Views added to a `ZStack` are stacked on top of each other along the z-axis (depth), with the first view at the back and subsequent views layered on top.
@@ -513,6 +555,8 @@ struct ZStackExample: View {
 ```
 In this example, the blue background fills the entire screen, the yellow circle is layered on top of the background, and the text is placed on top of the circle.
 
+[Top](#top)
+
 ## Layering content: Using `overlay`
 The `overlay` modifier allows you to place a view on top of another view. This is particularly useful for adding additional content like labels, icons, or custom shapes on top of existing views.
 
@@ -532,6 +576,8 @@ struct OverlayExample: View {
 }
 ```
 Here, the `Text` view is placed on top of the green rectangle using the `overlay` modifier.
+
+[Top](#top)
 
 ## Layering content: Using `background`
 The `background` modifier places content behind a view. This can be combined with the `overlay` modifier to create more complex layering effects.
@@ -553,6 +599,8 @@ struct BackgroundExample: View {
 }
 ```
 In this example, the circle is placed behind the text using the `background` modifier, creating a layered effect where the text is centered on the circle.
+
+[Top](#top)
 
 ## Layering content: Using `opacity` for layering effects
 You can use the `opacity` modifier to create subtle layering effects where one view slightly shows through another.
@@ -577,6 +625,8 @@ struct OpacityExample: View {
 }
 ```
 The star icon is semi-transparent, allowing the text to be visible through it, creating a layered visual effect.
+
+[Top](#top)
 
 ## Combining `ZStack` with overlays and backgrounds
 You can combine `ZStack` with the `overlay` and `background` modifiers to achieve even more complex layering.
@@ -616,6 +666,8 @@ In this example:
 - The `ZStack` layers a red circle, with a white stroke overlay and a blue background circle.
 - The text "SwiftUI" is layered on top, creating a complex visual hierarchy.
 
+[Top](#top)
+
 ## Layering content: Using `alignmentGuide`
 You can also align layers in a specific way using `alignmentGuide` to control how elements are stacked in a `ZStack`.
 
@@ -639,6 +691,8 @@ struct AlignmentGuideExample: View {
 ```
 This example aligns the text to the bottom-right corner of the orange rectangle using `alignmentGuide`.
 
+[Top](#top)
+
 ## Choosing the right way to hide a view
 Choosing the right way to hide a view in SwiftUI depends on the context and behavior you want to achieve. SwiftUI offers multiple methods to hide or conditionally display views, each with different implications for layout, performance, and user experience. Here's a guide on how to choose the right method for hiding a view:
 - Using `.hidden()` modifier
@@ -648,6 +702,8 @@ Choosing the right way to hide a view in SwiftUI depends on the context and beha
 - Using `opacity` with `allowsHitTesting`
 - Using `mask` Modifier
 - Using `transition` and `animation`
+
+[Top](#top)
 
 ## Choosing the right method to hide a view
 - **Maintain layout**: Use `.hidden()` if you need to hide the view but keep its space in the layout.
@@ -661,6 +717,8 @@ Choosing the right way to hide a view in SwiftUI depends on the context and beha
 - **Reusable modifier**: Create a custom modifier for repeated use across your views.
 
 By carefully choosing the right method for hiding views, you can achieve the desired behavior in your SwiftUI app while maintaining a clean and efficient codebase.
+
+[Top](#top)
 
 ## Hiding views: Using `.hidden()` modifier
 The `.hidden()` modifier hides the view visually but keeps the space it occupies in the layout. This means the view is still there, but it’s invisible.
@@ -688,6 +746,8 @@ struct HiddenModifierExample: View {
 }
 ```
 
+[Top](#top)
+
 ## Hiding views: Using `opacity()` modifier
 The `opacity(0)` modifier makes the view completely transparent but still interactive and occupying space.
 
@@ -713,6 +773,8 @@ struct OpacityModifierExample: View {
     }
 }
 ```
+
+[Top](#top)
 
 ## Hiding views: Using conditional view `if` statement
 Using an `if` statement to conditionally add or remove a view from the view hierarchy. When the condition is false, the view is completely removed from the layout, and the space it occupied is reclaimed.
@@ -740,6 +802,8 @@ struct ConditionalViewExample: View {
     }
 }
 ```
+
+[Top](#top)
 
 ## Hiding views: Using `isHidden` custom modifier
 You can create a custom modifier that toggles between showing and hiding a view by conditionally applying the `.hidden()` modifier or by entirely removing the view.
@@ -773,6 +837,8 @@ struct IsHiddenModifierExample: View {
 }
 ```
 
+[Top](#top)
+
 ## Hiding views: Using `opacity` with `allowsHitTesting`
 If you want a view to be invisible and non-interactive, you can combine `opacity` with `allowsHitTesting(false)`.
 
@@ -800,6 +866,8 @@ struct OpacityHitTestingExample: View {
 }
 ```
 
+[Top](#top)
+
 ## Hiding views: Using `mask` modifier
 The `mask` modifier allows you to hide a view by applying a mask that completely covers the view. This effectively hides the view but doesn’t remove it from the layout.
 
@@ -825,6 +893,8 @@ struct MaskModifierExample: View {
     }
 }
 ```
+
+[Top](#top)
 
 ## Hiding views: Using `transition` and `animation`
 For more sophisticated behavior, such as fading or sliding a view in and out of visibility, you can use `transition` with `animation`.
@@ -856,6 +926,8 @@ struct TransitionAnimationExample: View {
     }
 }
 ```
+
+[Top](#top)
 
 ## Advanced `NavigationStack` usage example
 ```
@@ -899,6 +971,8 @@ struct ProfileView: View, Hashable {
 }
 ```
 
+[Top](#top)
+
 ## Creating a custom input control that binds to a value
 Creating a custom input control that binds to a value involves defining a custom view that accepts a `@Binding` to a state variable. This allows the custom input control to interact with and update the bound value, reflecting changes in the parent view. Here's a step-by-step guide to achieving this:
 
@@ -909,6 +983,8 @@ Creating a custom input control that binds to a value involves defining a custom
 **Step 3: Test the custom input control**
 
 This approach allows you to create reusable, custom input controls that can bind to external state variables. The key is to use the `@Binding` property wrapper in the custom view, which provides a powerful way to create components that interact seamlessly with their parent views. This pattern is highly flexible and can be adapted to various types of custom controls, making your SwiftUI code more modular and maintainable.
+
+[Top](#top)
 
 ## Custom control: Define the input control
 Let's say we want to create a custom input control that allows the user to input a numerical value using a slider and a text field. The custom view will bind to an integer value so that it can update and reflect changes.
@@ -944,6 +1020,8 @@ Explanation:
 
 - **`TextField`**: The text field allows direct numerical input. The `value` is passed as a binding to the `TextField` and the `NumberFormatter` ensures the input is treated as an integer.
 
+[Top](#top)
+
 ## Custom control: Use the custom control in a parent view
 Now, let's use this custom input control in a parent view. We'll create a state variable in the parent view that the custom control will bind to.
 
@@ -970,8 +1048,12 @@ Explanation:
 
 - **`CustomNumberInput(value: $number, range: 0...100)`**: The `number` state is passed as a binding to the custom input control, allowing it to update the `number` state.
 
+[Top](#top)
+
 ## Custom control: Test the custom input control
 When you run the `ContentView`, the UI will display the `CustomNumberInput` control. You can interact with the slider and text field, and the value will update dynamically in both the custom input control and the text label in the parent view.
+
+[Top](#top)
 
 ## Defining the source of truth using a custom binding
 In SwiftUI, a source of truth is a single, authoritative state that determines the UI's behavior and appearance. When working with custom bindings, you often need to define a source of truth in a way that can drive multiple parts of your UI while ensuring that the state is consistent.
@@ -988,8 +1070,12 @@ A custom binding allows you to control how a state is read and written, which is
 
 - **Step 5: Test the custom binding**
 
+[Top](#top)
+
 ## Custom binding: Understand the basics of bindings
 Before creating a custom binding, it's important to understand that a binding is simply a way of connecting a view to its underlying data model. A binding allows a view to read and write a value, keeping the UI and the data in sync.
+
+[Top](#top)
 
 ## Custom binding: Create a binding
 To create a custom binding, you can use SwiftUI’s Binding type. The Binding initializer takes two closures: one for getting the value and one for setting the value. Here's a basic example:
@@ -1030,8 +1116,12 @@ Explanation:
   - **`get`**: returns the current value of `isOn`.
   - **`set`**: updates the `isOn` value with the new value and includes additional logic (like printing a message).
 
+[Top](#top)
+
 ## Custom binding: Use the custom binding
 In the example above, the custom binding is used with a `Toggle` control. The toggle reads the current value of `isOn` and updates it when the user interacts with the control. The custom logic in the `set` closure runs every time the value changes.
+
+[Top](#top)
 
 ## Custom binding: More complex use cases
 You might want to create a custom binding that manipulates the state or derives its value from another property. For example, if you have a temperature input in Celsius and you want to display it in Fahrenheit:
@@ -1068,8 +1158,12 @@ struct TemperatureView: View {
 Explanation:
 - **Temperature conversion**: Here, the source of truth is the temperature in Celsius. The custom binding converts the Celsius value to Fahrenheit for display in the `TextField` and converts back from Fahrenheit when the user inputs a value.
 
+[Top](#top)
+
 ## Custom binding: Test the custom binding
 When you run the `TemperatureView`, you can move the slider to change the temperature in Celsius, and the value in Fahrenheit will update accordingly. Similarly, typing a new value in Fahrenheit will update the slider and the Celsius state.
+
+[Top](#top)
 
 ## How to make a `List` scroll automatically?
 Example solution:
@@ -1087,6 +1181,8 @@ ScrollViewReader { scrollView in
     }
 }
 ```
+
+[Top](#top)
 
 ## MVVM in SwiftUI
 SwiftUI naturally supports the MVVM pattern through its use of data binding and the `@ObservedObject`, `@State` and `@Published` property wrappers.
@@ -1109,3 +1205,5 @@ struct ContentView: View {
 }
 ```
 Here, `ContentView` is the `View`, `UserViewModel` is the `ViewModel` and `UserService` handles the `Model` logic.
+
+[Top](#top)

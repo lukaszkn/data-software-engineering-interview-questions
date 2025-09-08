@@ -18,12 +18,16 @@ with recursive cte as
 select repeat('* ', n) from cte;
 ```
 
+[Top](#top)
+
 ## Query to calculate median value
 ```sql
 SELECT x.value from table x, table y
 GROUP BY x.value
 HAVING SUM(SIGN(1 - SIGN(y.value - x.value))) = (COUNT(*) + 1) / 2
 ```
+
+[Top](#top)
 
 ## How to pivot a table in SQL Server?
 SQL Server provides a built-in `PIVOT` function, which makes pivoting quite easy.
@@ -48,6 +52,8 @@ PIVOT (
 - The `PIVOT` function is applied to transform the `Year` column into separate columns.
 - The `SUM(Revenue)` aggregates the revenue values for each year.
 
+[Top](#top)
+
 ## How to pivot a table in MySQL?
 MySQL does not have a built-in `PIVOT` function, but you can simulate it using `CASE` statements and `GROUP BY`.
 
@@ -68,3 +74,5 @@ GROUP BY Product;
 - The `CASE` statement checks for each year and sums the revenue for each product accordingly.
 
 - The `GROUP BY` groups by the product to create a row for each product with columns representing each year.
+
+[Top](#top)

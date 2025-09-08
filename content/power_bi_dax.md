@@ -53,6 +53,8 @@ DAX (Data Analysis Expressions) is a formula language used in Power BI for data 
 
 In essence, DAX is central to defining, calculating, and modeling business logic efficiently within Power BI, enabling robust self-service analytics and governed data models.
 
+[Top](#top)
+
 ## How does DAX differ from SQL and when should each be used in a Power BI solution?
 DAX (Data Analysis Expressions) is a formula language designed specifically for data modeling, aggregation, and calculations within Power BI, Power Pivot, and Analysis Services Tabular models. SQL (Structured Query Language) is used to query and manipulate data in relational databases.
 
@@ -79,6 +81,8 @@ DAX (Data Analysis Expressions) is a formula language designed specifically for 
 
 In summary:  
 Use SQL for pre-modeling data shaping and extraction, and use DAX for model-level calculations, transformations, and analytical logic inside Power BI.
+
+[Top](#top)
 
 ## How do calculated columns in DAX differ from measures, and what are their use cases in a data pipeline?
 Calculated columns and measures in DAX serve different purposes and behave differently in Power BI:
@@ -110,6 +114,8 @@ Calculated columns and measures in DAX serve different purposes and behave diffe
 **Summary:**  
 Calculated columns add persistent, row-level data to the model during refresh and are best for static data enhancements; measures perform context-aware calculations at report time for interactive analytics.
 
+[Top](#top)
+
 ## Explain DAX context concepts such as row context and filter context and why they matter for complex calculations.
 DAX context is essential for understanding how calculations are performed in Power BI models. There are two primary types of context in DAX: row context and filter context.
 
@@ -126,6 +132,8 @@ These contexts matter for complex calculations because:
 
 In summary, understanding and intentionally managing row and filter context allows for accurate, powerful, and dynamic DAX calculations in complex reporting scenarios.
 
+[Top](#top)
+
 ## How do you write a DAX formula to perform a running total or cumulative sum?
 To create a running total or cumulative sum in DAX, you typically use the `CALCULATE` function combined with the `FILTER` function and `ALLSELECTED` (or `ALL`) to modify the context. For example, to calculate a running total of a column named `SalesAmount` in a table called `Sales`, based on dates in a `Date` column:
 
@@ -141,6 +149,8 @@ CALCULATE(
 ```
 
 This formula sums up `SalesAmount` for all dates up to and including the current context date, creating a cumulative total. `ALLSELECTED` keeps user filters (such as slicers) applied, while `ALL` ignores them. Adjust your usage depending on whether you want the running total to respect page filters/slicers.
+
+[Top](#top)
 
 ## How can you use DAX to create time intelligence calculations, such as year-to-date, previous month, or moving average?
 DAX provides several built-in time intelligence functions to perform calculations like year-to-date (YTD), previous month, and moving average. These functions work best when there’s a proper Date table marked as a Date Table in the data model.
@@ -177,6 +187,8 @@ DAX provides several built-in time intelligence functions to perform calculation
 
 Proper calendar tables and relationships are critical for accurate time intelligence calculations. Filtering by the right context ensures functions aggregate over intended periods.
 
+[Top](#top)
+
 ## What is the difference between the CALCULATE and CALCULATETABLE functions in DAX, and when would you use each?
 CALCULATE and CALCULATETABLE are both DAX functions used to modify filter context, but they differ in their output and typical use cases.
 
@@ -200,6 +212,8 @@ CALCULATE and CALCULATETABLE are both DAX functions used to modify filter contex
 - Use **CALCULATETABLE** when you need to return or work with a filtered table (for intermediate calculations, tables as output, or row context iteration with X-aggregators).
 
 Both functions allow you to overwrite or add filters to your calculations, but the primary distinction is CALCULATE outputs a scalar value, while CALCULATETABLE outputs a table.
+
+[Top](#top)
 
 ## How would you implement dynamic filtering or slicers using DAX measures?
 Dynamic filtering or slicers in Power BI are typically implemented using visual elements, but DAX measures can leverage slicer selections to drive dynamic calculations, conditional formatting, or visuals. Here’s how to do it:
@@ -260,6 +274,8 @@ Dynamic filtering or slicers in Power BI are typically implemented using visual 
 **Summary:**  
 To implement dynamic filtering using DAX measures, reference slicer selections using context-aware DAX functions like SELECTEDVALUE, VALUES, ISFILTERED, and use conditional DAX logic to drive dynamic calculations and visuals in response to user's slicer input. The measures will update automatically as slicer selections change.
 
+[Top](#top)
+
 ## How can DAX be used to support row-level security (RLS) in Power BI models?
 DAX supports row-level security (RLS) in Power BI by enabling you to define security roles using DAX filter expressions that restrict user access to specific rows of data based on criteria. In Power BI Desktop, you can create roles and assign DAX expressions to tables to control which data is visible to users assigned to those roles.
 
@@ -272,6 +288,8 @@ For example, if you want each user to see only their own sales data, you could c
 This filter ensures that only rows where the `[SalesPersonEmail]` matches the currently logged-in user’s email are visible to that user. DAX functions such as `USERPRINCIPALNAME()` and `USERNAME()` are commonly used in these filters to dynamically detect the user context.
 
 When the model is published to the Power BI Service and users are assigned to these roles, Power BI automatically applies the defined DAX filters for RLS, ensuring secure, tailored data access at query time.
+
+[Top](#top)
 
 ## Describe how you optimize DAX queries for large datasets and improve Power BI report performance.
 To optimize DAX queries for large datasets and improve Power BI performance:
@@ -300,6 +318,8 @@ To optimize DAX queries for large datasets and improve Power BI performance:
 
 By following these practices, DAX queries run more efficiently and Power BI report responsiveness is greatly improved on large datasets.
 
+[Top](#top)
+
 ## How do you troubleshoot or debug incorrect results in a complex DAX formula?
 When troubleshooting or debugging incorrect results in a complex DAX formula:
 
@@ -325,6 +345,8 @@ When troubleshooting or debugging incorrect results in a complex DAX formula:
 
 This systematic approach quickly isolates and resolves issues in complex DAX formulas.
 
+[Top](#top)
+
 ## What are some common DAX functions for handling date and time data, and how do you leverage them in analytics?
 Common DAX functions for handling date and time data include:
 
@@ -346,6 +368,8 @@ In analytics, these functions are leveraged to:
 - Implement rolling averages or moving time windows using DAX date offsets.
 
 These increase the interactivity and analytical power of Power BI reports by allowing precise temporal filtering, comparison, and aggregation.
+
+[Top](#top)
 
 ## How would you implement conditional logic (such as IF, SWITCH) in DAX for calculated columns or measures?
 Conditional logic in DAX can be implemented using functions like IF, SWITCH, and nested logical comparisons.
@@ -379,6 +403,8 @@ Here, using `SWITCH(TRUE(), ...)` mimics multiple IF...ELSE IF logic.
 
 Conditional statements work the same way in both calculated columns and measures, but be mindful of row context in columns and filter context in measures.
 
+[Top](#top)
+
 ## Explain the ALL, ALLSELECTED, and ALLEXCEPT functions and how they are used to manipulate context in DAX.
 **ALL** removes all filters from a table or column, effectively returning the unfiltered values from the specified data. It's typically used to calculate totals or to ignore slicer/page/report filters in a calculation. For example, using `CALCULATE(SUM(Sales[Amount]), ALL(Sales[Region]))` will return the total sales amount regardless of any filters on Sales[Region].
 
@@ -387,6 +413,8 @@ Conditional statements work the same way in both calculated columns and measures
 **ALLEXCEPT** removes filters from all columns of a table except for the columns specified. It allows retaining filters on certain columns while removing others, which is useful for calculating subtotals or grand totals except for the current group. For example, `CALCULATE(SUM(Sales[Amount]), ALLEXCEPT(Sales, Sales[Product]))` will remove all filters from the Sales table except those on the Product column, allowing subtotal calculation by product while ignoring other filters.
 
 All three functions manipulate filter context in DAX, determining which data is considered in calculations. Use ALL to ignore all filters, ALLSELECTED to respect user-created context, and ALLEXCEPT to selectively ignore filters except for specified columns.
+
+[Top](#top)
 
 ## How do RELATED and RELATEDTABLE functions work in DAX for accessing data across relationships?
 RELATED and RELATEDTABLE are DAX functions used to access data across tables that have defined relationships, typically in a star schema with fact and dimension tables.
@@ -409,6 +437,8 @@ To summarize:
 - **RELATED** brings a single column value from the "one" side to the "many" side.
 - **RELATEDTABLE** returns a table from the "many" side for a given row in the "one" side, useful for aggregations.  
 Both require relationships between tables to be defined in the data model.
+
+[Top](#top)
 
 ## How can you use DAX to create percent-of-total or market share calculations?
 To calculate percent-of-total or market share in DAX, create a measure using the DIVIDE function, along with the CALCULATE and ALL functions. The general pattern is:
@@ -437,6 +467,8 @@ DIVIDE(
 
 This yields each product's share of total sales across all products. Replace `[Value]`, `Table`, and `[Product]` as appropriate for your data model. For more advanced scenarios, adjust your ALL() or use ALLEXCEPT(), keeping filters you need for the calculation context.
 
+[Top](#top)
+
 ## What are the main performance bottlenecks in DAX queries, and how do you use tools like DAX Studio to diagnose them?
 The primary performance bottlenecks in DAX queries include:
 
@@ -464,6 +496,8 @@ To diagnose these bottlenecks using DAX Studio:
 - **VertiPaq Analyzer**: Shows column cardinality, column sizes, and table storage details. These help identify overly large columns/tables or poorly compressed columns.
 
 To summarize, optimize model design for smaller, properly related tables; avoid complex row-by-row calculations; monitor query plans in DAX Studio for FE bottlenecks; and regularly use tools like VertiPaq Analyzer to understand where data model or query inefficiencies arise.
+
+[Top](#top)
 
 ## How do you create ranking or top-n calculations (such as top customers by sales) using DAX?
 To create ranking or top-n calculations in Power BI using DAX, you typically use the `RANKX` function. Here is the general approach:
@@ -519,6 +553,8 @@ CALCULATE(
 - Combine rankings with filters or CALCULATE/FILTER for Top-N.
 - Always consider removing filters using ALL or ALLEXCEPT depending on your requirement.
 
+[Top](#top)
+
 ## How can you use variables (VAR) in DAX to simplify or optimize complex logic?
 Using variables (VAR) in DAX allows you to store intermediate calculations or sub-expressions with a name, which can then be reused in subsequent expressions within the same measure or calculated column. This approach serves two major purposes: simplification and optimization.
 
@@ -542,6 +578,8 @@ RETURN
 ```
 In this example, each intermediate value is stored once, improving performance and clarity. Variables can also encapsulate filter contexts, table expressions, and more, providing granular control in complex DAX logic.
 
+[Top](#top)
+
 ## How do you ensure DAX calculations produce correct results as users navigate filter and slicer selections in Power BI?
 To ensure DAX calculations produce correct results despite user filter and slicer selections, use context-aware functions and explicit filtering management. Key practices include:
 
@@ -556,6 +594,8 @@ To ensure DAX calculations produce correct results despite user filter and slice
 - Document assumptions and behavior of calculated measures, so users and developers understand how filters impact results.
 
 By carefully controlling filter propagation using DAX’s context modification functions, calculations remain robust and accurate across diverse user interactions with filters and slicers.
+
+[Top](#top)
 
 ## How would you use DAX to calculate distinct counts or unique values in large Power BI models?
 To calculate distinct counts or unique values in large Power BI models, use the DAX function `DISTINCTCOUNT`. This function is efficient and optimized for large datasets. Example:
@@ -587,6 +627,8 @@ Unique Combinations = COUNTROWS(
 
 When possible, avoid using `VALUES` inside calculated columns for distinct counts, as it can lead to performance degradation. Instead, prefer measures and optimize data model relationships. Always monitor the performance impact using DAX Studio or the Performance Analyzer in Power BI.
 
+[Top](#top)
+
 ## What is the purpose of the EARLIER function and in what scenarios is it required?
 The **EARLIER** function in DAX is used to retrieve the value of a column in an earlier (outer) row context during nested row context operations, typically when using iterators like `CALCULATE`, `FILTER`, or `SUMX` inside calculated columns or measures. EARLIER allows access to the value of a column before the current iteration context, making it possible to compare the value of the current row against that of a parent row context.
 
@@ -610,6 +652,8 @@ The **EARLIER** function in DAX is used to retrieve the value of a column in an 
 
 **Note:**  
 EARLIER is less common in measures or new DAX code because variables and functions like `SELECTEDVALUE` or using `FILTER` expressions with intermediate variables often make logic easier to read and maintain. However, it remains necessary in certain calculated columns involving complex row context nesting.
+
+[Top](#top)
 
 ## How do you design DAX measures that accommodate schema changes or evolving business requirements?
 To design DAX measures that accommodate schema changes or evolving business requirements:
@@ -646,6 +690,8 @@ To design DAX measures that accommodate schema changes or evolving business requ
 
 Designing with these principles ensures that measures are flexible, easier to maintain, and resilient to change—leading to a more robust Power BI solution as requirements and data models evolve.
 
+[Top](#top)
+
 ## How do you test and validate DAX calculations as part of your Power BI deployment pipeline?
 To test and validate DAX calculations in a Power BI deployment pipeline:
 
@@ -664,6 +710,8 @@ To test and validate DAX calculations in a Power BI deployment pipeline:
 7. **Monitoring and Rollback Plan**: After production deployment, monitor reports for data anomalies. Use Power BI Service’s lineage view and version history to track changes and revert if required.
 
 Document all critical DAX calculations, assumptions, and testing outcomes to support ongoing maintenance and troubleshooting.
+
+[Top](#top)
 
 ## How do you use DAX to handle “unknown” or missing data scenarios in aggregations or analytics?
 In DAX, handling "unknown" or missing data scenarios is typically managed by:
@@ -690,6 +738,8 @@ In DAX, handling "unknown" or missing data scenarios is typically managed by:
 
 By using these techniques, you can control how missing or "unknown" data is represented in calculations, visualizations, and analytical scenarios in Power BI with DAX.
 
+[Top](#top)
+
 ## What best practices do you follow for naming, documenting, and organizing DAX measures and columns?
 For naming DAX measures and columns, I use clear, descriptive, and consistent naming conventions to improve readability and maintainability. Measures are typically prefixed or suffixed to indicate their type, such as [Total Sales] (for sums), [Avg Sales], or [Is Active] (for bools and flags). I avoid spaces and special characters in column names, but I use spaces for measures since they're user-facing. Calculated columns and measures are grouped in display folders or with prefixes per business domain (e.g., Sales|Order Count).
 
@@ -698,6 +748,8 @@ For documentation, I leverage the “Description” property in Power BI for bot
 In organizing, I group related measures using display folders in the model view, aligning them by functional area (e.g., Sales, Inventory, Finance). I hide intermediate columns and tables from report view if not needed by users to keep the model tidy. I use consistent formatting (thousand separators, decimals, percent) for measures as appropriate and document any custom formats applied.
 
 Overall, I prioritize intuitiveness, consistency, and thorough documentation to streamline collaboration and handovers.
+
+[Top](#top)
 
 ## How do you combine DAX with Power Query transformations for end-to-end data shaping and analytics?
 Power Query is used for data extraction, cleaning, and transformation before the data is loaded into the Power BI data model. Typical tasks performed in Power Query include filtering rows, splitting columns, merging tables, unpivoting data, and transforming data types using the M language. These operations shape raw data into a clean, model-ready format.
@@ -717,6 +769,8 @@ An example end-to-end process:
 4. Use DAX for dynamic segmentation or ranking based on user selection.
 
 Guideline: Use Power Query for preparing and cleaning data (ETL), and DAX for analytics and interactive calculations tied to the report context. This division promotes efficiency, maintainability, and performance in Power BI models.
+
+[Top](#top)
 
 ## Describe how you would create dynamic cohort or segmentation analysis using DAX.
 To create dynamic cohort or segmentation analysis in Power BI using DAX, start by defining the cohort logic—typically based on a user’s first activity date (e.g., first purchase). These are the core steps:
@@ -771,6 +825,8 @@ To create dynamic cohort or segmentation analysis in Power BI using DAX, start b
 
 All cohort logic and segmentation use dynamic DAX calculations, responding to user interaction with slicers or other report elements, enabling flexible and interactive cohort analysis without having to pre-calculate static cohort groups outside Power BI.
 
+[Top](#top)
+
 ## How do you approach DAX optimization for DirectQuery vs. Import mode datasets in Power BI?
 DAX optimization strategies differ significantly between DirectQuery and Import mode in Power BI due to how queries are executed and data is stored:
 
@@ -790,6 +846,8 @@ DAX optimization strategies differ significantly between DirectQuery and Import 
 
 **Summary:**  
 For DirectQuery, limit DAX complexity, optimize for query folding, and reduce data movement. For Import mode, focus on efficient DAX, model design, and minimizing in-memory resource usage. Always tailor optimization to the storage mode to ensure optimal report performance.
+
+[Top](#top)
 
 ## What are some anti-patterns to avoid with DAX in enterprise-grade Power BI solutions?
 Some key anti-patterns to avoid with DAX in enterprise-grade Power BI solutions include:
@@ -826,6 +884,8 @@ Some key anti-patterns to avoid with DAX in enterprise-grade Power BI solutions 
 
 Avoiding these anti-patterns creates models that are maintainable, performant, and easier to govern at enterprise scale.
 
+[Top](#top)
+
 ## How do you manage dependencies between DAX measures and maintain model performance as complexity grows?
 Managing dependencies between DAX measures and maintaining model performance as complexity grows requires a strategic approach:
 
@@ -861,6 +921,8 @@ Managing dependencies between DAX measures and maintaining model performance as 
 
 Continually refactoring, monitoring dependencies, and optimizing for query performance ensures that DAX models remain scalable and maintainable as they grow more complex.
 
+[Top](#top)
+
 ## How do DAX table functions (like SUMMARIZE, ADDCOLUMNS) help with custom aggregation or complex grouping?
 DAX table functions like `SUMMARIZE` and `ADDCOLUMNS` provide powerful tools for custom aggregation and complex grouping scenarios beyond what is possible with standard visuals or basic measures.
 
@@ -875,6 +937,8 @@ By chaining these functions, you can:
 - Combine with functions like `FILTER`, `CALCULATETABLE`, or `TOPN` for even more refined results.
 
 These table functions are foundational in DAX for authoring advanced analytics in Power BI when built-in summarization options are insufficient.
+
+[Top](#top)
 
 ## How do you create rolling window or period-over-period comparison metrics using DAX?
 To create rolling window or period-over-period (PoP) comparison metrics in Power BI using DAX:
@@ -933,6 +997,8 @@ DIVIDE(
 - Avoid ambiguity by using explicit measures for base metrics (e.g., `[Total Sales]`).
 - Rolling or PoP metrics should be calculated measures, not calculated columns, to respect filter context.
 
+[Top](#top)
+
 ## How do you identify and refactor inefficient or duplicative DAX logic in a large data model?
 To identify and refactor inefficient or duplicative DAX logic in a large data model:
 
@@ -956,6 +1022,8 @@ To identify and refactor inefficient or duplicative DAX logic in a large data mo
 
 Consistent use of modular measures, variables, and performance tools leads to a cleaner, more maintainable model with efficient DAX logic.
 
+[Top](#top)
+
 ## How do you use the USERNAME or USERPRINCIPALNAME functions in DAX for personalized analytics?
 The `USERNAME()` and `USERPRINCIPALNAME()` functions in DAX are used for row-level security (RLS) and personalized analytics in Power BI. They return the identity of the user currently viewing the report.
 
@@ -971,6 +1039,8 @@ For personalized analytics, these functions are embedded in DAX expressions, oft
 This will restrict data so that users only see rows where `[Email]` matches their login. These functions can also be used in measures to display personalized data, for instance, to show a greeting or filter measures based on the identity of the user.
 
 During Power BI Desktop development, `USERNAME()` and `USERPRINCIPALNAME()` return the local Windows identity, but on the Power BI Service, they return the user’s organizational ID. This is key when designing personalized or secure analytics in enterprise environments.
+
+[Top](#top)
 
 ## What tools or processes do you use for code reuse and modularization of DAX logic across multiple Power BI solutions?
 For code reuse and modularization of DAX logic across multiple Power BI solutions, I use the following tools and processes:
@@ -990,6 +1060,8 @@ For code reuse and modularization of DAX logic across multiple Power BI solution
 7. Best Practice Analyzer: Through Tabular Editor’s Best Practice Analyzer or community-driven DAX libraries, I ensure reused code adheres to performance and naming standards across projects.
 
 These strategies help standardize development, accelerate implementation, and reduce errors when deploying shared DAX logic across multiple Power BI solutions.
+
+[Top](#top)
 
 ## What are some challenges or limitations you’ve encountered with DAX in large data models, and how did you address them?
 Some common challenges with DAX in large data models include:
@@ -1021,6 +1093,8 @@ Some common challenges with DAX in large data models include:
 
 By focusing on model design, optimizing DAX for columnar operations, and minimizing calculated columns, many challenges with DAX in large data models can be effectively managed.
 
+[Top](#top)
+
 ## How do you control and audit changes to mission-critical DAX calculations in collaborative data engineering teams?
 Controlling and auditing changes to mission-critical DAX calculations in collaborative teams requires a combination of process and technical controls:
 
@@ -1043,6 +1117,8 @@ Controlling and auditing changes to mission-critical DAX calculations in collabo
    Monitor usage metrics and audit logs from Power BI Service to track which DAX measures are actively impacting reports, and log changes with metadata (e.g., who changed, when, and why).
 
 This approach ensures transparency, consistency, and accountability in DAX management across teams.
+
+[Top](#top)
 
 ## Can you walk through an example where a complex business logic challenge was solved using DAX in Power BI?
 In a recent project, the requirement was to calculate a custom churn rate for a subscription-based service, taking into account upgrades, downgrades, suspensions, and reactivations—beyond a simple count of lost customers. The business logic specified that:
@@ -1094,3 +1170,5 @@ RETURN
 ```
 
 This approach allowed the client to see a nuanced churn metric and act on customers at risk before actual loss, directly enabling targeted retention strategies. The measure was later parameterized for different business rules as needed.
+
+[Top](#top)

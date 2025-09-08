@@ -61,6 +61,8 @@ The three main components of the Windows Azure (now Microsoft Azure) platform ar
 
 Note: "AppFabric" has since been replaced by Azure’s broader set of integration services, but these were the primary components when discussing the Windows Azure platform in its earlier releases.
 
+[Top](#top)
+
 ## What are the Service Model in Cloud Computing?
 The main service models in cloud computing are:
 
@@ -86,6 +88,8 @@ Some additional models include:
 
 Each model provides a different level of control, flexibility, and management responsibility.
 
+[Top](#top)
+
 ## How many Types of Deployment Models are used in Cloud?
 There are three primary types of deployment models used in cloud computing:
 
@@ -105,6 +109,8 @@ Some sources also mention a fourth model:
 
 In Azure context, customers primarily use public, private, and hybrid deployment models.
 
+[Top](#top)
+
 ## What is Windows Azure Platform?
 Windows Azure Platform, now known as Microsoft Azure, is Microsoft's cloud computing platform and infrastructure. It provides a range of cloud services, including computing, storage, networking, databases, analytics, and more. Azure allows developers and IT professionals to build, deploy, and manage applications through Microsoft-managed data centers across the globe. The platform supports various programming languages, tools, and frameworks, both Microsoft-specific and third-party. Key components include:
 
@@ -116,6 +122,8 @@ Windows Azure Platform, now known as Microsoft Azure, is Microsoft's cloud compu
 - **Developer Tools and DevOps**: Integration with Visual Studio, Azure DevOps, and automation tools.
 
 The platform supports scenarios like hosting websites, running enterprise applications, big data analytics, IoT, artificial intelligence, and hybrid cloud integrations.
+
+[Top](#top)
 
 ## What are the Roles Available in Windows Azure?
 Azure provides several types of "roles" to help define and structure cloud-based applications, especially in the context of classic Azure Cloud Services (not to be confused with modern Azure App Services or Virtual Machines). In classic Windows Azure terminology, the main roles are:
@@ -142,6 +150,8 @@ With the evolution of Azure, the concept of “roles” (Web and Worker) is spec
 
 *VM Role is deprecated; use Azure Virtual Machines for similar functionality.
 
+[Top](#top)
+
 ## What is difference between Windows Azure Platform and Windows Azure?
 "Windows Azure Platform" refers to the complete suite of cloud services provided by Microsoft that includes not just the operating system-level services, but also storage, databases, networking, and developer tools. This encompasses components such as Windows Azure (now called Azure), SQL Azure (now Azure SQL Database), and Windows Azure AppFabric (now Azure Service Bus and related services).
 
@@ -152,6 +162,8 @@ To sum up:
 - **Windows Azure** = The core cloud operating system—focus on running and managing applications
 
 Note: Since 2014, "Windows Azure" has been rebranded as "Microsoft Azure," and the distinction is less commonly made, as all these services are now integrated under the unified "Azure" branding.
+
+[Top](#top)
 
 ## What are the three Types of Roles in Compute Component in Windows Azure?
 The three types of roles in the Compute Component in Windows Azure (now called Microsoft Azure) are:
@@ -167,8 +179,12 @@ The three types of roles in the Compute Component in Windows Azure (now called M
 
 **Note:** In modern Azure, these roles are largely replaced by Azure Cloud Services (classic), Azure App Services, and Azure Virtual Machines, but these three roles were foundational in the early Azure platform architecture.
 
+[Top](#top)
+
 ## What is Windows Azure Compute Emulator?
 The Windows Azure Compute Emulator is a local simulation tool that allows developers to test and debug their cloud services on their local development machine before deploying them to the Azure cloud. It simulates the Azure compute environment, running web roles and worker roles just as they would run in Microsoft Azure. This enables developers to identify and fix issues efficiently during development without incurring cloud resource costs or deployment time delays. The emulator provides local endpoints, simulates the role lifecycle, and offers some integration with storage emulators, making it possible to test most of an application's behavior offline. Note that some Azure-specific features and networking scenarios may not be fully replicated locally.
+
+[Top](#top)
 
 ## What is Fabric?
 Fabric in the Azure ecosystem refers to **Microsoft Fabric**, an end-to-end analytics platform introduced by Microsoft. It unifies various data integration, engineering, warehousing, data science, real-time analytics, and business intelligence tools into a single SaaS (Software as a Service) offering.
@@ -188,8 +204,12 @@ Fabric in the Azure ecosystem refers to **Microsoft Fabric**, an end-to-end anal
 **Significance:**
 Fabric streamlines and simplifies analytics by reducing silos, lowering integration complexity, and enabling governance across the data and analytics lifecycle in the Azure cloud.
 
+[Top](#top)
+
 ## How many instances of a Role should be deployed to Satisfy Azure Sla?
 To satisfy the Azure Service Level Agreement (SLA) for roles in Azure Cloud Services, you must deploy **at least two instances** of each role. The SLA only applies when your service is running in two or more instances; deploying a single instance does not qualify for the uptime guarantee specified in the Azure SLA. This ensures high availability, as Azure can detect and remediate failures by automatically redistributing workloads among the remaining healthy instances.
+
+[Top](#top)
 
 ## What are the options to manage Session State in Windows Azure?
 In Azure, managing Session State for applications, particularly web applications like those built on ASP.NET, can be done through several options:
@@ -224,8 +244,12 @@ In Azure, managing Session State for applications, particularly web applications
 
 **Best practice is to use stateless web applications when possible, but when session state is required, Azure Redis Cache is generally recommended for performance, scalability, and reliability when running on multiple instances.**
 
+[Top](#top)
+
 ## What is Cspack?
 Cspack is a command-line tool in Microsoft Azure that is used to generate service package files (.cspkg) for cloud services. It packages the application code, configuration files, assemblies, and resources required to deploy a cloud service to Azure. These package files, along with the service configuration file (.cscfg), are uploaded to Azure for the deployment and provisioning of cloud services (classic Cloud Services model). Cspack is primarily associated with Azure Cloud Services (classic) and is part of the Azure SDK tools.
+
+[Top](#top)
 
 ## What is Csrun?
 Csrun is a command-line tool used in Microsoft Azure for managing and running Azure Cloud Service projects locally during the development and testing phase. It was specifically used with the Azure Cloud Services (classic) development model, typically in conjunction with Visual Studio and the Windows Azure SDK.
@@ -239,6 +263,8 @@ The primary functions of **csrun** include:
 
 **Note:** csrun is mostly relevant for legacy Azure Cloud Services (classic) projects and is not used in the newer Azure Resource Manager (ARM) or modern PaaS services like Azure App Services, Azure Functions, or containers. The tool is generally replaced by more modern CLI tools (like `Azure CLI`) and direct ARM deployment for current Azure services.
 
+[Top](#top)
+
 ## What is Guest Os?
 In the context of Azure, a **Guest OS** refers to the operating system that runs inside a virtual machine (VM) or a container, as opposed to the underlying host OS that runs on the physical or hypervisor machine managed by Azure. 
 
@@ -249,6 +275,8 @@ Key points:
 - User controls its configuration, updates, and security.
 - Distinct from the Host OS (controlled by Azure).
 - Azure provides Guest OS images, but users can also upload custom ones.
+
+[Top](#top)
 
 ## How to programmatically Scale Out Azure Worker Role Instances?
 You can programmatically scale out Azure Worker Role instances—meaning you increase the number of running instances—by updating the service configuration (`.cscfg`) file of your Cloud Service.
@@ -299,6 +327,8 @@ await computeManagementClient.Deployments.UpdateAsync(serviceName, slot, deploym
 **Summary:**
 To scale out Azure Worker Role instances programmatically, use the Azure Management APIs (REST/SDK/PowerShell) to modify the instance count for the Worker Role in the associated service configuration. Optionally, enable and configure autoscale for automated, metric-driven scaling out.
 
+[Top](#top)
+
 ## What is Web Role in Windows Azure?
 A Web Role in Windows Azure (now Microsoft Azure) is a cloud service role specifically designed to handle web application hosting using Internet Information Services (IIS). It is essentially a pre-configured virtual machine running Windows Server with IIS enabled to host front-end web applications, such as ASP.NET, PHP, or other supported frameworks.
 
@@ -312,6 +342,8 @@ Key characteristics:
 
 With the advent of Azure App Services and other modern services, use of classic Web Roles has diminished, but the concept remains relevant in legacy Cloud Services deployments.
 
+[Top](#top)
+
 ## What is the difference between Public Cloud and Private Cloud?
 A public cloud is a cloud computing environment operated by a third-party provider, such as Microsoft Azure, AWS, or Google Cloud, which delivers computing resources (like servers, storage, and applications) over the internet. These resources are shared among multiple organizations (known as multi-tenancy), and customers typically pay on a consumption or subscription basis. Public clouds offer scalability, cost efficiency, and global reach.
 
@@ -319,11 +351,17 @@ A private cloud, on the other hand, is a cloud environment dedicated to a single
 
 In summary, public cloud emphasizes shared infrastructure and scalability, while private cloud focuses on dedicated resources and enhanced control. Azure supports both models through its public Azure cloud and Azure Stack solutions for private and hybrid cloud deployments.
 
+[Top](#top)
+
 ## What is Windows Azure Diagnostics?
 Windows Azure Diagnostics is a feature that enables you to collect diagnostic data from applications running in Azure, such as logs, performance counters, crash dumps, and event logs. It helps monitor and analyze the operation and performance of your Azure resources. Azure Diagnostics can be configured to automatically transfer collected data to Azure storage accounts or other monitoring solutions, making it easier to troubleshoot issues and gain insights into application behavior in the cloud environment. It supports both infrastructure-as-a-service (IaaS) and platform-as-a-service (PaaS) environments and integrates with tools like Azure Monitor and Log Analytics for further analysis and alerting.
 
+[Top](#top)
+
 ## What is Blob?
 A Blob in Azure refers to "Binary Large Object" and is a type of storage provided by Azure Blob Storage within the Azure Storage account. Blob Storage is optimized for storing massive amounts of unstructured data, such as text or binary data. Examples include documents, images, videos, backups, and logs. Azure Blobs come in three types: block blobs (for uploading and storing large amounts of text or binary data), append blobs (optimized for append operations, such as logging), and page blobs (used for random read/write operations, like virtual hard drives). Blob Storage supports REST APIs, SDKs, and integrates with other Azure services, allowing applications to store and retrieve files at scale, securely, and with strong durability guarantees.
+
+[Top](#top)
 
 ## What is the difference between Block Blob Vs Page Blob?
 Block Blob and Page Blob are two types of blobs in Azure Blob Storage. Here are the key differences:
@@ -353,6 +391,8 @@ Block Blob and Page Blob are two types of blobs in Azure Blob Storage. Here are 
 | Update Granularity | Entire block                    | Specific byte range        |
 
 Choose Block Blob for file storage and streaming; choose Page Blob for workloads requiring frequent, random read/write access such as virtual disks.
+
+[Top](#top)
 
 ## What is the difference between Windows Azure Queues and Windows Azure Service Bus Queues?
 **Windows Azure Queues (Azure Storage Queues):**
@@ -392,6 +432,8 @@ Choose Block Blob for file storage and streaming; choose Page Blob for workloads
 - Use Azure Storage Queues for simple, cost-effective, high-throughput queue storage.
 - Use Azure Service Bus Queues for enterprise-grade features, complex workflow, message ordering, and publish/subscribe messaging.
 
+[Top](#top)
+
 ## What is Deadletter Queue?
 A Deadletter Queue (DLQ) in Azure is a sub-queue used to store messages that cannot be delivered to the intended receiver or processed successfully. In Azure Service Bus, Azure Storage Queues, and Event Grid, the DLQ captures problematic messages, allowing you to isolate and investigate issues without losing the data.
 
@@ -402,6 +444,8 @@ Common scenarios for a message landing in the DLQ include:
 - Explicit action by the receiving application, such as calling the `DeadLetter` method in Azure Service Bus.
 
 DLQs enable robust error handling, facilitate debugging, and prevent poison messages from blocking or clogging the primary queue or topic subscription. Messages in the DLQ can be inspected, repaired, and optionally reprocessed depending on the business requirements.
+
+[Top](#top)
 
 ## What are Instance Sizes of Azure?
 Instance sizes in Azure refer to the predefined configurations of virtual machine (VM) hardware resources such as CPU, RAM, storage, and network capacity. These sizes enable users to select the most appropriate hardware resources for their workloads, optimizing both performance and cost.
@@ -419,6 +463,8 @@ Each series offers different instance sizes, labeled based on virtual CPU (vCPU)
 
 Instance sizes can be scaled up or down to meet changing workload requirements, and Azure allows resizing of VMs within the same family to facilitate flexibility. Choosing the right instance size involves considering workload type, expected performance, and cost.
 
+[Top](#top)
+
 ## What is Table Storage in Windows Azure?
 Table Storage in Windows Azure is a NoSQL key-value store that allows you to store large amounts of unstructured and semi-structured data. It is a part of the Azure Storage offering, designed for scalable, cost-effective storage of structured datasets that don't require complex joins or foreign keys.
 
@@ -430,6 +476,8 @@ Key points:
 - Suitable for applications requiring massive scale, quick access, and low cost, such as logs, user profiles, and device telemetry.
 - Offers automatic load balancing and high availability.
 Azure Table Storage is often used where relational features such as joins and foreign keys aren't necessary. For more complex querying, Azure Cosmos DB Table API can be used as an alternative.
+
+[Top](#top)
 
 ## Difference between Web and Worker Roles in Windows Azure?
 In Windows Azure (now Azure Cloud Services), both Web Roles and Worker Roles are cloud service components designed to handle different types of workloads:
@@ -455,6 +503,8 @@ In Windows Azure (now Azure Cloud Services), both Web Roles and Worker Roles are
 
 The main difference: Web Roles handle web-based requests via IIS, Worker Roles handle general background processing and tasks.
 
+[Top](#top)
+
 ## What is Azure Fabric Controller?
 Azure Fabric Controller is a distributed, resource management component at the heart of the Azure Service Fabric. It manages the physical servers and infrastructure resources in Microsoft Azure data centers.
 
@@ -467,10 +517,14 @@ It is responsible for:
 
 Essentially, the Fabric Controller serves as the “kernel” for the Azure cloud, abstracting away physical infrastructure and enabling Azure’s platform-as-a-service (PaaS) offerings. It manages multiple “fabric clusters,” each mapping to a set of servers in a data center.
 
+[Top](#top)
+
 ## What is Autoscaling?
 Autoscaling in Azure refers to the automatic process of dynamically adjusting resources—such as the number of virtual machines or service instances—based on current workload demands. It helps ensure that applications maintain performance and availability while optimizing resource usage and controlling costs.
 
 Autoscaling is commonly used with services such as Azure Virtual Machine Scale Sets, Azure App Service, and Azure Kubernetes Service. It allows you to define rules or schedules that react to metrics like CPU utilization, memory usage, or request count. When thresholds are met, Azure automatically adds or removes resource instances to meet demand without manual intervention.
+
+[Top](#top)
 
 ## What is Vm Role in Windows Azure?
 The VM Role in Windows Azure (now referred to as Microsoft Azure) was a feature in the classic Azure Service Management model. It allowed users to upload their own custom Windows Server images to Azure and run them as virtual machines, providing more control over the operating system and installed software compared to the Web and Worker Roles.
@@ -484,6 +538,8 @@ Key points about the VM Role:
 
 The VM Role is no longer recommended or available for new deployments. For similar use cases, Azure now recommends using Azure Virtual Machines under the Resource Manager model.
 
+[Top](#top)
+
 ## Apart from dotnet Framework please name other three language framework that can be used to Develop Windows Azure Applications?
 Three other language frameworks that can be used to develop Windows Azure (Microsoft Azure) applications are:
 
@@ -493,6 +549,8 @@ Three other language frameworks that can be used to develop Windows Azure (Micro
 
 These frameworks allow developers to build and deploy applications on Azure using their preferred programming languages in addition to .NET.
 
+[Top](#top)
+
 ## How would you categorize Windows Azure?
 Windows Azure, now known as Microsoft Azure, is categorized as a cloud computing platform and service. More specifically, it is a public cloud platform that provides a wide range of cloud services, including:
 
@@ -501,6 +559,8 @@ Windows Azure, now known as Microsoft Azure, is categorized as a cloud computing
 - **Software as a Service (SaaS)**
 
 Azure supports building, deploying, and managing applications through Microsoft-managed data centers. It offers services related to computing, networking, databases, storage, analytics, artificial intelligence, and more. Azure is also considered a hybrid cloud platform due to its integration with on-premises environments through services like Azure Arc and Azure Stack.
+
+[Top](#top)
 
 ## What is Azure Cloud Service?
 Azure Cloud Service is a Platform as a Service (PaaS) offering from Microsoft Azure that enables you to deploy, manage, and scale multi-tier web applications and services. It allows you to host scalable web applications and background processing tasks within managed virtual machines. Cloud Services abstracts much of the underlying infrastructure management so you can focus on application logic.
@@ -514,6 +574,8 @@ Key characteristics:
 
 Azure Cloud Services are best suited for applications that require scalable, reliable, and highly available hosting environments and want to separate web front ends from background processing. However, for many new projects, Azure App Service and Azure Kubernetes Service are also commonly used.
 
+[Top](#top)
+
 ## What is Cloud Service Role?
 A Cloud Service Role in Azure refers to a component within the Azure Cloud Services model that defines the type and configuration of application instances running in the cloud. There are two main types of roles:
 
@@ -522,6 +584,8 @@ A Cloud Service Role in Azure refers to a component within the Azure Cloud Servi
 2. **Worker Role**: Designed for background processing tasks that don't require IIS. Worker Roles execute logic, process data, or perform long-running operations in the background.
 
 Each role is configured independently, can scale on demand, and runs in its own virtual machine instances managed by Azure. Roles help separate concerns—for example, the UI in a Web Role and background processing in a Worker Role—allowing for flexible application architecture.
+
+[Top](#top)
 
 ## What is Link Resource?
 In the context of Azure, a **Link Resource** generally refers to a type of resource that establishes a relationship or connection between two resources or services. In many Azure services, especially in Data and Integration services (like Azure Data Factory, Azure Synapse Analytics, or Azure Machine Learning), a Link Resource acts as a connector or reference to external resources.
@@ -536,6 +600,8 @@ Key characteristics:
 Summary:  
 A Link Resource in Azure is typically a configuration object that provides information needed to connect Azure services to external or internal resources. Its main role is to enable secure, manageable, and reusable connectivity between Azure components and data sources.
 
+[Top](#top)
+
 ## What is Scale Cloud Service?
 Scale Cloud Service in Azure refers to the process of adjusting the number of instances (roles) of a cloud service to meet workload demands. In Azure Cloud Services (classic), an application is deployed as a set of roles (web roles and worker roles), and each role runs across one or more virtual machine instances.
 
@@ -549,17 +615,27 @@ Increasing or decreasing the number of VM instances running a particular role. F
 
 Scaling can be done manually through the Azure Portal, or automatically by configuring autoscale rules based on metrics such as CPU usage or queue length. The objective is to maintain performance and availability while optimizing resource costs.
 
+[Top](#top)
+
 ## What is Web Role ?
 A Web Role in Azure Cloud Services is a cloud-based server instance specifically designed to run web applications developed using technologies like ASP.NET, PHP, or Node.js. Web Roles are automatically configured by Azure to handle HTTP and HTTPS requests via IIS (Internet Information Services). They are primarily used for hosting front-end web applications and exposing endpoints over the internet. Unlike Worker Roles, which are optimized for running background processing tasks, Web Roles are meant for direct client interaction and are managed as part of Azure's Platform as a Service (PaaS) model. Web Roles can scale out easily, and Azure handles the underlying infrastructure, OS maintenance, and load balancing.
+
+[Top](#top)
 
 ## What is Worker Role ?
 A Worker Role in Azure is a type of cloud service role used in Azure Cloud Services (classic model) designed to run background processing tasks. Unlike Web Roles, which are optimized to handle HTTP requests through IIS, Worker Roles do not have IIS enabled and are intended for generalized background jobs, such as data processing, queue handling, or any long-running tasks that do not involve direct web interaction. Worker Roles run custom code defined in the RoleEntryPoint class and can be scaled independently. In modern architectures, Azure now recommends using Azure Functions, Azure WebJobs, or Azure Container Instances for similar background processing tasks.
 
+[Top](#top)
+
 ## What is Role Instance ?
 In Azure, a **Role Instance** refers to an individual running copy of a role within an Azure Cloud Service. Roles can be either web roles (for handling web requests) or worker roles (for background processing). Each instance runs in its own virtual machine (VM) and operates independently. The number of role instances is configurable and determines the scalability and availability of an application. If you specify three role instances, Azure will deploy and run three separate VMs, each running the code for that role. Azure automatically handles health monitoring and restarting of these instances if they fail.
 
+[Top](#top)
+
 ## What is Guest Operating System ?
 A Guest Operating System refers to the operating system installed and running inside a virtual machine (VM) on a virtualization platform, such as Azure. It operates as if it were running on dedicated hardware but instead runs atop the virtualized hardware provided by the VM. In Azure, supported guest operating systems include various versions of Windows Server and Linux distributions. The guest OS is separate from the host OS, which is managed by Microsoft on the underlying Azure infrastructure.
+
+[Top](#top)
 
 ## What is Cloud Service Components?
 Cloud service components in Azure refer to the key building blocks required to deliver cloud solutions. The main cloud service components are:
@@ -587,12 +663,16 @@ Cloud service components in Azure refer to the key building blocks required to d
 
 These components work together to provide scalable, reliable, and secure cloud solutions in Azure.
 
+[Top](#top)
+
 ## What is Deployment Environments?
 Deployment environments are isolated stages or setups within the application lifecycle where code is built, tested, and released to ensure reliability before going to production. In Azure, deployment environments can include typical stages such as Development, Testing (QA), Staging (Pre-production), and Production. Each environment mirrors production conditions to varying degrees, with separate resources, configurations, and settings to prevent changes or failures in one environment from affecting others.
 
 Azure supports deploying resources to specific environments using tools like Azure Resource Manager (ARM) templates, Azure DevOps Pipelines, and GitHub Actions. These environments help in validating changes, automated testing, performance evaluations, and progressive rollouts, thereby improving application stability and reducing the risk of production issues. 
 
 Specifically, services like Azure App Service Environments or Azure Deployment Environments (in Azure DevBox) provide managed, isolated cloud resources tailored for different stages, making environment management more robust and scalable.
+
+[Top](#top)
 
 ## What is Swap Deployments?
 Swap Deployments in Azure refer to the process of exchanging the content and configuration of two deployment slots for a web app or cloud service. This feature is commonly used in Azure App Service to promote an application from a staging environment to production with minimal downtime.
@@ -609,6 +689,8 @@ The main points about Swap Deployments:
 - **Common Practice:** Typically, new code is deployed to the staging slot, tested, and then swapped with production once validated.
 
 Swap Deployments streamline release management and help ensure high availability during deployments in Azure App Service.
+
+[Top](#top)
 
 ## What is Minimal Vs Verbose Monitoring?
 Minimal Monitoring and Verbose Monitoring are terms often associated with Azure monitoring, particularly in the context of classic (old) Azure services and diagnostics.
@@ -641,6 +723,8 @@ Minimal Monitoring and Verbose Monitoring are terms often associated with Azure 
 **Current Recommendations:**  
 Use Azure Monitor and customize metrics and diagnostics collection to balance cost and the level of insight required, instead of relying solely on legacy "Minimal vs. Verbose" modes.
 
+[Top](#top)
+
 ## What is Service Definition File?
 In Azure Cloud Services (classic), the Service Definition File is an XML file with the extension `.csdef`. It defines the service model of a cloud service, specifying configuration details such as:
 
@@ -652,6 +736,8 @@ In Azure Cloud Services (classic), the Service Definition File is an XML file wi
 
 The Service Definition File acts as the blueprint for how the service should run in Azure. It works alongside the Service Configuration File (`.cscfg`) to fully describe the deployment. Changes to the `.csdef` require redeployment of the service, as it defines the structure and capabilities of the deployment.
 
+[Top](#top)
+
 ## What is Service Configuration File?
 In Azure, a Service Configuration File is an XML file used primarily in Cloud Services (classic), which defines the runtime settings for an application deployed to Azure. It contains configuration values such as:
 
@@ -662,8 +748,12 @@ In Azure, a Service Configuration File is an XML file used primarily in Cloud Se
 
 The Service Configuration File (typically named `ServiceConfiguration.Cloud.cscfg` or `ServiceConfiguration.Local.cscfg`) is separate from the code and package files, allowing you to change settings without redeploying the application code. It works in conjunction with the Service Definition File (`.csdef`) to fully describe and configure the cloud service deployment.
 
+[Top](#top)
+
 ## What is Service Package ?
 A Service Package in Azure is a compiled, deployable unit that contains all the necessary files, code, configuration, and resources required to host and run a cloud service application in Azure Cloud Services (classic). It typically has a `.cspkg` extension. The Service Package is created during the build and package process of a cloud service and is used alongside a Service Configuration (`.cscfg`) file to define how the cloud service should operate, what roles it includes, and what settings it uses. Azure uses the Service Package to provision and deploy the application in its environment, ensuring consistent, repeatable deployments.
+
+[Top](#top)
 
 ## What is Cloud Service Deployment ?
 Cloud Service Deployment in Azure refers to the process of deploying applications and services onto the Azure cloud platform, making them available to users over the internet. In the context of classic Azure Cloud Services (not to be confused with more modern Azure App Services), it involves packaging your application (usually in a service package and configuration file), and uploading it to Azure, where it runs in managed virtual machines.
@@ -687,6 +777,8 @@ Key components in classic Cloud Services deployment include:
 
 Cloud Service Deployment enables reliable, scalable, and manageable hosting of applications, leveraging Azure’s capabilities such as load balancing, automatic scaling, and health monitoring.
 
+[Top](#top)
+
 ## What is Azure Diagnostics ?
 Azure Diagnostics is a feature and service in Microsoft Azure that enables the collection, monitoring, and analysis of diagnostic data from Azure resources. This data includes performance metrics, application logs, crash dumps, Windows event logs, and custom log files. The primary goal of Azure Diagnostics is to help developers and administrators monitor the health, performance, and reliability of applications and services running in Azure.
 
@@ -708,5 +800,9 @@ Key components of Azure Diagnostics:
 
 Typical scenarios include troubleshooting application failures, monitoring service health, proactive alerting, and compliance auditing.
 
+[Top](#top)
+
 ## What is Azure Service Level Agreement?
 An Azure Service Level Agreement (SLA) is a formal document provided by Microsoft that defines the guaranteed availability and performance standards for Azure services. It specifies the uptime commitment, typically expressed as a percentage (such as 99.9%), and outlines how issues like outages or failures are measured and responded to. The SLA also details the remedies or credits customers may receive if Azure fails to meet these commitments. Each Azure service may have its own SLA, and often the SLA is only applicable when best practices, such as running workloads across multiple instances or regions, are followed as specified in the SLA documentation.
+
+[Top](#top)

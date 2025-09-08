@@ -140,6 +140,8 @@ Hello, World!
 ```
 This starts the Python interpreter, allows you to execute commands, and then exit the interpreter.
 
+[Top](#top)
+
 ## Passing arguments to scripts
 1. Using `sys.argv`
 - The `sys.argv` list contains the command-line arguments passed to the script. The first element (`sys.argv[0]`) is the script name, and the subsequent elements are the arguments.
@@ -175,6 +177,8 @@ print(args.accumulate(args.integers))
 # Run this as: python script.py 1 2 3 4 --sum
 ```
 
+[Top](#top)
+
 ## Using Python as a calculator: Basic arithmetic operations
 Python can be used as a powerful calculator directly in its interactive interpreter or by writing simple scripts.
 
@@ -209,6 +213,8 @@ result = 2 ** 3
 print(result)  # Outputs: 8
 ```
 
+[Top](#top)
+
 ## Using Python as a calculator: Using the `math` module
 For more advanced mathematical functions, Python provides the `math` module:
 ```python
@@ -236,6 +242,8 @@ print(result)  # Outputs: 2.0
 result = math.factorial(5)
 print(result)  # Outputs: 120
 ```
+
+[Top](#top)
 
 ## Using Python as a calculator: Handling complex numbers
 Python natively supports complex numbers:
@@ -266,6 +274,8 @@ result = z1 * z2
 print(result)  # Outputs: (11+2j)
 ```
 
+[Top](#top)
+
 ## Using Python as a calculator: `eval()` for quick calculations
 You can use the `eval()` function to evaluate string expressions as Python code:
 ```python
@@ -274,6 +284,8 @@ result = eval(expression)
 print(result)  # Outputs: 19
 ```
 Note: Be cautious when using eval() with untrusted input, as it can execute arbitrary code.
+
+[Top](#top)
 
 ## Using Python as a calculator: Handling large numbers
 Python handles arbitrarily large integers, so you can work with very large numbers without any special libraries:
@@ -284,6 +296,8 @@ large_num = 999999999999999999999999 * 888888888888888888888888
 
 print(large_num)
 ```
+
+[Top](#top)
 
 ## Using Python as a calculator: Floating-point precision
 Python provides built-in floating-point precision, but for high-precision calculations, consider using the decimal module:
@@ -296,6 +310,8 @@ result = Decimal('0.1') + Decimal('0.2')
 
 print(result)  # Outputs: 0.3
 ```
+
+[Top](#top)
 
 ## Using Python as a calculator: Built-in functions for common tasks
 Python provides many built-in functions for mathematical operations:
@@ -317,6 +333,8 @@ print(maximum)  # Outputs: 12
 rounded = round(3.14159, 2)
 print(rounded)  # Outputs: 3.14
 ```
+
+[Top](#top)
 
 ## Basic string operations
 ### Concatenation
@@ -342,6 +360,8 @@ length = len(str1)
 print(length)  # Outputs: 5
 ```
 
+[Top](#top)
+
 ## String indexing and slicing
 ### Indexing
 Access individual characters in a string using indexing. Python uses 0-based indexing.
@@ -362,6 +382,8 @@ print(substring)  # Outputs: Hello
 reversed_str = str1[::-1]  # Reverse the string
 print(reversed_str)  # Outputs: dlroW olleH
 ```
+
+[Top](#top)
 
 ## String methods
 Python provides many built-in string methods for common text operations.
@@ -410,6 +432,8 @@ joined_str = " ".join(words)
 print(joined_str)  # Outputs: Hello World, Welcome to Python
 ```
 
+[Top](#top)
+
 ## Formatting strings
 Python offers several ways to format strings:
 
@@ -432,6 +456,8 @@ print(formatted_str)  # Outputs: Name: Alice, Age: 30
 formatted_str = f"Name: {name}, Age: {age}"
 print(formatted_str)  # Outputs: Name: Alice, Age: 30
 ```
+
+[Top](#top)
 
 ## Regular expressions
 For more complex text manipulations, Python provides the re module, which supports regular expressions.
@@ -459,6 +485,8 @@ phone_number = re.findall(r'\d{3}-\d{3}-\d{4}', text)
 print(phone_number)  # Outputs: ['123-456-7890']
 ```
 
+[Top](#top)
+
 ## Working with multiline strings
 You can define and manipulate multiline strings using triple quotes.
 
@@ -468,6 +496,8 @@ a multiline
 string."""
 print(multiline_str)
 ```
+
+[Top](#top)
 
 ## Advanced string manipulations
 ### Reversing a string
@@ -491,6 +521,8 @@ count_a = str1.count("a")
 print(count_a)  # Outputs: 3
 ```
 
+[Top](#top)
+
 ## Text encoding and decoding
 Python strings are Unicode by default. You can encode and decode strings to/from different encodings.
 
@@ -502,6 +534,8 @@ print(encoded_str)  # Outputs: b'Hello World'
 decoded_str = encoded_str.decode('utf-8')
 print(decoded_str)  # Outputs: Hello World
 ```
+
+[Top](#top)
 
 ## Creating lists
 You can create a list using square brackets [] or the list() function.
@@ -517,6 +551,8 @@ empty_list_alternative = list()
 numbers = [1, 2, 3, 4, 5]
 mixed_list = [1, "Hello", 3.14, True]
 ```
+
+[Top](#top)
 
 ## Accessing list elements
 You can access elements in a list using indexing and slicing.
@@ -540,6 +576,8 @@ print(subset)  # Outputs: [2, 3, 4]
 every_other = numbers[::2]  # Extract every second element
 print(every_other)  # Outputs: [1, 3, 5]
 ```
+
+[Top](#top)
 
 ## Modifying lists
 Lists are mutable, so you can change their contents.
@@ -583,6 +621,8 @@ numbers.clear()  # Removes all elements
 print(numbers)  # Outputs: []
 ```
 
+[Top](#top)
+
 ## List operations
 Python provides several operations that can be performed on lists.
 
@@ -609,6 +649,8 @@ print(2 in list1)  # Outputs: True
 print(10 in list1)  # Outputs: False
 ```
 
+[Top](#top)
+
 ## Iterating over lists
 You can iterate over lists using loops.
 
@@ -626,6 +668,8 @@ while i < len(list1):
     i += 1
 ```
 
+[Top](#top)
+
 ## List comprehensions
 List comprehensions offer a concise way to create lists.
 
@@ -641,6 +685,8 @@ even_squares = [x**2 for x in range(10) if x % 2 == 0]
 print(even_squares)  # Outputs: [0, 4, 16, 36, 64]
 ```
 
+[Top](#top)
+
 ## Nested lists
 Lists can contain other lists, creating a multi-dimensional array.
 
@@ -655,6 +701,8 @@ matrix = [
 element = matrix[1][2]
 print(element)  # Outputs: 6
 ```
+
+[Top](#top)
 
 ## Sorting and reversing lists
 Python provides methods to sort and reverse lists.
@@ -677,6 +725,8 @@ numbers.reverse()
 print(numbers)  # Outputs: [9, 5, 4, 3, 1, 1]
 ```
 
+[Top](#top)
+
 ## Copying lists
 Copying lists can be done in several ways:
 
@@ -693,6 +743,8 @@ import copy
 deep_copied_list = copy.deepcopy(original_list)
 ```
 
+[Top](#top)
+
 ## List methods
 Here are some common list methods:
 
@@ -706,6 +758,8 @@ Here are some common list methods:
 - **`count(x)`**: Returns the number of occurrences of an item `x`.
 - **`sort(key=None, reverse=False)`**: Sorts the list in place.
 - **`reverse()`**: Reverses the elements of the list in place.
+
+[Top](#top)
 
 ## Basic `if` statement
 The basic syntax of an `if` statement in Python is:
@@ -723,6 +777,8 @@ if x > 5:
     print("x is greater than 5")
 ```
 In this example, because x is greater than 5, the message "x is greater than 5" will be printed.
+
+[Top](#top)
 
 ## `if-else` statement
 You can use an `else` clause to specify a block of code to execute if the condition in the if statement is false.
@@ -744,6 +800,8 @@ else:
     print("x is not greater than 5")
 ```
 In this example, because x is not greater than 5, the message "x is not greater than 5" will be printed.
+
+[Top](#top)
 
 ## `if-elif-else` statement
 The `elif` (short for "else if") statement allows you to check multiple conditions in sequence. The first condition that evaluates to `True` will have its corresponding code block executed.
@@ -769,6 +827,8 @@ else:
     print("x is 5 or less")
 ```
 In this example, the message "x is greater than 5 but less than or equal to 10" will be printed because `x` is 8.
+
+[Top](#top)
 
 ## Nested `if` statements
 You can nest if statements within other `if`, `elif` or `else` blocks. This allows you to check multiple conditions at different levels.
@@ -798,6 +858,8 @@ else:
 ```
 In this example, because `x` is greater than 10 but `y` is not, the message "x is greater than 10, but y is not" will be printed.
 
+[Top](#top)
+
 ## Comparison operators
 These operators are used to compare two values:
 
@@ -808,6 +870,8 @@ These operators are used to compare two values:
 - **`>=`** Greater than or equal to
 - **`<=`** Less than or equal to
 
+
+[Top](#top)
 
 ## Logical operators
 These operators are used to combine multiple conditions:
@@ -831,6 +895,8 @@ if not (x == 5):
     print("x is not equal to 5")
 ```
 
+[Top](#top)
+
 ## Ternary (conditional) operator
 Python also supports a conditional expression (often referred to as the ternary operator) that allows you to write an `if-else` statement in a single line.
 
@@ -844,6 +910,8 @@ x = 5
 result = "Even" if x % 2 == 0 else "Odd"
 print(result)  # Outputs: Odd
 ```
+
+[Top](#top)
 
 ## Basic `for` loop
 The basic syntax of a for loop is:
@@ -866,6 +934,8 @@ apple
 banana
 cherry
 ```
+
+[Top](#top)
 
 ## Using `for` with `range()`
 The `range()` function is commonly used with `for` loops to generate a sequence of numbers. The syntax of range() is as follows:
@@ -914,6 +984,8 @@ Output:
 9
 ```
 
+[Top](#top)
+
 ## Iterating over strings
 You can use a `for` loop to iterate over each character in a string.
 
@@ -932,6 +1004,8 @@ l
 l
 o
 ```
+
+[Top](#top)
 
 ## Iterating over lists of lists (nested loops)
 When dealing with lists of lists (like matrices), you can use nested `for` loops to iterate through each element.
@@ -956,6 +1030,8 @@ Output:
 7 8 9 
 ```
 
+[Top](#top)
+
 ## Using for with `enumerate()`
 The `enumerate()` function is useful when you need both the index and the value from the sequence during iteration.
 
@@ -972,6 +1048,8 @@ Index 0: apple
 Index 1: banana
 Index 2: cherry
 ```
+
+[Top](#top)
 
 ## Using for with `zip()`
 The `zip()` function allows you to iterate over multiple sequences in parallel.
@@ -990,6 +1068,8 @@ John is 25 years old
 Jane is 30 years old
 Doe is 22 years old
 ```
+
+[Top](#top)
 
 ## `for` with `else`
 Python allows you to use an `else` block after a `for` loop. The `else` block will execute after the loop finishes, unless the loop is terminated with a `break` statement.
@@ -1022,6 +1102,8 @@ Output:
 0
 ```
 In this example, the `else` block does not execute because the loop was terminated early with `break`.
+
+[Top](#top)
 
 ## `break` and `continue` in `for` loops
 - **`break`**: Exits the loop immediately.
@@ -1056,6 +1138,8 @@ Output:
 4
 ```
 
+[Top](#top)
+
 ## Basic `while` loop
 The basic syntax of a while loop is:
 ```python
@@ -1085,6 +1169,8 @@ In this example:
 - The loop continues to execute as long as `i` is less than or equal to 5.
 - Once `i` becomes 6, the condition `i <= 5` is false, so the loop stops.
 
+[Top](#top)
+
 ## `pass` statement
 The `pass` statement is a null operation; it does nothing when executed. It's used as a placeholder in situations where a statement is syntactically required but no action is needed or when the actual code is not yet implemented.
 
@@ -1101,6 +1187,8 @@ class MyClass:
 ```
 In this example, `my_function` and `MyClass` are placeholders that you can come back to later and implement.
 
+[Top](#top)
+
 ## Why use `pass`?
 - **Placeholder for future code**: It allows you to outline the structure of your code without implementing the details immediately.
 
@@ -1108,12 +1196,16 @@ In this example, `my_function` and `MyClass` are placeholders that you can come 
 
 - **Readability**: It makes the intent clear to anyone reading your code that you plan to add code later, or that no action is intentionally required.
 
+[Top](#top)
+
 ## `pass`: Difference from `continue` and `break`
 - **`continue`**: Skips the rest of the code inside the loop for the current iteration and moves to the next iteration.
 
 - **`break`**: Exits the loop entirely.
 
 - **`pass`**: Does nothing; it simply acts as a placeholder and can be used anywhere a statement is syntactically required.
+
+[Top](#top)
 
 ## `match` statement
 The `match` statement is a feature introduced in Python 3.10 as part of Structural Pattern Matching, which allows for more expressive and readable ways to handle complex conditional logic. It’s similar to the `switch` statements found in other languages but is more powerful and flexible.
@@ -1150,6 +1242,8 @@ In this example:
 - If `x` is `1`, it returns "One".
 - The underscore `_` is used as a wildcard pattern to match any value not covered by previous cases, acting as the default case.
 
+[Top](#top)
+
 ## `match` statement: Matching multiple patterns
 You can match multiple patterns in the same case statement by separating them with a pipe (|), which acts as an "or" operator.
 
@@ -1166,6 +1260,8 @@ print(describe_number(1))  # Output: Zero or One
 print(describe_number(42)) # Output: Something else
 ```
 
+[Top](#top)
+
 ## `match` statement: Matching with conditions (guards)
 You can add an `if` condition (called a "guard") to a `case` statement to further refine the match.
 ```python
@@ -1181,6 +1277,8 @@ def describe_number(x):
 print(describe_number(10))  # Output: Positive
 print(describe_number(-5))  # Output: Negative
 ```
+
+[Top](#top)
 
 ## Destructuring in match statements: Tuples
 `match` statements can also destructure sequences and objects, making it possible to directly match complex data structures.
@@ -1204,6 +1302,8 @@ print(point_location((3, 0)))    # Output: On the X-axis at 3
 print(point_location((0, 4)))    # Output: On the Y-axis at 4
 print(point_location((2, 5)))    # Output: At coordinates (2, 5)
 ```
+
+[Top](#top)
 
 ## Destructuring in match statements: Lists
 ```python
@@ -1233,6 +1333,8 @@ print(list_info([1, 2]))
 print(list_info([1, 2, 3, 4]))
 ```
 
+[Top](#top)
+
 ## `match`: Matching named attributes in objects
 You can match against attributes of objects, which is useful for working with classes.
 
@@ -1258,6 +1360,8 @@ print(describe_point(p1))  # Output: Origin
 print(describe_point(p2))  # Output: Point at (3, 4)
 ```
 
+[Top](#top)
+
 ## Basic function definition
 The basic syntax for defining a function in Python is:
 
@@ -1275,6 +1379,8 @@ def function_name(parameters):
 
 - **`return`**: (Optional) A statement used to return a value from the function.
 
+[Top](#top)
+
 ## Example of a simple function
 Here’s an example of a simple function that adds two numbers:
 
@@ -1289,6 +1395,8 @@ You can call this function like so:
 sum_result = add_numbers(5, 3)
 print(sum_result)  # Output: 8
 ```
+
+[Top](#top)
 
 ## Function with default parameters
 You can define default values for function parameters. If a caller doesn’t provide a value for a parameter, the default value is used.
@@ -1305,6 +1413,8 @@ print(greet("Alice"))  # Output: Hello, Alice!
 print(greet())  # Output: Hello, Guest!
 ```
 
+[Top](#top)
+
 ## Using `*args` for variable length positional arguments
 Python allows functions to accept a variable number of arguments using `*args` for positional arguments.
 ```python
@@ -1315,6 +1425,8 @@ def sum_all(*args):
 print(sum_all(1, 2, 3))  # Output: 6
 print(sum_all(10, 20, 30, 40))  # Output: 100
 ```
+
+[Top](#top)
 
 ## Using `**kwargs` for variable length keyword arguments
 Python allows functions to accept a variable number of arguments using  `**kwargs` for keyword arguments.
@@ -1331,6 +1443,8 @@ print_details(name="Alice", age=25, city="New York")
 # city: New York
 ```
 
+[Top](#top)
+
 ## Returning multiple values from a function
 Python functions can return multiple values as a tuple:
 ```python
@@ -1345,6 +1459,8 @@ print(f"Sum: {sum_val}, Difference: {diff_val}")
 # Output: Sum: 15, Difference: 5
 ```
 
+[Top](#top)
+
 ## Lambda functions
 Lambda functions are small anonymous functions defined with the `lambda` keyword. They can have any number of input parameters but only one expression.
 
@@ -1357,6 +1473,8 @@ print(add(3, 5))  # Output: 8
 ```
 Lambda functions are often used for short, simple functions that are passed as arguments to other functions e.g., in `map()`, `filter()` or `sorted()`.
 
+[Top](#top)
+
 ## Docstrings
 A docstring is a string that describes what the function does. It’s placed as the first statement in the function body and is enclosed in triple quotes. Docstrings are useful for documenting code and can be accessed using the `help()` function or the `__doc__ attribute.
 `
@@ -1368,6 +1486,8 @@ def multiply(a, b):
 # Accessing the docstring
 print(multiply.__doc__)
 ```
+
+[Top](#top)
 
 ## Nested functions
 Functions can be defined inside other functions, creating nested functions. Nested functions are useful for encapsulating helper functions or creating closures.
@@ -1387,6 +1507,8 @@ add_five = outer_function(5)
 print(add_five(10))  # Output: 15
 ```
 
+[Top](#top)
+
 ## Closures
 A closure is a function object that remembers values in enclosing scopes even if they are not present in memory.
 
@@ -1403,6 +1525,8 @@ add_ten = outer_function(10)
 print(add_ten(5))  # Output: 15
 ```
 In this example, `add_ten` is a closure that remembers the value `10` for `x`, even though `outer_function` has finished execution.
+
+[Top](#top)
 
 ## Decorators
 Decorators are functions that modify the behavior of another function. They are often used for logging, access control, memoization, and more. A decorator is a function that takes in a function as an input argument and returns a supplemented copy of that function.
@@ -1428,6 +1552,8 @@ say_hello()
 # Something is happening after the function is called.
 ```
 
+[Top](#top)
+
 ## Using lists as stacks
 In Python, lists are versatile data structures that can be used as stacks. A stack is a collection of elements that follows the Last In, First Out (LIFO) principle, meaning that the last element added is the first one to be removed.
 
@@ -1436,6 +1562,8 @@ Python lists provide built-in methods to implement stack operations:
 
 - **`append()`** Adds an element to the top of the stack.
 - **`pop()`** Removes and returns the element from the top of the stack.
+
+[Top](#top)
 
 ## Pushing an item onto the stack
 To add an item to the stack, use the `append()` method. This operation pushes an item onto the end of the list, which is considered the top of the stack.
@@ -1453,6 +1581,8 @@ print(stack)  # Output: [1, 2, 3]
 ```
 In this example, the elements `1`, `2` and `3` are added to the stack.
 
+[Top](#top)
+
 ## Popping an item from the stack
 To remove and return the item from the top of the stack, use the `pop()` method. This operation removes the last element in the list.
 
@@ -1466,6 +1596,8 @@ print(stack)  # Output: [1, 2]
 ```
 In this example, 3 is the last element added to the stack, so it is the first one to be removed.
 
+[Top](#top)
+
 ## Checking if the stack is empty
 Before popping an item from the stack, it's good practice to check if the stack is empty to avoid errors.
 
@@ -1477,6 +1609,8 @@ if stack:
 else:
     print("Stack is empty")
 ```
+
+[Top](#top)
 
 ## Peeking at the top item
 If you want to look at the top item of the stack without removing it, you can simply access the last item in the list using `stack[-1]`.
@@ -1490,6 +1624,8 @@ if stack:
 else:
     print("Stack is empty")
 ```
+
+[Top](#top)
 
 ## Complete stack example
 Here’s a complete example that demonstrates pushing, popping, and peeking:
@@ -1521,6 +1657,8 @@ while stack:
 print("Stack is now empty:", stack)  # Output: []
 ```
 
+[Top](#top)
+
 ## Stack underflow
 If you try to pop an item from an empty stack, Python will raise an IndexError. You can handle this using a try-except block or by checking if the stack is empty before popping.
 
@@ -1531,6 +1669,8 @@ try:
 except IndexError:
     print("Cannot pop from an empty stack!")
 ```
+
+[Top](#top)
 
 ## Sets
 A set is an unordered collection of unique elements. Sets are useful when you need to store items without duplicates and when you require fast membership testing (i.e., checking whether an item is in the set). Sets are also ideal for performing mathematical operations like union, intersection, difference, and symmetric difference.
@@ -1553,6 +1693,8 @@ letters = set("hello")
 print(letters)  # Output: {'h', 'e', 'l', 'o'}
 ```
 
+[Top](#top)
+
 ## Sets: Adding elements
 You can add a single element to a set using the `add()` method or multiple elements using the update() method.
 
@@ -1565,6 +1707,8 @@ print(fruits)  # Output: {'apple', 'banana', 'cherry', 'orange'}
 fruits.update(["mango", "grape"])
 print(fruits)  # Output: {'banana', 'cherry', 'grape', 'mango', 'orange', 'apple'}
 ```
+
+[Top](#top)
 
 ## Sets: Removing elements
 You can remove elements using `remove()` or `discard()`. The difference is that `remove()` will raise a `KeyError` if the element is not found, while `discard()` will not.
@@ -1582,6 +1726,8 @@ print(fruits)  # Output: {'cherry', 'grape', 'mango', 'orange'}
 fruits.discard("banana")  # No error
 ```
 
+[Top](#top)
+
 ## Sets: Clearing all elements
 You can remove all elements from a set using the `clear()` method.
 
@@ -1589,6 +1735,8 @@ You can remove all elements from a set using the `clear()` method.
 fruits.clear()
 print(fruits)  # Output: set()
 ```
+
+[Top](#top)
 
 ## Set operations: Union (`|` or `union()`)
 Combines elements from both sets, without duplicates.
@@ -1602,6 +1750,8 @@ union_set = set1 | set2
 union_set = set1.union(set2)
 print(union_set)  # Output: {1, 2, 3, 4, 5}
 ```
+
+[Top](#top)
 
 ## Set operations: Intersection (`&` or `intersection()`)
 Returns elements that are common to both sets.
@@ -1617,6 +1767,8 @@ intersection_set = set1.intersection(set2)
 print(intersection_set)  # Output: {3}
 ```
 
+[Top](#top)
+
 ## Set operations: Difference (`-` or `difference()`)
 Returns elements that are in the first set but not in the second.
 
@@ -1630,6 +1782,8 @@ difference_set = set1.difference(set2)
 
 print(difference_set)  # Output: {1, 2}
 ```
+
+[Top](#top)
 
 ## Set operations: Symmetric difference (`^` or `symmetric_difference()`)
 Returns elements that are in either set, but not in both.
@@ -1645,6 +1799,8 @@ symmetric_difference_set = set1.symmetric_difference(set2)
 print(symmetric_difference_set)  # Output: {1, 2, 4, 5}
 ```
 
+[Top](#top)
+
 ## Set operations: Useful set methods
 - **`len(set)`** Returns the number of elements in the set.
 
@@ -1655,6 +1811,8 @@ print(symmetric_difference_set)  # Output: {1, 2, 4, 5}
 - **`issuperset()`** Checks if the set is a superset of another set.
 
 - **`copy()`** Creates a shallow copy of the set.
+
+[Top](#top)
 
 ## Frozen sets
 A frozen set is an immutable version of a set. Once created, elements cannot be added or removed. Frozen sets are useful for situations where you need an immutable set, such as using it as a key in a dictionary.
@@ -1667,6 +1825,8 @@ print(frozen_set)  # Output: frozenset({1, 2, 3, 4})
 # Attempting to modify a frozen set will raise an error
 # frozen_set.add(5)  # Raises AttributeError
 ```
+
+[Top](#top)
 
 ## Dictionaries
 A dictionary is a collection of key-value pairs. Each key is associated with a value, and the key acts as a unique identifier for that value within the dictionary. Dictionaries are one of the most commonly used data structures in Python because they allow for efficient lookups, insertions, and deletions based on keys.
@@ -1690,6 +1850,8 @@ print(person)  # Output: {'name': 'Alice', 'age': 30, 'city': 'New York'}
 print(person2) # Output: {'name': 'Bob', 'age': 25, 'city': 'Los Angeles'}
 ```
 
+[Top](#top)
+
 ## Dictionaries: Accessing values
 You can access the value associated with a specific key using the square bracket notation `[]` or the `get()` method.
 
@@ -1705,6 +1867,8 @@ print(person.get("age"))  # Output: 30
 print(person.get("address", "Unknown"))  # Output: Unknown
 ```
 
+[Top](#top)
+
 ## Dictionaries: Adding and updating elements
 You can add new key-value pairs or update the value of an existing key by assigning a value to the key using square brackets.
 
@@ -1718,6 +1882,8 @@ print(person)  # Output: {'name': 'Alice', 'age': 30, 'city': 'New York', 'email
 person["age"] = 31
 print(person)  # Output: {'name': 'Alice', 'age': 31, 'city': 'New York', 'email': 'alice@example.com'}
 ```
+
+[Top](#top)
 
 ## Dictionaries: Removing elements
 You can remove elements from a dictionary using the `del` statement, the `pop()` method or the `popitem()` method.
@@ -1739,6 +1905,8 @@ print(last_item)  # Output: ('city', 'New York')
 print(person)     # Output: {'name': 'Alice'}
 ```
 
+[Top](#top)
+
 ## Dictionaries: Useful methods
 - **`keys()`** Returns a view object that displays a list of all the keys in the dictionary.
 
@@ -1748,6 +1916,8 @@ print(person)     # Output: {'name': 'Alice'}
 
 - **`update()`** Updates the dictionary with the key-value pairs from another dictionary or iterable of key-value pairs.
 
+[Top](#top)
+
 ## Dictionaries: Checking for keys
 You can check if a key exists in a dictionary using the in keyword.
 
@@ -1755,6 +1925,8 @@ You can check if a key exists in a dictionary using the in keyword.
 if "name" in person:
     print("Name is in the dictionary")
 ```
+
+[Top](#top)
 
 ## Dictionaries: Iterating over a dictionary
 You can iterate over keys, values` or key-value pairs in a dictionary using a `for` loop.
@@ -1774,6 +1946,8 @@ for key, value in person.items():
     print(f"{key}: {value}")
 ```
 
+[Top](#top)
+
 ## Dictionaries: Dictionary comprehensions
 You can create dictionaries using dictionary comprehensions, which provide a concise way to create dictionaries from iterables.
 
@@ -1782,6 +1956,8 @@ Example:
 squares = {x: x**2 for x in range(1, 6)}
 print(squares)  # Output: {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
 ```
+
+[Top](#top)
 
 ## Dictionaries: Nested dictionaries
 A dictionary can contain another dictionary, allowing for complex data structures.
@@ -1795,6 +1971,8 @@ students = {
 
 print(students["Alice"]["grade"])  # Output: A
 ```
+
+[Top](#top)
 
 ## Dictionaries: Copying dictionaries
 To create a copy of a dictionary, use the `copy()` method or the `dict()` function. Simply using the assignment operator `=` will create a reference to the same dictionary, not a copy.
@@ -1810,6 +1988,8 @@ copy1["one"] = "ONE"
 print(original)  # Output: {'one': 1, 'two': 2}
 print(copy1)     # Output: {'one': 'ONE', 'two': 2}
 ```
+
+[Top](#top)
 
 ## Python modules
 In Python, modules are files containing Python code (functions, classes, variables, etc.) that can be reused in other programs. Using modules helps organize code into logical units and promotes code reuse. A Python module is simply a `.py` file that can be imported into another Python file to access its functions, classes, and variables.
@@ -1830,6 +2010,8 @@ pi = 3.14159
 ```
 Here, `mymodule.py` contains a function `greet()` and a variable `pi`.
 
+[Top](#top)
+
 ## Importing a module
 You can import a module into another Python file using the `import` statement.
 
@@ -1846,6 +2028,8 @@ print(message)  # Output: Hello, Alice!
 print(mymodule.pi)  # Output: 3.14159
 ```
 In this example, the `mymodule` module is imported, and its function `greet()` and variable `pi` are accessed.
+
+[Top](#top)
 
 ## Different ways to import modules
 There are several ways to import modules or specific items from modules.
@@ -1887,6 +2071,8 @@ import mymodule as mm
 print(mm.greet("Charlie"))  # Output: Hello, Charlie!
 ```
 
+[Top](#top)
+
 ## Built-in Python modules
 Python comes with many built-in modules that provide common functionality. Some common built-in modules are:
 
@@ -1908,6 +2094,8 @@ print(math.sqrt(16))
 print(random.randint(1, 10))
 ```
 
+[Top](#top)
+
 ## Installing third-party modules
 Python has a vast ecosystem of third-party modules that you can install using `pip`, the Python package manager. These modules are hosted on the Python Package Index (PyPI) and can be installed using the command:
 
@@ -1927,6 +2115,8 @@ response = requests.get("https://api.github.com")
 print(response.status_code)  # Output: 200 (if successful)
 ```
 
+[Top](#top)
+
 ## Finding the location of modules
 You can find where a module is located on your system by checking the `__file__` attribute.
 
@@ -1936,6 +2126,8 @@ import os
 
 print(os.__file__)  # Outputs the path to the os module
 ```
+
+[Top](#top)
 
 ## Module search path (`sys.path`)
 When you import a module, Python searches for it in directories listed in the `sys.path` variable. This includes:
@@ -1952,6 +2144,8 @@ import sys
 
 print(sys.path)  # Outputs the list of directories Python searches for modules
 ```
+
+[Top](#top)
 
 ## Module initialization code
 When a module is imported, all top-level code (not inside functions or classes) in the module is executed. You can use this feature to initialize data when the module is imported.
@@ -1971,6 +2165,8 @@ import mymodule
 # Output: Module mymodule has been imported
 ```
 
+[Top](#top)
+
 ## Packages
 A package is a way to organize related modules into directories. A package is essentially a directory containing a special `__init__.py` file and multiple modules.
 
@@ -1986,6 +2182,8 @@ In this case, `mypackage` is a package and `module1.py` and `module2.py` are mod
 ```python
 from mypackage import module1
 ```
+
+[Top](#top)
 
 ## Defining a class
 Classes are used to define new types of objects, encapsulating both data (attributes) and behavior (methods) into a single structure. Python classes are a fundamental aspect of Object-Oriented Programming (OOP), which helps in structuring code to make it more modular, reusable, and scalable.
@@ -2016,6 +2214,8 @@ In this example:
 
 - `self`: Refers to the current instance of the class. It must be the first parameter in instance methods to access instance-specific data.
 
+[Top](#top)
+
 ## Creating objects (instances)
 You can create an instance (object) of a class by calling the class name like a function. This will invoke the `__init__` method to initialize the object.
 
@@ -2030,6 +2230,8 @@ obj.display()
 # Instance attribute: Instance attribute value
 ```
 In this example, obj is an instance of `MyClass`. The method `display()` prints both the class and instance attributes.
+
+[Top](#top)
 
 ## Instance attributes vs. class attributes
 - **Class attributes** are shared by all instances of the class. Changing the value of a class attribute will affect all instances.
@@ -2056,6 +2258,8 @@ print(car1.wheels)  # Output: 4
 print(car2.wheels)  # Output: 4
 ```
 
+[Top](#top)
+
 ## Instance methods
 Instance methods are functions defined inside a class that operate on instances of the class. They must take `self` as the first parameter, which refers to the instance on which the method is called.
 
@@ -2072,6 +2276,8 @@ class Dog:
 dog = Dog("Buddy")
 dog.bark()  # Output: Buddy is barking!
 ```
+
+[Top](#top)
 
 ## Class methods
 A class method operates on the class itself rather than on instances. To define a class method, use the `@classmethod` decorator. The first parameter of a class method is `cls`, which refers to the class.
@@ -2097,6 +2303,8 @@ a2 = Animal("Tiger")
 Animal.total_species()  # Output: Total species count: 2
 ```
 
+[Top](#top)
+
 ## Static methods
 A static method doesn’t access or modify the class or instance data. It behaves like a regular function but belongs to the class’s namespace. Static methods are defined using the `@staticmethod` decorator.
 
@@ -2111,6 +2319,8 @@ class MathOperations:
 result = MathOperations.add(5, 3)
 print(result)  # Output: 8
 ```
+
+[Top](#top)
 
 ## Inheritance
 Python supports inheritance, which allows one class to inherit attributes and methods from another class. This is useful for creating a hierarchy of classes that share behavior.
@@ -2137,6 +2347,8 @@ dog.speak()  # Output: Buddy barks.
 ```
 Here, the `Dog` class inherits from the `Animal` class and overrides the `speak()` method.
 
+[Top](#top)
+
 ## Method overriding
 When a derived class provides a specific implementation of a method already defined in the base class, it overrides the base class method. The overridden method will be called instead of the base class method.
 
@@ -2153,6 +2365,8 @@ class Dog(Animal):
 dog = Dog()
 dog.speak()  # Output: Dog barks
 ```
+
+[Top](#top)
 
 ## The super() function
 The `super()` function allows you to call methods from the parent class in a derived class. This is useful when you want to extend the functionality of a method in the derived class but still use the base class’s implementation.
@@ -2181,6 +2395,8 @@ dog = Dog("Buddy", "Golden Retriever")
 dog.speak()
 ```
 
+[Top](#top)
+
 ## Encapsulation
 In Python, data encapsulation is achieved by restricting access to certain attributes and methods using leading underscores `_` or `__`.
 
@@ -2203,6 +2419,8 @@ person.display()
 print(person._age)  # Accessing protected attribute (though it's just a convention)
 ```
 
+[Top](#top)
+
 ## What is LEGB Rule?
 The LEGB Rule in Python describes the order in which Python looks for variable names when you reference them. It’s about scope resolution — that is, where Python searches for a name you use in your code.
 
@@ -2219,6 +2437,10 @@ Important:
   - Use `global` to assign to a global variable inside a function.
   - Use `nonlocal` to assign to an enclosing variable inside a nested function.
 
+[Top](#top)
+
 ## Namespaces vs. Scopes
 - A namespace is a mapping of names to objects. Namespaces define what names exist.
 - A scope determines the visibility and lifetime of those names. Scopes define where you can access a name.
+
+[Top](#top)

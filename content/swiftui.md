@@ -60,6 +60,8 @@ SwiftUI is Apple's declarative framework for building user interfaces across all
 - Animation and transitions
 - Accessibility
 
+[Top](#top)
+
 ## SwiftUI: Declarative syntax
 In SwiftUI, you describe the UI using simple, declarative code. Instead of telling the system how to perform specific UI operations step-by-step (as you would with UIKit or AppKit), you declare what the UI should look like and how it should behave.
 
@@ -81,10 +83,14 @@ struct ContentView: View {
 ```
 In this example, the code defines a vertical stack (VStack) containing a text label and a button.
 
+[Top](#top)
+
 ## SwiftUI: Live previews
 - SwiftUI integrates with Xcode to provide live previews of your UI. As you modify the code, Xcode updates the preview in real-time, allowing for a more interactive and efficient development process.
 
 - You can see how your UI will look across different devices and screen orientations without needing to run the app on a simulator or device.
+
+[Top](#top)
 
 ## SwiftUI: Automatic data binding
 SwiftUI offers powerful data-binding mechanisms, allowing the UI to automatically update in response to changes in underlying data. This is achieved through properties like `@State`, `@Binding` and `@ObservedObject`.
@@ -106,12 +112,16 @@ struct CounterView: View {
 ```
 Here, the `@State` property wrapper ensures that the `count` variable is stored in a way that updates the UI whenever its value changes.
 
+[Top](#top)
+
 ## SwiftUI: Cross-platform compatibility and accessibility
 - SwiftUI is designed to work seamlessly across all Apple platforms. By writing SwiftUI code once, you can build apps that work on iPhone, iPad, Mac, Apple Watch, and Apple TV, adapting to different screen sizes and input methods.
 
 - SwiftUI's layout system and components are optimized for flexibility and adaptability, so you can build interfaces that look great on any device.
 
 - SwiftUI automatically incorporates many accessibility features, making it easier to create apps that are accessible to everyone. You can also customize accessibility behavior using built-in modifiers.
+
+[Top](#top)
 
 ## SwiftUI: Modifiers and composability
 SwiftUI views are composed of simple building blocks, which you can customize and extend using modifiers. Modifiers are methods that you chain together to apply changes to a view.
@@ -126,6 +136,8 @@ Text("Hello, World!")
     .cornerRadius(10)
 ```
 In this example, multiple modifiers are applied to a Text view, customizing its appearance.
+
+[Top](#top)
 
 ## SwiftUI: Animation and transitions
 SwiftUI makes it easy to add animations and transitions to your UI. With just a few lines of code, you can create smooth, fluid animations that respond to state changes.
@@ -153,6 +165,8 @@ struct AnimatedView: View {
 ```
 This example uses `withAnimation` and a `.transition` modifier to animate the appearance and disappearance of a `Text` view.
 
+[Top](#top)
+
 ## Why use SwiftUI?
 - **Simplicity**: SwiftUI’s declarative syntax makes the code more readable and easier to maintain. You can focus more on what the UI should look like rather than how to implement it.
 
@@ -161,6 +175,8 @@ This example uses `withAnimation` and a `.transition` modifier to animate the ap
 - **Modern architecture**: SwiftUI encourages a more modern, reactive approach to UI development, aligning well with trends in software architecture and design.
 
 - **Seamless integration**: SwiftUI works well with other Apple technologies like Combine for reactive programming, Core Data for data persistence, and even UIKit/AppKit for backward compatibility.
+
+[Top](#top)
 
 ## SwiftUI app building blocks
 In SwiftUI, building blocks are the fundamental components used to create an app's user interface. These building blocks include views, state management, layout systems, and various other elements that work together to create interactive, dynamic, and responsive UIs. Here's a breakdown of the key building blocks in a SwiftUI app:
@@ -197,6 +213,8 @@ SwiftUI uses environment values and dependency injection to pass data and config
 
 SwiftUI is built on these foundational blocks, allowing developers to create powerful and dynamic UIs with less code. Its declarative syntax, combined with tools like data binding, modifiers, and animations, makes it a modern and efficient way to develop apps across all Apple platforms.
 
+[Top](#top)
+
 ## SwiftUI building blocks: Primitive views
 - **Text**: Displays a string of text.
 ```swift
@@ -212,6 +230,8 @@ Image(systemName: "star.fill")
 ```swift
 Button("Tap me", action: { print("Button tapped") })
 ```
+
+[Top](#top)
 
 ## SwiftUI building blocks: Container views
 - **VStack**: Arranges views vertically.
@@ -238,6 +258,8 @@ ZStack {
 }
 ```
 
+[Top](#top)
+
 ## SwiftUI building blocks: Custom views
 You can create reusable components by defining your own custom views.
 
@@ -251,6 +273,8 @@ struct CustomView: View {
     }
 }
 ```
+
+[Top](#top)
 
 ## SwiftUI building blocks: State management
 - **@State**: Manages simple, local state within a view.
@@ -288,6 +312,8 @@ struct ContentView: View {
 }
 ```
 
+[Top](#top)
+
 ## SwiftUI building blocks: Styling modifiers
 - **`padding()`** Adds space around the view.
 - **`background()`** Sets the background of the view.
@@ -299,6 +325,8 @@ Text("Hello, World!")
     .foregroundColor(.blue)
 ```
 
+[Top](#top)
+
 ## SwiftUI building blocks: Layout modifiers
 - **`frame()`** Specifies the size of a view.
 - **`alignment()`** Aligns views within a container.
@@ -306,6 +334,8 @@ Text("Hello, World!")
 Text("Hello")
     .frame(width: 100, height: 50)
 ```
+
+[Top](#top)
 
 ## SwiftUI building blocks: Behavior modifiers
 - **`onTapGesture()`** Adds a tap gesture to a view.
@@ -316,6 +346,8 @@ Text("Tap me")
         print("Tapped!")
     }
 ```
+
+[Top](#top)
 
 ## SwiftUI building blocks: Layout system
 SwiftUI provides a flexible and powerful layout system to arrange and align views.
@@ -339,6 +371,8 @@ List {
 }
 ```
 
+[Top](#top)
+
 ## SwiftUI building blocks: Navigation
 SwiftUI uses navigation views and links to enable navigation between different views.
 
@@ -358,12 +392,16 @@ NavigationLink(destination: DetailView()) {
 }
 ```
 
+[Top](#top)
+
 ## SwiftUI building blocks: Data flow
 SwiftUI emphasizes the flow of data between views, which is managed through bindings, environment objects, and observed objects.
 
 - **Binding**: Allows views to share state by passing data binding references.
 
 - **Environment**: Injects global state into the view hierarchy.
+
+[Top](#top)
 
 ## SwiftUI building blocks: Animations
 Animations in SwiftUI are straightforward and powerful, making it easy to add smooth transitions and effects.
@@ -382,6 +420,8 @@ Text("Animate me")
     .animation(.easeIn)
 ```
 
+[Top](#top)
+
 ## SwiftUI building blocks: Interactivity
 SwiftUI provides a wide range of interactive controls that respond to user input, such as buttons, sliders, pickers, and more.
 
@@ -392,6 +432,8 @@ Form {
     Slider(value: $value, in: 0...100)
 }
 ```
+
+[Top](#top)
 
 ## SwiftUI building blocks: App lifecycle
 SwiftUI apps start with an `App` struct that defines the entry point and lifecycle of the app.
@@ -408,6 +450,8 @@ struct MyApp: App {
 }
 ```
 
+[Top](#top)
+
 ## SwiftUI building blocks: Environment and dependency injection
 SwiftUI uses environment values and dependency injection to pass data and configuration settings through the view hierarchy.
 
@@ -422,6 +466,8 @@ struct ContentView: View {
     @EnvironmentObject var settings: AppSettings
 }
 ```
+
+[Top](#top)
 
 ## What is `@State` used for?
 ### `@State`
@@ -443,6 +489,8 @@ struct CounterView: View {
     }
 }
 ```
+
+[Top](#top)
 
 ## What is `@Binding` used for?
 ### `@Binding`
@@ -467,6 +515,8 @@ struct ChildView: View {
     }
 }
 ```
+
+[Top](#top)
 
 ## What is `@ObservedObject` used for?
 ### `@ObservedObject`
@@ -494,6 +544,8 @@ struct TimerView: View {
 }
 ```
 
+[Top](#top)
+
 ## What is `@Environment` used for?
 ### `@Environment`
 - **Purpose**: Provides access to environment values, which are shared pieces of state that multiple views might depend on, such as color schemes, locale, or custom values.
@@ -509,6 +561,8 @@ struct ContentView: View {
     }
 }
 ```
+
+[Top](#top)
 
 ## What is `@EnvironmentObject` used for?
 ### `@EnvironmentObject`
@@ -540,6 +594,8 @@ struct ContentView: View {
 }
 ```
 
+[Top](#top)
+
 ## What is `@AppStorage` used for?
 ### `@AppStorage`
 - **Purpose**: Wraps access to `UserDefaults`, automatically reading and writing values to it.
@@ -555,6 +611,8 @@ struct SettingsView: View {
     }
 }
 ```
+
+[Top](#top)
 
 ## What is `@StateObject` used for?
 ### `@StateObject`
@@ -575,6 +633,8 @@ struct ContentView: View {
     }
 }
 ```
+
+[Top](#top)
 
 ## What's the difference between `@State` and `@Binding`?
 `@State` and `@Binding` are both property wrappers used in SwiftUI, but they serve different purposes in managing and passing state within a SwiftUI view hierarchy. Here's a breakdown of their differences:
@@ -598,6 +658,8 @@ struct ContentView: View {
 
 Together, **`@State`** and **`@Binding`** enable a clear and effective way to manage state across different layers of a SwiftUI view hierarchy, keeping your UI reactive and in sync with the underlying data.
 
+[Top](#top)
+
 ## What is `NavigationStack`?
 In SwiftUI, NavigationStack is a container view that manages a navigation-based interface, allowing for hierarchical navigation between views. It replaces the NavigationView that was commonly used in earlier versions of SwiftUI and brings more flexibility and power to handling navigation within an app.
 
@@ -610,6 +672,8 @@ With `NavigationStack`, you have the ability to control navigation programmatica
 
 - **Type-safe navigation**:
 `NavigationStack` leverages Swift's type system to ensure that the navigation is type-safe, reducing the likelihood of runtime errors related to navigation.
+
+[Top](#top)
 
 ## Basic structure of `NavigationStack`
 A `NavigationStack` works with `NavigationLink` to navigate between different views. Here’s a simple example:
@@ -644,6 +708,8 @@ struct AnotherView: View {
 }
 ```
 
+[Top](#top)
+
 ## Features of `NavigationStack`: Navigation links
 `NavigationLink` is used within a `NavigationStack` to push new views onto the navigation stack. When a `NavigationLink` is tapped, the corresponding destination view is displayed.
 
@@ -652,6 +718,8 @@ Example:
 NavigationLink("Go to Profile", destination: ProfileView())
 ```
 
+[Top](#top)
+
 ## Features of `NavigationStack`: Navigation title
 Use `.navigationTitle` to set the title for the current view in the navigation stack.
 
@@ -659,6 +727,8 @@ Example:
 ```swift
 .navigationTitle("Home")
 ```
+
+[Top](#top)
 
 ## Features of `NavigationStack`: Programmatic navigation
 You can navigate programmatically using `NavigationPath`, which allows you to manage a custom path stack and control the navigation stack programmatically.
@@ -677,6 +747,8 @@ NavigationStack(path: $path) {
 }
 ```
 
+[Top](#top)
+
 ## Features of `NavigationStack`: Navigation path
 - `NavigationPath` allows you to manage the entire navigation history. You can append, remove, or modify views in the stack dynamically.
 
@@ -694,6 +766,8 @@ You can use `path.removeAll()` to pop all views and return to the root view.
 - **Pop to specific view**:
 You can also pop to a specific view by manipulating the `path` state variable.
 
+[Top](#top)
+
 ## Using `Spacer`
 `Spacer` is used to create flexible space between views, allowing other views to stretch and contract as needed.
 
@@ -706,6 +780,8 @@ HStack {
 }
 ```
 
+[Top](#top)
+
 ## Organizing and aligning content with stacks
 You use stacks to organize and align content within your views. Stacks are fundamental layout containers that allow you to arrange views horizontally, vertically, or along the z-axis (depth). SwiftUI provides three main types of stacks:
 
@@ -714,6 +790,8 @@ You use stacks to organize and align content within your views. Stacks are funda
 - **VStack**: Arranges views vertically, one on top of the other.
 
 - **ZStack**: Overlaps views, placing them on top of each other.
+
+[Top](#top)
 
 ## HStack (Horizontal stack)
 `HStack` arranges its child views horizontally from left to right. You can use it to line up elements side by side.
@@ -749,6 +827,8 @@ struct HStackAlignedExample: View {
     }
 }
 ```
+
+[Top](#top)
 
 ## VStack (Vertical stack)
 `VStack` arranges its child views vertically from top to bottom. This is useful for creating lists or any content that needs to be stacked vertically.
@@ -789,6 +869,8 @@ struct VStackAlignedExample: View {
 }
 ```
 
+[Top](#top)
+
 ## Combining stacks
 Stacks can be combined to create complex layouts. For example, you can nest `HStack` and `VStack` within each other to arrange content in a grid-like fashion.
 
@@ -811,6 +893,8 @@ struct NestedStacksExample: View {
 }
 ```
 
+[Top](#top)
+
 ## Spacing and padding
 - **Spacing**: Controls the space between views within a stack. It's set using the `spacing` parameter when initializing `HStack`, `VStack` or `ZStack`.
 
@@ -831,6 +915,8 @@ struct PaddingExample: View {
     }
 }
 ```
+
+[Top](#top)
 
 ## Driving changes in your UI with state and bindings
 In SwiftUI, state and bindings are core concepts that enable dynamic and reactive user interfaces. They allow your UI to respond to changes in your data models and vice versa, creating a seamless and interactive experience. Let's break down how state and bindings work and how they drive changes in your UI.
@@ -860,6 +946,8 @@ struct ToggleView: View {
 ```
 In this example, `isOn` is a state variable, and the `$isOn` binding is passed to the `Toggle` control. When the user interacts with the toggle, it automatically updates the `isOn` state, which then updates the UI accordingly.
 
+[Top](#top)
+
 ## Driving changes with state and bindings
 State and bindings work together to create a reactive UI. Here’s how:
 
@@ -869,9 +957,13 @@ State and bindings work together to create a reactive UI. Here’s how:
 
 - **Binding**: If the state is passed as a binding to another view (like a child view), that view can both read and modify the state. Changes made in the child view reflect in the parent view and trigger a UI update.
 
+[Top](#top)
+
 ## State management best practices
 - **Use `@State` for local state**: Use `@State` for simple, transient states within a single view.
 
 - **Use `@Binding` for shared state**: Use `@Binding` when you need to pass state to a child view and allow it to modify that state.
 
 - **Use `@ObservedObject` or `@StateObject` for complex state**: For more complex or shared state across multiple views, consider using `ObservableObject` with `@ObservedObject` or `@StateObject`.
+
+[Top](#top)
