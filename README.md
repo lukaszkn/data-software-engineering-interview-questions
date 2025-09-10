@@ -1,4 +1,4 @@
-# 7117 Data and Software engineering interview questions
+# 7306 Data and Software engineering interview questions
 | Questions | Description |
 | --- | --- |
 | [Amazon Bedrock](content/amazon_bedrock.md) | Amazon Bedrock |
@@ -35,6 +35,7 @@
 | [Data Warehousing](content/dwha.md) | Data Warehousing Architecture |
 | [Databricks AutoML](content/databricks_automl.md) | Databricks AutoML |
 | [Databricks Data Modeling Strategies](content/databricks_data_modeling_strategies.md) | Databricks Data Modeling Strategies |
+| [Databricks data platform and AI architecture roles](content/databricks_data_platform_and_ai_architecture_roles.md) | Databricks data platform and AI architecture roles |
 | [Databricks Data Warehousing](content/databricks_data_warehousing.md) | Databricks Data Warehousing |
 | [Databricks Generative AI Application Deployment and Monitoring](content/databricks_generative_ai_application_deployment_and_monitoring.md) | Databricks Generative AI Application Deployment and Monitoring |
 | [Databricks Generative AI Application Development](content/databricks_generative_ai_application_development.md) | Databricks Generative AI Application Development |
