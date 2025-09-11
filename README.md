@@ -1,4 +1,4 @@
-# 7306 Data and Software engineering interview questions
+# 7523 Data and Software engineering interview questions
 | Questions | Description |
 | --- | --- |
 | [Amazon Bedrock](content/amazon_bedrock.md) | Amazon Bedrock |
@@ -20,12 +20,14 @@
 | [AWS](content/aws.md) | AWS |
 | [AWS Glue](content/aws_glue.md) | A serverless data integration service that makes it easy for analytics users to discover, prepare, move, and integrate data from multiple sources |
 | [AWS Lambda](content/aws_lambda.md) | AWS Lambda |
+| [AWS services](content/aws_services.md) | List of AWS services and their short descriptions |
 | [Azure](content/azure.md) | Azure |
 | [Azure Data Factory](content/azure_data_factory.md) | Azure Data Factory |
 | [Azure Databricks](content/azure_databricks.md) | Azure Databricks |
 | [Azure DevOps](content/azure_devops.md) | Azure DevOps |
 | [Azure HDInsight](content/azure_hdinsight.md) | Azure HDInsight |
 | [Azure Purview](content/azure_purview.md) | A unified data governance solution that helps organizations discover, manage, and govern their data estate across on-premises, multi-cloud, and SaaS environments |
+| [Azure services](content/azure_services.md) | List of Azure services |
 | [Azure Synapse Analytics](content/azure_synapse_analytics.md) | Azure Synapse Analytics |
 | [Big Data Engineering](content/bigdata.md) | Big Data engineering concepts and tools. |
 | [Data pipelines](content/data_pipelines.md) | Data pipelines basics |
@@ -48,6 +50,7 @@
 | [Elasticsearch](content/elasticsearch.md) | A search engine based on Apache Lucene, a free and open-source search engine. It provides a distributed, multitenant-capable full-text search engine with an HTTP web interface and schema-free JSON documents. |
 | [FastAPI](content/fastapi.md) | A high-performance web framework for building HTTP-based service APIs in Python |
 | [Fivetran](content/fivetran.md) | Fivetran |
+| [GCP services](content/gcp_services.md) | Google Cloud Platform services |
 | [General](content/general.md) | General programming concepts, design patterns |
 | [General Data Engineer interview](content/general_interview.md) | General, behavioral, communication, collaboration, problem solving from data engineering perspective |
 | [Golang](content/golang.md) | Golang |
